@@ -1,0 +1,46 @@
+#!/bin/bash
+
+set -Eeufo pipefail
+
+# brews
+{{ $brews := list
+  "asdf"
+  "bat"
+  "gh"
+  "ghq"
+  "git"
+  "jq"
+  "peco"
+  "pinentry-mac" -}}
+
+# casks
+{{ $casks := list
+  "1password"
+  "cron"
+  "deepl"
+  "docker"
+  "dropbox"
+  "iterm2"
+  "karabiner-elements"
+  "mos"
+  "notion"
+  "raycast"
+  "slack"
+  "visual-studio-code"
+  "wezterm" -}}
+
+# fonts
+{{ $casks = concat $casks (list
+  "font-fira-code"
+  "font-sauce-code-pro-nerd-font"
+  "font-udev-gothic-nf") -}}
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "homebrew/cask-fonts"
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF
