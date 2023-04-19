@@ -10,7 +10,7 @@ brew install chezmoi
 chezmoi init --apply h3y6e
 ```
 
-### other
+### linux
 ```shell
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply h3y6e
 ```
