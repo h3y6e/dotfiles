@@ -2,7 +2,6 @@
 
 set -Eeufo pipefail
 
-# brews
 {{ $brews := list
   "asdf"
   "bat"
@@ -13,13 +12,13 @@ set -Eeufo pipefail
   "peco"
   "pinentry-mac" -}}
 
-# casks
 {{ $casks := list
   "1password"
   "cron"
   "deepl"
   "docker"
   "dropbox"
+  "firefox-developer-edition"
   "iterm2"
   "karabiner-elements"
   "mos"
@@ -29,14 +28,25 @@ set -Eeufo pipefail
   "visual-studio-code"
   "wezterm" -}}
 
-# fonts
 {{ $casks = concat $casks (list
   "font-fira-code"
   "font-sauce-code-pro-nerd-font"
   "font-udev-gothic-nf") -}}
 
+{{ if eq .chezmoi.username "h3y6e" -}}
+# personal
+{{ $casks = concat $casks (list
+  "affinity-designer"
+  "affinity-photo"
+  "affinity-publisher"
+  "amazon-photos"
+  "google-chrome-dev"
+  "readdle-spark") -}}
+{{ end -}}
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 {{ range ($brews | sortAlpha | uniq) -}}
 brew "{{ . }}"
 {{ end -}}
