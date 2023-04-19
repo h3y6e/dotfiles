@@ -1,0 +1,15 @@
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'tommcdo/vim-exchange'
+Plug 'kana/vim-textobj-entire'
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'michaeljsmith/vim-indent-object'
+source ~/.vimrc
+set ideajoin
+map <C-n> <A-n>
+map <leader><leader>f <Plug>(easymotion-bd-f2)
+map <leader><leader>l <Plug>(easymotion-bd-jk)

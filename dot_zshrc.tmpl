@@ -1,0 +1,114 @@
+# zinit
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+  print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+  command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+  command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+    print -P "%F{33} %F{34}Installation successful.%f%b" || \
+    print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
+
+# zinit light-mode for \
+#   PZTM::helper \
+#   PZTM::environment \
+#   PZTM::spectrum \
+#   PZTM::editor \
+
+zinit wait lucid blockf light-mode for \
+  zsh-users/zsh-completions \
+  zsh-users/zsh-autosuggestions \
+  zdharma-continuum/fast-syntax-highlighting \
+  zdharma-continuum/history-search-multi-word
+
+### zsh ###
+setopt INTERACTIVE_COMMENTS
+
+# history
+setopt HIST_IGNORE_ALL_DUPS
+setopt SHARE_HISTORY
+
+# directory
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+setopt PUSHD_TO_HOME
+setopt CDABLE_VARS
+setopt MULTIOS
+setopt EXTENDED_GLOB
+unsetopt CLOBBER
+
+# correct
+setopt CORRECT
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias grep='nocorrect grep'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir -p'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+alias sudo='noccorect sudo'
+
+# ls
+alias ls='ls -G'
+alias l='ls -A'
+alias ll='ls -lh'
+alias la='ll -A'
+alias sl='ls'
+
+# homebrew
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  # asdf
+  type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
+fi
+
+# ghq
+if type ghq &>/dev/null && type peco &>/dev/null
+then
+  function g() {
+    local dir="$(ghq list | peco)"
+    [ ! -z $dir ] && cd "$(ghq root)/$dir"
+  }
+  type code &>/dev/null && function c() {
+    local dir="$(ghq list | peco)"
+    [ ! -z $dir ] && code -n "$(ghq root)/$dir"
+  }
+fi
+
+# git
+alias gti="git"
+
+# github copilot cli
+type github-copilot-cli &>/dev/null && eval "$(github-copilot-cli alias -- "$0")"
+
+# pbcopy
+alias clip="pbcopy"
+
+# direnv
+type direnv &>/dev/null && eval "$(direnv hook zsh)"
+
+# terraform
+alias tf="terraform"
+
+{{ if eq .chezmoi.os "darwin" -}}
+# xcode
+alias xcode="xed"
+alias xcodeclean="rm -rf ~/Library/Developer/Xcode/DerivedData"
+{{- end }}
+
+# chezmoi
+alias cz="chezmoi"
+
+# autocompletion
+autoload -Uz compinit
+compinit

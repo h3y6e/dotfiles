@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "dot_vimrc*": "vimrc",
+    "dot_zshrc*": "shellscript",
+    "dot_zprofile*": "shellscript",
+    "*ignore*": "ignore",
+  }
+}

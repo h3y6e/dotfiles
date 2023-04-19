@@ -1,0 +1,26 @@
+[user]
+	name = h3y6e
+	email = h3y6e@pm.me
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+	ignorecase = false
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	tree = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
+	fetch-p = fetch --prune
+	push-f = push --force-with-lease
+	cleanup = !git branch --merged | egrep -v '\\*|master|main|dev' | xargs git branch -d
+[merge]
+	ff = false
+[pull]
+	ff = only
+	rebase = true
+[push]
+	default = current
+[rebase]
+	autostash = true
+[fetch]
+	prune = true
