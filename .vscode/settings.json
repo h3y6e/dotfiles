@@ -4,5 +4,6 @@
     "dot_zshrc*": "shellscript",
     "dot_zprofile*": "shellscript",
     "*ignore*": "ignore",
+    "*.sh.tmpl": "shellscript",
   }
 }
