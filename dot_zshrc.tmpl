@@ -69,6 +69,12 @@ then
 
   # asdf
   type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
+
+  # gcloud
+  if type gloud &>/dev/null;  then
+    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+  fi
 fi
 
 # ghq
