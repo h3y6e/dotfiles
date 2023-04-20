@@ -5,6 +5,7 @@ set -Eeufo pipefail
 {{ $brews := list
   "asdf"
   "bat"
+  "direnv"
   "gh"
   "ghq"
   "git"
@@ -14,6 +15,7 @@ set -Eeufo pipefail
 
 {{ $casks := list
   "1password"
+  "1password-cli"
   "cron"
   "deepl"
   "docker"
@@ -40,8 +42,12 @@ set -Eeufo pipefail
   "affinity-photo"
   "affinity-publisher"
   "amazon-photos"
+  "discord"
   "google-chrome-dev"
-  "readdle-spark") -}}
+  "onedrive"
+  "qmk-toolbox"
+  "readdle-spark"
+  "spotify") -}}
 {{ end -}}
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
