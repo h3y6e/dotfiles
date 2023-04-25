@@ -53,7 +53,7 @@ alias man='nocorrect man'
 alias mkdir='nocorrect mkdir -p'
 alias mv='nocorrect mv'
 alias rm='nocorrect rm'
-alias sudo='noccorect sudo'
+alias sudo='nocorrect sudo'
 
 # ls
 alias ls='ls -G'
@@ -95,6 +95,9 @@ alias gti="git"
 
 # github copilot cli
 type github-copilot-cli &>/dev/null && eval "$(github-copilot-cli alias -- "$0")"
+
+# kubectl
+alias k="kubectl"
 
 # pbcopy
 alias clip="pbcopy"
