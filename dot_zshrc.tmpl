@@ -120,7 +120,7 @@ alias czc="code -n $(cz source-path)"
 
 # broot
 alias tree="br"
-source "$HOME/.config/broot/launcher/bash/br"
+type broot &>/dev/null && source "$HOME/.config/broot/launcher/bash/br"
 
 # autocompletion
 autoload -Uz compinit
