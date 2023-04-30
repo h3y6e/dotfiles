@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "fn単体 → mission control、組み合わせ → Alt+Ctrl+⌘、長押し → fn",
+                        "description": "fn単体 → Mission Control、組み合わせ → Prox key (Alt+Ctrl+⌘)、長押し → fn",
                         "manipulators": [
                             {
                                 "from": {
