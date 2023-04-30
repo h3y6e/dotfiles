@@ -18,7 +18,43 @@
                 },
                 "rules": [
                     {
-                        "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。(左コマンドキーは英数、右コマンドキーはかな)",
+                        "description": "fn単体 → mission control、組み合わせ → Alt+Ctrl+⌘、長押し → fn",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "fn",
+                                    "modifiers": {
+                                        "optional": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "mission_control"
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "fn",
+                                        "halt": true
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "⌘単体 → 英数・かなキー",
                         "manipulators": [
                             {
                                 "from": {
@@ -83,7 +119,7 @@
                         ]
                     },
                     {
-                        "description": "Ctrl+[を押したときに、escキーと英数キーを送信する",
+                        "description": "Ctrl+[ → esc+英数",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -143,7 +179,7 @@
                         ]
                     },
                     {
-                        "description": "Change button4,5 to back,forward",
+                        "description": "button4,5 → back,forward",
                         "manipulators": [
                             {
                                 "from": {
@@ -754,7 +790,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "mission_control"
+                            "apple_vendor_keyboard_key_code": "mission_control"
                         }
                     ]
                 },
@@ -764,7 +800,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "launchpad"
+                            "apple_vendor_keyboard_key_code": "launchpad"
                         }
                     ]
                 },
@@ -774,7 +810,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_decrement"
+                            "apple_vendor_top_case_key_code": "illumination_down"
                         }
                     ]
                 },
@@ -784,7 +820,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_increment"
+                            "apple_vendor_top_case_key_code": "illumination_up"
                         }
                     ]
                 },
@@ -814,7 +850,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "fastforward"
+                            "consumer_key_code": "fast_forward"
                         }
                     ]
                 },
