@@ -5,6 +5,8 @@ set -Eeufo pipefail
 # https://macos-defaults.com
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
+echo "setting up configure..."
+
 # Dockを自動的に表示/非表示
 defaults write com.apple.dock autohide -bool true
 # リピート入力認識までの時間: 最短
@@ -24,11 +26,14 @@ defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
 # トラックパッド > 軌跡の速さ: 真ん中
 defaults write -g com.apple.trackpad.scaling -float 1
-# 起動時にサウンドを再生: オフ
-sudo nvram SystemAudioVolume=" "
 # ユーザインターフェイスのサウンドエフェクトを再生: オフ
 defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -bool false
 # 音量を変更する時にフィードバックを再生: オン
 defaults write -g com.apple.sound.beep.feedback -bool true
 # デスクトップ項目: オン
 defaults write com.apple.finder CreateDesktop -bool true
+
+# 起動時にサウンドを再生: オフ
+if [[ $(nvram SystemAudioVolume 2>/dev/null | cut -f2) != " " ]]; then
+  sudo nvram SystemAudioVolume=" "
+fi
