@@ -1,6 +1,9 @@
 [user]
 	name = heyhoe
 	email = h3y6e@pm.me
+{{- if eq .chezmoi.os "darwin" }}
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINruieWJY7o2U4nvaPHJYKHPiCRmOzKBJe1TRZX3mtPB
+{{- end }}
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	ignorecase = false
@@ -24,3 +27,11 @@
 	autostash = true
 [fetch]
 	prune = true
+{{- if eq .chezmoi.os "darwin" }}
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+	gpgsign = true
+{{- end }}
