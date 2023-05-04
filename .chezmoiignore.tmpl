@@ -2,10 +2,23 @@
 .github/
 .gitignore
 LICENSE
+install.sh
 README.md
 
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
 .config/karabiner/
+.gnupg/
 com.googlecode.iterm2.plist
+.finicky.js
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
+.bashrc
+{{- end }}
+
+{{- if .ephemeral }}
+.config/wezterm/
+.ideavimrc
 {{- end }}

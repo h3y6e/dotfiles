@@ -2,7 +2,6 @@
 
 set -Eeufo pipefail
 
-
 file="/etc/pam.d/sudo"
 if ! grep 'pam_tid.so' ${file} > /dev/null; then
   echo "setting up pam..."

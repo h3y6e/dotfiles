@@ -1,0 +1,8 @@
+{{- $ephemeral := false -}}
+
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vscode") -}}
+{{-   $ephemeral = true -}}
+{{- end -}}
+
+[data]
+  ephemeral = {{ $ephemeral }}

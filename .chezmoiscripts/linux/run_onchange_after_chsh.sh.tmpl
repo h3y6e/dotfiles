@@ -1,0 +1,7 @@
+{{- if not .ephemeral -}}
+#!/bin/bash
+
+set -Eeufo pipefail
+
+chsh -s /usr/bin/zsh
+{{ end -}}
