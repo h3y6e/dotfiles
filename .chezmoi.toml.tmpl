@@ -1,6 +1,6 @@
 {{- $ephemeral := false -}}
 
-{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vscode") -}}
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "runner" "ubuntu" "vscode") -}}
 {{-   $ephemeral = true -}}
 {{- end -}}
 
