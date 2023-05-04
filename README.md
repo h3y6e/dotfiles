@@ -23,4 +23,5 @@ cz update
 ## Edit
 ```shell
 czc
+cz apply
 ```
