@@ -1,0 +1,31 @@
+module.exports = {
+  defaultBrowser: "Firefox Developer Edition",
+  handlers: [
+    {
+      match: ({ url }) => url.host.endsWith("google.com"),
+      browser: ({ url }) => {
+        const profile = search => {
+          try {
+            const authuser = search.match(/authuser=(.*)/)[1]
+            switch (authuser.slice(-5)) {
+// {{- if eq .chezmoi.hostname "Mac145h" }}
+              case "ad.jp":
+                return "Profile 1"
+              case "ts.jp":
+                return "Profile 3"
+// {{- end }}
+              default:
+                return "Default"
+            }
+          } catch {
+            return "Default"
+          }
+        }
+        return {
+          name: "Google Chrome",
+          profile: profile(url.search)
+        }
+      }
+    }
+  ]
+}

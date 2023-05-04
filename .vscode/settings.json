@@ -6,5 +6,6 @@
     "*ignore*": "ignore",
     "*.sh.tmpl": "shellscript",
     "*.plist.tmpl": "xml",
+    "*.js.tmpl": "javascript",
   }
 }
