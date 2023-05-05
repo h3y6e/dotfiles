@@ -80,7 +80,7 @@ has() {
 }
 
 install() {
-  if has "chezmoi"; then
+  if ! chezmoi="$(command -v chezmoi)"; then
     bin_dir="${HOME}/.local/bin"
     chezmoi="${bin_dir}/chezmoi"
     if has "curl" || has "wget"; then
