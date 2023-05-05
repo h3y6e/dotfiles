@@ -77,21 +77,28 @@ has() {
 }
 
 install() {
-  info "install chezmoi..."
-  if has "curl" || has "wget"; then
-    BIN_DIR="$HOME/.local/bin"
-    if has "curl"; then
-      sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$BIN_DIR"
+  if has "chezmoi"; then
+    bin_dir="${HOME}/.local/bin"
+    chezmoi="${bin_dir}/chezmoi"
+    if has "curl" || has "wget"; then
+      info "Installing chezmoi to '${chezmoi}'"
+      if has "curl"; then
+        chezmoi_install_script="$(curl -fsLS get.chezmoi.io)"
+      else
+        chezmoi_install_script="$(wget -qO- get.chezmoi.io)"
+      fi
     else
-      sh -c "$(wget -qO- get.chezmoi.io)" -- -b "$BIN_DIR"
+      die "curl or wget required."
     fi
-  else
-    die "curl or wget required."
+    sh -c "${chezmoi_install_script}" -- -b "${bin_dir}"
+    unset chezmoi_install_script bin_dir
   fi
 
-  if [[ "$only_chezmoi" == 0 ]]; then
-  info "install dotfiles..."
-  chezmoi init --apply -S .
+  if [[ "${only_chezmoi}" == 0 ]]; then
+    script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
+    set -- init --apply --source="${script_dir}"
+    info "Running 'chezmoi $*'"
+    exec "${chezmoi}" "$@"
   fi
 
   completed "All done."
