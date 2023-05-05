@@ -5,23 +5,23 @@
 ## Install
 
 ### darwin
-```shell
+```zsh
 brew install chezmoi
 chezmoi init --apply h3y6e
 ```
 
 ### linux
-```shell
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply h3y6e
+```bash
+/bin/bash -c "$(curl -fsLS dotfiles.heyh.ooo)" -- -i
 ```
 
 ## Update
-```shell
+```zsh
 cz update
 ```
 
 ## Edit
-```shell
+```zsh
 czc
 cz apply
 ```
