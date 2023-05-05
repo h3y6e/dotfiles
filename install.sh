@@ -14,7 +14,7 @@ Available options:
 -h, --help     Print this help and exit
 -v, --verbose  Print script debug info
 -c, --chezmoi  Only install chezmoi
--i, --ind      Run with this script only
+-i, --init     Run with this script only
 --no-color     No colors
 EOF
   exit
