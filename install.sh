@@ -96,9 +96,8 @@ install() {
 
   if [[ "${only_chezmoi}" == 0 ]]; then
     script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
-    set -- init --apply --source="${script_dir}"
     info "Running 'chezmoi $*'"
-    exec "${chezmoi}" "$@"
+    exec "${chezmoi}" init --apply --source="${script_dir}"
   fi
 
   completed "All done."
