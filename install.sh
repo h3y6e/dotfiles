@@ -14,7 +14,7 @@ Available options:
 -h, --help     Print this help and exit
 -v, --verbose  Print script debug info
 -c, --chezmoi  Only install chezmoi
--i, --ind      Run with this script only
+-r, --remote   Perform installation remotely
 --no-color     No colors
 EOF
   exit
@@ -57,14 +57,14 @@ die() {
 
 parse_params() {
   only_chezmoi=0
-  independent=0
+  remote_install=0
 
   while :; do
     case "${1-}" in
     -h | --help) usage;;
     -v | --verbose) set -x;;
     -c | --chezmoi) only_chezmoi=1;;
-    -i | --ind) independent=1;;
+    -r | --remote) remote_install=1;;
     --no-color) NO_COLOR=1;;
     -?*) die "Unknown option: $1";;
     *) break;;
@@ -100,7 +100,7 @@ install() {
   if [[ "${only_chezmoi}" == 0 ]]; then
     script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
     info "Installing dotfiles..."
-    if [[ "${independent}" == 0 ]]; then
+    if [[ "${remote_install}" == 0 ]]; then
       "${chezmoi}" init --apply --source="${script_dir}"
     else
       "${chezmoi}" init --apply h3y6e
