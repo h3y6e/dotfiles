@@ -12,7 +12,7 @@ chezmoi init --apply h3y6e
 
 ### linux
 ```bash
-/bin/bash -c "$(curl -fsLS dotfiles.heyh.ooo)" -- -i
+/bin/bash -c "$(curl -fsLS dotfiles.heyh.ooo)" -- --remote
 ```
 
 ## Update
