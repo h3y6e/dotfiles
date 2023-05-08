@@ -32,6 +32,12 @@ defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -bool false
 defaults write -g com.apple.sound.beep.feedback -bool true
 # デスクトップ項目: オン
 defaults write com.apple.finder CreateDesktop -bool true
+# 時計: 24時間表示
+defaults write com.apple.menuextra.clock Show24Hour -int 1
+# 時計: 日付を表示
+defaults write com.apple.menuextra.clock ShowDate -int 1
+# 時計: 秒を表示
+defaults write com.apple.menuextra.clock ShowSeconds -int 1
 
 # 起動時にサウンドを再生: オフ
 if [[ $(nvram SystemAudioVolume 2>/dev/null | cut -f2) != " " ]]; then
