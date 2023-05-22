@@ -63,8 +63,7 @@ alias la='ll -A'
 alias sl='ls'
 
 # homebrew
-if type brew &>/dev/null
-then
+if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
   # asdf
@@ -78,8 +77,7 @@ then
 fi
 
 # ghq
-if type ghq &>/dev/null && type peco &>/dev/null
-then
+if type ghq &>/dev/null && type peco &>/dev/null; then
   function g() {
     local dir="$(ghq list | peco)"
     [ ! -z $dir ] && cd "$(ghq root)/$dir"
@@ -121,6 +119,14 @@ alias czc="code -n $(cz source-path)"
 # broot
 type broot &>/dev/null && source "$HOME/.config/broot/launcher/bash/br"
 
+# rust
+if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
+  command mkdir "$HOME/.zfunc"
+  rustup completions zsh > "$HOME/.zfunc/_rustup"
+  rustup completions zsh cargo > "$HOME/.zfunc/_cargo"
+fi
+
 # autocompletion
+fpath+=~/.zfunc
 autoload -Uz compinit
 compinit
