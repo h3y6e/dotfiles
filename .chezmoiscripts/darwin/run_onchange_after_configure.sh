@@ -18,9 +18,9 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # 外部キーボードのF1, F2などのキーを標準のファンクションキーとして使用
 defaults write -g com.apple.keyboard.fnState -bool true
 # キーボードショートカット > 次のウィンドウを操作対象にする: オフ (ブラウザのcmd+2と干渉する為)
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 "{enabled=0;value={parameters=(64,33,1048576);type='standard';};}"
+# defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 "{enabled=0;value={parameters=(64,33,1048576);type='standard';};}"
 # キーボードショートカット > Spotlight検索を表示: オフ
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled=0;value={parameters=(65535,49,1048576);type='standard';};}"
+# defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled=0;value={parameters=(65535,49,1048576);type='standard';};}"
 # トラックパッド > クリック: 弱い
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
