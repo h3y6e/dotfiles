@@ -127,7 +127,9 @@ if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
 fi
 
 # rye
-source "$HOME/.rye/env"
+if type rye &>/dev/null; then
+  source "$HOME/.rye/env"
+fi
 
 # autocompletion
 fpath+=~/.zfunc
