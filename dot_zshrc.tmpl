@@ -126,6 +126,9 @@ if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
   rustup completions zsh cargo > "$HOME/.zfunc/_cargo"
 fi
 
+# rye
+source "$HOME/.rye/env"
+
 # autocompletion
 fpath+=~/.zfunc
 autoload -Uz compinit
