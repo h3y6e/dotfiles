@@ -64,16 +64,24 @@ alias sl='ls'
 
 # homebrew
 if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  if [[ $(arch) == "i386" ]]; then
+    # x86_64
+    [ -s "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
+  else
+    # arm64
+    [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  # asdf
-  type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
+    # asdf
+    type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
 
-  # gcloud
-  if type gloud &>/dev/null;  then
-    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+    # gcloud
+    if type gloud &>/dev/null;  then
+      source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+      source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+    fi
   fi
+
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
 # ghq

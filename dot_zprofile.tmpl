@@ -22,9 +22,4 @@ fi
 {{ if eq .chezmoi.os "darwin" -}}
 # browser
 export BROWSER='open'
-
-{{ if eq .chezmoi.arch "arm64" -}}
-# homebrew
-[ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
-{{- end }}
 {{- end }}
