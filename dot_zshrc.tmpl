@@ -63,14 +63,16 @@ alias la='ll -A'
 alias sl='ls'
 
 # homebrew
-if type brew &>/dev/null; then
-  if [[ $(arch) == "i386" ]]; then
-    # x86_64
-    [ -s "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
-  else
-    # arm64
-    [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $(arch) == "i386" ]]; then
+  # x86_64
+  [ -s "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
+else
+  # arm64
+  [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
+if type brew &>/dev/null; then
+  if [[ $(arch) == "arm64" ]]; then
     # asdf
     type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
 
@@ -136,7 +138,7 @@ fi
 
 # rye
 if type rye &>/dev/null; then
-  source "$HOME/.rye/env"
+  source "$HOME/.rye/shims"
 fi
 
 # autocompletion
