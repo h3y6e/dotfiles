@@ -8,6 +8,7 @@ module.exports = {
           try {
             const authuser = search.match(/authuser=(.*)/)[1]
             switch (authuser.slice(-5)) {
+// ~/Library/Application Support/Google/Chrome/<Profile Name>
 // {{- if eq .chezmoi.hostname "Mac145h" }}
               case "ad.jp":
                 return "Profile 1"
