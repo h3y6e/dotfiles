@@ -137,7 +137,7 @@ if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
 fi
 
 # rye
-if type rye &>/dev/null; then
+if type rye &>/dev/null && [[ -d "$HOME/.rye" ]]; then
   source "$HOME/.rye/shims"
 fi
 
