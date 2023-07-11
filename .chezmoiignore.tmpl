@@ -9,14 +9,25 @@ README.md
 .chezmoiscripts/darwin/**
 .config/karabiner/
 .gnupg/
+Library/
 com.googlecode.iterm2.plist
 .finicky.js
+.zprofile
+.zshrc
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
 .bashrc
 {{- end }}
+
+{{ if ne .chezmoi.os "windows" }}
+.chezmoiscripts/windows/**
+{{ else }}
+.config/bat/
+.ssh/
+.asdfrc
+{{ end }}
 
 {{- if .ephemeral }}
 .config/wezterm/
