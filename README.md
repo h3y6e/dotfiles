@@ -15,6 +15,12 @@ chezmoi init --apply h3y6e
 /bin/bash -c "$(curl -fsLS dotfiles.heyh.ooo)" -- --remote
 ```
 
+### windows
+```ps1
+(irm -useb https://get.chezmoi.io/ps1) | powershell -c -
+./bin/chezmoi.exe init --apply h3y6e
+```
+
 ## Update
 ```zsh
 cz update
