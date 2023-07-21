@@ -33,7 +33,6 @@ cz apply
 ```
 
 ## Clear the state of chezmoiscipts
-
 ```zsh
 # `run_once_` scripts
 cz state delete-bucket --bucket=scriptState
