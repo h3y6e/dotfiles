@@ -130,6 +130,7 @@ alias czc="code -n $(cz source-path)"
 type broot &>/dev/null && source "$HOME/.config/broot/launcher/bash/br"
 
 # rust
+[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
 if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
   command mkdir "$HOME/.zfunc"
   rustup completions zsh > "$HOME/.zfunc/_rustup"
