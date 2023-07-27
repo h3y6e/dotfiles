@@ -660,7 +660,7 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "right_option"
+                                "key_code": "f24"
                             },
                             "to": [
                                 {
