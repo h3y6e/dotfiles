@@ -22,4 +22,7 @@ fi
 {{ if eq .chezmoi.os "darwin" -}}
 # browser
 export BROWSER='open'
+
+# orbstack
+[[ -d "$HOME/.orbstack" ]] && source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 {{- end }}
