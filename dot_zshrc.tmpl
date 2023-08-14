@@ -102,7 +102,7 @@ fi
 alias gti="git"
 
 # github copilot cli
-type github-copilot-cli &>/dev/null && eval "$(github-copilot-cli alias -- "$0")"
+(gc=github-copilot-cli; type $gc &>/dev/null && $gc -V &>/dev/null && eval "$($gc alias -- "$0")")
 
 # kubectl
 alias k="kubectl"
