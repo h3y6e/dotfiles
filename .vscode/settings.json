@@ -8,5 +8,6 @@
     "*.plist.tmpl": "xml",
     "*.js.tmpl": "javascript",
     "*.ini.tmpl": "ini",
+    "*.json": "jsonc",
   }
 }
