@@ -1,0 +1,9 @@
+[tools]
+node = "system"
+ruby = "system"
+java = "system"
+
+[settings]
+asdf_compat = true
+disable_tools = ["python"]
+experimental = true
