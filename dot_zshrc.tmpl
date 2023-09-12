@@ -76,6 +76,9 @@ if type brew &>/dev/null; then
     # asdf
     type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
 
+    # rtx
+    type rtx &>/dev/null && eval "$(rtx activate zsh)"
+
     # gcloud
     if type gloud &>/dev/null;  then
       source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"

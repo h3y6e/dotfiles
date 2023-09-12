@@ -3,7 +3,6 @@
 set -Eeufo pipefail
 
 {{ $brews := list
-  "asdf"
   "bat"
   "direnv"
   "ffmpeg"
@@ -14,8 +13,9 @@ set -Eeufo pipefail
   "jq"
   "peco"
   "pinentry-mac"
-  "swiftlint"
-  "rye" -}}
+  "rtx"
+  "rye"
+  "swiftlint" -}}
 
 {{ $casks := list
   "1password"
