@@ -5,7 +5,7 @@ set -Eeufo pipefail
 # https://macos-defaults.com
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
-echo "setting up configure..."
+printf "\033[3;35m%s\033[m\n" "setting up configure..."
 
 # Dockを自動的に表示/非表示
 defaults write com.apple.dock autohide -bool true

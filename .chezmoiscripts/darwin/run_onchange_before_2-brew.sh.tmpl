@@ -2,6 +2,8 @@
 
 set -Eeufo pipefail
 
+printf "\033[3;35m%s\033[m\n" "brew installing..."
+
 {{ $brews := list
   "bat"
   "direnv"
