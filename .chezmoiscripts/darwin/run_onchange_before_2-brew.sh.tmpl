@@ -18,7 +18,8 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "pinentry-mac"
   "rtx"
   "rye"
-  "swiftlint" -}}
+  "swiftlint"
+-}}
 
 {{ $casks := list
   "1password"
@@ -34,12 +35,14 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "notion"
   "raycast"
   "visual-studio-code"
-  "wezterm" -}}
+  "wezterm"
+-}}
 
 {{ $casks = concat $casks (list
+  "./Casks/font-juisee.rb"
   "font-fira-code"
-  "font-sauce-code-pro-nerd-font"
-  "font-udev-gothic-nf") -}}
+  "font-udev-gothic-nf"
+) -}}
 
 {{ if eq .chezmoi.username "h3y6e" -}}
 # personal
@@ -55,7 +58,8 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "qmk-toolbox"
   "readdle-spark"
   "slack"
-  "spotify") -}}
+  "spotify"
+) -}}
 {{ end -}}
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
