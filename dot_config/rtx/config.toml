@@ -2,6 +2,7 @@
 node = "system"
 ruby = "system"
 java = "system"
+go = "system"
 
 [settings]
 asdf_compat = true
