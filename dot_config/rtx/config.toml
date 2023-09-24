@@ -6,5 +6,4 @@ go = "system"
 
 [settings]
 asdf_compat = true
-disable_tools = ["python"]
 experimental = true
