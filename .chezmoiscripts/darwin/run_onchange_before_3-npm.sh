@@ -10,7 +10,7 @@ if ! type github-copilot-cli &>/dev/null; then
   github-copilot-cli auth
 fi
 
-if ! type ncu &>/dev/null; then
-  echo "installing ncu..."
-  npm install -g npm-check-updates
+if ! type npm-check &>/dev/null; then
+  echo "installing npm-check..."
+  npm install -g npm-check
 fi
