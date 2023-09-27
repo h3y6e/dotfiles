@@ -27,6 +27,9 @@
 	autostash = true
 [fetch]
 	prune = true
+[diff "lockb"]
+	textconv = bun
+	binary = true
 {{- if eq .chezmoi.os "darwin" }}
 [gpg]
 	format = ssh
