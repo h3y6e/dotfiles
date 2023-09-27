@@ -1,5 +1,5 @@
 [tools]
-node = "system"
+bun = "system"
 ruby = "system"
 java = "system"
 go = "system"
