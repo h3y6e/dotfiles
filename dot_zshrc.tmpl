@@ -136,7 +136,7 @@ type broot &>/dev/null && source "$HOME/.config/broot/launcher/bash/br"
 # rust
 [[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
 if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
-  command mkdir "$HOME/.zfunc"
+command mkdir "$HOME/.zfunc"
   rustup completions zsh > "$HOME/.zfunc/_rustup"
   rustup completions zsh cargo > "$HOME/.zfunc/_cargo"
 fi
@@ -152,5 +152,5 @@ fi
 
 # autocompletion
 fpath+=~/.zfunc
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+compdef _ni ni
