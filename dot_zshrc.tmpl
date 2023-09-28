@@ -120,6 +120,9 @@ type direnv &>/dev/null && eval "$(direnv hook zsh)"
 # terraform
 alias tf="terraform"
 
+# tre
+alias tree="tre"
+
 {{ if eq .chezmoi.os "darwin" -}}
 # xcode
 alias xcode="xed"
@@ -129,9 +132,6 @@ alias xcodeclean="rm -rf ~/Library/Developer/Xcode/DerivedData"
 # chezmoi
 alias cz="chezmoi"
 alias czc="code -n $(cz source-path)"
-
-# broot
-type broot &>/dev/null && source "$HOME/.config/broot/launcher/bash/br"
 
 # rust
 [[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
