@@ -24,6 +24,7 @@ zinit wait lucid blockf light-mode for \
   zsh-users/zsh-autosuggestions \
   zdharma-continuum/fast-syntax-highlighting \
   zdharma-continuum/history-search-multi-word \
+  CyberShadow/per-directory-history \
   azu/ni.zsh
 
 ### zsh ###
@@ -31,7 +32,16 @@ setopt INTERACTIVE_COMMENTS
 
 # history
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_ALLOW_CLOBBER
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_FUNCTIONS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+## per-directory-history
+PER_DIRECTORY_HISTORY_TOGGLE='^G'
 
 # directory
 setopt AUTO_CD
