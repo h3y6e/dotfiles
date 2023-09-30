@@ -96,17 +96,6 @@ cnoremap <C-b> <Left>
 cnoremap <C-a> <C-b>
 cnoremap <C-u> <C-e><C-u>
 
-"bracket autocompletion
-inoremap { {}<ESC>i
-inoremap {} {}
-inoremap {<Enter> {}<Left><CR><ESC><S-o><Tab>
-inoremap ( ()<ESC>i
-inoremap () ()
-inoremap (<Enter> ()<Left><CR><ESC><S-o><Tab>
-inoremap [ []<ESC>i
-inoremap [] []
-inoremap [<Enter> []<Left><CR><ESC><S-o><Tab>
-
 "other
 nnoremap Y y$
 nnoremap > >>
