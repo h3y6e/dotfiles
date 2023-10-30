@@ -29,7 +29,10 @@ module.exports = {
       },
     },
     {
-      match: ({ url }) => url.host.endsWith("figma.com"),
+      match: ({ url }) =>
+        ["figma.com", "inspect.isar.dev"].some((host) =>
+          url.host.endsWith(host)
+        ),
       browser: {
         name: "Google Chrome",
         profile: "Default",
