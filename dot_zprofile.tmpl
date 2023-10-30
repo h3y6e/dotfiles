@@ -31,3 +31,9 @@ export BROWSER='open'
 
 # bun
 [[ -d "$HOME/.bun" ]] && export PATH="$HOME/.bun/bin:$PATH"
+
+# android
+[[ -d "$HOME/Library/Android/sdk" ]] && export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+
+# pub
+[[ -d "$HOME/.pub-cache" ]] && export PATH="$HOME/.pub-cache/bin:$PATH"
