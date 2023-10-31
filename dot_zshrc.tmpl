@@ -127,9 +127,6 @@ alias clip="pbcopy"
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
-# terraform
-alias tf="terraform"
-
 # tre
 alias tree="tre"
 
@@ -163,9 +160,14 @@ fi
 # autocompletion
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
 # ni
 compdef _ni ni
 
 # buf
 type buf &>/dev/null && eval "$(buf completion zsh)"
+
+# terraform
+alias tf="terraform"
+type terraform &>/dev/null && complete -o nospace -C terraform terraform
