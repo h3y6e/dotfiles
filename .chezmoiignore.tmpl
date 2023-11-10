@@ -7,6 +7,7 @@ README.md
 
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
+Casks/
 .config/karabiner/
 .gnupg/
 Library/
@@ -27,6 +28,8 @@ com.googlecode.iterm2.plist
 .config/bat/
 .ssh/
 .asdfrc
+.ideavimrc
+.vimrc
 {{ end }}
 
 {{- if .ephemeral }}
