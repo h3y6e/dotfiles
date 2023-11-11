@@ -15,7 +15,7 @@
 	tree = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
 	fetch-p = fetch --prune
 	push-f = push --force-with-lease
-	cleanup = !git for-each-ref --merged HEAD --no-contains HEAD 'refs/heads/**' --format '%(refname)' | while read s; do echo "$s $(git rev-parse "$s")"; git update-ref -d "$s"; done
+	cleanup = !git branch --merged | egrep -v '\\*|master|main|dev' | xargs git branch -d
 [merge]
 	ff = false
 [pull]
