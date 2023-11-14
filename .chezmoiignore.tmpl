@@ -1,6 +1,8 @@
 .vscode/
 .github/
+.editorconfig
 .gitignore
+.winget.json
 LICENSE
 install.sh
 README.md
@@ -24,7 +26,7 @@ com.googlecode.iterm2.plist
 
 {{ if ne .chezmoi.os "windows" }}
 .chezmoiscripts/windows/**
-winget.json
+AppData/
 {{ else }}
 .config/bat/
 .ssh/
