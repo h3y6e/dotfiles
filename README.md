@@ -21,15 +21,9 @@ chezmoi init --apply h3y6e
 ### windows
 
 ```ps1
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 winget install twpayne.chezmoi
 chezmoi init --apply h3y6e
-```
-
-Or, in the case of ephemeral:
-
-```ps1
-(irm -useb https://get.chezmoi.io/ps1) | powershell -c -
-.\bin\chezmoi.exe init h3y6e --apply
 ```
 
 ## Update
