@@ -14,6 +14,12 @@
         },
         {
           "PackageIdentifier": "Git.Git"
+        },
+        {
+          "PackageIdentifier": "Mozilla.Firefox.DeveloperEdition"
+        },
+        {
+          "PackageIdentifier": "Microsoft.PowerToys"
         }
       ],
       "SourceDetails": {
