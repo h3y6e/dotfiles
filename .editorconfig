@@ -7,7 +7,10 @@ charset = utf-8
 trim_trailing_whitespace = false
 insert_final_newline = true
 
-[dot_config/git/config.tmpl,*.plist*,]
+[dot_config/git/config.tmpl]
+indent_style = tab
+
+[*.plist*]
 indent_style = tab
 
 [*.ps1*]
