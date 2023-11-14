@@ -4,9 +4,6 @@
     {
       "Packages": [
         {
-          "PackageIdentifier": "twpayne.chezmoi"
-        },
-        {
           "PackageIdentifier": "Microsoft.VisualStudioCode"
         },
         {
@@ -20,6 +17,9 @@
         },
         {
           "PackageIdentifier": "Microsoft.PowerToys"
+        },
+        {
+          "PackageIdentifier": "eza-community.eza"
         }
       ],
       "SourceDetails": {
