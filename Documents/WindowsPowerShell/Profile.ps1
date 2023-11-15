@@ -37,3 +37,8 @@ if ((Get-Command ghq -ErrorAction SilentlyContinue) -and (Get-Command peco -Erro
     }
   }
 }
+
+# completions
+Get-ChildItem "$PROFILE\..\Completions\" | ForEach-Object {
+  . $_.FullName
+}
