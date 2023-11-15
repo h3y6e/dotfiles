@@ -20,6 +20,9 @@
         },
         {
           "PackageIdentifier": "eza-community.eza"
+        },
+        {
+          "PackageIdentifier": "Notion.Notion"
         }
       ],
       "SourceDetails": {
