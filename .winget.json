@@ -23,9 +23,6 @@
         },
         {
           "PackageIdentifier": "Notion.Notion"
-        },
-        {
-          "PackageIdentifier": "Rye.Rye"
         }
       ],
       "SourceDetails": {
