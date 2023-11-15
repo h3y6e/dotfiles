@@ -15,6 +15,7 @@ if (Get-Command eza -ErrorAction SilentlyContinue) {
 
 # git
 Set-Alias gti git
+Import-Module posh-git
 
 # ghq
 if ((Get-Command ghq -ErrorAction SilentlyContinue) -and (Get-Command peco -ErrorAction SilentlyContinue)) {
@@ -32,7 +33,7 @@ if ((Get-Command ghq -ErrorAction SilentlyContinue) -and (Get-Command peco -Erro
       if (![string]::IsNullOrEmpty($dir)) {
         $path = (ghq root) + "/$dir"
         code -n $path
-    }
+      }
     }
   }
 }
