@@ -38,6 +38,11 @@ if ((Get-Command ghq -ErrorAction SilentlyContinue) -and (Get-Command peco -Erro
   }
 }
 
+# inshellisense
+if (Test-Path "$env:USERPROFILE\.inshellisense\key-bindings-powershell.ps1" -PathType Leaf) {
+  . "$env:USERPROFILE\.inshellisense\key-bindings-powershell.ps1"
+}
+
 # completions
 Get-ChildItem "$PROFILE\..\Completions\" | ForEach-Object {
   . $_.FullName
