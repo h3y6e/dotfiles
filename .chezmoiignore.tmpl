@@ -22,6 +22,7 @@ com.googlecode.iterm2.plist
 {{- if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
 .bashrc
+.hushlogin
 {{- end }}
 
 {{ if ne .chezmoi.os "windows" }}
