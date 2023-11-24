@@ -4,6 +4,7 @@ ruby = "system"
 java = "system"
 go = "system"
 node = "system"
+julia = "system"
 
 [settings]
 asdf_compat = true
