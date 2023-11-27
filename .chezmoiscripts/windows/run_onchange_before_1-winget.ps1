@@ -13,7 +13,8 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
   "eza-community.eza",
   "OpenJS.Nodejs.LTS",
   "Discord.Discord",
-  "SlackTechnologies.Slack"
+  "SlackTechnologies.Slack",
+  "Google.Chrome"
 ) | ForEach-Object {
   winget install $_
 }
