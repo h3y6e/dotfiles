@@ -12,7 +12,8 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
   "Notion.Notion",
   "eza-community.eza",
   "OpenJS.Nodejs.LTS",
-  "Discord.Discord"
+  "Discord.Discord",
+  "SlackTechnologies.Slack"
 ) | ForEach-Object {
   winget install $_
 }
