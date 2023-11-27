@@ -9,8 +9,10 @@ if (!(Get-Command scoop -ErrorAction SilentlyContinue)) {
 }
 
 @(
-  "ghq",
-  "peco"
+  "main/ghq",
+  "main/peco",
+  "nerd-fonts/FiraCode",
+  "nerd-fonts/JetBrains-Mono"
 ) | ForEach-Object {
   scoop install $_
 }
