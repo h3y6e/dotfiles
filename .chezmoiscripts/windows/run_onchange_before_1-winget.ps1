@@ -11,7 +11,8 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
   "Mozilla.Firefox.DeveloperEdition",
   "Notion.Notion",
   "eza-community.eza",
-  "OpenJS.Nodejs.LTS"
+  "OpenJS.Nodejs.LTS",
+  "Discord.Discord"
 ) | ForEach-Object {
   winget install $_
 }
