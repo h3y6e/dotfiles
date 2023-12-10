@@ -113,7 +113,13 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
 fi
 
 # git
-alias gti="git"
+function git-defaultbranch() {
+  git rev-parse 2> /dev/null || return 0
+  defaultbranch=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')
+  [ -z $defaultbranch ] && return 0
+  git config --local init.defaultBranch $defaultbranch
+  echo $defaultbranch
+}
 
 # github copilot cli
 type github-copilot-cli &>/dev/null && github-copilot-cli -V &>/dev/null && eval "$(github-copilot-cli alias -- "$0")"

@@ -15,10 +15,12 @@
 	status = auto
 	branch = auto
 [alias]
+	aliases = config --get-regexp alias
 	tree = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
 	fetch-p = fetch --prune
 	push-f = push --force-with-lease
 	cleanup = !git branch --merged | egrep -v '\\*|master|main|dev' | xargs git branch -d
+	cd = !git switch $(git config --get init.defaultBranch)
 [merge]
 	ff = false
 [pull]
