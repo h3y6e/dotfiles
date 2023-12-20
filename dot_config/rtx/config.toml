@@ -2,7 +2,6 @@
 bun = "system"
 ruby = "system"
 java = "system"
-go = "system"
 node = "system"
 julia = "system"
 
