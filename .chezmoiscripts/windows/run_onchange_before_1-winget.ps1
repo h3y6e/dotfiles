@@ -14,7 +14,9 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
   "OpenJS.Nodejs.LTS",
   "Discord.Discord",
   "SlackTechnologies.Slack",
-  "Google.Chrome"
+  "Google.Chrome",
+  "Docker.DockerDesktop",
+  "Schniz.fnm"
 ) | ForEach-Object {
   winget install $_
 }
