@@ -43,6 +43,12 @@ if (Test-Path "$env:USERPROFILE\.inshellisense\key-bindings-powershell.ps1" -Pat
   . "$env:USERPROFILE\.inshellisense\key-bindings-powershell.ps1"
 }
 
+# fnm
+if (Get-Command fnm -ErrorAction SilentlyContinue) {
+  fnm completions --shell power-shell | Out-String | Invoke-Expression
+  fnm env --use-on-cd | Out-String | Invoke-Expression
+}
+
 # completions
 Get-ChildItem "$PROFILE\..\Completions\" | ForEach-Object {
   . $_.FullName
