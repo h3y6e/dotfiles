@@ -34,14 +34,11 @@ defaults write -g com.apple.sound.beep.feedback -bool true
 defaults write com.apple.finder CreateDesktop -bool true
 # 時計: 24時間表示
 defaults write com.apple.menuextra.clock Show24Hour -int 1
-# 時計: 日付を表示
-defaults write com.apple.menuextra.clock ShowDate -int 1
+# 時計: 日付を非表示
+defaults write com.apple.menuextra.clock ShowDate -int 2
+# 時計: 曜日を非表示
+defaults write com.apple.menuextra.clock ShowDayOfWeek -int 0
 # 時計: 秒を表示
 defaults write com.apple.menuextra.clock ShowSeconds -int 1
 # コントロールセンター > メニューバーにVPNの状態を表示: オン
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.vpn" -bool true
-
-# 起動時にサウンドを再生: オフ
-if [[ $(nvram SystemAudioVolume 2>/dev/null | cut -f2) != " " ]]; then
-  sudo nvram SystemAudioVolume=" "
-fi
