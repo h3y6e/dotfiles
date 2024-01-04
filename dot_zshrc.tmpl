@@ -87,8 +87,8 @@ if type brew &>/dev/null; then
     # asdf
     type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
 
-    # rtx
-    type rtx &>/dev/null && eval "$(rtx activate zsh)"
+    # mise
+    type mise &>/dev/null && eval "$(mise activate zsh)"
 
     # gcloud
     if type gloud &>/dev/null;  then
