@@ -4,7 +4,3 @@ ruby = "system"
 java = "system"
 node = "system"
 julia = "system"
-
-[settings]
-asdf_compat = true
-experimental = true
