@@ -8,6 +8,7 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
   "AgileBits.1Password",
   "Microsoft.PowerToys",
   "Git.Git",
+  "GitHub.cli",
   "Mozilla.Firefox.DeveloperEdition",
   "Notion.Notion",
   "eza-community.eza",
