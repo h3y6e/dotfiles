@@ -30,7 +30,7 @@ module.exports = {
     },
     {
       match: ({ url }) =>
-        ["figma.com", "inspect.isar.dev"].some((host) =>
+        ["figma.com", "inspect.isar.dev", "notion.so"].some((host) =>
           url.host.endsWith(host)
         ),
       browser: {
