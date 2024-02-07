@@ -1,0 +1,17 @@
+cask "font-moralerspace" do
+  version "0.0.1"
+
+  url "https://github.com/yuru7/moralerspace/releases/download/v#{version}/moralerspace_v#{version}.zip"
+  name "moralerspace"
+  desc "Programming font based on Monaspace and IBM Plex Sans JP"
+  homepage "https://github.com/yuru7/moralerspace"
+
+  font "moralerspace_v#{version}/MoralerspaceNeon-Bold.ttf"
+  font "moralerspace_v#{version}/MoralerspaceNeon-BoldItalic.ttf"
+  font "moralerspace_v#{version}/MoralerspaceNeon-Regular.ttf"
+  font "moralerspace_v#{version}/MoralerspaceNeon-RegularItalic.ttf"
+  font "moralerspace_v#{version}/MoralerspaceArgon-Bold.ttf"
+  font "moralerspace_v#{version}/MoralerspaceArgon-BoldItalic.ttf"
+  font "moralerspace_v#{version}/MoralerspaceArgon-Regular.ttf"
+  font "moralerspace_v#{version}/MoralerspaceArgon-RegularItalic.ttf"
+end
