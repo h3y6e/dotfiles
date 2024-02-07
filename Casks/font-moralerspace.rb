@@ -9,10 +9,10 @@ cask "font-moralerspace" do
 
   font "moralerspace_v#{version}/MoralerspaceNeon-Bold.ttf"
   font "moralerspace_v#{version}/MoralerspaceNeon-BoldItalic.ttf"
+  font "moralerspace_v#{version}/MoralerspaceNeon-Italic.ttf"
   font "moralerspace_v#{version}/MoralerspaceNeon-Regular.ttf"
-  font "moralerspace_v#{version}/MoralerspaceNeon-RegularItalic.ttf"
   font "moralerspace_v#{version}/MoralerspaceArgon-Bold.ttf"
   font "moralerspace_v#{version}/MoralerspaceArgon-BoldItalic.ttf"
+  font "moralerspace_v#{version}/MoralerspaceArgon-Italic.ttf"
   font "moralerspace_v#{version}/MoralerspaceArgon-Regular.ttf"
-  font "moralerspace_v#{version}/MoralerspaceArgon-RegularItalic.ttf"
 end
