@@ -42,3 +42,5 @@ defaults write com.apple.menuextra.clock ShowDayOfWeek -int 0
 defaults write com.apple.menuextra.clock ShowSeconds -int 1
 # コントロールセンター > メニューバーにVPNの状態を表示: オン
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.vpn" -bool true
+# 入力切り替えインジケータを非表示
+sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist redesigned_text_cursor -dict-add Enabled -bool NO
