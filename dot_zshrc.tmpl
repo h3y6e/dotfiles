@@ -100,6 +100,9 @@ if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# 1password cli
+[[ -d "$HOME/.config/op" ]] && source "$HOME/.config/op/plugins.sh"
+
 # ghq
 if type ghq &>/dev/null && type peco &>/dev/null; then
   function g() {
@@ -120,9 +123,6 @@ function git-defaultbranch() {
   git config --local init.defaultBranch $defaultbranch
   echo $defaultbranch
 }
-
-# github copilot cli
-type github-copilot-cli &>/dev/null && github-copilot-cli -V &>/dev/null && eval "$(github-copilot-cli alias -- "$0")"
 
 # kubectl
 alias k="kubectl"
