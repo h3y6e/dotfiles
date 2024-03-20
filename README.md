@@ -17,7 +17,7 @@ chezmoi init --apply h3y6e
 ### linux
 
 ```bash
-/bin/bash -c "$(curl -fsLS https://raw.githubusercontent.com/h3y6e/dotfiles/main/install.sh)" -- --remote
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/h3y6e/dotfiles/main/install.sh)" -- --remote
 ```
 
 ### windows
