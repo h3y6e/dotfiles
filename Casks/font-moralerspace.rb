@@ -1,5 +1,5 @@
 cask "font-moralerspace" do
-  version "0.0.1"
+  version "0.0.11"
   sha256 :no_check
 
   url "https://github.com/yuru7/moralerspace/releases/download/v#{version}/Moralerspace_v#{version}.zip"
