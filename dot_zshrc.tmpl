@@ -198,3 +198,7 @@ type terraform &>/dev/null && complete -o nospace -C terraform terraform
 
 # jujutsu
 type jj &>/dev/null && source <(jj util completion zsh)
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
