@@ -146,6 +146,7 @@ alias xcodeclean="rm -rf ~/Library/Developer/Xcode/DerivedData"
 {{- end }}
 
 # fvm
+[[ -f "$HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$HOME/.dart-cli-completion/zsh-config.zsh" || true
 function check-fvm() {
   if [[ -d ".fvm" ]]; then
     echo "fvm is available"
