@@ -1,5 +1,8 @@
 module.exports = {
   defaultBrowser: "Firefox Developer Edition",
+  options: {
+    hideIcon: true,
+  },
   handlers: [
     {
       match: ({ url }) => url.host.endsWith("google.com"),
