@@ -1,3 +1,7 @@
 [behavior]
 use-uv = true
 autosync = true
+global-python = true
+
+[default]
+toolchain = "cpython@3.12"
