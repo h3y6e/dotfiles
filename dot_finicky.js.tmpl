@@ -31,8 +31,8 @@ module.exports = {
     },
     {
       match: ({ url }) =>
-        ["figma.com", "inspect.isar.dev", "notion.so"].some((host) =>
-          url.host.endsWith(host)
+        ["figma.com", "inspect.isar.dev", "notion.so", "linear.app"].some(
+          (host) => url.host.endsWith(host)
         ),
       browser: "Arc",
     },
