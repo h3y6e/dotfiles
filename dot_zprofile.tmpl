@@ -43,4 +43,4 @@ export BROWSER='open'
 [[ -d "$HOME/.maestro" ]] && export PATH="$PATH:$HOME/.maestro/bin"
 
 # rye
-[[ -d "$HOME/.rye" ]] && source "$HOME/.rye/env"
+[[ -f "$HOME/.rye/env" ]] && source "$HOME/.rye/env"
