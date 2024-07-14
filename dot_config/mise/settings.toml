@@ -1,3 +1,2 @@
-asdf_compat = true
 experimental = true
 legacy_version_file_disable_tools = ["python"]
