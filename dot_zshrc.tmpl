@@ -196,6 +196,9 @@ type buf &>/dev/null && eval "$(buf completion zsh)"
 alias tf="terraform"
 type terraform &>/dev/null && complete -o nospace -C terraform terraform
 
+# terragrunt
+type terragrunt &>/dev/null && complete -o nospace -C terragrunt terragrunt
+
 # jujutsu
 type jj &>/dev/null && source <(jj util completion zsh)
 
