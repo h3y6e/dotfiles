@@ -124,22 +124,19 @@ function git-defaultbranch() {
   echo $defaultbranch
 }
 
-# kubectl
-alias k="kubectl"
-
-# pbcopy
-alias clip="pbcopy"
-
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
-
-# tailscale
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # tre
 alias tree="tre"
 
 {{ if eq .chezmoi.os "darwin" -}}
+# pbcopy
+alias clip="pbcopy"
+
+# tailscale
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
 # xcode
 alias xcode="xed"
 alias xcodeclean="rm -rf ~/Library/Developer/Xcode/DerivedData"
@@ -175,14 +172,14 @@ fi
 
 # tabtab source for packages
 # uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+[[ -f $HOME/.config/tabtab/zsh/__tabtab.zsh ]] && . $HOME/.config/tabtab/zsh/__tabtab.zsh || true
 
 # chpwd hook
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd check-fvm
 
 # autocompletion
-fpath+=~/.zfunc
+fpath+=$HOME/.zfunc
 autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
