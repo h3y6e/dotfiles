@@ -10,6 +10,7 @@
     "*.ini.tmpl": "ini",
     "*.json": "jsonc",
     "*.ps1.tmpl": "powershell",
+    "*.toml.tmpl": "toml",
   },
   "cSpell.words": [
     "NFLG",
