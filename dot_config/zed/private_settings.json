@@ -19,7 +19,7 @@
     "metrics": false
   },
   "base_keymap": "VSCode",
-  "theme": "Ayu Light",
+  "theme": "Catppuccin Latte",
   "buffer_font_size": 13,
   "buffer_font_family": "UDEV Gothic 35NFLG",
   "tab_size": 2,
