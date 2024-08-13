@@ -8,7 +8,7 @@ end
 
 wezterm.on('gui-startup', function(cmd)
   local _, _, window = mux.spawn_window(cmd or {})
-  window:gui_window():toggle_fullscreen()
+  window:gui_window():maximize()
 end)
 
 wezterm.on('update-right-status', function(window, _)
@@ -48,7 +48,7 @@ wezterm.on('update-right-status', function(window, _)
 end)
 
 -- theme
-conf.color_scheme = 'OneHalfDark'
+conf.color_scheme = 'Catppuccin Frappe'
 conf.font = wezterm.font_with_fallback {
   { family = 'UDEV Gothic 35NFLG' },
 }
@@ -86,8 +86,5 @@ conf.keys = {
   { key = "/",     mods = "SUPER", action = act.Search("CurrentSelectionOrEmptyString") },
   { key = "Enter", mods = "SUPER", action = act.ToggleFullScreen },
 }
-
--- misc
-conf.check_for_updates = false
 
 return conf
