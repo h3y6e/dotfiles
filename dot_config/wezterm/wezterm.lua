@@ -57,6 +57,12 @@ conf.line_height = 1.1
 conf.unicode_version = 14
 conf.scrollback_lines = 10000
 conf.use_ime = true
+conf.audible_bell = "Disabled"
+conf.visual_bell = {
+  fade_in_duration_ms = 75,
+  fade_out_duration_ms = 75,
+  target = 'CursorColor',
+}
 
 -- window
 conf.adjust_window_size_when_changing_font_size = false
