@@ -48,7 +48,7 @@ wezterm.on('update-right-status', function(window, _)
 end)
 
 -- theme
-conf.color_scheme = 'Catppuccin Latte'
+conf.color_scheme = 'Catppuccin Frappe'
 conf.font = wezterm.font_with_fallback {
   { family = 'UDEV Gothic 35NFLG' },
 }
