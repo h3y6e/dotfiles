@@ -50,6 +50,7 @@ end)
 -- theme
 conf.color_scheme = 'Catppuccin Frappe'
 conf.font = wezterm.font_with_fallback {
+  { family = 'Explex35 Console' },
   { family = 'UDEV Gothic 35NFLG' },
 }
 conf.font_size = 13.0
