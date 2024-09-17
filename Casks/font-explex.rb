@@ -1,5 +1,5 @@
 cask "font-explex" do
-  version "0.0.2"
+  version "0.0.3"
   sha256 :no_check
 
   url "https://github.com/yuru7/Explex/releases/download/v#{version}/Explex_v#{version}.zip"
