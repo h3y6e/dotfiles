@@ -70,7 +70,7 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
 ) -}}
 {{ end -}}
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --no-lock --file=-<<EOF
 tap "h3y6e/dotfiles", "https://github.com/h3y6e/dotfiles"
 tap "homebrew/cask-versions"
 {{ range ($brews | sortAlpha | uniq) -}}
