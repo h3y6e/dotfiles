@@ -47,6 +47,7 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
 
 {{ $casks = concat $casks (list
   "font-explex"
+  "font-explex-nf"
   "font-fira-code"
   "font-juisee"
   "font-udev-gothic-nf"
@@ -71,7 +72,6 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "h3y6e/dotfiles", "https://github.com/h3y6e/dotfiles"
-tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 {{ range ($brews | sortAlpha | uniq) -}}
 brew "{{ . }}"
