@@ -1,0 +1,8 @@
+git_protocol: https
+editor:
+prompt: enabled
+pager:
+aliases: {memo: issue create --repo h3y6e/log}
+http_unix_socket:
+browser:
+version: "1"

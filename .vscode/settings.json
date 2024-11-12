@@ -15,6 +15,9 @@
   "[jsonc]": {
     "editor.formatOnSave": false
   },
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
   "cSpell.words": [
     "Catppuccin",
     "lockb",
