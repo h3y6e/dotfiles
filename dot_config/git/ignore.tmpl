@@ -1,14 +1,12 @@
 # Created in part by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,vim,visualstudiocode,jetbrains,xcode,dotenv
 
-### custom ###
 _pr_*/
+*.local.*
 
 ### 1Password ###
 .oc/
 
 ### mise ###
-.mise.local.toml
-.mise.*.local.toml
 .mise/tasks/local/
 
 ### direnv ###
@@ -133,7 +131,7 @@ fabric.properties
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+!*.svg
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -176,7 +174,6 @@ tags
 
 # Ignore local code-workspaces
 local.code-workspace
-*.local.code-workspace
 
 {{- if eq .chezmoi.os "linux" }}
 
