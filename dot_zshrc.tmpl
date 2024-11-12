@@ -106,6 +106,15 @@ fi
 # 1password cli
 [[ -d "$HOME/.config/op" ]] && source "$HOME/.config/op/plugins.sh"
 
+# gh
+if type gh &>/dev/null && type peco &>/dev/null; then
+  function ghpr() {
+    local num branch
+    IFS=$'\t' read -r num branch <<< "$(gh pr list | peco | cut -f1,3)"
+    [ ! -z $num ] && git worktree add -B "$branch" "_pr_$num"
+  }
+fi
+
 # ghq
 if type ghq &>/dev/null && type peco &>/dev/null; then
   function g() {
@@ -114,7 +123,20 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
   }
   type code &>/dev/null && function c() {
     local dir="$(ghq list | peco)"
-    [ ! -z $dir ] && code -n "$(ghq root)/$dir"
+      if [ ! -z "$dir" ]; then
+      local root_dir="$(ghq root)/$dir"
+      
+      if [ -f "$root_dir/local.code-workspace" ]; then
+        code -n "$root_dir/local.code-workspace"
+      else
+        local workspace_file=$(find "$root_dir" -maxdepth 1 -type f -name "*.code-workspace" | head -n 1)
+        if [ ! -z "$workspace_file" ]; then
+          code -n "$workspace_file"
+        else
+          code -n "$root_dir"
+        fi
+      fi
+    fi
   }
 fi
 
