@@ -107,11 +107,31 @@ fi
 [[ -d "$HOME/.config/op" ]] && source "$HOME/.config/op/plugins.sh"
 
 # gh
-if type gh &>/dev/null && type peco &>/dev/null; then
-  function ghpr() {
+if type gh &>/dev/null; then
+  function gh-pr-worktree() {
+    git rev-parse 2>/dev/null || {
+      echo "Not a git repository"
+      return 1
+    }
+    type peco &>/dev/null || {
+      echo "peco is not installed"
+      return 1
+    }
+
     local num branch
     IFS=$'\t' read -r num branch <<< "$(gh pr list | peco | cut -f1,3)"
     [ ! -z $num ] && git worktree add -B "$branch" "_pr_$num"
+  }
+
+  function gh-defaultbranch() {
+    git rev-parse 2>/dev/null || {
+      echo "Not a git repository"
+      return 1
+    }
+    defaultbranch=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')
+    [ -z $defaultbranch ] && return 0
+    git config --local init.defaultBranch $defaultbranch
+    echo $defaultbranch
   }
 fi
 
@@ -139,15 +159,6 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
     fi
   }
 fi
-
-# git
-function git-defaultbranch() {
-  git rev-parse 2> /dev/null || return 0
-  defaultbranch=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')
-  [ -z $defaultbranch ] && return 0
-  git config --local init.defaultBranch $defaultbranch
-  echo $defaultbranch
-}
 
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
