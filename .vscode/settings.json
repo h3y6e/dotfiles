@@ -12,8 +12,12 @@
     "*.ps1.tmpl": "powershell",
     "*.toml.tmpl": "toml",
   },
+  "[jsonc]": {
+    "editor.formatOnSave": false
+  },
   "cSpell.words": [
     "Catppuccin",
+    "lockb",
     "NFLG",
     "twpayne",
     "UDEV"
