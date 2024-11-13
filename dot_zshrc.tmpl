@@ -141,21 +141,21 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
     local dir="$(ghq list | peco)"
     [ ! -z $dir ] && cd "$(ghq root)/$dir"
   }
-  type code &>/dev/null && function c() {
-    local dir="$(ghq list | peco)"
-      if [ ! -z "$dir" ]; then
-      local root_dir="$(ghq root)/$dir"
-      
-      if [ -f "$root_dir/local.code-workspace" ]; then
-        code -n "$root_dir/local.code-workspace"
-      else
-        local workspace_file=$(find "$root_dir" -maxdepth 1 -type f -name "*.code-workspace" | head -n 1)
-        if [ ! -z "$workspace_file" ]; then
-          code -n "$workspace_file"
-        else
-          code -n "$root_dir"
-        fi
-      fi
+fi
+
+# code
+if type code &>/dev/null; then
+  function c() {
+    local localwsfile="local.code-workspace"
+    if [ -f "$localwsfile" ]; then
+      code -n "$localwsfile"
+      return 0
+    fi
+    local wsfile=$(find . -maxdepth 1 -type f -name "*.code-workspace" | head -n 1)
+    if [ ! -z "$wsfile" ]; then
+      code -n "$wsfile"
+    else
+      code -n .
     fi
   }
 fi
