@@ -103,9 +103,6 @@ if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
-# 1password cli
-[[ -d "$HOME/.config/op" ]] && source "$HOME/.config/op/plugins.sh"
-
 # gh
 if type gh &>/dev/null; then
   function gh-pr-worktree() {
@@ -221,6 +218,13 @@ autoload -U +X bashcompinit && bashcompinit
 
 # ni
 compdef _ni ni
+
+# 1password cli
+if type op &>/dev/null; then
+  [[ -f "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
+  eval "$(op completion zsh)"
+  compdef _op op
+fi
 
 # buf
 type buf &>/dev/null && eval "$(buf completion zsh)"
