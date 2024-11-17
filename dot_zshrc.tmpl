@@ -106,6 +106,9 @@ if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# git
+alias gr="cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)"
+
 # gh
 if type gh &>/dev/null; then
   function gh-pr-worktree() {
@@ -120,7 +123,8 @@ if type gh &>/dev/null; then
 
     local num branch
     IFS=$'\t' read -r num branch <<< "$(gh pr list | peco | cut -f1,3)"
-    [ ! -z $num ] && git worktree add -B "$branch" "_pr_$num"
+    local dir=$(git rev-parse --show-toplevel)
+    [ ! -z $num ] && git worktree add -B "$branch" "$dir.pr/$num"
   }
 
   function gh-defaultbranch() {
