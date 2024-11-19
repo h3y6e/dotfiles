@@ -107,7 +107,7 @@ if type brew &>/dev/null; then
 fi
 
 # git
-alias gr="cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)"
+alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
 
 # gh
 if type gh &>/dev/null; then
@@ -168,18 +168,19 @@ fi
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
 # tre
-alias tree="tre"
+alias tree='tre'
 
 {{ if eq .chezmoi.os "darwin" -}}
 # pbcopy
-alias clip="pbcopy"
+alias clip='pbcopy'
 
 # tailscale
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+[[ -f "${fpath[1]}/_tailscale" ]] || tailscale completion zsh > "${fpath[1]}/_tailscale"
 
 # xcode
-alias xcode="xed"
-alias xcodeclean="rm -rf ~/Library/Developer/Xcode/DerivedData"
+alias xcode='xed'
+alias xcodeclean='rm -rf ~/Library/Developer/Xcode/DerivedData'
 {{- end }}
 
 # fvm
@@ -194,13 +195,13 @@ function check-fvm() {
 check-fvm
 
 # chezmoi
-alias cz="chezmoi"
-alias czc="code -n $(cz source-path)"
+alias cz='chezmoi'
+alias czc='code -n $(cz source-path)'
 
 # rust
 [[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
 if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
-command mkdir "$HOME/.zfunc"
+  command mkdir "$HOME/.zfunc"
   rustup completions zsh > "$HOME/.zfunc/_rustup"
   rustup completions zsh cargo > "$HOME/.zfunc/_cargo"
 fi
@@ -237,7 +238,6 @@ fi
 type buf &>/dev/null && eval "$(buf completion zsh)"
 
 # terraform
-alias tf="terraform"
 type terraform &>/dev/null && complete -o nospace -C terraform terraform
 
 # terragrunt
