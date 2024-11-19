@@ -18,12 +18,5 @@
   "[yaml]": {
     "editor.formatOnSave": false
   },
-  "cSpell.words": [
-    "Catppuccin",
-    "eisuu",
-    "lockb",
-    "NFLG",
-    "twpayne",
-    "UDEV"
-  ]
+  "cSpell.enabled": false
 }
