@@ -124,7 +124,7 @@ if type gh &>/dev/null; then
     local num branch
     IFS=$'\t' read -r num branch <<< "$(gh pr list | peco | cut -f1,3)"
     local dir=$(git rev-parse --show-toplevel)
-    [ ! -z $num ] && git worktree add -B "$branch" "$dir.pr/$num"
+    [ ! -z $num ] && git worktree add -B "$branch" "$dir.pr/$num" "origin/$branch"
   }
 
   function gh-defaultbranch() {
