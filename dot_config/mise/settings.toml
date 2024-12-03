@@ -1,2 +1,2 @@
 experimental = true
-legacy_version_file_disable_tools = ["python"]
+idiomatic_version_file_disable_tools = ["python"]
