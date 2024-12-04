@@ -1,13 +1,19 @@
+# xdg
+[[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="$HOME/.config"
+[[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="$HOME/.cache"
+[[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
+[[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="$HOME/.local/state"
+
 # zinit
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+if [[ ! -f $XDG_DATA_HOME/zinit/zinit.git/zinit.zsh ]]; then
   print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-  command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-  command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+  command mkdir -p "$XDG_DATA_HOME/zinit" && command chmod g-rwX "$XDG_DATA_HOME/zinit"
+  command git clone https://github.com/zdharma-continuum/zinit "$XDG_DATA_HOME/zinit/zinit.git" && \
     print -P "%F{33} %F{34}Installation successful.%f%b" || \
     print -P "%F{160} The clone has failed.%f%b"
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+source "$XDG_DATA_HOME/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -184,7 +190,7 @@ alias xcodeclean='rm -rf ~/Library/Developer/Xcode/DerivedData'
 {{- end }}
 
 # fvm
-[[ -f "$HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$HOME/.dart-cli-completion/zsh-config.zsh" || true
+[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
 function check-fvm() {
   if [[ -d ".fvm" ]]; then
     echo "fvm is available"
@@ -213,7 +219,7 @@ fi
 
 # tabtab source for packages
 # uninstall by removing these lines
-[[ -f $HOME/.config/tabtab/zsh/__tabtab.zsh ]] && . $HOME/.config/tabtab/zsh/__tabtab.zsh || true
+[[ -f $XDG_CONFIG_HOME/tabtab/zsh/__tabtab.zsh ]] && . $XDG_CONFIG_HOME/tabtab/zsh/__tabtab.zsh || true
 
 # chpwd hook
 autoload -Uz add-zsh-hook
@@ -229,7 +235,7 @@ compdef _ni ni
 
 # 1password cli
 if type op &>/dev/null; then
-  [[ -f "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
+  [[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
   eval "$(op completion zsh)"
   compdef _op op
 fi
