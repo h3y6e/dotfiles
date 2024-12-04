@@ -1,3 +1,5 @@
+min_version = "2024.11.37"
+
 [tools]
 buf = "latest"
 bun = "system"
@@ -6,3 +8,8 @@ java = "system"
 node = "system"
 julia = "system"
 python = "system"
+
+[settings]
+experimental = true
+idiomatic_version_file_disable_tools = ["python"]
+trusted_config_paths = ["~/ghq/github.com/h3y6e"]
