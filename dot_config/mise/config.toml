@@ -9,12 +9,16 @@ trusted_config_paths = ["~/ghq/github.com/h3y6e"]
 [settings.npm]
 bun = true
 
+[settings.pipx]
+uvx = true
+
 [tools]
-buf = "latest"
-bun = "latest"
-node = "system"
 ruby = "system"
 java = "system"
-julia = "system"
 python = "system"
+node = "22"
+bun = "latest"
+go = "latest"
+uv = "latest"
 "npm:npm-check" = "latest"
+"npm:textlint" = "latest"
