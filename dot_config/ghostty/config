@@ -1,0 +1,3 @@
+theme = dark:catppuccin-frappe,light:catppuccin-latte
+shell-integration = zsh
+font-family = "Explex35 Console"
