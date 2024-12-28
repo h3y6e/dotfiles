@@ -1,3 +1,23 @@
-theme = dark:catppuccin-frappe,light:catppuccin-latte
-shell-integration = zsh
+# theme
+theme = catppuccin-frappe
+background-opacity = 0.9
+bold-is-bright = true
 font-family = "Explex35 Console"
+
+# quick terminal
+quick-terminal-animation-duration = 0
+quick-terminal-screen = mouse
+quick-terminal-autohide = false
+
+# keybinds
+keybind = global:alt+space=toggle_quick_terminal
+
+# mouse
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+# darwin specific
+macos-window-shadow = false
+macos-option-as-alt = true
+macos-titlebar-style = tabs
+macos-non-native-fullscreen = visible-menu
