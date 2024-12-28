@@ -4,13 +4,17 @@ background-opacity = 0.9
 bold-is-bright = true
 font-family = "Explex35 Console"
 
+# window
+window-padding-x = 2
+window-padding-y = 0
+
 # quick terminal
 quick-terminal-animation-duration = 0
 quick-terminal-screen = mouse
 quick-terminal-autohide = false
 
 # keybinds
-keybind = global:alt+space=toggle_quick_terminal
+keybind = global:alt+shift+space=toggle_quick_terminal
 
 # mouse
 mouse-hide-while-typing = true
