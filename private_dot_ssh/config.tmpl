@@ -1,7 +1,7 @@
 Include ~/.ssh/conf.d/*
 
 {{ if eq .chezmoi.os "darwin" -}}
-Include ~/.colima/ssh_config
+Include ~/.config/colima/ssh_config
 
 Host *
 	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
