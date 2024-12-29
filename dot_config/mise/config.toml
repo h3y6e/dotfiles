@@ -1,4 +1,4 @@
-min_version = "2024.11.37"
+min_version = "2024.12.21"
 
 [settings]
 activate_aggressive = true
@@ -13,9 +13,6 @@ bun = true
 uvx = true
 
 [tools]
-ruby = "system"
-java = "system"
-python = "system"
 node = "22"
 bun = "latest"
 go = "latest"
