@@ -1,3 +1,5 @@
+auto-update-channel = tip
+
 # theme
 theme = catppuccin-frappe
 background-opacity = 0.9
@@ -15,6 +17,7 @@ quick-terminal-autohide = false
 
 # keybinds
 keybind = global:alt+shift+space=toggle_quick_terminal
+keybind = global:alt+space=toggle_visibility
 
 # mouse
 mouse-hide-while-typing = true
