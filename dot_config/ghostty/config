@@ -1,4 +1,4 @@
-auto-update-channel = tip
+auto-update-channel = stable
 
 # theme
 theme = catppuccin-frappe
