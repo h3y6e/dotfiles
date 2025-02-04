@@ -1,4 +1,4 @@
-min_version = "2024.12.21"
+min_version = "2025.2.1"
 
 [settings]
 activate_aggressive = true
@@ -13,7 +13,7 @@ bun = true
 uvx = true
 
 [tools]
-node = "22"
+node = "latest"
 bun = "latest"
 go = "latest"
 uv = "latest"
