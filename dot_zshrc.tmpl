@@ -17,13 +17,13 @@ source "$XDG_DATA_HOME/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit ice pick"async.zsh" src"pure.zsh"
+zinit ice compile"(pure|async).zsh" pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
 
 zinit light-mode for \
   PZTM::environment \
   PZTM::spectrum \
-  PZTM::editor \
+  PZTM::editor
 
 zinit wait lucid blockf light-mode for \
   zsh-users/zsh-completions \
