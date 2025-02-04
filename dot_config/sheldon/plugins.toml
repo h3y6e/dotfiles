@@ -1,0 +1,57 @@
+shell = "zsh"
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
+# completions
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+# sourced
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[plugins.pure]
+github = "sindresorhus/pure"
+use = ["{async,pure}.zsh"]
+
+[plugins.prezto-modules]
+github = "sorin-ionescu/prezto"
+use = ["modules/editor/init.zsh"]
+
+# deferred
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+apply = ["defer"]
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+apply = ["defer"]
+
+[plugins.history-search-multi-word]
+github = "zdharma-continuum/history-search-multi-word"
+apply = ["defer"]
+
+[plugins.per-directory-history]
+github = "CyberShadow/per-directory-history"
+apply = ["defer"]
+hooks.post = """
+PER_DIRECTORY_HISTORY_TOGGLE='^G'
+PER_DIRECTORY_HISTORY_NEW_PROMPT=false
+"""
+
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+apply = ["defer"]
+hooks.post = """
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+bindkey -M viins '^P' history-substring-search-up
+bindkey -M viins '^N' history-substring-search-down
+"""
+
+[plugins.ni]
+github = "azu/ni.zsh"
+use = ["ni.zsh"]
+apply = ["defer"]

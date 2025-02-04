@@ -4,36 +4,7 @@
 [[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
 [[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="$HOME/.local/state"
 
-# zinit
-if [[ ! -f $XDG_DATA_HOME/zinit/zinit.git/zinit.zsh ]]; then
-  print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-  command mkdir -p "$XDG_DATA_HOME/zinit" && command chmod g-rwX "$XDG_DATA_HOME/zinit"
-  command git clone https://github.com/zdharma-continuum/zinit "$XDG_DATA_HOME/zinit/zinit.git" && \
-    print -P "%F{33} %F{34}Installation successful.%f%b" || \
-    print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$XDG_DATA_HOME/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zinit ice compile"(pure|async).zsh" pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
-
-zinit light-mode for \
-  PZTM::environment \
-  PZTM::spectrum \
-  PZTM::editor
-
-zinit wait lucid blockf light-mode for \
-  zsh-users/zsh-completions \
-  zsh-users/zsh-autosuggestions \
-  zdharma-continuum/fast-syntax-highlighting \
-  zdharma-continuum/history-search-multi-word \
-  CyberShadow/per-directory-history \
-  azu/ni.zsh
-
-### zsh ###
+# comment
 setopt INTERACTIVE_COMMENTS
 
 # history
@@ -46,8 +17,6 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
-## per-directory-history
-PER_DIRECTORY_HISTORY_TOGGLE='^G'
 
 # directory
 setopt AUTO_CD
@@ -96,9 +65,6 @@ if type brew &>/dev/null; then
     # asdf
     type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
 
-    # mise
-    type mise &>/dev/null && eval "$(mise activate zsh)"
-
     # gcloud
     if type gloud &>/dev/null;  then
       source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
@@ -111,6 +77,12 @@ if type brew &>/dev/null; then
 
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
+
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh)"
+
+# sheldon
+type sheldon &>/dev/null && eval "$(sheldon source)"
 
 # git
 alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
