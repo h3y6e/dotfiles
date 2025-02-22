@@ -34,6 +34,9 @@ fi
 # rye
 [[ -f "$HOME/.rye/env" ]] && source "$HOME/.rye/env"
 
+# windsurf
+[[ -d "$HOME/.codeium/windsurf" ]] && export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
 {{ if eq .chezmoi.os "darwin" -}}
 # browser
 export BROWSER='open'

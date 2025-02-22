@@ -66,7 +66,7 @@ if type brew &>/dev/null; then
     type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
 
     # gcloud
-    if type gloud &>/dev/null;  then
+    if type gcloud &>/dev/null; then
       source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
       source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
     fi
@@ -100,7 +100,7 @@ if type gh &>/dev/null; then
     }
 
     local num branch
-    IFS=$'\t' read -r num branch <<< "$(gh pr list | peco | cut -f1,3)"
+    IFS=$'\t' read -r num branch <<<"$(gh pr list | peco | cut -f1,3)"
     local dir=$(git rev-parse --show-toplevel)
     [ ! -z $num ] && git worktree add -B "$branch" "$dir.pr/$num" "origin/$branch"
   }
@@ -154,7 +154,7 @@ alias clip='pbcopy'
 
 # tailscale
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
-[[ -f "${fpath[1]}/_tailscale" ]] || tailscale completion zsh > "${fpath[1]}/_tailscale"
+[[ -f "${fpath[1]}/_tailscale" ]] || tailscale completion zsh >"${fpath[1]}/_tailscale"
 
 # xcode
 alias xcode='xed'
@@ -180,8 +180,8 @@ alias czc='code -n $(cz source-path)'
 [[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
 if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
   command mkdir "$HOME/.zfunc"
-  rustup completions zsh > "$HOME/.zfunc/_rustup"
-  rustup completions zsh cargo > "$HOME/.zfunc/_cargo"
+  rustup completions zsh >"$HOME/.zfunc/_rustup"
+  rustup completions zsh cargo >"$HOME/.zfunc/_cargo"
 fi
 
 # rye
