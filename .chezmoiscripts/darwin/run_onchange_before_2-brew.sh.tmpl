@@ -4,68 +4,78 @@ set -Eeufo pipefail
 
 printf "\033[3;35m%s\033[m\n" "brew installing..."
 
+# shared
 {{ $brews := list
-  "bat"
+  "sheldon"
+  "mise"
   "cargo-binstall"
-  "colima"
+  "gnupg"
   "cosign"
-  "docker"
-  "docker-compose"
-  "docker-buildx"
-  "ffmpeg"
+  "slsa-verifier"
+  "bat"
+  "tre-command"
+  "jq"
+  "peco"
   "gh"
   "ghq"
   "git"
-  "gnupg"
-  "jq"
   "lazygit"
-  "mise"
-  "peco"
   "pinentry-mac"
-  "sheldon"
-  "slsa-verifier"
-  "tre-command"
+  "ffmpeg"
 -}}
 
 {{ $casks := list
   "1password"
   "1password-cli"
+  "raycast"
+  "wezterm"
   "android-studio"
-  "craft"
   "finicky"
+  "arc"
   "firefox@developer-edition"
-  "google-cloud-sdk"
-  "karabiner-elements"
   "mos"
+  "karabiner-elements"
+  "craft"
   "notion"
   "notion-calendar"
-  "raycast"
-  "visual-studio-code"
-  "wezterm"
+  "google-cloud-sdk"
 -}}
 
 {{ $casks = concat $casks (list
+  "font-udev-gothic-nf"
+  "font-fira-code"
   "font-explex"
   "font-explex-nf"
-  "font-fira-code"
   "font-juisee"
-  "font-udev-gothic-nf"
 ) -}}
 
 {{ if eq .chezmoi.username "h3y6e" -}}
 # personal
+{{ $brews = concat $brews (list
+  "colima"
+  "docker"
+  "docker-compose"
+  "docker-buildx"
+) -}}
+
 {{ $casks = concat $casks (list
   "affinity-designer"
   "affinity-photo"
   "affinity-publisher"
   "amazon-photos"
-  "discord"
+  "cursor"
   "dropbox"
-  "google-chrome"
   "qmk-toolbox"
   "readdle-spark"
   "slack"
+  "discord"
   "spotify"
+) -}}
+{{ else -}}
+# work
+{{ $casks = concat $casks (list
+  "visual-studio-code"
+  "docker"
 ) -}}
 {{ end -}}
 
