@@ -19,6 +19,10 @@ use = ["{async,pure}.zsh"]
 github = "sorin-ionescu/prezto"
 use = ["modules/editor/init.zsh"]
 
+[plugins.ni]
+github = "azu/ni.zsh"
+use = ["ni.zsh"]
+
 # deferred
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
@@ -50,8 +54,3 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M viins '^P' history-substring-search-up
 bindkey -M viins '^N' history-substring-search-down
 """
-
-[plugins.ni]
-github = "azu/ni.zsh"
-use = ["ni.zsh"]
-apply = ["defer"]
