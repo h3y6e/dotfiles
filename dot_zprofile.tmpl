@@ -1,3 +1,6 @@
+#==============================================================================
+# Environment Variables
+#==============================================================================
 export DO_NOT_TRACK=1
 
 # editors
@@ -8,19 +11,46 @@ export PAGER='less'
 # language
 export LANG='en_US.UTF-8'
 
-# paths
+{{ if eq .chezmoi.os "darwin" -}}
+# browser
+export BROWSER='open'
+{{- end }}
+
+#==============================================================================
+# Path Settings
+#==============================================================================
+# base paths
 typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   $path
 )
 
+#==============================================================================
+# XDG Base Directory
+#==============================================================================
+[[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="$HOME/.config"
+[[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="$HOME/.cache"
+[[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
+[[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="$HOME/.local/state"
+
+#==============================================================================
+# Development Tools
+#==============================================================================
 # less
 export LESS='-F -g -i -M -R -S -w -X -z-4'
-# shellcheck disable=SC1009,SC1072,SC1073
-if (( $#commands[(i)lesspipe(|.sh)] )); then
-  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+
+# homebrew
+if [[ $(arch) == "i386" ]]; then
+  # x86_64
+  [ -s "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
+else
+  # arm64
+  [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh)"
 
 # android
 [[ -d "$HOME/Library/Android/sdk" ]] && export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
@@ -31,16 +61,5 @@ fi
 # maestro
 [[ -d "$HOME/.maestro" ]] && export PATH="$PATH:$HOME/.maestro/bin"
 
-# rye
-[[ -f "$HOME/.rye/env" ]] && source "$HOME/.rye/env"
-
 # windsurf
 [[ -d "$HOME/.codeium/windsurf" ]] && export PATH="$HOME/.codeium/windsurf/bin:$PATH"
-
-{{ if eq .chezmoi.os "darwin" -}}
-# browser
-export BROWSER='open'
-
-# orbstack
-[[ -d "$HOME/.orbstack" ]] && source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-{{- end }}

@@ -4,12 +4,6 @@
 # profiling
 zmodload zsh/zprof
 
-# XDG Base Directory
-[[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="$HOME/.config"
-[[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="$HOME/.cache"
-[[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
-[[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="$HOME/.local/state"
-
 #==============================================================================
 # Zsh Options
 #==============================================================================
@@ -77,14 +71,6 @@ alias tree='tre'
 # Package Managers & Runtimes
 #==============================================================================
 # homebrew
-if [[ $(arch) == "i386" ]]; then
-  # x86_64
-  [ -s "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
-else
-  # arm64
-  [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 if type brew &>/dev/null; then
   # gcloud
   if type gcloud &>/dev/null; then
@@ -100,9 +86,6 @@ fi
 
 # sheldon
 type sheldon &>/dev/null && eval "$(sheldon source)"
-
-# mise
-type mise &>/dev/null && eval "$(mise activate zsh)"
 
 # flutter
 [[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
