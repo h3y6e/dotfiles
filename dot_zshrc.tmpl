@@ -137,19 +137,27 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
   }
 fi
 
-# vscode
-if type code &>/dev/null; then
+# code
+if type cursor &>/dev/null || type windsurf &>/dev/null || type code &>/dev/null; then
   function c() {
+    local editor="code"
+    if type cursor &>/dev/null; then
+      editor="cursor"
+    elif type windsurf &>/dev/null; then
+      editor="windsurf"
+    fi
+
     local localwsfile="local.code-workspace"
     if [ -f "$localwsfile" ]; then
-      code -n "$localwsfile"
+      $editor -n "$localwsfile"
       return 0
     fi
+
     local wsfile=$(find . -maxdepth 1 -type f -name "*.code-workspace" | head -n 1)
     if [ ! -z "$wsfile" ]; then
-      code -n "$wsfile"
+      $editor -n "$wsfile"
     else
-      code -n .
+      $editor -n .
     fi
   }
 fi
