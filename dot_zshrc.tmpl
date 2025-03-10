@@ -157,6 +157,9 @@ fi
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
+# 1password cli
+[[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
+
 {{ if eq .chezmoi.os "darwin" -}}
 #==============================================================================
 # macOS Specific Settings
@@ -180,20 +183,22 @@ alias xcodeclean='rm -rf ~/Library/Developer/Xcode/DerivedData'
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd check-fvm
 
-# basic completion setup
-fpath+=$HOME/.zfunc
-autoload -Uz compinit && compinit
+# zfunc
+[[ -d $HOME/.zfunc ]] && fpath+=$HOME/.zfunc
+
+# compinit
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump)" ]; then
+  compinit
+else
+  compinit -C
+fi
+
+# bashcompinit
 autoload -U +X bashcompinit && bashcompinit
 
 # ni.zsh
 compdef _ni ni
-
-# 1password cli
-if type op &>/dev/null; then
-  [[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
-  eval "$(op completion zsh)"
-  compdef _op op
-fi
 
 #==============================================================================
 # End of Profiling
