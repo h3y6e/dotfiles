@@ -1,9 +1,18 @@
-# xdg
+#==============================================================================
+# Basic Settings
+#==============================================================================
+# profiling
+zmodload zsh/zprof
+
+# XDG Base Directory
 [[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="$HOME/.config"
 [[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="$HOME/.cache"
 [[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
 [[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="$HOME/.local/state"
 
+#==============================================================================
+# Zsh Options
+#==============================================================================
 # comment
 setopt INTERACTIVE_COMMENTS
 
@@ -29,7 +38,7 @@ setopt MULTIOS
 setopt EXTENDED_GLOB
 unsetopt CLOBBER
 
-# correct
+# auto correction
 setopt CORRECT
 alias cd='nocorrect cd'
 alias cp='nocorrect cp'
@@ -41,6 +50,9 @@ alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 alias sudo='nocorrect sudo'
 
+#==============================================================================
+# Aliases
+#==============================================================================
 # ls
 alias ls='ls -G'
 alias l='ls -A'
@@ -51,6 +63,19 @@ alias sl='ls'
 # network
 alias ipen0='ipconfig getifaddr en0'
 
+# git
+alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
+
+# chezmoi
+alias cz='chezmoi'
+alias czc='code -n $(cz source-path)'
+
+# other
+alias tree='tre'
+
+#==============================================================================
+# Package Managers & Runtimes
+#==============================================================================
 # homebrew
 if [[ $(arch) == "i386" ]]; then
   # x86_64
@@ -61,32 +86,36 @@ else
 fi
 
 if type brew &>/dev/null; then
-  if [[ $(arch) == "arm64" ]]; then
-    # asdf
-    type asdf &>/dev/null && . $(brew --prefix asdf)/libexec/asdf.sh
-
-    # gcloud
-    if type gcloud &>/dev/null; then
-      source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-      source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-    fi
-
-    # mysql-client
-    [[ -d "$(brew --prefix)/opt/mysql-client@8.4" ]] && export PATH="$(brew --prefix)/opt/mysql-client@8.4/bin:$PATH"
+  # gcloud
+  if type gcloud &>/dev/null; then
+    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
   fi
+
+  # mysql-client
+  [[ -d "$(brew --prefix)/opt/mysql-client@8.4" ]] && export PATH="$(brew --prefix)/opt/mysql-client@8.4/bin:$PATH"
 
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
-# mise
-type mise &>/dev/null && eval "$(mise activate zsh)"
-
 # sheldon
 type sheldon &>/dev/null && eval "$(sheldon source)"
 
-# git
-alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh)"
 
+# flutter
+[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
+function check-fvm() {
+  if [[ -d ".fvm" ]]; then
+    alias flutter='fvm flutter'
+    alias dart='fvm dart'
+  fi
+}
+
+#==============================================================================
+# Development Tools
+#==============================================================================
 # gh
 if type gh &>/dev/null; then
   function gh-pr-worktree() {
@@ -125,7 +154,7 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
   }
 fi
 
-# code
+# vscode
 if type code &>/dev/null; then
   function c() {
     local localwsfile="local.code-workspace"
@@ -145,11 +174,11 @@ fi
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
-# tre
-alias tree='tre'
-
 {{ if eq .chezmoi.os "darwin" -}}
-# pbcopy
+#==============================================================================
+# macOS Specific Settings
+#==============================================================================
+# clipboard
 alias clip='pbcopy'
 
 # tailscale
@@ -161,48 +190,19 @@ alias xcode='xed'
 alias xcodeclean='rm -rf ~/Library/Developer/Xcode/DerivedData'
 {{- end }}
 
-# fvm
-[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
-function check-fvm() {
-  if [[ -d ".fvm" ]]; then
-    echo "fvm is available"
-    alias flutter='fvm flutter'
-    alias dart='fvm dart'
-  fi
-}
-check-fvm
-
-# chezmoi
-alias cz='chezmoi'
-alias czc='code -n $(cz source-path)'
-
-# rust
-[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
-if type rustup &>/dev/null && [[ ! -f $HOME/.zfunc/_rustup ]]; then
-  command mkdir "$HOME/.zfunc"
-  rustup completions zsh >"$HOME/.zfunc/_rustup"
-  rustup completions zsh cargo >"$HOME/.zfunc/_cargo"
-fi
-
-# rye
-if type rye &>/dev/null && [[ -d "$HOME/.rye" ]]; then
-  source "$HOME/.rye/shims"
-fi
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f $XDG_CONFIG_HOME/tabtab/zsh/__tabtab.zsh ]] && . $XDG_CONFIG_HOME/tabtab/zsh/__tabtab.zsh || true
-
+#==============================================================================
+# Autocompletion
+#==============================================================================
 # chpwd hook
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd check-fvm
 
-# autocompletion
+# basic completion setup
 fpath+=$HOME/.zfunc
 autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
-# ni
+# ni.zsh
 compdef _ni ni
 
 # 1password cli
@@ -212,18 +212,9 @@ if type op &>/dev/null; then
   compdef _op op
 fi
 
-# buf
-type buf &>/dev/null && eval "$(buf completion zsh)"
-
-# terraform
-type terraform &>/dev/null && complete -o nospace -C terraform terraform
-
-# terragrunt
-type terragrunt &>/dev/null && complete -o nospace -C terragrunt terragrunt
-
-# jujutsu
-type jj &>/dev/null && source <(jj util completion zsh)
-
-# sdkman
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#==============================================================================
+# End of Profiling
+#==============================================================================
+if type zprof >/dev/null 2>&1; then
+  zprof | less
+fi
