@@ -18,5 +18,10 @@
   "[yaml]": {
     "editor.formatOnSave": false
   },
-  "cSpell.enabled": false
+  "cSpell.enabled": false,
+  "shellcheck.ignorePatterns": {
+    "dot_bashrc": true,
+    "dot_zprofile.tmpl": true,
+    "dot_zshrc.tmpl": true
+  }
 }
