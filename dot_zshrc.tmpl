@@ -138,29 +138,31 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
 fi
 
 # code
-if type cursor &>/dev/null || type windsurf &>/dev/null || type code &>/dev/null; then
-  function c() {
-    local editor="code"
-    if type cursor &>/dev/null; then
-      editor="cursor"
-    elif type windsurf &>/dev/null; then
-      editor="windsurf"
+function c() {
+  local editor=""
+  for e in windsurf-next windsurf cursor code; do
+    if type $e &>/dev/null; then
+      editor=$e
+      break
     fi
+  done
 
-    local localwsfile="local.code-workspace"
-    if [ -f "$localwsfile" ]; then
-      $editor -n "$localwsfile"
-      return 0
-    fi
+  if [ -z "$editor" ]; then
+    echo "editor not found"
+    return 1
+  fi
 
+  if [ -f "local.code-workspace" ]; then
+    $editor -n "local.code-workspace"
+  else
     local wsfile=$(find . -maxdepth 1 -type f -name "*.code-workspace" | head -n 1)
     if [ ! -z "$wsfile" ]; then
       $editor -n "$wsfile"
     else
       $editor -n .
     fi
-  }
-fi
+  fi
+}
 
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
