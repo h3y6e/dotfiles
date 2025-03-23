@@ -1,0 +1,4 @@
+export DO_NOT_TRACK=1
+
+# rust
+. "$HOME/.cargo/env"
