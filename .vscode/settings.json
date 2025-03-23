@@ -1,8 +1,9 @@
 {
   "files.associations": {
     "dot_vimrc*": "Vimscript",
-    "dot_zshrc*": "shellscript",
     "dot_zprofile*": "shellscript",
+    "dot_zshenv*": "shellscript",
+    "dot_zshrc*": "shellscript",
     "*ignore*": "ignore",
     "*.sh.tmpl": "shellscript",
     "*.plist.tmpl": "xml",
@@ -20,8 +21,9 @@
   },
   "cSpell.enabled": false,
   "shellcheck.ignorePatterns": {
-    "dot_bashrc": true,
-    "dot_zprofile.tmpl": true,
-    "dot_zshrc.tmpl": true
+    "dot_bashrc*": true,
+    "dot_zprofile*": true,
+    "dot_zshrc*": true,
+    "dot_zshenv*": true,
   }
 }
