@@ -1,4 +1,4 @@
 export DO_NOT_TRACK=1
 
 # rust
-. "$HOME/.cargo/env"
+[[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
