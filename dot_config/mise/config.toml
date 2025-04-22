@@ -16,6 +16,7 @@ uvx = true
 [tools]
 node = "latest"
 bun = "latest"
+rust = "latest"
 go = "latest"
 uv = "latest"
 "npm:npm-check" = "latest"
