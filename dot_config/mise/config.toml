@@ -1,7 +1,7 @@
 [settings]
 activate_aggressive = true
 experimental = true
-idiomatic_version_file_disable_tools = ["python"]
+idiomatic_version_file_enable_tools = ["node"]
 trusted_config_paths = ["~/ghq/github.com/h3y6e"]
 
 [settings.cargo]
