@@ -1,4 +1,6 @@
 export DO_NOT_TRACK=1
+export NEXT_TELEMETRY_DISABLED=1
+export STORYBOOK_DISABLE_TELEMETRY=1
 
 # rust
 [[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
