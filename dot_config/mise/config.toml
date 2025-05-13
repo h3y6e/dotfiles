@@ -3,15 +3,9 @@ activate_aggressive = true
 experimental = true
 idiomatic_version_file_enable_tools = ["node"]
 trusted_config_paths = ["~/ghq/github.com/h3y6e"]
-
-[settings.cargo]
-binstall = true
-
-[settings.npm]
-bun = true
-
-[settings.pipx]
-uvx = true
+cargo.binstall = true
+npm.bun = true
+pipx.uvx = true
 
 [tools]
 node = "latest"
