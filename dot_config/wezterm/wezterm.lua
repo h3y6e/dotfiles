@@ -13,6 +13,8 @@ end)
 
 wezterm.on('update-right-status', function(window, _)
   local cells = {}
+  table.insert(cells, window:active_workspace())
+
   local date = wezterm.strftime '%a %b %-d %H:%M'
   table.insert(cells, date)
 
@@ -23,25 +25,19 @@ wezterm.on('update-right-status', function(window, _)
   local colors = {
     '#3c1361',
     '#52307c',
+    '#6f2c91',
   }
-  local elements = {}
-  local num_cells = 0
 
-  local function push(text, is_last)
-    local cell_no = num_cells + 1
+  local elements = {}
+  for i, text in ipairs(cells) do
     table.insert(elements, { Foreground = { Color = '#c0c0c0' } })
-    table.insert(elements, { Background = { Color = colors[cell_no] } })
+    table.insert(elements, { Background = { Color = colors[((i - 1) % #colors) + 1] } })
     table.insert(elements, { Text = ' ' .. text .. ' ' })
-    if not is_last then
-      table.insert(elements, { Foreground = { Color = colors[cell_no + 1] } })
+
+    if i < #cells then
+      table.insert(elements, { Foreground = { Color = colors[(i % #colors) + 1] } })
       table.insert(elements, { Text = utf8.char(0xe0b2) })
     end
-    num_cells = num_cells + 1
-  end
-
-  while #cells > 0 do
-    local cell = table.remove(cells, 1)
-    push(cell, #cells == 0)
   end
 
   window:set_right_status(wezterm.format(elements))
@@ -92,6 +88,24 @@ conf.keys = {
   { key = "j",     mods = "SUPER", action = act({ ActivatePaneDirection = "Down" }) },
   { key = "/",     mods = "SUPER", action = act.Search("CurrentSelectionOrEmptyString") },
   { key = "Enter", mods = "SUPER", action = act.ToggleFullScreen },
+  { key = 's',     mods = 'SUPER', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
+  {
+    key = "s",
+    mods = "SUPER|SHIFT",
+    action = act.PromptInputLine {
+      description = "[wezterm] Create new workspace:",
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace {
+              name = line,
+            },
+            pane
+          )
+        end
+      end),
+    },
+  },
 }
 
 return conf
