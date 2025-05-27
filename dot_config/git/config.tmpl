@@ -12,6 +12,7 @@
 	symlinks = true
 	quotepath = false
 	safecrlf = true
+	pager = delta
 [color]
 	diff = auto
 	status = auto
@@ -25,6 +26,7 @@
 	cd = !git switch $(git config --get init.defaultBranch)
 [merge]
 	ff = false
+	conflictStyle = zdiff3
 [pull]
 	ff = only
 	rebase = true
@@ -50,3 +52,10 @@
 {{- end }}
 [url "https://github.com/"]
 	insteadOf = git@github.com:
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	hyperlinks = true
+	side-by-side = true
