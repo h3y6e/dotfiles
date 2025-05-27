@@ -86,14 +86,16 @@ conf.keys = {
   { key = "l",     mods = "SUPER", action = act({ ActivatePaneDirection = "Right" }) },
   { key = "k",     mods = "SUPER", action = act({ ActivatePaneDirection = "Up" }) },
   { key = "j",     mods = "SUPER", action = act({ ActivatePaneDirection = "Down" }) },
+  { key = "[",     mods = "SUPER", action = act({ ActivatePaneDirection = "Prev" }) },
+  { key = "]",     mods = "SUPER", action = act({ ActivatePaneDirection = "Next" }) },
   { key = "/",     mods = "SUPER", action = act.Search("CurrentSelectionOrEmptyString") },
   { key = "Enter", mods = "SUPER", action = act.ToggleFullScreen },
   { key = 's',     mods = 'SUPER', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
   {
-    key = "s",
-    mods = "SUPER|SHIFT",
+    key = "S",
+    mods = "SUPER",
     action = act.PromptInputLine {
-      description = "[wezterm] Create new workspace:",
+      description = "Create new workspace:",
       action = wezterm.action_callback(function(window, pane, line)
         if line then
           window:perform_action(
