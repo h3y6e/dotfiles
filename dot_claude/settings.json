@@ -13,11 +13,29 @@
       "Bash(pnpm check:*)",
       "Bash(pnpm lint:*)",
       "Bash(pnpm fmt:*)",
-      "Bash(pnpm biome check:*)",
+      "Bash(biome:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
-      "Bash(gh pr diff:*)"
+      "Bash(gh pr diff:*)",
+      "Read(~/ghq/**)",
+      "Edit(./**)",
+      "WebFetch(domain:*)",
+      "WebSearch(*)",
+      "Write(./**)",
+      "MultiEdit(./**)"
     ],
-    "deny": ["Bash(rm:*)"]
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(chmod:*)",
+      "Bash(chown:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(sudo:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
   }
 }
