@@ -1,13 +1,22 @@
 {
   "model": "opus",
   "preferredNotifChannel": "terminal_bell",
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(find:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm check:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm fmt:*)",
+      "Bash(pnpm biome check:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)"
     ],
     "deny": ["Bash(rm:*)"]
   }
