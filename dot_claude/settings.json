@@ -9,10 +9,5 @@
       "Bash(grep:*)"
     ],
     "deny": ["Bash(rm:*)"]
-  },
-  "env": {
-{{- if ne .chezmoi.username "h3y6e" }}
-    "CLAUDE_CODE_USE_BEDROCK": "true"
-{{- end }}
   }
 }
