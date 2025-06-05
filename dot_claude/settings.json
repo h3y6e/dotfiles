@@ -1,4 +1,5 @@
 {
+  "model": "opus",
   "preferredNotifChannel": "terminal_bell",
   "permissions": {
     "allow": [
