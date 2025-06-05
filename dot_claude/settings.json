@@ -13,6 +13,7 @@
       "Bash(pnpm check:*)",
       "Bash(pnpm lint:*)",
       "Bash(pnpm fmt:*)",
+      "Bash(pnpm type-check:*)",
       "Bash(biome:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
