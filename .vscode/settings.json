@@ -10,8 +10,7 @@
     "*.js.tmpl": "javascript",
     "*.ini.tmpl": "ini",
     "*.json": "jsonc",
-    "*.ps1.tmpl": "powershell",
-    "*.toml.tmpl": "toml",
+    "*.ps1.tmpl": "powershell"
   },
   "[jsonc]": {
     "editor.formatOnSave": false
