@@ -12,6 +12,7 @@
       "Bash(head:*)",
       "Bash(tail:*)",
       "Bash(sort:*)",
+      "Bash(rg:*)",
       "Bash(xargs grep:*)",
       "Bash(xargs wc:*)",
       "Bash(pnpm install:*)",
