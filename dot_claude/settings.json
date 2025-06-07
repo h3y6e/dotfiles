@@ -9,6 +9,9 @@
       "Bash(cat:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(xargs grep:*)",
       "Bash(pnpm install:*)",
       "Bash(pnpm check:*)",
       "Bash(pnpm lint:*)",
@@ -20,6 +23,7 @@
       "Bash(gh pr diff:*)",
       "Read(~/ghq/**)",
       "Edit(./**)",
+      "MultiEdit(./**)",
       "WebFetch(domain:*)",
       "WebSearch(*)",
       "Write(./**)",
@@ -32,8 +36,7 @@
       "Bash(curl:*)",
       "Bash(wget:*)",
       "Bash(sudo:*)",
-      "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git push:*)"
     ]
   },
   "env": {
