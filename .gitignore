@@ -51,7 +51,7 @@ Temporary Items
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+!*.svg # comment out if you don't need vector files
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -120,3 +120,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,vim,visualstudiocode
+
+### Custom ###
+!dot_claude/CLAUDE.md
