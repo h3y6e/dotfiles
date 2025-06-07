@@ -10,6 +10,7 @@ npm.bun = true
 pipx.uvx = true
 
 [tools]
+deno = "latest"
 node = "latest"
 bun = "latest"
 rust = "latest"
