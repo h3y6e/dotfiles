@@ -23,6 +23,8 @@
       "Bash(pnpm run check:*)",
       "Bash(pnpm run type-check:*)",
       "Bash(biome:*)",
+      "Bash(deno test:*)",
+      "Bash(go doc:*)",
       "Bash(go test:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
