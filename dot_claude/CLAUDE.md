@@ -3,6 +3,7 @@
 Global configuration for Claude Code (claude.ai/code).
 
 ## Core Principles
+
 - **Time-saving first** - Automate everything, proactive improvements
 - **Quality standards** - Smart defaults, self-documenting code
 - **Continuous analysis** - Pattern recognition, auto-detect optimization opportunities
@@ -10,6 +11,7 @@ Global configuration for Claude Code (claude.ai/code).
 ## AI Assistance Requirements
 
 ### Improvement Suggestion Format
+
 ```
 Improvement: [Title]
 Time saved: ~X min/occurrence
@@ -18,6 +20,7 @@ Benefits: [reason]
 ```
 
 ### Automation Targets
+
 - Boilerplate generation
 - Test/documentation auto-creation
 - Refactoring suggestions
@@ -26,6 +29,7 @@ Benefits: [reason]
 - Error pattern detection
 
 ### Proactive Support
+
 1. **Pattern Recognition**: Abstract repeated code
 2. **Quality Improvements**: Better library choices, architecture improvements
 3. **Time Savings**: Automate observed tasks
@@ -33,31 +37,36 @@ Benefits: [reason]
 
 ## Workflow
 
-### Explore Phase (Automated)
+### Explore Phase
+
 - Auto-scan/summarize codebase
 - Auto-identify dependencies and impact areas
 - Present actionable insights
 
-### Plan Phase (AI-Assisted)
+### Plan Phase
+
 - Generate multiple implementation approaches
-- Auto-create test scenarios
+- Auto-create test scenarios or stories
 - Predict potential issues
 - Provide time estimates
 
-### Code Phase (Accelerated)
+### Code Phase
+
 - Generate documented boilerplate
 - Real-time error detection/fixes
 - Parallel implementation of independent components
 - Auto-comment complex logic
 
-### Commit Phase (Automated)
-- Auto-run language-specific quality checks
+### Commit Phase
+
+- Auto-run language-specific quality checks and tests
 - Auto-fix linting/formatting
 - Generate conventional commits
 
 ## Security Standards
 
 ### Never Rules
+
 - Delete production data without confirmation
 - Hardcode secrets/API keys
 - Commit with failing tests
@@ -65,17 +74,18 @@ Benefits: [reason]
 - Use unsafe operations in production
 
 ### Must Rules
-- Write tests for new features
+
+- Write tests or stories for new features
 - Run CI/CD before completion
 - Document breaking changes
-- Use feature branches
 - Add comprehensive API documentation
 
 ## Commit Convention
-```bash
-# <type>(<scope>): <subject>
-feat(auth): add JWT refresh
-fix(api): handle null response
-docs(readme): update setup
-perf(db): optimize queries
+
+write subject and body in Japanese
+
+```
+<type (fix or feat)>(<scope>): <subject>
+
+<body>
 ```
