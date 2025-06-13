@@ -1,91 +1,77 @@
 # CLAUDE.md
 
-Global configuration for Claude Code (claude.ai/code).
+## Operating Modes
 
-## Core Principles
-
-- **Time-saving first** - Automate everything, proactive improvements
-- **Quality standards** - Smart defaults, self-documenting code
-- **Continuous analysis** - Pattern recognition, auto-detect optimization opportunities
-
-## AI Assistance Requirements
-
-### Improvement Suggestion Format
+### Suggestion
 
 ```
-Improvement: [Title]
-Time saved: ~X min/occurrence
-Implementation: [command/code]
-Benefits: [reason]
+💡 [Category]: [Specific issue]
+Automation level: [Full automation|Semi-automation|Assistance]
+Command: `specific command or code`
+Impact: [Lines removed|Errors prevented|Steps simplified]
 ```
 
-### Automation Targets
+## Phase-Specific Guidelines
 
-- Boilerplate generation
-- Test/documentation auto-creation
-- Refactoring suggestions
-- Performance optimization
-- Dependency analysis
-- Error pattern detection
+### "Explore"
 
-### Proactive Support
+- List improvements with metrics (duplicate lines, complexity scores)
 
-1. **Pattern Recognition**: Abstract repeated code
-2. **Quality Improvements**: Better library choices, architecture improvements
-3. **Time Savings**: Automate observed tasks
-4. **Documentation**: Auto-generate API/README/ADRs
+### "Plan"
 
-## Workflow
+- Present multiple implementation paths (with LOC, dependency count)
 
-### Explore Phase
+### "Code"
 
-- Auto-scan/summarize codebase
-- Auto-identify dependencies and impact areas
-- Present actionable insights
+- Generate boilerplate without asking
+- Write tests/documentation
 
-### Plan Phase
+### "Verify"
 
-- Generate multiple implementation approaches
-- Auto-create test scenarios or stories
-- Predict potential issues
-- Provide time estimates
+- Auto-fix fixable issues
+- Report unfixable issues with solutions
 
-### Code Phase
+## Intervention Criteria
 
-- Generate documented boilerplate
-- Real-time error detection/fixes
-- Parallel implementation of independent components
-- Auto-comment complex logic
+### Intervene Immediately
 
-### Commit Phase
+- Algorithms with O(n^2) or worse complexity
+- Code blocks repeated 3+ times
 
-- Auto-run language-specific quality checks and tests
-- Auto-fix linting/formatting
-- Generate conventional commits
+### Suggest After Task Completion
 
-## Security Standards
+- Functions longer than 20 lines
+- Functions with 5+ parameters
 
-### Never Rules
+## Quality Metrics
 
-- Delete production data without confirmation
-- Hardcode secrets/API keys
-- Commit with failing tests
-- Push directly to main
-- Use unsafe operations in production
+### Track These Metrics
 
-### Must Rules
+- **Duplication**: Identical code block occurrences
+- **Complexity**: Cyclomatic complexity
 
-- Write tests or stories for new features
-- Run CI/CD before completion
-- Document breaking changes
-- Add comprehensive API documentation
+## Output Formats
 
-## Commit Convention
-
-write subject and body in Japanese
+### Priority Indicators
 
 ```
-<type (fix or feat)>(<scope>): <subject>
-
-<body>
+🔴 Critical: Security/bugs
+🟡 Medium: Performance/maintainability
+🟢 Low: Style/optimization
 ```
+
+### Commit Messages
+
+```
+<type>: <summary>
+
+<body in Japanese>
+```
+
+## Automation Guidelines
+
+### Pattern → Action Mapping
+
+- Same import in 3+ places → Suggest common module
+- 5+ method chains → Suggest intermediate variables
+- Remaining console.log → Replace with proper logger
