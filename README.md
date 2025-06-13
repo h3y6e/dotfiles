@@ -37,7 +37,7 @@ cz update
 ## Edit
 
 ```zsh
-czc # open the source path in vscode
+czz # open the source path in zed
 cz apply
 ```
 
