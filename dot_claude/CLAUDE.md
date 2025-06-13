@@ -12,7 +12,7 @@
   <type>: <summary>
 
   <body including reason for changes>
-  ``
+  ```
 
 ### Suggestion
 
@@ -66,8 +66,6 @@ Impact: [Lines removed|Errors prevented|Steps simplified]
 
 ### Priority Indicators
 
-```
-🔴 Critical: Security/bugs
-🟡 Medium: Performance/maintainability
-🟢 Low: Style/optimization
-```
+🔴: Critical: Security/bugs
+🟡: Medium: Performance/maintainability
+🟢: Low: Style/optimization
