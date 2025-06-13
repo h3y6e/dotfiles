@@ -35,6 +35,7 @@
       "Bash(git --no-pager diff:*)",
       "Bash(git --no-pager log:*)",
       "Bash(git merge-base:*)",
+      "Bash(git add:*)",
       "Read(~/ghq/**)",
       "Edit(./**)",
       "MultiEdit(./**)",
