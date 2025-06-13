@@ -2,6 +2,18 @@
 
 ## Operating Modes
 
+### Git
+
+- Never work on default branch (main, etc.), always `git switch -c fix/[name]` for new branch
+- Commit frequently at each logical change unit (for easy rollback)
+- Format: Write conventional commit message in Japanese
+
+  ```
+  <type>: <summary>
+
+  <body including reason for changes>
+  ``
+
 ### Suggestion
 
 ```
@@ -59,19 +71,3 @@ Impact: [Lines removed|Errors prevented|Steps simplified]
 🟡 Medium: Performance/maintainability
 🟢 Low: Style/optimization
 ```
-
-### Commit Messages
-
-```
-<type>: <summary>
-
-<body in Japanese>
-```
-
-## Automation Guidelines
-
-### Pattern → Action Mapping
-
-- Same import in 3+ places → Suggest common module
-- 5+ method chains → Suggest intermediate variables
-- Remaining console.log → Replace with proper logger
