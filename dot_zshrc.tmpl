@@ -105,7 +105,7 @@ fi
 # code
 function c() {
   local editor=""
-  for e in cursor windsurf-next windsurf code; do
+  for e in {{ if eq .chezmoi.username "h3y6e" }}cursor code{{ else }}code cursor{{ end }} windsurf; do
     if type $e &>/dev/null; then
       editor=$e
       break
