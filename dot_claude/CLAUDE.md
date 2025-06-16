@@ -2,18 +2,6 @@
 
 ## Operating Modes
 
-### Git
-
-- Never work on default branch (main, etc.), always `git switch -c fix/[name]` for new branch
-- Commit frequently at each logical change unit (for easy rollback)
-- Format: Write conventional commit message in Japanese
-
-  ```
-  <type>: <summary>
-
-  <body including reason for changes>
-  ```
-
 ### Suggestion
 
 ```
@@ -22,6 +10,13 @@ Automation level: [Full automation|Semi-automation|Assistance]
 Command: `specific command or code`
 Impact: [Lines removed|Errors prevented|Steps simplified]
 ```
+
+### Git
+
+- Never work on default branch (main, etc.), always `git switch -c fix/[name]` for new branch
+- Write conventional commit message in Japanese (without scope)
+- subject: max 50 chars, imperative mood, focus on "why" not "what", no trailing punctuation
+- Create commits with minimal granularity, one logical change per commit
 
 ## Phase-Specific Guidelines
 
@@ -36,7 +31,7 @@ Impact: [Lines removed|Errors prevented|Steps simplified]
 ### "Code"
 
 - Generate boilerplate without asking
-- Write tests/documentation
+- Write tests, stories, and documentations
 
 ### "Verify"
 
@@ -61,11 +56,3 @@ Impact: [Lines removed|Errors prevented|Steps simplified]
 
 - **Duplication**: Identical code block occurrences
 - **Complexity**: Cyclomatic complexity
-
-## Output Formats
-
-### Priority Indicators
-
-🔴: Critical: Security/bugs
-🟡: Medium: Performance/maintainability
-🟢: Low: Style/optimization
