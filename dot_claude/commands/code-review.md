@@ -1,6 +1,6 @@
 # Code Review
 
-Detect PR associated with current branch and conduct thorough code review.
+Detect PR associated with current branch and conduct thorough code review in Japanese.
 
 ## Process
 
@@ -11,7 +11,7 @@ Detect PR associated with current branch and conduct thorough code review.
 
 ```bash
 # PR details
-gh pr view --json title,body,reviews,comments | jq '{title,body,reviews: [.reviews[].body],comments: [.comments[] | select(.isMinimized == false) | .body]}'
+gh pr view --json title,body,reviews,comments --jq '{title,body,reviews: [.reviews[].body],comments: [.comments[] | select(.isMinimized == false) | .body]}'
 
 # Diff
 gh pr diff
