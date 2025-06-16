@@ -42,8 +42,7 @@
       "MultiEdit(./**)",
       "WebFetch(domain:*)",
       "WebSearch(*)",
-      "Write(./**)",
-      "MultiEdit(./**)"
+      "Write(./**)"
     ],
     "deny": [
       "Bash(rm:*)",
