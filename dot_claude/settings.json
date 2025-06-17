@@ -40,7 +40,10 @@
       "Read(~/ghq/**)",
       "Edit(./**)",
       "MultiEdit(./**)",
-      "WebFetch(domain:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:nextjs.org)",
+      "WebFetch(domain:www.npmjs.com)",
       "WebSearch(*)",
       "Write(./**)"
     ],
