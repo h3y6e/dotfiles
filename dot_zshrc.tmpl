@@ -135,6 +135,9 @@ type direnv &>/dev/null && eval "$(direnv hook zsh)"
 # 1password cli
 [[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
 
+# claude code
+[[ -f "$HOME/.claude/local/claude" ]] && alias claude='$HOME/.claude/local/claude'
+
 {{ if eq .chezmoi.os "darwin" -}}
 #==============================================================================
 # macOS Specific Settings
