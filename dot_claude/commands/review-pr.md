@@ -1,4 +1,4 @@
-# Code Review
+# PR Reviewer
 
 Detect PR associated with current branch and conduct thorough code review in Japanese.
 
