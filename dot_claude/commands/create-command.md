@@ -23,7 +23,6 @@ Before creating:
 1. List existing: `ls -la /.claude/commands/` or `~/.claude/commands/`
 2. Study patterns: task structure, MCP tools, arguments, references
 3. Use MCP tools NOT CLI: ✅ `mcp__scopecraft-cmd__task_create` ❌ `scopecraft task list`
-4. Standard refs: organizational-structure-guide.md, command-resources/, claude-commands-guide.md
 
 ## Interview process
 
@@ -38,7 +37,6 @@ Before creating:
 Copy from similar commands:
 
 - MCP usage: `mcp__scopecraft-cmd__task_create/update/list`
-- References: organizational-structure-guide.md, templates, guides
 - Task updates: status/logs/checklist/decisions
 - Human review: assumptions/technical/patterns flags
 
@@ -59,5 +57,5 @@ Copy from similar commands:
 
 1. Command: {location/name/category/pattern}
 2. Resources: {templates/docs}
-3. Usage: `/{prefix}:{name}` with example
+3. Usage: `/{name}` with example
 4. Next: Test → Refine → Document
