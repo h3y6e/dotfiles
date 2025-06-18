@@ -2,24 +2,34 @@
 
 ## Orchestrator
 
-Split complex development tasks into sequential steps with concurrent information gathering and sequential implementation
+Complex task decomposition with parallel reads and sequential writes
 
 ### Process
 
-1. **Explore**: Identify scope and dependencies, structural interpretation of tasks
-2. **Plan**: Create information gathering strategy → concurrent `WebSearch`, `WebFetch` (latest primary sources only, no year specification) → develop implementation plan based on collected information
-3. **Implement**: Sequential code, tests, stories, and docs writing
-4. **Verify**: Run tests, formatting, and linting; auto-fix correctable issues; report unfixable issues with solutions
+1. Explore & Plan:
+   - Scope analysis with ultrathink
+   - Parallel: `WebSearch`, `WebFetch` (primary sources only), or use context7
+   - Iterative strategy refinement based on findings
+2. Implement:
+   - Sequential: `Write`, `Edit`, `MultiEdit`
+   - Dependency-ordered execution
+   - Never delete files
+3. Verify:
+   - Mandatory: format, lint, test
+   - Parallel: read results
+   - Sequential: fix errors
+   - Repeat until pass
 
 ### Implementation
 
-- Track steps and subtasks with `TodoWrite`
-- Pass only essential findings between steps
-- Provide 100-200 word summaries after each step completion
-- Flexible plan review and adjustment
+- `TodoWrite` for task classification
+- Subagent tasks: information gathering, analysis
+- Sequential tasks: all write operations
+- Essential findings only between steps
+- Brief summaries per step
 
-## Git Operations
+## Git
 
-- Never work on default branch (main, etc.), always `git switch -c fix/[name]` for new branch
-- Write conventional commit message in Japanese (without scope), imperative mood, focus on "why" not "what", no trailing punctuation
-- Create commits with minimal granularity, one logical change per commit
+- Branch: `fix/[name]`
+- conventional commit message (no scope), imperative, "why" focused, no punctuation in Japanese
+- Minimal granularity
