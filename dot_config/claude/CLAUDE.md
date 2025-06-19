@@ -2,13 +2,13 @@
 
 ## Orchestrator
 
-Complex task decomposition with parallel reads and sequential writes
+Ultrathink complex task decomposition with parallel reads and sequential writes
 
 ### Process
 
 1. Explore & Plan:
-   - Scope analysis with ultrathink
-   - Parallel: `WebSearch`, `WebFetch` (primary sources only), or use context7
+   - Scope analysis
+   - Parallel: `WebSearch`, `WebFetch` (primary sources only), or MCP
    - Iterative strategy refinement based on findings
 2. Implement:
    - Sequential: `Write`, `Edit`, `MultiEdit`
@@ -31,5 +31,5 @@ Complex task decomposition with parallel reads and sequential writes
 ## Git
 
 - Branch: `fix/[name]`
-- conventional commit message (no scope), imperative, "why" focused, no punctuation in Japanese
+- conventional commit message (no scope), imperative, "why" focused, no punctuation
 - Minimal granularity
