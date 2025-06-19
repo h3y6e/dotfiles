@@ -23,6 +23,8 @@
 	push-f = push --force-with-lease
 	pull-f = !git fetch && git reset --hard @{u}
 	cd = !git switch $(git config --get init.defaultBranch)
+	worktree-remove-all = !git worktree list --porcelain | grep \"^worktree \" | grep -v \"$(git rev-parse --show-toplevel)$\" | cut -d\" \" -f2 | xargs -I {} git worktree remove --force {}
+	cleanup = !git fetch --prune && git for-each-ref --format=\"%(refname:short) %(upstream:track)\" refs/heads | grep \"\\\\[gone\\\\]\" | cut -d\" \" -f1 | xargs -r git branch -D
 [merge]
 	ff = false
 	conflictStyle = zdiff3
