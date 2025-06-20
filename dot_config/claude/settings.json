@@ -1,6 +1,5 @@
 {
   "model": "opus",
-  "preferredNotifChannel": "terminal_bell",
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
@@ -45,18 +44,21 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:nextjs.org)",
       "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:docs.expo.dev)",
+      "WebFetch(domain:scrapbox.io)",
+      "WebFetch(domain:gist.github.com)",
       "WebSearch(*)",
-      "Write(./**)"
+      "Write(./**)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__figma-dev-mode-mcp-server__get_code",
+      "mcp__figma-dev-mode-mcp-server__get_image",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_close"
     ],
-    "deny": [
-      "Bash(rm:*)",
-      "Bash(chmod:*)",
-      "Bash(chown:*)",
-      "Bash(curl:*)",
-      "Bash(wget:*)",
-      "Bash(sudo:*)",
-      "Bash(git push:*)"
-    ]
+    "deny": ["Bash(rm:*)", "Bash(sudo:*)"]
   },
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
