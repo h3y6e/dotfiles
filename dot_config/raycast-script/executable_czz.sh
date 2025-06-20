@@ -9,7 +9,6 @@ set -Eeufo pipefail
 
 # Optional parameters:
 # @raycast.icon ⚙️
-# @raycast.packageName util
 
 # Documentation:
 # @raycast.author h3y6e
