@@ -9,10 +9,10 @@ set -Eeufo pipefail
 
 # Optional parameters:
 # @raycast.icon 🙈
-# @raycast.packageName util
+# @raycast.argument1 { "type": "text", "placeholder": "log" }
 
 # Documentation:
 # @raycast.author h3y6e
 # @raycast.authorURL https://raycast.com/h3y6e
 
-pbpaste | sed -E 's#(/Users)/[^/]+#\1/<user>#g' | sed -E 's#(/ghq/github\.com)/[^/]+/[^/]+#\1/<org>/<repo>#g' | pbcopy
+echo "$1" | sed -E 's#(/Users)/[^/]+#\1/<user>#g' | sed -E 's#(/ghq/github\.com)/[^/]+/[^/]+#\1/<org>/<repo>#g' | pbcopy
