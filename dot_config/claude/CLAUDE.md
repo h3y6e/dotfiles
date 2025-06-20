@@ -8,7 +8,7 @@ Ultrathink complex task decomposition with parallel reads and sequential writes
 
 1. Explore & Plan:
    - Scope analysis
-   - Parallel: `WebSearch`, `WebFetch` (primary sources only), or MCP
+   - Parallel: `WebSearch`, `WebFetch`, or context7
    - Iterative strategy refinement based on findings
 2. Implement:
    - Sequential: `Write`, `Edit`, `MultiEdit`
@@ -27,6 +27,15 @@ Ultrathink complex task decomposition with parallel reads and sequential writes
 - Sequential tasks: all write operations
 - Essential findings only between steps
 - Brief summaries per step
+
+## Shell
+
+- Default: `zsh`
+
+## Markdown
+
+- Avoid overuse of bold text and emojis
+- Use `: ` instead of `：` even in Japanese text
 
 ## Git
 
