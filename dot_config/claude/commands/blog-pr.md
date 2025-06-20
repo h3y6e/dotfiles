@@ -39,22 +39,22 @@ Generate technical blog articles by analyzing PRs, issues, or commits from any G
 
 ```bash
 # Generate from single source
-/blog https://github.com/owner/repo/pull/123
+/blog-pr https://github.com/owner/repo/pull/123
 
 # Generate from multiple sources
-/blog https://github.com/owner/repo/pull/123 owner/repo#456 owner/repo@abc123def
+/blog-pr https://github.com/owner/repo/pull/123 owner/repo#456 owner/repo@abc123def
 
 # Multiple sources with direction
-/blog "performance optimization analysis" \
+/blog-pr "performance optimization analysis" \
   https://github.com/owner/repo/pull/123 \
   https://github.com/owner/repo/pull/124 \
   owner/repo#456
 
 # Mix different repositories
-/blog owner1/repo1#123 owner2/repo2#456 "comparing different approaches"
+/blog-pr owner1/repo1#123 owner2/repo2#456 "comparing different approaches"
 
 # Review article
-/blog review latest.md
+/blog-pr review latest.md
 ```
 
 ## Direction Examples
