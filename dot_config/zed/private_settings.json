@@ -28,8 +28,8 @@
   },
   "agent": {
     "default_model": {
-      "provider": "ollama",
-      "model": "qwen3:4b"
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
     },
     "version": "2"
   },
@@ -45,8 +45,6 @@
   "format_on_save": "on",
   "vim_mode": true,
   "copilot": {
-    "disabled_globs": [
-      ".env"
-    ]
+    "disabled_globs": [".env"]
   }
 }
