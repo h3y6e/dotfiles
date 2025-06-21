@@ -13,7 +13,8 @@ Create a GitHub Pull Request from staged files.
 
 1. **Branch & Staged Changes Analysis**
 
-   - Verify not on default branch
+   - Check if on default branch (main/master)
+   - If on default branch, create and switch to a new branch based on staged changes
    - Analyze only staged files
    - Completely ignore unstaged changes
 
