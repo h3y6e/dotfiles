@@ -29,7 +29,8 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 
 ## File Management
 
-- When removing files: use `mv` to `trash/` folder in project root instead of `rm`
+- Never use `rm` to delete files
+- When removing files: use `mv` to `.trash.local/` folder in project root
 
 ## Naming Conventions
 
@@ -65,6 +66,19 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 
 - Don't special-case test values (names, IDs)
 - Causes: fragility, hidden specs, lack of generality
+
+## Task Clarification
+
+- When task requirements are unclear or ambiguous, ASK the user for clarification
+- Do NOT make assumptions about implementation details
+- It's better to ask questions than to guess wrong
+- Feel free to ask without hesitation - clarification saves time
+
+## Thinking
+
+- ALWAYS think in English, regardless of the user's language
+- Internal reasoning and analysis must be in English
+- Only use other languages when communicating with the user
 
 ## Shell
 
