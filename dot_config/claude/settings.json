@@ -15,6 +15,7 @@
       "Bash(jq:*)",
       "Bash(test:*)",
       "Bash(mv:*)",
+      "Bash(file:*)",
       "Bash(xargs grep:*)",
       "Bash(xargs wc:*)",
       "Bash(pnpm install:*)",
