@@ -7,6 +7,13 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "language_models": {
+    "copilot_chat": {
+      "api_url": "https://api.githubcopilot.com/chat/completions",
+      "auth_url": "https://api.github.com/copilot_internal/v2/token",
+      "models_url": "https://api.githubcopilot.com/models"
+    }
+  },
   "edit_predictions": {
     "disabled_globs": [],
     "mode": "eager",
@@ -27,6 +34,7 @@
     "dock": "right"
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
