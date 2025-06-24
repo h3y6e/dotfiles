@@ -1,12 +1,4 @@
 #==============================================================================
-# XDG Base Directory
-#==============================================================================
-[[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="$HOME/.config"
-[[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="$HOME/.cache"
-[[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
-[[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="$HOME/.local/state"
-
-#==============================================================================
 # Zsh Options
 #==============================================================================
 # comment
@@ -50,14 +42,15 @@ alias sudo='nocorrect sudo'
 # Aliases
 #==============================================================================
 # ls
+{{ if eq .chezmoi.os "darwin" -}}
 alias ls='ls -G'
+{{- else }}
+alias ls='ls --color=auto'
+{{- end }}
 alias l='ls -A'
 alias ll='ls -lh'
 alias la='ll -A'
 alias sl='ls'
-
-# network
-alias ipen0='ipconfig getifaddr en0'
 
 # git
 alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
@@ -67,8 +60,16 @@ alias cz='chezmoi'
 alias czc='code $(cz source-path)'
 alias czz='zed $(cz source-path)'
 
-# other
+# tre
 alias tree='tre'
+
+{{ if eq .chezmoi.os "darwin" -}}
+# network
+alias ipen0='ipconfig getifaddr en0'
+
+# tailscale
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+{{- end }}
 
 #==============================================================================
 # Package Managers & Runtimes
@@ -143,20 +144,7 @@ type direnv &>/dev/null && eval "$(direnv hook zsh)"
 # 1password cli
 [[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
 
-# claude code
-export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
-
 {{ if eq .chezmoi.os "darwin" -}}
-#==============================================================================
-# macOS Specific Settings
-#==============================================================================
-# clipboard
-alias clip='pbcopy'
-
-# tailscale
-alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
-[[ -f "${fpath[1]}/_tailscale" ]] || tailscale completion zsh >"${fpath[1]}/_tailscale"
-
 # xcode
 alias xcode='xed'
 alias xcodeclean='rm -rf ~/Library/Developer/Xcode/DerivedData'

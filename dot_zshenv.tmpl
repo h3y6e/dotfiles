@@ -1,0 +1,39 @@
+#==============================================================================
+# XDG Base Directory
+#==============================================================================
+[[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="$HOME/.config"
+[[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="$HOME/.cache"
+[[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
+[[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="$HOME/.local/state"
+
+#==============================================================================
+# Environment Variables
+#==============================================================================
+# editors
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+
+# language
+export LANG='en_US.UTF-8'
+
+{{ if eq .chezmoi.os "darwin" -}}
+# browser
+export BROWSER='open'
+{{- end }}
+
+# less
+export LESS='-F -g -i -M -R -S -w -X -z-4'
+
+# claude code
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
+
+# rust
+[[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
+
+#==============================================================================
+# Privacy & Telemetry
+#==============================================================================
+export DO_NOT_TRACK=1
+export NEXT_TELEMETRY_DISABLED=1
+export STORYBOOK_DISABLE_TELEMETRY=1
