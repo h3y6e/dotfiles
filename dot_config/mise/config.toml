@@ -21,3 +21,4 @@ uv = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:opencode-ai" = "latest"
 "pipx:pfnet/plamo-translate-cli" = { version = "latest", uvx_args = "-p 3.12" }
+"npm:@google/gemini-cli" = "latest"
