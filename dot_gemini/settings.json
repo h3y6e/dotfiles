@@ -1,0 +1,13 @@
+{
+  "theme": "Default Light",
+  "selectedAuthType": "oauth-personal",
+  "usageStatisticsEnabled": false,
+  "preferredEditor": "zed",
+  "contextFileName": "CLAUDE.md",
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}
