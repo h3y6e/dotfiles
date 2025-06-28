@@ -20,23 +20,21 @@ Process: Understand purpose → Determine category → Choose location → Gener
 
 Before creating:
 
-1. List existing: `ls -la /.claude/commands/` or `~/.claude/commands/`
+1. List existing: `ls -la /.claude/commands/` or `$XDG_CONFIG_HOME/claude/commands/`
 2. Study patterns: task structure, MCP tools, arguments, references
-3. Use MCP tools NOT CLI: ✅ `mcp__scopecraft-cmd__task_create` ❌ `scopecraft task list`
 
 ## Interview process
 
 1. **Purpose**: Check similar commands → Problem/users/output/interactive?
 2. **Classification**: Match to existing patterns
 3. **Pattern**: Study similar command's task/args/MCP/docs/review sections
-4. **Location**: Project (/.claude/commands/) vs User (~/.claude/commands/)
+4. **Location**: Project (/.claude/commands/) vs User ($XDG_CONFIG_HOME/claude/commands/)
 5. **Resources**: Check existing templates/guides
 
 ## Generation patterns
 
 Copy from similar commands:
 
-- MCP usage: `mcp__scopecraft-cmd__task_create/update/list`
 - Task updates: status/logs/checklist/decisions
 - Human review: assumptions/technical/patterns flags
 
