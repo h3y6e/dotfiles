@@ -2,6 +2,7 @@
   "model": "opus",
   "includeCoAuthoredBy": false,
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(mkdir:*)",
       "Bash(ls:*)",
