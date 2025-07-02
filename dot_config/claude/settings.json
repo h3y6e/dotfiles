@@ -61,5 +61,29 @@
   },
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r0 '[.message//\"\", .title//\"Claude Code\"] | map(gsub(\"\\\\u0000\"; \"\"))[]' | xargs -0 osascript -e 'on run a' -e 'display notification item 1 of a with title item 2 of a sound name \"Morse\"' -e 'end run'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.transcript_path//empty' | xargs -I{} sh -c '[ -f \"{}\" ] && tail -1 \"{}\" | jq -r \"(.message.content[0].text//\\\"Done\\\")\" | xargs osascript -e \"display notification \\\"{}\\\" with title \\\"Claude Code\\\" sound name \\\"Frog\\\"\"'"
+          }
+        ]
+      }
+    ]
   }
 }
