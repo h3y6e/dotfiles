@@ -8,7 +8,7 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 
 1. Explore & Plan:
    - Scope analysis
-   - Parallel: `WebFetch`, or context7
+   - Parallel: `WebFetch`, `WebSearch` or context7
    - Iterative strategy refinement based on findings
 2. Implement:
    - Sequential: `Write`, `Edit`, `MultiEdit`
@@ -26,11 +26,6 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 - Sequential tasks: all write operations
 - Essential findings only between steps
 - Brief summaries per step
-
-## Search
-
-- `gemini` is the command-line tool for the Gemini agent.
-- Use `gemini -p "GoogleSearch: <search text>"` for web searches. Do not use `WebSearch`.
 
 ## File Management
 
@@ -85,10 +80,6 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 - Internal reasoning and analysis must be in English
 - Only use other languages when communicating with the user
 
-## Shell
-
-- Default: `zsh`
-
 ## Markdown
 
 - Avoid overuse of bold text and emojis
@@ -99,3 +90,9 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 - Branch: `fix/[name]`
 - conventional commit message (no scope), imperative, "why" focused, no punctuation
 - Minimal granularity
+
+## Work Logging
+
+- After completing work at a good stopping point, record the work content in `.log.local/$(date +%Y%m%d).md` in the project root
+- Create the `.log.local/` directory if it doesn't exist
+- Append to the existing file if one already exists for the day
