@@ -73,17 +73,6 @@
           }
         ]
       }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '.transcript_path//empty' | xargs -I{} sh -c '[ -f \"{}\" ] && tail -1 \"{}\" | jq -r \"(.message.content[0].text//\\\"Done\\\")\" | xargs osascript -e \"display notification \\\"{}\\\" with title \\\"Claude Code\\\" sound name \\\"Frog\\\"\"'"
-          }
-        ]
-      }
     ]
   }
 }
