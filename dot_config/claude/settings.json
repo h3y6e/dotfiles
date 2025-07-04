@@ -39,7 +39,6 @@
       "Bash(git --no-pager diff:*)",
       "Bash(git --no-pager log:*)",
       "Bash(git merge-base:*)",
-      "Bash(git add:*)",
       "Read(~/ghq/**)",
       "Edit(./**)",
       "MultiEdit(./**)",
@@ -60,7 +59,8 @@
     "deny": ["Bash(rm:*)", "Bash(sudo:*)"]
   },
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "MAX_THINKING_TOKENS": "31999"
   },
   "hooks": {
     "Notification": [
