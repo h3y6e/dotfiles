@@ -1,8 +1,10 @@
 {
-  "model": "opus",
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "MAX_THINKING_TOKENS": "31999"
+  },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(mkdir:*)",
       "Bash(ls:*)",
@@ -56,11 +58,8 @@
       "Write(./**)",
       "mcp__*"
     ],
-    "deny": ["Bash(rm:*)", "Bash(sudo:*)"]
-  },
-  "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "MAX_THINKING_TOKENS": "31999"
+    "deny": ["Bash(rm:*)", "Bash(sudo:*)"],
+    "defaultMode": "acceptEdits"
   },
   "hooks": {
     "Notification": [
