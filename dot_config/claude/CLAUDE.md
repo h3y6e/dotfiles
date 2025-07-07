@@ -93,6 +93,7 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 
 ## Work Logging
 
-- After completing work at a good stopping point, record the work content in `.log.local/$(date +%Y%m%d).md` in the project root
+- After completing work at a good stopping point, record the work content in `.log.local/[descriptive-name].md` in the project root
 - Create the `.log.local/` directory if it doesn't exist
-- Append to the existing file if one already exists for the day
+- Use descriptive filenames based on the work content
+- Write log content and filenames in Japanese
