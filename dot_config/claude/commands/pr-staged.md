@@ -12,20 +12,17 @@ Create a GitHub Pull Request from staged files.
 ## Process
 
 1. **Branch & Staged Changes Analysis**
-
    - Check if on default branch (main/master)
    - If on default branch, create and switch to a new branch based on staged changes
    - Analyze only staged files
    - Completely ignore unstaged changes
 
 2. **Commit Preparation**
-
    - Conventional commit (no scope, imperative, no punctuation)
    - Focus on "why" in the message
    - Default: Japanese, Option: English with `--en` flag
 
 3. **Create Pull Request**
-
    - Push branch to remote
    - Create PR (Japanese by default, English with `--en` flag)
    - Automatically open PR in web browser for review
@@ -70,21 +67,18 @@ Check if English option is specified:
 
 ```zsh
 # Create PR and automatically open in browser
-gh pr create --title "[PRタイトル]" --body "$(cat <<'EOF'
+gh pr create --title "[PRタイトル - conventional commit形式で記述]" --body "$(cat <<'EOF'
 ## 概要
-[変更内容を1-3つの箇条書きで]
+[なぜこの変更が必要なのかを1-3つの箇条書きで説明 - whatではなくwhyに集中]
 
 ## 背景 (optional)
 [なぜこの決定を行う必要があったか、背景情報や制約]
 
 ## 変更内容
-[詳細な変更内容]
+[変更の理由と意図を中心に説明 - 実装の詳細よりも、なぜこのアプローチを選択したかを重視]
 
 ## 影響 (optional)
 [システムやコードへの影響、発生するメリット・デメリット、既存コードへのマイグレーション方法など]
-
-## スクリーンショット/実行結果 (optional)
-[該当する場合]
 EOF
 )" --web
 ```
@@ -93,21 +87,18 @@ EOF
 
 ```zsh
 # Create PR and automatically open in browser
-gh pr create --title "[PR Title]" --body "$(cat <<'EOF'
+gh pr create --title "[PR Title - use conventional commit format]" --body "$(cat <<'EOF'
 ## Summary
-[List 1-3 bullet points of changes]
+[Explain why these changes are needed in 1-3 bullet points - focus on why, not what]
 
 ## Background (optional)
 [Why this change was necessary, background information, or constraints]
 
 ## Changes
-[Detailed description of changes]
+[Explain the reasoning and intent behind changes - emphasize why this approach was chosen over implementation details]
 
 ## Impact (optional)
 [Impact on system/code, benefits/drawbacks, migration approach for existing code]
-
-## Screenshots/Results (optional)
-[If applicable]
 EOF
 )" --web
 ```
