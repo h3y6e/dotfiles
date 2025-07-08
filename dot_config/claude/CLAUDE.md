@@ -30,7 +30,7 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 ## File Management
 
 - Never use `rm` to delete files
-- When removing files: use `mv` to `.trash.local/` folder in project root
+- When removing files: use `trash` on macOS
 
 ## Naming Conventions
 
