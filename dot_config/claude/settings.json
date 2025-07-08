@@ -3,6 +3,7 @@
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "MAX_THINKING_TOKENS": "31999"
   },
+  "model": "opus",
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
