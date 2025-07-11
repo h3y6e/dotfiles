@@ -1,7 +1,6 @@
 {
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "MAX_THINKING_TOKENS": "31999"
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
   },
   "model": "opus",
   "includeCoAuthoredBy": false,
