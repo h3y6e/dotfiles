@@ -116,10 +116,10 @@ Based on the diff from Step 1, perform a quick code review:
 
 ```zsh
 # Default (Japanese PR)
-/pr-staged
+/staged-pr
 
 # English PR
-/pr-staged --en
+/staged-pr --en
 ```
 
 Check staged files with `git status` before execution.

@@ -91,7 +91,7 @@ The command handles these GitHub PR comment URL types:
 ## Example
 
 ```
-/pr-response https://github.com/owner/repo/pull/123#discussion_r789
+/response-pr https://github.com/owner/repo/pull/123#discussion_r789
 ```
 
 ## Output Format
