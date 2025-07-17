@@ -8,7 +8,7 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 
 1. Explore & Plan:
    - Scope analysis
-   - Parallel: `WebFetch`, `WebSearch`, !`gemini -p "GoogleSearch: <query>"` or use context7 mcp
+   - Parallel: `WebFetch`, `gemini -p "GoogleSearch: <query>"` or use context7
    - Iterative strategy refinement based on findings
 2. Implement:
    - Sequential: `Write`, `Edit`, `MultiEdit`
