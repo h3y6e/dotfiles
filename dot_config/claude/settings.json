@@ -1,9 +1,9 @@
 {
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": 0,
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": 1,
-    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": 1,
-    "ENABLE_BACKGROUND_TASKS": 1
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1",
+    "ENABLE_BACKGROUND_TASKS": "1"
   },
   "model": "opus",
   "includeCoAuthoredBy": false,
@@ -75,7 +75,7 @@
       "WebFetch(domain:stylexjs.com)",
       "WebFetch(domain:cloud.google.com)",
       "WebFetch(domain:www.microsoft.com)",
-      "WebFetch(domain:arxiv.org)"
+      "WebFetch(domain:arxiv.org)",
       "Write(./**)",
       "mcp__figma__get_image",
       "mcp__figma__get_code",
