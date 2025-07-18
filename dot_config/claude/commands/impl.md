@@ -32,8 +32,8 @@ For each incomplete task:
 - Check task dependencies
 - Implement the task following specifications
 - Run tests and linting
-- Create atomic git commit with conventional commit message
 - Update task status to completed `- [x]` in `3-tasks.md`
+- Create atomic git commit with conventional commit message (including both implementation and 3-tasks.md update)
 
 ### 3. Quality Assurance
 
@@ -56,6 +56,10 @@ For each incomplete task:
 ```bash
 # Create feature branch from spec name
 git checkout -b feat/[spec-name]
+
+# Commit spec documents to track progress
+git add docs/spec/[spec-name]/
+git commit -m "docs: add [spec-name] specification documents"
 
 # Or continue on existing branch
 git branch --show-current
@@ -133,12 +137,19 @@ git pull origin main
 
 # Create/switch to feature branch
 git switch -c feat/[spec-name]
+
+# Run initial checks to ensure environment is ready
+mise x -- pnpm check
+mise x -- pnpm test run
 ```
 
 ### Per-Task Flow
 
 ```bash
-# 1. Implement task
+# 1. Mark task as in-progress in 3-tasks.md
+# Edit 3-tasks.md: change "- [ ]" to "- [-]"
+
+# 2. Implement task
 [implementation steps]
 
 # 2. Stage changes
