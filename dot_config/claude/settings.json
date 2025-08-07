@@ -82,6 +82,8 @@
       "WebFetch(domain:arxiv.org)",
       "WebFetch(domain:help.figma.com)",
       "WebFetch(domain:mise.jdx.dev)",
+      "WebFetch(domain:www.w3.org)",
+      "WebFetch(domain:developer.mozilla.org)",
       "Write(./**)",
       "mcp__figma__get_image",
       "mcp__figma__get_code",
