@@ -57,6 +57,7 @@
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh pr checks:*)",
+      "Bash(gh run view:*)",
       "Bash(git --no-pager diff:*)",
       "Bash(git --no-pager log:*)",
       "Bash(git merge-base:*)",
