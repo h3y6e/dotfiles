@@ -108,6 +108,7 @@
       "mcp__playwright__browser_press_key",
       "mcp__playwright__browser_evaluate",
       "mcp__playwright__browser_close",
+      "mcp__playwright__browser_fill_form",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs"
     ],
