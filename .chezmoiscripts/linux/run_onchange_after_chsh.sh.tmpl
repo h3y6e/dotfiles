@@ -1,9 +1,0 @@
-{{- if not .ephemeral }}
-{{- if not (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-#!/bin/bash
-
-set -Eeufo pipefail
-
-chsh -s /usr/bin/zsh
-{{ end -}}
-{{ end -}}
