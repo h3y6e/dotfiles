@@ -6,23 +6,28 @@
 LICENSE
 install.sh
 README.md
+AGENTS.md
 
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
 Casks/
 .config/karabiner/
-.gnupg/
+.config/raycast-script/
+.config/ghostty/
+.cursor/
+.kiro/
+.rye/
 Library/
 com.googlecode.iterm2.plist
-.finicky.js
+.finicky.ts
 .zprofile
 .zshrc
+.zshenv
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
 .bashrc
-.hushlogin
 {{- end }}
 
 {{ if ne .chezmoi.os "windows" }}
@@ -32,12 +37,14 @@ Documents/
 {{ else }}
 .config/bat/
 .ssh/
-.asdfrc
 .ideavimrc
 .vimrc
 {{ end }}
 
 {{- if .ephemeral }}
+.config/sheldon/
+.config/silicon/
 .config/wezterm/
+.config/zed/
 .ideavimrc
 {{- end }}
