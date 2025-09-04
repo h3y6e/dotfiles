@@ -7,52 +7,35 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "language_models": {
-    "copilot_chat": {
-      "api_url": "https://api.githubcopilot.com/chat/completions",
-      "auth_url": "https://api.github.com/copilot_internal/v2/token",
-      "models_url": "https://api.githubcopilot.com/models"
-    }
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
   },
-  "edit_predictions": {
-    "disabled_globs": [],
-    "mode": "eager",
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null
-    },
-    "enabled_in_text_threads": false
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
+  "theme": "Catppuccin Latte",
   "icon_theme": "Catppuccin Latte",
+  "base_keymap": "VSCode",
+  "buffer_font_size": 12,
+  "buffer_font_family": "UDEV Gothic 35NFLG",
+  "tab_size": 2,
+  "vim_mode": true,
   "outline_panel": {
     "dock": "right"
   },
   "collaboration_panel": {
     "dock": "right"
   },
+  "format_on_save": "on",
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "edit_predictions": {
+    "mode": "eager"
+  },
   "agent": {
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
-    },
-    "version": "2"
-  },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "base_keymap": "VSCode",
-  "theme": "Catppuccin Latte",
-  "buffer_font_size": 13,
-  "buffer_font_family": "UDEV Gothic 35NFLG",
-  "tab_size": 2,
-  "format_on_save": "on",
-  "vim_mode": true,
-  "copilot": {
-    "disabled_globs": [".env"]
+    }
   }
 }
