@@ -13,11 +13,11 @@
   },
   "theme": "Catppuccin Latte",
   "icon_theme": "Catppuccin Latte",
-  "base_keymap": "VSCode",
+  "base_keymap": "Atom",
   "buffer_font_size": 12,
   "buffer_font_family": "UDEV Gothic 35NFLG",
   "tab_size": 2,
-  "vim_mode": true,
+  "helix_mode": true,
   "outline_panel": {
     "dock": "right"
   },
@@ -32,10 +32,12 @@
     "mode": "eager"
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "single_file_review": false,
+    "use_modifier_to_send": true,
+    "play_sound_when_agent_done": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-opus-4"
     }
   }
 }
