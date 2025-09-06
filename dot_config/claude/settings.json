@@ -124,7 +124,7 @@
       "mcp__serena__list_dir",
       "mcp__serena__get_symbols_overview"
     ],
-    "deny": ["Bash(rm:*)", "Bash(sudo:*)"],
+    "deny": ["Bash(rm:*)", "Bash(sudo:*)", "Bash(npx:*)"],
     "defaultMode": "acceptEdits"
   },
   "hooks": {
