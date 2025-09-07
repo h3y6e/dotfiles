@@ -1,13 +1,25 @@
 {
-  "theme": "Default Light",
-  "selectedAuthType": "oauth-personal",
-  "usageStatisticsEnabled": false,
-  "preferredEditor": "zed",
-  "contextFileName": "CLAUDE.md",
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"]
-    }
+  "general": {
+    "disableAutoUpdate": true
+  },
+  "ui": {
+    "theme": "Default Light",
+    "hideTips": true,
+    "hideBanner": true,
+    "showMemoryUsage": true,
+    "showLineNumbers": true,
+    "showCitations": true
+  },
+  "tools": {
+    "useRipgrep": true
+  },
+  "context": {
+    "fileName": ["AGENTS.md"]
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "telemetry": {
+    "enabled": false
   }
 }
