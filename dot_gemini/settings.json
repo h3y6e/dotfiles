@@ -1,4 +1,5 @@
 {
+  "selectedAuthType": "oauth-personal",
   "general": {
     "disableAutoUpdate": true
   },
