@@ -1,3 +1,4 @@
+#:tombi schema.strict = false
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [settings]
@@ -19,5 +20,4 @@ uv = "latest"
 "npm:npm-check" = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
-"npm:@openai/codex" = "latest"
 "pipx:pfnet/plamo-translate-cli" = { version = "latest", uvx_args = "-p 3.12" }
