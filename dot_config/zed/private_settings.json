@@ -11,6 +11,7 @@
     "diagnostics": false,
     "metrics": false
   },
+  "confirm_quit": true,
   "theme": "Catppuccin Latte",
   "icon_theme": "Catppuccin Latte",
   "base_keymap": "Atom",
@@ -32,6 +33,7 @@
     "mode": "eager"
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_profile": "write",
     "single_file_review": false,
     "use_modifier_to_send": true,
