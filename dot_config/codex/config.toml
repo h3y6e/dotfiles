@@ -8,6 +8,7 @@ sandbox_mode = "workspace-write"
 disable_response_storage = true
 hide_agent_reasoning = false
 file_opener = "none"
+experimental_use_rmcp_client = true
 
 [tools]
 web_search = true
@@ -22,3 +23,6 @@ args = ["@playwright/mcp@latest"]
 [mcp_servers.chrome-devtools]
 command = "npx"
 args = ["-y", "chrome-devtools-mcp@latest"]
+
+[mcp_servers.figma]
+url = "http://127.0.0.1:3845/mcp"
