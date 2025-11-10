@@ -4,6 +4,7 @@
 
 - Never use `rm` to delete files
 - When removing files: use `trash` on macOS
+- Never execute python scripts
 
 ## Naming Conventions
 
