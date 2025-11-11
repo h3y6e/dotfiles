@@ -8,10 +8,9 @@ sandbox_mode = "workspace-write"
 disable_response_storage = true
 hide_agent_reasoning = false
 file_opener = "none"
-experimental_use_rmcp_client = true
-
-[tools]
-web_search = true
+[features]
+rmcp_client = true
+web_search_request = true
 
 [sandbox_workspace_write]
 network_access = true
