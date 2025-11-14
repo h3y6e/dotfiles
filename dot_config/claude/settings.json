@@ -14,7 +14,7 @@
     "DISABLE_TELEMETRY": "1"
   },
   "model": "opus",
-  "includeCoAuthoredBy": false,
+  "includeCoAuthoredBy": true,
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
