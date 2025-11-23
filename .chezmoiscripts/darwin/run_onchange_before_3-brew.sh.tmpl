@@ -23,10 +23,12 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "git-delta"
   "pinentry-mac"
   "ffmpeg"
+  "imagemagick"
   "aria2"
   "xcodes"
   "awscli"
   "codex"
+  "watchman"
 -}}
 
 {{ $casks := list
@@ -40,9 +42,9 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "firefox@developer-edition"
   "scroll-reverser"
   "karabiner-elements"
-  "craft"
   "notion"
   "notion-calendar"
+  "figma"
 -}}
 
 {{ $casks = concat $casks (list
@@ -63,6 +65,7 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
 ) -}}
 
 {{ $casks = concat $casks (list
+  "appcleaner"
   "affinity-designer"
   "affinity-photo"
   "affinity-publisher"
