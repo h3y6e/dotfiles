@@ -9,6 +9,10 @@ printf "\033[3;35m%s\033[m\n" "setting up configure..."
 
 # Dockを自動的に表示/非表示
 defaults write com.apple.dock autohide -bool true
+# Dockからすべてのアプリケーションショートカットを削除
+defaults delete com.apple.dock persistent-apps
+# Dockのアイコンサイズを48pxに設定
+defaults write com.apple.dock tilesize -int 48
 # リピート入力認識までの時間: 最短
 defaults write -g InitialKeyRepeat -int 15
 # キーのリピート: 最速
@@ -17,10 +21,9 @@ defaults write -g KeyRepeat -int 2
 defaults write -g ApplePressAndHoldEnabled -bool false
 # 外部キーボードのF1, F2などのキーを標準のファンクションキーとして使用
 defaults write -g com.apple.keyboard.fnState -bool true
-# キーボードショートカット > 次のウィンドウを操作対象にする: オフ (ブラウザのcmd+2と干渉する為)
-# defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 "{enabled=0;value={parameters=(64,33,1048576);type='standard';};}"
 # キーボードショートカット > Spotlight検索を表示: オフ
-# defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled=0;value={parameters=(65535,49,1048576);type='standard';};}"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/></dict>"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "<dict><key>enabled</key><false/></dict>"
 # トラックパッド > クリック: 弱い
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
@@ -32,6 +35,12 @@ defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -bool false
 defaults write -g com.apple.sound.beep.feedback -bool true
 # デスクトップ項目: オン
 defaults write com.apple.finder CreateDesktop -bool true
+# Finderのデフォルト表示モードをリストビューに設定
+defaults write com.apple.finder FXPreferredViewStyle -string Nlsv
+# Finderの下部にフォルダ階層を表示
+defaults write com.apple.finder ShowPathbar -bool true
+# Finderの新規ウィンドウでホームを表示
+defaults write com.apple.finder NewWindowTarget -string PfHm
 # 時計: 24時間表示
 defaults write com.apple.menuextra.clock Show24Hour -int 1
 # 時計: 日付を非表示
