@@ -19,5 +19,4 @@ go = "latest"
 uv = "latest"
 "npm:npm-check" = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
-"npm:@google/gemini-cli" = "latest"
 "pipx:pfnet/plamo-translate-cli" = { version = "latest", uvx_args = "-p 3.12" }
