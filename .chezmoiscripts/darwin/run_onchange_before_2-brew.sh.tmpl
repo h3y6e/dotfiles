@@ -16,27 +16,31 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "tre-command"
   "jq"
   "peco"
+  "ripgrep"
   "gh"
   "ghq"
   "git"
   "lazygit"
   "git-delta"
+  "shellcheck"
   "pinentry-mac"
   "ffmpeg"
   "imagemagick"
   "aria2"
   "xcodes"
   "awscli"
-  "codex"
   "watchman"
 -}}
 
 {{ $casks := list
+  "codex"
   "1password"
   "1password-cli"
   "raycast"
   "wezterm"
   "android-studio"
+  "zed"
+  "visual-studio-code"
   "finicky"
   "arc"
   "firefox@developer-edition"
@@ -80,7 +84,6 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
 {{ else -}}
 # work
 {{ $casks = concat $casks (list
-  "visual-studio-code"
   "docker-desktop"
 ) -}}
 {{ end -}}
