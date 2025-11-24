@@ -19,11 +19,12 @@ use = ["{async,pure}.zsh"]
 github = "sorin-ionescu/prezto"
 use = ["modules/editor/init.zsh"]
 
+# deferred
 [plugins.ni]
 github = "azu/ni.zsh"
 use = ["ni.zsh"]
+apply = ["defer"]
 
-# deferred
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
