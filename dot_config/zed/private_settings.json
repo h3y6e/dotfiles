@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "title_bar": {
+    "show_sign_in": false
+  },
   "git": {
     "branch_picker": {
       "show_author_name": true
