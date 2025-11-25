@@ -1,11 +1,5 @@
 "color
-syntax enable
-colorscheme darkblue
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-highlight LineNr ctermbg=none
-highlight Folded ctermbg=none
-highlight EndOfBuffer ctermbg=none
+syntax on
 
 "essential
 if &compatible
