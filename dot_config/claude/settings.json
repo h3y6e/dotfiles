@@ -13,7 +13,6 @@
     "DISABLE_ERROR_REPORTING": "1",
     "DISABLE_TELEMETRY": "1"
   },
-  "model": "opus",
   "includeCoAuthoredBy": true,
   "permissions": {
     "allow": [
@@ -124,7 +123,11 @@
       "mcp__serena__list_dir",
       "mcp__serena__get_symbols_overview"
     ],
-    "deny": ["Bash(rm:*)", "Bash(sudo:*)", "Bash(npx:*)"],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(sudo:*)",
+      "Bash(npx:*)"
+    ],
     "defaultMode": "acceptEdits"
   },
   "hooks": {
