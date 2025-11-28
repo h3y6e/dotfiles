@@ -31,12 +31,13 @@ export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
 # openai codex
 export CODEX_HOME="$XDG_CONFIG_HOME/codex"
 
+# ni.zsh
+export NI_USE_SOCKET_FIREWALL=1
+
 # rust
 [[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
 
-#==============================================================================
-# Privacy & Telemetry
-#==============================================================================
+# telemetry
 export DO_NOT_TRACK=1
 export NEXT_TELEMETRY_DISABLED=1
 export STORYBOOK_DISABLE_TELEMETRY=1

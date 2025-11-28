@@ -18,4 +18,5 @@ rust = "latest"
 go = "latest"
 uv = "latest"
 "npm:npm-check" = "latest"
+"npm:sfw" = "latest"
 "pipx:pfnet/plamo-translate-cli" = { version = "latest", uvx_args = "-p 3.12" }
