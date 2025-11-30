@@ -1,4 +1,4 @@
-import type { FinickyConfig } from "/Applications/Finicky.app/Contents/Resources/finicky.d.ts";
+import type { FinickyConfig } from "/Applications/Finicky.app/Contents/Resources/finicky";
 
 // see: https://github.com/johnste/finicky/wiki/Configuration-(v4)
 export default {
@@ -12,9 +12,7 @@ export default {
           "linear.app",
           "inspect.isar.dev",
           "inspect.isar-community.dev",
-        ].some(
-          (host) => url.host.endsWith(host)
-        ),
+        ].some((host) => url.host.endsWith(host)),
       browser: "Arc",
     },
   ],
