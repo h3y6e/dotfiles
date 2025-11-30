@@ -13,6 +13,8 @@ defaults write com.apple.dock autohide -bool true
 defaults delete com.apple.dock persistent-apps
 # Dockのアイコンサイズを48pxに設定
 defaults write com.apple.dock tilesize -int 48
+# Mission Control > ウィンドウをアプリケーションごとにグループ化: オン
+defaults write com.apple.dock expose-group-apps -bool true
 # リピート入力認識までの時間: 最短
 defaults write -g InitialKeyRepeat -int 15
 # キーのリピート: 最速
