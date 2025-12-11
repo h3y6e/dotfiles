@@ -5,6 +5,7 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINruieWJY7o2U4nvaPHJYKHPiCRmOzKBJe1TRZX3mtPB
 {{- end }}
 [core]
+	pager =
 	editor = vim -c \"set fenc=utf-8\"
 	ignorecase = false
 	autocrlf = false
@@ -38,6 +39,9 @@
 	autoSquash = true
 [fetch]
 	prune = true
+	fsckObjects = true
+[diff]
+	algorithm = histogram
 [diff "lockb"]
 	textconv = bun
 	binary = true
@@ -48,6 +52,7 @@
 	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
 	gpgsign = true
+	verbose = true
 {{- end }}
 [url "https://github.com/"]
 	insteadOf = git@github.com:
@@ -55,3 +60,9 @@
 	recurse = true
 [rerere]
 	enabled = true
+[branch]
+	sort = -committerdate
+[help]
+	autocorrect = prompt
+[transfer]
+	fsckObjects = true
