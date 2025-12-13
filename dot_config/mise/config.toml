@@ -11,7 +11,7 @@ npm.bun = true
 pipx.uvx = true
 
 [tools]
-deno = "2.5.6"
+deno = "2.6.0"
 node = "24.11.1"
 bun = "1.3.3"
 rust = "1.91.1"
@@ -20,3 +20,8 @@ uv = "0.9.17"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
+
+[hooks]
+postinstall = """
+deno x --install-alias
+"""
