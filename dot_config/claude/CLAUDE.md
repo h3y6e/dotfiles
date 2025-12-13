@@ -8,7 +8,7 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 
 1. Explore & Plan:
    - Scope analysis
-   - Parallel: `WebFetch` or use context7
+   - Parallel: use context7 (preferred) or `WebFetch`
    - Iterative strategy refinement based on findings
 2. Implement:
    - Sequential: `Write`, `Edit`, `MultiEdit`
@@ -90,3 +90,8 @@ Use ultrathink for complex task decomposition with parallel reads and sequential
 - Branch: `fix/[name]`
 - conventional commit message (no scope), imperative, "why" focused, no punctuation
 - Minimal granularity
+
+## Context7
+
+- Always use context7 when I need code generation, setup or configuration steps, or library/API documentation.
+- This means you should automatically use the Context7 MCP tools to resolve library id and get library docs without me having to explicitly ask.
