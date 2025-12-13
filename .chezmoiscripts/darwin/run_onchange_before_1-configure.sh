@@ -28,6 +28,8 @@ defaults write -g com.apple.keyboard.fnState -bool true
 # キーボードショートカット > Spotlight検索を表示: オフ
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/></dict>"
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "<dict><key>enabled</key><false/></dict>"
+# マウス > 軌跡の速さ: 速め
+defaults write -g com.apple.mouse.scaling -float 1.5
 # トラックパッド > クリック: 弱い
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
