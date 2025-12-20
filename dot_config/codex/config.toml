@@ -17,7 +17,7 @@ web_search_request = true
 network_access = true
 
 [mcp_servers.chrome-devtools]
-command = "dx"
+command = "bunx"
 args = ["-y", "chrome-devtools-mcp@latest"]
 
 [mcp_servers.figma]
