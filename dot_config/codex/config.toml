@@ -1,20 +1,25 @@
-preferred_auth_method = "chatgpt"
-model = "gpt-5.1-codex-max"
+model = "gpt-5.2-codex"
 model_provider = "openai"
 model_reasoning_effort = "medium"
+model_reasoning_summary = "detailed"
 model_verbosity = "high"
-approval_policy = "on-request"
-sandbox_mode = "workspace-write"
-disable_response_storage = true
+model_supports_reasoning_summaries = true
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
 hide_agent_reasoning = false
 file_opener = "none"
 
 [features]
-rmcp_client = true
+apply_patch_freeform = true
+skills = true
+tui2 = true
+unified_exec = true
+view_image_tool = true
 web_search_request = true
 
-[sandbox_workspace_write]
-network_access = true
+[shell_environment_policy]
+inherit = "all"
+ignore_default_excludes = true
 
 [mcp_servers.chrome-devtools]
 command = "bunx"
