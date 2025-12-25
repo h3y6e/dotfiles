@@ -1,7 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "catppuccin",
-  "model": "github-copilot/gemini-2.5-pro",
-  "autoshare": false,
-  "autoupdate": false
+  "share": "disabled",
+  "autoupdate": false,
+  "mcp": {
+    "figma": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  }
 }
