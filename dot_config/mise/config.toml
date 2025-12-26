@@ -3,15 +3,16 @@
 
 [settings]
 activate_aggressive = true
+color_theme = "catppuccin"
 experimental = true
-idiomatic_version_file_enable_tools = ["node"]
-trusted_config_paths = ["~/ghq/github.com/h3y6e"]
+trusted_config_paths = ["~/ghq/github.com"]
 cargo.binstall = true
 npm.package_manager = "bun"
 pipx.uvx = true
 
 [tools]
 node = "24.12.0"
+deno = "2.6.3"
 bun = "1.3.3"
 rust = "1.92.0"
 go = "1.25.4"
