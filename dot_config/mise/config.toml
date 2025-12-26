@@ -19,3 +19,6 @@ uv = "0.9.18"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
+shellcheck = "0.11.0"
+shfmt = "3.12.0"
+xcodes = "1.6.2"
