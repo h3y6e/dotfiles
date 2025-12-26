@@ -6,6 +6,7 @@ activate_aggressive = true
 color_theme = "catppuccin"
 experimental = true
 trusted_config_paths = ["~/ghq/github.com"]
+install_before = "1d"
 pin = true
 cargo.binstall = true
 npm.package_manager = "bun"
