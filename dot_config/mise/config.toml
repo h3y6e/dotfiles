@@ -7,7 +7,7 @@ experimental = true
 idiomatic_version_file_enable_tools = ["node"]
 trusted_config_paths = ["~/ghq/github.com/h3y6e"]
 cargo.binstall = true
-npm.bun = true
+npm.package_manager = "bun"
 pipx.uvx = true
 
 [tools]
