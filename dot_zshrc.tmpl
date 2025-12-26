@@ -108,6 +108,9 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
   }
 fi
 
+# git-wt
+type git-wt &>/dev/null && eval "$(git-wt --init zsh)"
+
 # code
 function c() {
   local editor=""
