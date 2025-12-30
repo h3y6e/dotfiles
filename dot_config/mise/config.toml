@@ -14,8 +14,12 @@ cargo.binstall = true
 npm.package_manager = "bun"
 pipx.uvx = true
 
-# https://docs.renovatebot.com/modules/manager/mise/#supported-default-registry-tool-short-names
-# https://mise.jdx.dev/registry.html#tools
+# For Renovate:
+# - Use short names if available (node, aws-cli), otherwise full names (aqua:peco/peco, npm:sfw)
+#   https://docs.renovatebot.com/modules/manager/mise/#supported-default-registry-tool-short-names
+#   https://mise.jdx.dev/registry.html#tools
+# - Specify versions ("1.2.3") if Renovate recognizes them, otherwise "latest"
+#   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
 node = "24.12.0"
 deno = "2.6.3"
@@ -36,7 +40,8 @@ aws-cli = { version = "2.32.25", symlink_bins = "true" }
 "aqua:jesseduffield/lazygit" = "0.57.0"
 "aqua:sst/opencode" = "1.0.207"
 "aqua:openai/codex" = "0.77.0"
-"vfox:mise-plugins/vfox-gcloud" = "550.0.0"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
+"vfox:mise-plugins/vfox-1password" = "latest"
+"vfox:mise-plugins/vfox-gcloud" = "latest"
