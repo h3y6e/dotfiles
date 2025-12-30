@@ -14,6 +14,8 @@ cargo.binstall = true
 npm.package_manager = "bun"
 pipx.uvx = true
 
+# https://docs.renovatebot.com/modules/manager/mise/#supported-default-registry-tool-short-names
+# https://mise.jdx.dev/registry.html#tools
 [tools]
 node = "24.12.0"
 deno = "2.6.3"
@@ -23,18 +25,18 @@ go = "1.25.4"
 uv = "0.9.18"
 shellcheck = "0.11.0"
 shfmt = "3.12.0"
-"aqua:XcodesOrg/xcodes" = "1.6.2"
-bat = "0.26.1"
 jq = "1.8.1"
-peco = "0.5.11"
-ripgrep = "15.1.0"
-github-cli = "2.83.2"
-ghq = "1.8.0"
-lazygit = "0.57.0"
 aws-cli = { version = "2.32.25", symlink_bins = "true" }
-gcloud = "550.0.0"
-opencode = "1.0.207"
-codex = "0.77.0"
+"aqua:XcodesOrg/xcodes" = "1.6.2"
+"aqua:sharkdp/bat" = "0.26.1"
+"aqua:peco/peco" = "0.5.11"
+"aqua:BurntSushi/ripgrep" = "15.1.0"
+"aqua:cli/cli" = "2.83.2"
+"aqua:x-motemen/ghq" = "1.8.0"
+"aqua:jesseduffield/lazygit" = "0.57.0"
+"aqua:sst/opencode" = "1.0.207"
+"aqua:openai/codex" = "0.77.0"
+"vfox:mise-plugins/vfox-gcloud" = "550.0.0"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
