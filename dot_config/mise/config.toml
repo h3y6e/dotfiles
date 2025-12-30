@@ -31,7 +31,6 @@ ripgrep = "15.1.0"
 github-cli = "2.83.2"
 ghq = "1.8.0"
 lazygit = "0.57.0"
-1password = "2.32.0"
 aws-cli = { version = "2.32.25", symlink_bins = "true" }
 gcloud = "550.0.0"
 opencode = "1.0.207"
