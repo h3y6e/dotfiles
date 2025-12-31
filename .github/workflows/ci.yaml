@@ -2,15 +2,10 @@ name: CI
 
 on:
   push:
-  pull_request:
 
 jobs:
   install:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: ["ubuntu-latest"]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
 
     steps:
