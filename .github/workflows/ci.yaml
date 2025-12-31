@@ -11,7 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Show installer help
+        run: ./install.sh -h
       - name: Install dotfiles
-        run: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply -S .
+        run: ./install.sh
       - name: Check chezmoi
-        run: ./bin/chezmoi data
+        shell: bash -i {0}
+        run: cz data --format=yaml
