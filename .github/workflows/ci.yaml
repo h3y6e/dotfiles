@@ -16,5 +16,15 @@ jobs:
       - name: Install dotfiles
         run: ./install.sh
       - name: Check chezmoi
+        run: chezmoi data -f yaml
+
+  remote:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Remote install
+        run: bash -c "$(curl -fsSL s.h3y6e.com/dotfiles)" -- -r
+      - name: Check chezmoi
         shell: bash -i {0}
-        run: cz data --format=yaml
+        run: cz managed
