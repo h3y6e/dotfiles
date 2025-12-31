@@ -90,6 +90,7 @@ conf.keys = {
   { key = "]",     mods = "SUPER", action = act({ ActivatePaneDirection = "Next" }) },
   { key = "/",     mods = "SUPER", action = act.Search("CurrentSelectionOrEmptyString") },
   { key = "Enter", mods = "SUPER", action = act.ToggleFullScreen },
+  { key = "Enter", mods = "SHIFT", action = act({ SendString = "\x1b\r" }) },
   { key = 's',     mods = 'SUPER', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
   {
     key = "S",

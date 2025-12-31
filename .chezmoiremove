@@ -1,0 +1,4 @@
+# Claude Code's /terminal-setup creates ~/.wezterm.lua without checking existing config,
+# breaking WezTerm's config resolution. Brilliant engineering, Anthropic.
+# https://github.com/wezterm/wezterm/issues/7251#issuecomment-3363979705
+.wezterm.lua
