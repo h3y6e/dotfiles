@@ -51,7 +51,6 @@ conf.font = wezterm.font_with_fallback {
 }
 conf.font_size = 13.0
 conf.line_height = 1.1
-conf.unicode_version = 14
 conf.scrollback_lines = 10000
 conf.use_ime = true
 conf.audible_bell = "Disabled"
