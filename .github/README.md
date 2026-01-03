@@ -41,7 +41,7 @@ czz # open the source path in zed
 cz apply
 ```
 
-## Clear the state of chezmoiscipts
+## Clear state
 
 ```zsh
 # `run_once_` scripts
