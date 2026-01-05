@@ -13,8 +13,6 @@ defaults write com.apple.dock autohide -bool true
 defaults delete com.apple.dock persistent-apps
 # Dockのアイコンサイズを48pxに設定
 defaults write com.apple.dock tilesize -int 48
-# Mission Control > ウィンドウをアプリケーションごとにグループ化: オン
-defaults write com.apple.dock expose-group-apps -bool true
 # タイル表示されたウィンドウを隙間を入れて配置: オフ
 defaults write com.apple.WindoManager EnableTiledWindowMargins -bool false
 # リピート入力認識までの時間: 最短
