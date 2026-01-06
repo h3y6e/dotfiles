@@ -48,4 +48,3 @@ aws-cli = { version = "2.32.28", symlink_bins = "true" }
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
 "vfox:mise-plugins/vfox-1password" = "latest"
-"vfox:h3y6e/vfox-gcloud" = "latest"  # https://github.com/mise-plugins/vfox-gcloud/pull/2
