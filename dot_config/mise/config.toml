@@ -42,6 +42,7 @@ aws-cli = { version = "2.32.26", symlink_bins = "true" }
 "aqua:jesseduffield/lazygit" = "0.58.0"
 "aqua:sst/opencode" = "1.1.1"
 "aqua:openai/codex" = "0.77.0"
+"github:k1LoW/git-wt" = "0.10.0"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
