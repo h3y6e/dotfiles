@@ -1,6 +1,6 @@
 model = "gpt-5.2-codex"
 model_provider = "openai"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
 model_reasoning_summary = "detailed"
 model_verbosity = "high"
 model_supports_reasoning_summaries = true
