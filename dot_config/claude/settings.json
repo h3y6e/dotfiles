@@ -12,7 +12,8 @@
     "DISABLE_INTERLEAVED_THINKING": "1",
     "DISABLE_AUTOUPDATER": "1",
     "DISABLE_ERROR_REPORTING": "1",
-    "DISABLE_TELEMETRY": "1"
+    "DISABLE_TELEMETRY": "1",
+    "ENABLE_TOOL_SEARCH": "1"
   },
   "attribution": {
     "commit": "Co-authored-by: Claude <noreply@anthropic.com>"
@@ -119,12 +120,7 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs"
     ],
-    "deny": [
-      "NotebookEdit",
-      "Bash(rm:*)",
-      "Bash(sudo:*)",
-      "Bash(npx:*)"
-    ],
+    "deny": ["NotebookEdit", "Bash(rm:*)", "Bash(sudo:*)", "Bash(npx:*)"],
     "defaultMode": "acceptEdits"
   },
   "hooks": {
