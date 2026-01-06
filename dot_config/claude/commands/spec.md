@@ -1,12 +1,15 @@
+---
+description: Generate comprehensive technical specifications following professional standards
+argument-hint: <feature-description>
+---
+
 # Spec
 
 Generate comprehensive technical specifications following professional standards.
 
-## Usage
+## Input
 
-```bash
-/spec [feature-description]
-```
+`$ARGUMENTS` - Feature description to generate specifications for
 
 ## Overview
 
@@ -257,20 +260,6 @@ Description of API endpoints and data flow.
 - Tasks linked to specific requirements
 - Clear dependency mapping
 
-## Example Usage
-
-```bash
-# Generate spec for new feature
-/spec "user authentication system with OAuth2 support"
-
-# The command will:
-# 1. Analyze the feature request
-# 2. Generate 1-requirements.md and ask for feedback
-# 3. Create 2-design.md after approval and ask for feedback
-# 4. Plan 3-tasks.md after approval and ask for feedback
-# 5. Save to docs/spec/[feature-name]/
-```
-
 ## Workflow Example
 
 ```
@@ -299,3 +288,5 @@ Claude: [Creates 2-design.md]
 - Consider existing components and utilities for reuse
 - Align with project's technology stack and conventions
 - Include migration considerations for existing functionality
+
+Generate specifications for: $ARGUMENTS

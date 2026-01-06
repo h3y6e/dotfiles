@@ -1,43 +1,36 @@
+---
+description: Detect differences between current branch and default branch (main) and conduct thorough code review in Japanese
+allowed-tools: Bash(git:*)
+---
+
 # Branch Reviewer
 
 Detect differences between current branch and default branch (main) and conduct thorough code review in Japanese.
 
+## Context
+
+- Current branch: !`git branch --show-current`
+- Diff between current branch and main: !`git --no-pager diff main...HEAD`
+- Files changed: !`git diff --name-only main...HEAD`
+- Commit log: !`git log --oneline main..HEAD`
+
 ## Process
 
-1. **Branch Difference Retrieval**
+1. **Context Analysis**
+   - Complete comprehension of all changes
+   - Architecture mapping
+   - Business logic understanding
+   - System-wide impact assessment
 
-- Retrieve current branch name and compare with main branch
-- Examine all differences
+2. **Issue Detection**
+   - Security vulnerabilities
+   - Performance issues
+   - Design flaws
+   - Future technical debt
 
-```bash
-# Current branch name
-git branch --show-current
-# Diff between current branch and main
-git --no-pager diff main...HEAD
-# File list changed between branches
-git diff --name-only main...HEAD
-# Commit log differences
-git log --oneline main..HEAD
-```
-
-2. **Context Analysis**
-
-- Complete comprehension of all changes
-- Architecture mapping
-- Business logic understanding
-- System-wide impact assessment
-
-3. **Issue Detection**
-
-- Security vulnerabilities
-- Performance issues
-- Design flaws
-- Future technical debt
-
-4. **Improvement Proposals**
-
-- Specific fix code presentation
-- Prioritized action items
+3. **Improvement Proposals**
+   - Specific fix code presentation
+   - Prioritized action items
 
 ## Output Format
 

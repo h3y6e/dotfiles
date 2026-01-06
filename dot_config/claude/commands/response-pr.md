@@ -1,3 +1,9 @@
+---
+description: Handle GitHub PR review comments by implementing fixes or providing explanations in Japanese
+argument-hint: <github-pr-comment-url>
+allowed-tools: Bash(gh:*), Bash(git:*), Read, Edit
+---
+
 # PR Review Responder
 
 Handle GitHub PR review comments by either implementing fixes or providing concise explanations in Japanese.
@@ -5,6 +11,15 @@ Handle GitHub PR review comments by either implementing fixes or providing conci
 ## Task
 
 Analyze PR review comments from GitHub URLs and respond appropriately - fix issues that need fixing, or explain why no changes are needed.
+
+## Input
+
+`$ARGUMENTS` - GitHub PR comment URL
+
+## Context
+
+Current branch: !`git branch --show-current`
+Repository info: !`gh repo view --json nameWithOwner --jq .nameWithOwner`
 
 ## Process
 
@@ -35,26 +50,6 @@ Analyze PR review comments from GitHub URLs and respond appropriately - fix issu
    - Technical justification if no changes made
    - Reference specific code/commits if relevant
 
-## Workflow
-
-```bash
-# 1. Extract info from URL (e.g., https://github.com/owner/repo/pull/1892#issuecomment-3057835518)
-# Parse: owner, repo, PR number, comment ID
-
-# 2. Fetch specific comment
-gh api repos/{owner}/{repo}/issues/comments/{comment_id}
-
-# For review comments (on specific lines):
-gh api repos/{owner}/{repo}/pulls/{pr_number}/comments
-
-# 3. Get PR context
-gh pr view {pr_number} --json files,diff
-
-# 4. After fixes (if any)
-git add -A
-git commit -m "fix: address review feedback from comment #{comment_id}"
-```
-
 ## URL Patterns
 
 The command handles these GitHub PR comment URL types:
@@ -84,16 +79,6 @@ The command handles these GitHub PR comment URL types:
 現在の実装で問題ありません。[技術的な理由]
 ```
 
-## Arguments
-
-- `<url>`: GitHub PR comment URL (e.g., https://github.com/owner/repo/pull/123#issuecomment-456)
-
-## Example
-
-```
-/response-pr https://github.com/owner/repo/pull/123#discussion_r789
-```
-
 ## Output Format
 
 ```markdown
@@ -118,3 +103,5 @@ The command handles these GitHub PR comment URL types:
 - Provide code references when relevant
 - Complete one comment at a time
 - Respond in Japanese
+
+Process the URL: $ARGUMENTS

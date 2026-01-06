@@ -1,3 +1,8 @@
+---
+description: Project-specific context management for consistent code generation
+argument-hint: <action: create|update|list|review> [domain: product|tech|structure|custom]
+---
+
 # Steering
 
 Project-specific context management for consistent code generation.
@@ -10,11 +15,11 @@ Create and manage project-specific context files to ensure consistent code gener
 
 Steering files provide persistent, project-specific guidance that Claude automatically references, similar to Kiro's steering concept. These files capture conventions, standards, and architectural decisions to ensure consistency across the codebase.
 
-## Arguments
+## Input
 
-- `action`: create|update|list|review (required)
-- `domain`: product|tech|structure|custom (optional)
-- `name`: custom domain name (if domain=custom)
+- `$1` - Action: create|update|list|review (required)
+- `$2` - Domain: product|tech|structure|custom (optional)
+- `$3` - Custom domain name (if domain=custom)
 
 ## Process
 
@@ -44,6 +49,7 @@ Steering files provide persistent, project-specific guidance that Claude automat
 ## Implementation
 
 ### File structure
+
 ```
 /.claude/steering/
 ├── product.md      # Product objectives and requirements
@@ -53,82 +59,98 @@ Steering files provide persistent, project-specific guidance that Claude automat
 ```
 
 ### Product steering template
+
 ```markdown
 # Product Steering
 
 ## Purpose
+
 [Clear product mission statement]
 
 ## Target Users
+
 - Primary: [User persona and needs]
 - Secondary: [Additional user groups]
 
 ## Core Features
+
 1. [Feature]: [Purpose and value]
 2. [Feature]: [Purpose and value]
 
 ## Success Metrics
+
 - [Metric]: [Target and rationale]
 
 ## Constraints
+
 - [Business/regulatory constraints]
 ```
 
 ### Tech steering template
+
 ```markdown
 # Technology Steering
 
 ## Stack
+
 - Language: [Primary language and version]
 - Framework: [Framework and version]
 - Database: [Database choice and rationale]
 - Infrastructure: [Deployment environment]
 
 ## Conventions
+
 - Code style: [Style guide reference]
 - Testing: [Testing approach and tools]
 - State management: [Patterns used]
 
 ## Dependencies
+
 - [Package]: [Purpose and version constraints]
 
 ## Performance Requirements
+
 - [Requirement]: [Target and measurement]
 
 ## Security Considerations
+
 - [Security requirement or practice]
 ```
 
 ### Structure steering template
+
 ```markdown
 # Structure Steering
 
 ## Directory Organization
-```
+
 project/
 ├── src/
-│   ├── components/   # [Purpose]
-│   ├── services/     # [Purpose]
-│   └── utils/        # [Purpose]
-└── tests/           # [Testing structure]
-```
+│ ├── components/ # [Purpose]
+│ ├── services/ # [Purpose]
+│ └── utils/ # [Purpose]
+└── tests/ # [Testing structure]
 
 ## Architectural Patterns
+
 - Pattern: [Description and usage]
 - Data flow: [How data moves through the system]
 
 ## Naming Conventions
+
 - Files: [Convention with examples]
 - Components: [Convention with examples]
 - Functions: [Convention with examples]
 
 ## Module Boundaries
+
 - [Module]: [Responsibilities and interfaces]
 ```
 
 ## Status updates
 
 Update task with:
+
 - Files created/updated
 - Key decisions captured
 - Consistency improvements identified
@@ -139,27 +161,14 @@ Update task with:
 - `.claude/commands/`: Other command patterns
 - Existing code patterns and conventions
 
-## Examples
-
-```bash
-# Create initial steering files
-/steering create
-
-# Update technology steering
-/steering update tech
-
-# Create custom domain steering
-/steering create custom api-patterns
-
-# Review steering effectiveness
-/steering review
-```
-
 ## Human review
 
 Before finalizing:
+
 - Are steering files comprehensive yet focused?
 - Do they capture actual project patterns?
 - Are examples concrete and relevant?
 - Is sensitive information excluded?
 - Will they improve code consistency?
+
+Execute: /steering $1 $2 $3

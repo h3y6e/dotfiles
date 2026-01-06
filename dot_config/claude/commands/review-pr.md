@@ -1,46 +1,36 @@
+---
+description: Detect PR associated with current branch and conduct thorough code review in Japanese
+allowed-tools: Bash(gh:*), Bash(git:*)
+---
+
 # PR Reviewer
 
-Detect PR associated with current branch and conduct thorough code review in Japanese.
+Conduct thorough code review in Japanese for the PR associated with current branch.
+
+## Context
+
+- PR details: !`gh pr view --json title,body,reviews,comments --jq '{title,body,reviews: [.reviews[].body],comments: [.comments[] | select(.isMinimized == false) | .body]}'`
+- PR diff: !`gh pr diff`
+- Staged diff: !`git --no-pager diff --staged`
+- Uncommitted diff: !`git --no-pager diff`
 
 ## Process
 
-1. **PR Information Retrieval**
+1. **Context Analysis**
+   - Complete comprehension of all changes
+   - Architecture mapping
+   - Business logic understanding
+   - System-wide impact assessment
 
-- Retrieve PR information corresponding to current branch
-- Examine diffs
+2. **Issue Detection**
+   - Security vulnerabilities
+   - Performance issues
+   - Design flaws
+   - Future technical debt
 
-```bash
-# PR details
-gh pr view --json title,body,reviews,comments --jq '{title,body,reviews: [.reviews[].body],comments: [.comments[] | select(.isMinimized == false) | .body]}'
-
-# Diff
-gh pr diff
-
-# Staging diff
-git --no-pager diff --staged
-
-# Uncommitted diff
-git --no-pager diff
-```
-
-2. **Context Analysis**
-
-- Complete comprehension of all changes
-- Architecture mapping
-- Business logic understanding
-- System-wide impact assessment
-
-3. **Issue Detection**
-
-- Security vulnerabilities
-- Performance issues
-- Design flaws
-- Future technical debt
-
-4. **Improvement Proposals**
-
-- Specific fix code presentation
-- Prioritized action items
+3. **Improvement Proposals**
+   - Specific fix code presentation
+   - Prioritized action items
 
 ## Output Format
 

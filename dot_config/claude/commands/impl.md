@@ -1,12 +1,22 @@
+---
+description: Sequentially implement tasks from specification documents with proper git commits and PR creation
+argument-hint: <spec-name>
+allowed-tools: Bash(git:*), Bash(gh:*), Bash(mise:*), Bash(pnpm:*), Read, Edit
+---
+
 # Impl Command
 
 Sequentially implement tasks from specification documents with proper git commits and PR creation.
 
-## Usage
+## Input
 
-```bash
-/impl [spec-name]
-```
+`$ARGUMENTS` - Specification name (corresponds to directory under `docs/spec/`)
+
+## Context
+
+- Current branch: !`git branch --show-current`
+- Git status: !`git status --short`
+- Recent commits: !`git log --oneline -5`
 
 ## Overview
 
@@ -16,7 +26,7 @@ This command automates the implementation of tasks defined in specification docu
 
 ### 1. Task Analysis
 
-- Load specification documents from `docs/spec/[spec-name]/`:
+- Load specification documents from `docs/spec/$ARGUMENTS/`:
   - `1-requirements.md` - Understand user stories and acceptance criteria
   - `2-design.md` - Review technical architecture and implementation details
   - `3-tasks.md` - Get task list and dependencies
@@ -55,11 +65,11 @@ For each incomplete task:
 
 ```bash
 # Create feature branch from spec name
-git checkout -b feat/[spec-name]
+git checkout -b feat/$ARGUMENTS
 
 # Commit spec documents to track progress
-git add docs/spec/[spec-name]/
-git commit -m "docs: add [spec-name] specification documents"
+git add docs/spec/$ARGUMENTS/
+git commit -m "docs: add $ARGUMENTS specification documents"
 
 # Or continue on existing branch
 git branch --show-current
@@ -136,7 +146,7 @@ git status
 git pull origin main
 
 # Create/switch to feature branch
-git switch -c feat/[spec-name]
+git switch -c feat/$ARGUMENTS
 
 # Run initial checks to ensure environment is ready
 mise x -- pnpm check
@@ -150,12 +160,12 @@ mise x -- pnpm test run
 # Edit 3-tasks.md: change "- [ ]" to "- [-]"
 
 # 2. Implement task
-[implementation steps]
+# [implementation steps]
 
-# 2. Stage changes
+# 3. Stage changes
 git add [files]
 
-# 3. Commit with message
+# 4. Commit with message
 git commit -m "feat: [task description]"
 ```
 
@@ -163,36 +173,13 @@ git commit -m "feat: [task description]"
 
 ```bash
 # Push branch
-git push -u origin feat/[spec-name]
+git push -u origin feat/$ARGUMENTS
 
 # Create PR via GitHub CLI
 gh pr create \
-  --title "feat: [spec feature name]" \
+  --title "feat: $ARGUMENTS" \
   --body "[generated description]" \
   --web
-```
-
-## Examples
-
-### Basic Usage
-
-```bash
-# Implement all remaining tasks for community-joined-list spec
-/impl community-joined-list
-```
-
-### Continue Partial Implementation
-
-```bash
-# Resume implementation from where it left off
-/impl community-joined-list -c
-```
-
-### Specific Task Range
-
-```bash
-# Implement only specific tasks
-/impl community-joined-list -t 6,12,17
 ```
 
 ## Task Implementation Guidelines
@@ -267,8 +254,10 @@ Implementation is complete when:
 
 ## References
 
-- Spec documents: `docs/spec/[name]/`
+- Spec documents: `docs/spec/$ARGUMENTS/`
   - `1-requirements.md` - User stories and acceptance criteria
   - `2-design.md` - Technical architecture and design decisions
   - `3-tasks.md` - Implementation tasks (edited in-place)
 - Git conventions: Conventional Commits
+
+Implement the spec: $ARGUMENTS

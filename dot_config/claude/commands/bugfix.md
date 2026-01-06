@@ -1,3 +1,8 @@
+---
+description: Systematic bug investigation and resolution with comprehensive testing
+argument-hint: <issue-id or bug description>
+---
+
 # Bug fixer
 
 Systematic bug investigation and resolution with comprehensive testing.
@@ -9,21 +14,18 @@ Investigate, fix, and verify bugs following test-driven approach.
 ## Process
 
 1. **Bug Analysis**
-
    - Reproduce the issue
    - Identify root cause through debugging
    - Map affected components and dependencies
    - Review related code and tests
 
 2. **Solution Development**
-
    - Write failing test cases first (TDD)
    - Implement minimal fix
    - Consider edge cases and side effects
    - Update documentation if needed
 
 3. **Verification**
-
    - Run all affected tests
    - Verify fix doesn't break existing functionality
    - Check performance impact
@@ -112,15 +114,4 @@ git commit -m "fix: <concise description of what was fixed>"
 - [ ] [Any additional tasks needed]
 ```
 
-## Arguments
-
-- `<issue-id>`: GitHub issue number or bug description
-- `--quick`: Skip comprehensive testing (use with caution)
-
-## Example
-
-```
-/bugfixer 123
-/bugfixer "TypeError in user login"
-/bugfixer --quick "Fix typo in error message"
-```
+Fix the bug: $ARGUMENTS

@@ -1,3 +1,8 @@
+---
+description: Generate commands following established patterns
+argument-hint: [command-name]
+---
+
 # Command Creator
 
 ## Task
@@ -38,13 +43,49 @@ Copy from similar commands:
 - Task updates: status/logs/checklist/decisions
 - Human review: assumptions/technical/patterns flags
 
+## Frontmatter Options
+
+When generating commands, include appropriate frontmatter:
+
+- `description`: Brief description of the command (shown in /help)
+- `argument-hint`: Arguments expected (shown during auto-complete)
+- `allowed-tools`: List of tools the command can use (e.g., `Bash(git:*)`, `Read`, `Edit`)
+- `model`: Specific model string (optional)
+- `disable-model-invocation`: Prevent SlashCommand tool from calling this command (optional)
+
+## Bash Execution
+
+Use `!` prefix for bash commands that execute before the command runs:
+
+```
+## Context
+
+Current branch: !`git branch --show-current`
+Git status: !`git status --short`
+```
+
+Note: Must include `allowed-tools` with `Bash` tool when using bash execution.
+
+## File References
+
+Use `@` prefix to include file contents:
+
+```
+Review the implementation in @src/utils/helpers.js
+```
+
+## Arguments
+
+- `$ARGUMENTS`: Captures all arguments passed to the command
+- `$1`, `$2`, etc.: Individual positional arguments
+
 ## Checklist
 
 - [ ] Studied similar commands
 - [ ] Naming convention (numeric prefix for workflows)
 - [ ] Task/context structure
 - [ ] References organizational guide
-- [ ] MCP tools (not CLI)
+- [ ] Appropriate frontmatter (description, argument-hint, allowed-tools)
 - [ ] Human review sections
 - [ ] Clear examples
 - [ ] Task state updates
@@ -57,3 +98,5 @@ Copy from similar commands:
 2. Resources: {templates/docs}
 3. Usage: `/{name}` with example
 4. Next: Test → Refine → Document
+
+Create command: $ARGUMENTS

@@ -1,3 +1,9 @@
+---
+description: Create a GitHub Pull Request from staged files
+argument-hint: [--en]
+allowed-tools: Bash(git:*), Bash(gh:*)
+---
+
 # PR Staged Files
 
 Create a GitHub Pull Request from staged files.
@@ -8,6 +14,12 @@ Create a GitHub Pull Request from staged files.
 - **Only process staged files**
 - **Never execute `git add` or `git restore` automatically**
 - **Never include unstaged/untracked changes in PR**
+
+## Context
+
+- Current branch: !`git branch --show-current`
+- Git status: !`git status --short`
+- Staged changes summary: !`git diff --cached --stat`
 
 ## Process
 
@@ -33,24 +45,17 @@ Create a GitHub Pull Request from staged files.
 
 ## Workflow Steps
 
-### Step 1: Analysis
+### Step 1: Get Full Diff
 
-```zsh
-# Check branch and staging status
-git branch --show-current
-git status --short
-git diff --cached --stat
+```bash
 git diff --cached
 ```
 
 ### Step 2: Commit
 
-```zsh
+```bash
 # Commit staged changes
-git commit -m "$(cat <<'EOF'
-[conventional commit message]
-EOF
-)"
+git commit -m "[conventional commit message]"
 
 # Push to remote
 git push -u origin "$(git branch --show-current)"
@@ -58,17 +63,15 @@ git push -u origin "$(git branch --show-current)"
 
 ### Step 3: Create PR & Review
 
-Check if English option is specified:
+Check if English option is specified in $ARGUMENTS:
 
-- If command includes `--en` flag, use English PR template
+- If `--en` flag is present, use English PR template
 - Otherwise, use Japanese PR template (default)
 
 #### Japanese PR Template (Default)
 
-```zsh
-# Create PR and automatically open in browser
-gh pr create --title "[PRタイトル - conventional commit形式で記述]" --body "$(cat <<'EOF'
-## 概要
+```bash
+gh pr create --title "[PRタイトル - conventional commit形式で記述]" --body "## 概要
 [なぜこの変更が必要なのかを1-3つの箇条書きで説明 - whatではなくwhyに集中]
 
 ## 背景 (optional)
@@ -78,17 +81,13 @@ gh pr create --title "[PRタイトル - conventional commit形式で記述]" --b
 [変更の理由と意図を中心に説明 - 実装の詳細よりも、なぜこのアプローチを選択したかを重視]
 
 ## 影響 (optional)
-[システムやコードへの影響、発生するメリット・デメリット、既存コードへのマイグレーション方法など]
-EOF
-)" --web
+[システムやコードへの影響、発生するメリット・デメリット、既存コードへのマイグレーション方法など]" --web
 ```
 
 #### English PR Template (with --en flag)
 
-```zsh
-# Create PR and automatically open in browser
-gh pr create --title "[PR Title - use conventional commit format]" --body "$(cat <<'EOF'
-## Summary
+```bash
+gh pr create --title "[PR Title - use conventional commit format]" --body "## Summary
 [Explain why these changes are needed in 1-3 bullet points - focus on why, not what]
 
 ## Background (optional)
@@ -98,9 +97,7 @@ gh pr create --title "[PR Title - use conventional commit format]" --body "$(cat
 [Explain the reasoning and intent behind changes - emphasize why this approach was chosen over implementation details]
 
 ## Impact (optional)
-[Impact on system/code, benefits/drawbacks, migration approach for existing code]
-EOF
-)" --web
+[Impact on system/code, benefits/drawbacks, migration approach for existing code]" --web
 ```
 
 ### Step 4: Code Review
@@ -114,7 +111,7 @@ Based on the diff from Step 1, perform a quick code review:
 
 ## Usage
 
-```zsh
+```bash
 # Default (Japanese PR)
 /staged-pr
 
@@ -128,3 +125,5 @@ Check staged files with `git status` before execution.
 
 - GitHub CLI (`gh`) installed and authenticated
 - Project convention: `fix/[name]` branch naming format
+
+Arguments: $ARGUMENTS
