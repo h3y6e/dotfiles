@@ -30,6 +30,7 @@ uv = "0.9.21"
 shellcheck = "0.11.0"
 shfmt = "3.12.0"
 jq = "1.8.1"
+yq = "4.50.1"
 aws-cli = { version = "2.32.28", symlink_bins = "true" }
 "aqua:ByteNess/aws-vault" = "7.8.6"
 "aqua:rhysd/actionlint" = "1.7.10"
