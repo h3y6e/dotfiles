@@ -24,6 +24,7 @@
     "git_gutter": "tracked_files",
   },
   "git_panel": {
+    "tree_view": true,
     "collapse_untracked_diff": false,
     "sort_by_path": false,
     "status_style": "label_color",
