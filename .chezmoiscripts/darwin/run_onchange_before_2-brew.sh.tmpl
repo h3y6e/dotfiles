@@ -19,6 +19,7 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "imagemagick"
   "aria2"
   "watchman"
+  "mas"
 -}}
 
 {{ $casks := list
@@ -47,6 +48,11 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "font-explex-nf"
   "font-juisee"
 ) -}}
+
+{{ $masApps := dict
+  "GarageBand" 682658836
+  "RunCat" 1429033973
+}}
 
 {{ if eq .chezmoi.username "h3y6e" -}}
 # personal
@@ -84,5 +90,8 @@ brew "{{ . }}"
 {{ end -}}
 {{ range ($casks | sortAlpha | uniq) -}}
 cask "{{ . }}"
+{{ end -}}
+{{ range $name, $id := $masApps -}}
+mas "{{ $name }}", id: {{ $id }}
 {{ end -}}
 EOF
