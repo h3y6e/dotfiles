@@ -22,7 +22,7 @@ pipx.uvx = true
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
 node = "24.12.0"
-deno = "2.6.3"
+deno = "2.6.4"
 bun = "1.3.3"
 rust = "1.92.0"
 go = "1.25.4"
