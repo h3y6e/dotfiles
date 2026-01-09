@@ -3,6 +3,11 @@
   "theme": "catppuccin",
   "share": "disabled",
   "autoupdate": false,
+  "tui": {
+    "scroll_acceleration": {
+      "enabled": true
+    }
+  },
   "mcp": {
     "figma": {
       "type": "remote",
