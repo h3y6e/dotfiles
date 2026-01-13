@@ -6,5 +6,5 @@
     "schedule:daily",
     ":automergeAll"
   ],
-  "minimumReleaseAge": "1 day"
+  "minimumReleaseAge": "12 hours"
 }
