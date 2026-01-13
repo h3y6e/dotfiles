@@ -5,7 +5,6 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINruieWJY7o2U4nvaPHJYKHPiCRmOzKBJe1TRZX3mtPB
 {{- end }}
 [core]
-	pager =
 	editor = vim -c \"set fenc=utf-8\"
 	ignorecase = false
 	autocrlf = false
@@ -13,6 +12,8 @@
 	symlinks = true
 	quotepath = false
 	safecrlf = true
+[pager]
+	diff = false
 [color]
 	diff = auto
 	status = auto
