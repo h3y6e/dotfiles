@@ -21,7 +21,7 @@ pipx.uvx = true
 # - Specify versions ("1.2.3") if Renovate recognizes them, otherwise "latest"
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
-node = "24.12.0"
+node = "24.13.0"
 deno = "2.6.4"
 bun = "1.3.5"
 rust = "1.92.0"
