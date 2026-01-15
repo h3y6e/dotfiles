@@ -38,7 +38,7 @@ aws-cli = { version = "2.32.32", symlink_bins = "true" }
 "aqua:sharkdp/bat" = "0.26.1"
 "aqua:peco/peco" = "0.5.11"
 "aqua:BurntSushi/ripgrep" = "15.1.0"
-"aqua:cli/cli" = "2.83.2"
+"aqua:cli/cli" = "2.85.0"
 "aqua:x-motemen/ghq" = "1.8.0"
 "aqua:jesseduffield/lazygit" = "0.58.0"
 "aqua:anomalyco/opencode" = "1.1.13"
