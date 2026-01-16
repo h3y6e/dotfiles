@@ -101,7 +101,15 @@
     },
     "vtsls": {
       "settings": {
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
         "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
           "tsserver": {
             "maxTsServerMemory": 16184,
           },
