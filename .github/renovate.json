@@ -3,8 +3,8 @@
   "extends": [
     "github>h3y6e/renovate-config",
     "github>h3y6e/renovate-config:casks",
-    "schedule:daily",
     ":automergeAll"
   ],
+  "schedule": ["at any time"],
   "minimumReleaseAge": "12 hours"
 }
