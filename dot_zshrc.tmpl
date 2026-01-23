@@ -28,48 +28,9 @@ unsetopt CLOBBER
 
 # auto correction
 setopt CORRECT
-alias cd='nocorrect cd'
-alias cp='nocorrect cp'
-alias grep='nocorrect grep'
-alias ln='nocorrect ln'
-alias man='nocorrect man'
-alias mkdir='nocorrect mkdir -p'
-alias mv='nocorrect mv'
-alias rm='nocorrect rm'
-alias sudo='nocorrect sudo'
 
 #==============================================================================
-# Aliases
-#==============================================================================
-# ls
-{{ if eq .chezmoi.os "darwin" -}}
-alias ls='ls -G'
-{{- else }}
-alias ls='ls --color=auto'
-{{- end }}
-alias l='ls -A'
-alias ll='ls -lh'
-alias la='ll -A'
-alias sl='ls'
-
-# git
-alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
-
-# chezmoi
-alias cz='chezmoi'
-alias czc='code $(cz source-path)'
-alias czz='zed $(cz source-path)'
-
-{{ if eq .chezmoi.os "darwin" -}}
-# network
-alias ipen0='ipconfig getifaddr en0'
-
-# tailscale
-alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
-{{- end }}
-
-#==============================================================================
-# Package Managers & Runtimes
+# Environment
 #==============================================================================
 # homebrew
 if type brew &>/dev/null; then
@@ -85,21 +46,52 @@ if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# flutter
+[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
+
+#==============================================================================
+# Plugins
+#==============================================================================
 # sheldon
 type sheldon &>/dev/null && eval "$(sheldon source)"
 
-# flutter
-[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
-function check-fvm() {
-  if [[ -d ".fvm" ]]; then
-    alias flutter='fvm flutter'
-    alias dart='fvm dart'
-  fi
-}
+# direnv
+type direnv &>/dev/null && eval "$(direnv hook zsh)"
+
+# git-wt
+type git-wt &>/dev/null && eval "$(git-wt --init zsh)"
+
+# 1password cli
+[[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
 
 #==============================================================================
-# Development Tools
+# Aliases & Functions
 #==============================================================================
+# nocorrect
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias grep='nocorrect grep'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir -p'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+alias sudo='nocorrect sudo'
+
+# ls
+{{ if eq .chezmoi.os "darwin" -}}
+alias ls='ls -G'
+{{- else }}
+alias ls='ls --color=auto'
+{{- end }}
+alias l='ls -A'
+alias ll='ls -lh'
+alias la='ll -A'
+alias sl='ls'
+
+# git
+alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
+
 # ghq
 if type ghq &>/dev/null && type peco &>/dev/null; then
   function g() {
@@ -108,8 +100,10 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
   }
 fi
 
-# git-wt
-type git-wt &>/dev/null && eval "$(git-wt --init zsh)"
+# chezmoi
+alias cz='chezmoi'
+alias czc='code $(cz source-path)'
+alias czz='zed $(cz source-path)'
 
 # code
 function c() {
@@ -141,20 +135,28 @@ function c() {
 # zed
 alias z='zed .'
 
-# direnv
-type direnv &>/dev/null && eval "$(direnv hook zsh)"
-
-# 1password cli
-[[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
+# flutter/fvm
+function check-fvm() {
+  if [[ -d ".fvm" ]]; then
+    alias flutter='fvm flutter'
+    alias dart='fvm dart'
+  fi
+}
 
 {{ if eq .chezmoi.os "darwin" -}}
 # xcode
 alias xcode='xed'
 alias xcodeclean='rm -rf ~/Library/Developer/Xcode/DerivedData'
+
+# network
+alias ipen0='ipconfig getifaddr en0'
+
+# tailscale
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 {{- end }}
 
 #==============================================================================
-# Autocompletion
+# Completions
 #==============================================================================
 # chpwd hook
 autoload -Uz add-zsh-hook
