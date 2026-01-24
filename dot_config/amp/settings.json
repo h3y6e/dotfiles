@@ -1,4 +1,5 @@
 {
+  "amp.terminal.animation": false,
   "amp.git.commit.ampThread.enabled": false,
   "amp.git.commit.coauthor.enabled": false,
   "amp.updates.mode": "disalbed",
