@@ -44,7 +44,7 @@ aws-cli = { version = "2.33.6", symlink_bins = "true" }
 "aqua:anomalyco/opencode" = "1.1.36"
 "aqua:openai/codex" = "0.77.0"
 "go:github.com/k1LoW/git-wt" = "0.16.0"
-"npm:@sourcegraph/amp" = "0.0.1769212917-g26f1e8"
+"npm:@sourcegraph/amp" = "0.0.1769594672-g3dce0e"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
