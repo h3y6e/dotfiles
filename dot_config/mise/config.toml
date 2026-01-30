@@ -43,7 +43,7 @@ aws-cli = { version = "2.33.7", symlink_bins = "true" }
 "aqua:jesseduffield/lazygit" = "0.58.1"
 "aqua:anomalyco/opencode" = "1.1.36"
 "aqua:openai/codex" = "0.92.0"
-"go:github.com/k1LoW/git-wt" = "0.16.0"
+"go:github.com/k1LoW/git-wt" = "0.16.1"
 "npm:@sourcegraph/amp" = "0.0.1769716999-gdf283f"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
