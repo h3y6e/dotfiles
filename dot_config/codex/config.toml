@@ -1,3 +1,4 @@
+#:schema https://developers.openai.com/codex/config-schema.json
 model = "gpt-5.2-codex"
 model_provider = "openai"
 model_reasoning_effort = "xhigh"
@@ -8,14 +9,16 @@ approval_policy = "never"
 sandbox_mode = "danger-full-access"
 hide_agent_reasoning = false
 file_opener = "none"
+web_search = "live"
 
 [features]
 apply_patch_freeform = true
-skills = true
-tui2 = true
+child_agents_md = true
 unified_exec = true
-view_image_tool = true
-web_search_request = true
+shell_snapshot = true
+apps = true
+steer = true
+personality = true
 
 [shell_environment_policy]
 inherit = "all"
