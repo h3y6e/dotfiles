@@ -31,7 +31,7 @@ shellcheck = "0.11.0"
 shfmt = "3.12.0"
 jq = "1.8.1"
 yq = "4.52.2"
-aws-cli = { version = "2.33.12", symlink_bins = "true" }
+aws-cli = { version = "2.33.13", symlink_bins = "true" }
 "aqua:ByteNess/aws-vault" = "7.9.3"
 "aqua:rhysd/actionlint" = "1.7.10"
 "aqua:XcodesOrg/xcodes" = "1.6.2"
