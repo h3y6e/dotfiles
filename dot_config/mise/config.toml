@@ -40,7 +40,7 @@ aws-cli = { version = "2.33.14", symlink_bins = "true" }
 "aqua:BurntSushi/ripgrep" = "15.1.0"
 "aqua:cli/cli" = "2.86.0"
 "aqua:x-motemen/ghq" = "1.8.1"
-"aqua:jesseduffield/lazygit" = "0.58.1"
+"aqua:jesseduffield/lazygit" = "0.59.0"
 "aqua:anomalyco/opencode" = "1.1.53"
 "aqua:openai/codex" = "latest"
 "go:github.com/k1LoW/git-wt" = "0.19.0"
