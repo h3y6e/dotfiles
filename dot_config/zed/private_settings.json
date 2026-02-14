@@ -19,7 +19,8 @@
       "show_avatar": true,
     },
     "inline_blame": {
-      "show_commit_summary": false,
+      "delay_ms": 200,
+      "show_commit_summary": true,
     },
     "git_gutter": "tracked_files",
   },
@@ -72,10 +73,8 @@
     "dock": "right",
   },
   "format_on_save": "on",
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
   "edit_predictions": {
+    "provider": "zed",
     "mode": "eager",
   },
   "agent": {
