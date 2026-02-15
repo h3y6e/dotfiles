@@ -41,7 +41,7 @@ aws-cli = { version = "2.33.21", symlink_bins = "true" }
 "aqua:cli/cli" = "2.86.0"
 "aqua:x-motemen/ghq" = "1.9.3"
 "aqua:jesseduffield/lazygit" = "0.59.0"
-"aqua:anomalyco/opencode" = "1.2.1"
+"aqua:anomalyco/opencode" = "1.2.5"
 "aqua:openai/codex" = "latest"
 "go:github.com/k1LoW/git-wt" = "0.21.1"
 "npm:@sourcegraph/amp" = "latest"
