@@ -1,4 +1,13 @@
 {
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "context7_api_key": "",
+      },
+    },
+  },
   "colorize_brackets": true,
   "title_bar": {
     "show_sign_in": false,
@@ -11,7 +20,7 @@
       "show_avatar": true,
     },
     "inline_blame": {
-      "delay_ms": 200,
+      "delay_ms": 100,
       "show_commit_summary": true,
     },
     "git_gutter": "tracked_files",
