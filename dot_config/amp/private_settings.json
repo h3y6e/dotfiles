@@ -5,36 +5,6 @@
   "amp.updates.mode": "disalbed",
   "amp.permissions": [
     { "tool": "Bash", "action": "ask", "matches": { "cmd": "*" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "pwd *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "mkdir *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "ls *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "cat *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "find *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "grep *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "head *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "tail *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "sort *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "rg *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "jq *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "test *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "mv *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "trash *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "file *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "sed *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "touch *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "diff *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "cp *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "wc *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "xargs *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "go doc *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "go test *" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "git status*" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "git branch*" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "git log*" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "git diff*" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "git show*" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "git blame*" } },
-    { "tool": "Bash", "action": "allow", "matches": { "cmd": "git ls-tree*" } },
     { "tool": "Bash", "action": "reject", "matches": { "cmd": "rm *" } },
     { "tool": "Bash", "action": "reject", "matches": { "cmd": "*rm *" } },
     { "tool": "Bash", "action": "reject", "matches": { "cmd": "sudo *" } },
@@ -43,9 +13,6 @@
   "amp.mcpServers": {
     "context7": {
       "url": "https://mcp.context7.com/mcp"
-    },
-    "figma": {
-      "url": "http://127.0.0.1:3845/mcp"
     }
   }
 }
