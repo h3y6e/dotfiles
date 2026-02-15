@@ -1,4 +1,5 @@
 #!/bin/bash
+# version: {{ output "sw_vers" "--buildVersion" }}
 
 set -Eeufo pipefail
 
