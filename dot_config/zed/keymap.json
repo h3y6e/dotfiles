@@ -1,10 +1,3 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: Open Default Keymap`
-// from the command palette.
 [
   {
     "context": "Pane",
@@ -18,8 +11,8 @@
       "cmd-7": ["pane::ActivateItem", 6],
       "cmd-8": ["pane::ActivateItem", 7],
       "cmd-9": ["pane::ActivateItem", 8],
-      "cmd-0": "pane::ActivateLastItem"
-    }
+      "cmd-0": "pane::ActivateLastItem",
+    },
   },
   {
     "context": "Workspace",
@@ -33,13 +26,13 @@
       "ctrl-6": ["workspace::ActivatePane", 5],
       "ctrl-7": ["workspace::ActivatePane", 6],
       "ctrl-8": ["workspace::ActivatePane", 7],
-      "ctrl-9": ["workspace::ActivatePane", 8]
-    }
+      "ctrl-9": ["workspace::ActivatePane", 8],
+    },
   },
   {
-    "context": "Editor",
+    "context": "Terminal",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-    }
-  }
+      "shift-enter": ["terminal::SendText", "\u001b\r"],
+    },
+  },
 ]
