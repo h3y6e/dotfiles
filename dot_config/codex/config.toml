@@ -1,5 +1,6 @@
 #:schema https://developers.openai.com/codex/config-schema.json
-model = "gpt-5.2-codex"
+
+model = "gpt-5.3-codex"
 model_provider = "openai"
 model_reasoning_effort = "xhigh"
 model_reasoning_summary = "detailed"
