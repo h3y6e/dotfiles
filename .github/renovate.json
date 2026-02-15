@@ -1,10 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>h3y6e/renovate-config",
-    "github>h3y6e/renovate-config:casks",
-    ":automergeAll"
-  ],
+  "extends": ["github>h3y6e/renovate-config", ":automergeAll"],
   "schedule": ["at any time"],
   "minimumReleaseAge": "12 hours"
 }
