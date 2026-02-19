@@ -35,3 +35,6 @@ url = "http://127.0.0.1:3845/mcp"
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
+
+[mcp_servers.gh-grep]
+url = "https://mcp.grep.app"
