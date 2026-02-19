@@ -6,13 +6,31 @@
   "permission": {
     "bash": {
       "*": "ask",
-      "rm*": "deny",
-      "sudo*": "deny",
-      "npx*": "deny",
+      "mkdir *": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "find *": "allow",
+      "grep *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "sort *": "allow",
+      "rg *": "allow",
+      "cp *": "allow",
+      "mv *": "allow",
+      "trash *": "allow",
+      "echo *": "allow",
+      "touch *": "allow",
+      "diff *": "allow",
+      "rm *": "deny",
+      "sudo *": "deny",
+      "npx *": "deny",
     },
     "read": {
       "*": "allow",
       "*.env": "deny",
+    },
+    "external_directory": {
+      "~/ghq/**": "allow",
     },
   },
   "tui": {
@@ -28,6 +46,10 @@
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
+    },
+    "gh-grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
     },
   },
 }
