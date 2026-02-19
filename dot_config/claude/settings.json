@@ -105,19 +105,6 @@
       "Write(./**)",
       "mcp__figma__get_image",
       "mcp__figma__get_code",
-      "mcp__linear__get_project",
-      "mcp__linear__list_teams",
-      "mcp__playwright__browser_navigate",
-      "mcp__playwright__browser_click",
-      "mcp__playwright__browser_type",
-      "mcp__playwright__browser_wait_for",
-      "mcp__playwright__browser_console_messages",
-      "mcp__playwright__browser_snapshot",
-      "mcp__playwright__browser_take_screenshot",
-      "mcp__playwright__browser_press_key",
-      "mcp__playwright__browser_evaluate",
-      "mcp__playwright__browser_close",
-      "mcp__playwright__browser_fill_form",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs"
     ],
@@ -125,19 +112,6 @@
     "defaultMode": "acceptEdits"
   },
   "model": "opusplan",
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r0 '[.message//\"\", .title//\"Claude Code\"] | map(gsub(\"\\\\u0000\"; \"\"))[]' | xargs -0 osascript -e 'on run a' -e 'display notification item 1 of a with title item 2 of a sound name \"Morse\"' -e 'end run'"
-          }
-        ]
-      }
-    ]
-  },
   "enabledPlugins": {
     "code-review@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
