@@ -79,7 +79,9 @@
     "mode": "eager",
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_profile": "write",
     "single_file_review": false,
     "use_modifier_to_send": true,
