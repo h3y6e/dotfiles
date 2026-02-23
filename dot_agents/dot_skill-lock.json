@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "github-copilot",
+    "opencode",
+    "claude-code"
+  ]
+}
