@@ -111,7 +111,7 @@ alias czz='zed $(cz source-path)'
 # code
 function c() {
   local editor=""
-  for e in {{ if eq .chezmoi.username "h3y6e" }}cursor code{{ else }}code cursor{{ end }}; do
+  for e in {{ if .personal }}cursor code{{ else }}code cursor{{ end }}; do
     if type $e &>/dev/null; then
       editor=$e
       break

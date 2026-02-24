@@ -51,7 +51,7 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "RunCat" 1429033973
 }}
 
-{{ if eq .chezmoi.username "h3y6e" -}}
+{{ if .personal -}}
 # personal
 {{ $brews = concat $brews (list
   "colima"
