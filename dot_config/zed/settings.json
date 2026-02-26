@@ -1,11 +1,16 @@
 {
   "context_servers": {
-    "mcp-server-context7": {
-      "enabled": true,
-      "remote": false,
-      "settings": {
-        "context7_api_key": "",
-      },
+    "figma": {
+      "settings": {},
+      "url": "http://127.0.0.1:3845/mcp",
+    },
+    "context7": {
+      "settings": {},
+      "url": "https://mcp.context7.com/mcp",
+    },
+    "gh_grep": {
+      "settings": {},
+      "url": "https://mcp.grep.app",
     },
   },
   "colorize_brackets": true,
