@@ -1,0 +1,3 @@
+- Use `trash` instead of `rm`.
+- Use `context7` tools to search docs.
+- Use `gh_grep` to search code from GitHub. Never use `gh api`.
