@@ -26,10 +26,6 @@ personality = true
 inherit = "all"
 ignore_default_excludes = true
 
-[mcp_servers.chrome-devtools]
-command = "bunx"
-args = ["-y", "chrome-devtools-mcp@latest"]
-
 [mcp_servers.figma]
 url = "http://127.0.0.1:3845/mcp"
 
