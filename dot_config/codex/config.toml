@@ -12,6 +12,7 @@ hide_agent_reasoning = false
 file_opener = "none"
 web_search = "live"
 suppress_unstable_features_warning = true
+personality = "pragmatic"
 
 [features]
 apply_patch_freeform = true
