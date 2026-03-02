@@ -9,13 +9,13 @@
 - Enter plan mode for non-trivial tasks. If something goes wrong, stop and re-plan.
 - Use subagents liberally: one task per subagent, keep main context clean.
 - Never mark a task done without proving it works (tests, logs, diffs).
-- After any correction, capture the pattern in `tasks/lessons.md`.
+- After any correction, capture the pattern in `task.local/lessons.md`.
 
 # Task Management
 
-- Write a plan to `tasks/todo.md` with checkable items before starting.
+- Write a plan to `task.local/todo.md` with checkable items before starting.
 - Track progress, mark items complete, document findings.
-- Review `tasks/lessons.md` at session start.
+- Review `task.local/lessons.md` at session start.
 
 # Principles
 
