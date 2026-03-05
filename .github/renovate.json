@@ -2,5 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>h3y6e/renovate-config", ":automergeAll"],
   "schedule": ["at any time"],
-  "minimumReleaseAge": "12 hours"
+  "minimumReleaseAge": "12 hours",
+  "mise": {
+    "managerFilePatterns": ["/mise/config\\.toml\\.tmpl$/"]
+  }
 }
