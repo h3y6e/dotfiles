@@ -4,6 +4,6 @@
   "schedule": ["at any time"],
   "minimumReleaseAge": "12 hours",
   "mise": {
-    "managerFilePatterns": ["/mise/config\\.toml\\.tmpl$/"]
+    "managerFilePatterns": ["/dot_config/mise/config\\.toml\\.tmpl$/"]
   }
 }
