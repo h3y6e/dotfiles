@@ -37,7 +37,7 @@ aws-cli = { version = "2.34.2", symlink_bins = "true" }
 "aqua:rhysd/actionlint" = "1.7.11"
 "aqua:XcodesOrg/xcodes" = "1.6.2"
 "aqua:sharkdp/bat" = "0.26.1"
-"aqua:peco/peco" = "0.5.11"
+"aqua:peco/peco" = "0.6.0"
 "aqua:BurntSushi/ripgrep" = "15.1.0"
 "aqua:cli/cli" = "2.87.3"
 "aqua:x-motemen/ghq" = "1.9.4"
