@@ -1,8 +1,8 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 model_provider = "openai"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "high"
 model_reasoning_summary = "detailed"
 model_verbosity = "high"
 model_supports_reasoning_summaries = true
