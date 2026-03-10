@@ -29,7 +29,7 @@ go = "1.26.1"
 python = "3.14.3"
 uv = "0.10.9"
 shellcheck = "0.11.0"
-shfmt = "3.12.0"
+shfmt = "3.13.0"
 jq = "1.8.1"
 yq = "4.52.4"
 aws-cli = { version = "2.34.4", symlink_bins = "true" }
