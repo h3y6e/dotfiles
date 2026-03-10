@@ -18,7 +18,7 @@ Frontmatter: `summary`, `tags: []`.
 
 ## Sections
 
-Entries as `## HH:MM` or `## <label>`.
+Entries as `## <label>`.
 
 ## Rules
 
