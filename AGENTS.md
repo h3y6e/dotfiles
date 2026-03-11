@@ -3,6 +3,8 @@
 - Use `trash` instead of `rm`.
 - Use `context7` tools to search docs.
 - Use `gh-grep` to search code from GitHub. Never use `gh api`.
+- Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `shfmt`, `shellcheck`.
+- Avoid throwaway Python/Ruby scripts.
 
 # Workflow
 
