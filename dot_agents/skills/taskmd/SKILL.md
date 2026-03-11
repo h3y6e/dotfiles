@@ -21,7 +21,7 @@ tags: []
 
 ## Sections
 
-Goal, DoD, Research, Notes.
+Goal, DoD (checklist), Research, Notes.
 
 ## Rules
 
