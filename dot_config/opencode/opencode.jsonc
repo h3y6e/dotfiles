@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "catppuccin",
   "share": "disabled",
   "autoupdate": false,
   "permission": {
@@ -54,11 +53,6 @@
     },
     "external_directory": {
       "~/ghq/**": "allow",
-    },
-  },
-  "tui": {
-    "scroll_acceleration": {
-      "enabled": true,
     },
   },
   "mcp": {
