@@ -120,6 +120,11 @@
       },
     },
   },
+  "languages": {
+    "Markdown": {
+      "format_on_save": "off",
+    },
+  },
   "auto_install_extensions": {
     "biome": true,
     "catppuccin": true,
