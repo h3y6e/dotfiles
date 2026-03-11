@@ -1,7 +1,6 @@
 ---
 name: taskmd
-description: >
-  Plan before starting, track progress during work. One task = one file.
+description: Plan before starting, track progress during work. One task = one file.
 ---
 
 # TaskMD

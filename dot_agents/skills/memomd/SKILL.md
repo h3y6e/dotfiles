@@ -1,7 +1,6 @@
 ---
 name: memomd
-description: >
-  Log findings, decisions, and lessons at natural breakpoints. One topic = one file.
+description: Log findings, decisions, and lessons at natural breakpoints. One topic = one file.
 ---
 
 # MemoMD
