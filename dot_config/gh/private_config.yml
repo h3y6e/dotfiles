@@ -14,10 +14,7 @@ aliases:
     type peco >/dev/null 2>&1 || { echo "peco is not installed"; exit 1; }
     IFS=$'\t' read -r num branch _ <<<"$(gh pr list --json number,headRefName,title --jq '.[] | [.number, .headRefName, .title] | @tsv' | peco)"
     [ -z "$num" ] && exit 0
-    base=$(git rev-parse --show-toplevel)
-    workdir="${base%/*}/$(basename "$base").wt/${branch//\//-}"
-    git worktree add -B "$branch" "$workdir" "origin/$branch" && git -C "$workdir" submodule update --init --recursive
-    [ -f "$base/local.code-workspace" ] && cp "$base/local.code-workspace" "$workdir/"
+    git wt "$branch"
 http_unix_socket:
 browser:
 version: "1"
