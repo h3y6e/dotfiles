@@ -68,8 +68,8 @@
 [transfer]
 	fsckObjects = true
 [wt]
-	basedir = ../{gitroot}.work
-	copyuntracked = true
+	basedir = ../{gitroot}.wt
+	remover = "trash"
 	copy = "*.local.*"
 	copy = "*.local"
 	hook = "git submodule update --init --recursive"
