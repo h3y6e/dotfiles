@@ -38,11 +38,41 @@ export OPENCODE_ENABLE_EXA=1
 # ni.zsh
 export NI_USE_SOCKET_FIREWALL=1
 
-# rust
-[[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
-
 # telemetry
 export DO_NOT_TRACK=1
 export NEXT_TELEMETRY_DISABLED=1
 export STORYBOOK_DISABLE_TELEMETRY=1
 export EXPO_NO_TELEMETRY=1
+
+#==============================================================================
+# Path Settings
+#==============================================================================
+# deduplicate
+typeset -gU cdpath fpath mailpath path
+
+{{ if eq .chezmoi.os "darwin" -}}
+# homebrew
+if [[ $(arch) == "i386" ]]; then
+  [ -s "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
+else
+  [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+{{- end }}
+
+# rust
+[[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
+
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh)"
+
+# android
+[[ -d "$HOME/Library/Android/sdk" ]] && export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+
+# pub
+[[ -d "$HOME/.pub-cache" ]] && export PATH="$HOME/.pub-cache/bin:$PATH"
+
+# maestro
+[[ -d "$HOME/.maestro" ]] && export PATH="$PATH:$HOME/.maestro/bin"
+
+# windsurf
+[[ -d "$HOME/.codeium/windsurf" ]] && export PATH="$HOME/.codeium/windsurf/bin:$PATH"
