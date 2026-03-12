@@ -24,7 +24,7 @@
 	push-f = push --force-with-lease
 	pull-f = !git fetch && git reset --hard @{u}
 	cd = !git switch $(git config --get init.defaultBranch)
-	cleanup = !git fetch --prune && git for-each-ref --format=\"%(refname:short) %(upstream:track)\" refs/heads | grep \"\\\\[gone\\\\]\" | cut -d\" \" -f1 | xargs -r git branch -D
+	cleanup = !git fetch --prune && git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | grep '\\[gone\\]' | cut -d' ' -f1 | xargs -r git wt -D
 [merge]
 	ff = false
 	conflictStyle = zdiff3

@@ -19,8 +19,6 @@ aliases:
     workdir="${base%/*}/$(basename "$base").wt/${branch//\//-}"
     git worktree add -B "$branch" "$workdir" "origin/$branch" && git -C "$workdir" submodule update --init --recursive
     [ -f "$base/local.code-workspace" ] && cp "$base/local.code-workspace" "$workdir/"
-  cleanup: |
-    !gh pr list --state merged --json headRefName -q ".[].headRefName" --limit 1000 | xargs -r git branch -D
 http_unix_socket:
 browser:
 version: "1"
