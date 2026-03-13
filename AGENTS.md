@@ -14,8 +14,8 @@
 
 # Task Management
 
-- Use **taskmd** and **memomd** skills.
-- On session start: read tasks and memos relevant to the current work.
+- Use **taskmd** skill.
+- On session start: read tasks relevant to the current work.
 
 # Principles
 
