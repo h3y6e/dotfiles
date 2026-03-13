@@ -47,10 +47,13 @@ url = "https://mcp.context7.com/mcp"
 
 [mcp_servers.gh_grep]
 url = "https://mcp.grep.app"
+
+{{- if lookPath "ghq" }}
 {{- range (output "ghq" "list" "-p" | splitList "\n") }}
 {{- if ne . "" }}
 
 [projects."{{ . }}"]
 trust_level = "trusted"
+{{- end }}
 {{- end }}
 {{- end }}
