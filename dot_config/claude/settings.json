@@ -15,6 +15,7 @@
     "DISABLE_TELEMETRY": "1",
     "ENABLE_TOOL_SEARCH": "1"
   },
+  "language": "ja",
   "attribution": {
     "commit": "Co-authored-by: Claude <noreply@anthropic.com>"
   },
