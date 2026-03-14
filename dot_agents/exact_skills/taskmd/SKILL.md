@@ -15,12 +15,13 @@ allowed-tools: Bash(obsidian:*) Bash(ghq get log) Bash(cat:*) Bash(rg:*) Read Ed
 
 `task/YYYY-MM-DD-<slug>.md`
 
-Frontmatter: `status` (`backlog` → `todo` → `in-progress` → `done`/`canceled`), `tags`.
+Frontmatter: `title` (human-readable name for the task), `status` (`backlog` → `todo` → `in-progress` → `done`/`canceled`), `tags`.
 
 Sections: Goal, DoD (checklist), Research, Notes (findings, decisions, lessons learned).
 
 ## Rules
 
+- Never ask before writing. Infer slug, title, tags, and content from context.
 - On session start: `obsidian tasks todo vault=log` or `obsidian search:context vault=log query="keyword" path=task` to find relevant tasks, then read the file directly.
 - Keep status and notes updated as work progresses.
 - Log universal insights (not task-specific) to today's daily note: `obsidian daily:append vault=log content="..."`.
