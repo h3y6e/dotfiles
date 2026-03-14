@@ -10,7 +10,7 @@
 
 - Enter plan mode for non-trivial tasks. If something goes wrong, stop and re-plan.
 - Use subagents liberally: one task per subagent, keep main context clean.
-- Never mark a task done without proving it works (tests, logs, diffs).
+- Never mark a task done without relevant validation. Prefer tool-specific lint, format, test, or execution checks that match the files you changed.
 
 # Task Management
 
