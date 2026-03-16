@@ -25,10 +25,11 @@ Sections: Goal, DoD (checklist), Research, Notes (findings, decisions, lessons l
 - On session start: `obsidian tasks todo vault=log` or `obsidian search:context vault=log query="keyword" path=task` to find relevant tasks, then read the file directly.
 - Every state transition must touch the task note.
 - Fill Goal and the initial DoD before doing substantial work, then move the task to `in-progress`.
+- If note text includes backticks, shell substitutions, or other shell-sensitive characters, do not pass it via `obsidian append ... content="..."` or `obsidian daily:append ... content="..."` in zsh. Edit the markdown file directly, or only use shell-safe quoting when the content is simple enough to verify.
 - If an `obsidian` subcommand or flag is uncertain, check `obsidian --help` or `obsidian help <command>` before guessing.
 - Run a task-note sync checkpoint after the initial plan, after each meaningful implementation/inspection batch, when blocked or changing direction, and immediately before the final response.
 - Never send the final answer or treat the work as complete until the task note reflects the current status, completed DoD items, key verification commands/results, and any remaining follow-up.
-- Log universal insights (not task-specific) to today's daily note: `obsidian daily:append vault=log content="..."`.
+- Log universal insights (not task-specific) to today's daily note. Use `obsidian daily:append` only for simple plain text; if the note includes backticks or other shell-sensitive characters, edit the daily note directly instead.
 
 ## Workflow
 
@@ -36,7 +37,7 @@ Sections: Goal, DoD (checklist), Research, Notes (findings, decisions, lessons l
 2. Search for an existing relevant task; if one exists, resume it, otherwise `obsidian create vault=log path="task/YYYY-MM-DD-slug.md" template=task`
 3. Edit the file directly — title, Goal, DoD checklist, Research, and Notes seed entries
 4. `obsidian property:set vault=log path="task/..." name=status value=in-progress`
-5. After each work batch, append findings, decisions, blockers, and verification to Notes; update DoD and status immediately if the state changed
+5. After each work batch, update Notes with findings, decisions, blockers, and verification. Prefer direct file edits for multi-line or shell-sensitive text; use `obsidian append` only for simple plain text that is safe to quote.
 6. `obsidian task vault=log path="task/..." line=N toggle`
 7. Before the final response, run one last sync checkpoint so the note matches reality
 8. `obsidian property:set vault=log path="task/..." name=status value=done`
