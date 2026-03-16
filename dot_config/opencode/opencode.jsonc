@@ -43,6 +43,7 @@
       "echo *": "allow",
       "touch *": "allow",
       "diff *": "allow",
+      "obsidian *": "allow",
       "rm *": "deny",
       "sudo *": "deny",
       "npx *": "deny",
