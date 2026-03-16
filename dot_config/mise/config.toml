@@ -33,7 +33,7 @@ shfmt = "3.13.0"
 jq = "1.8.1"
 yq = "4.52.4"
 aws-cli = { version = "2.34.8", symlink_bins = "true" }
-"aqua:ByteNess/aws-vault" = "7.9.9"
+"aqua:ByteNess/aws-vault" = "7.9.10"
 "aqua:rhysd/actionlint" = "1.7.11"
 "aqua:XcodesOrg/xcodes" = "1.6.2"
 "aqua:sharkdp/bat" = "0.26.1"
