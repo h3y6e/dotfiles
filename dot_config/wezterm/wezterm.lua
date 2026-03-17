@@ -90,24 +90,6 @@ conf.keys = {
   { key = "/",     mods = "SUPER", action = act.Search("CurrentSelectionOrEmptyString") },
   { key = "Enter", mods = "SUPER", action = act.ToggleFullScreen },
   { key = "Enter", mods = "SHIFT", action = act({ SendString = "\x1b\r" }) },
-  { key = 's',     mods = 'SUPER', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
-  {
-    key = "S",
-    mods = "SUPER",
-    action = act.PromptInputLine {
-      description = "Create new workspace:",
-      action = wezterm.action_callback(function(window, pane, line)
-        if line then
-          window:perform_action(
-            act.SwitchToWorkspace {
-              name = line,
-            },
-            pane
-          )
-        end
-      end),
-    },
-  },
 }
 
 return conf
