@@ -43,7 +43,7 @@ if type brew &>/dev/null; then
   fi
 
   # mysql-client
-  [[ -d "$(brew --prefix)/opt/mysql-client@8.4" ]] && export PATH="$(brew --prefix)/opt/mysql-client@8.4/bin:$PATH"
+  [[ -d "$(brew --prefix)/opt/mysql-client" ]] && export PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
 fi
 
 # flutter
