@@ -1,6 +1,6 @@
 ---
-name: git-workflow
-description: Inspect a git-managed repository, choose the least disruptive workflow, and carry out branch switching, worktree moves, commits, pushes, pull request creation, and branch completion. Use this whenever the user wants to start or resume work on another branch, protect dirty changes, work in parallel with `git-wt`, ship a branch, or says shorthand like `push` or `pr`.
+name: git-wf
+description: Git branch, commit, push, and PR workflow using `git-wt`. Use before making code changes in a git repo, on branch switch, or when the user says `push` or `pr`.
 compatibility: Requires git, gh, and git-wt.
 ---
 
