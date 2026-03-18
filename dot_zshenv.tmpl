@@ -1,3 +1,5 @@
+typeset -gU cdpath fpath mailpath path
+
 #==============================================================================
 # XDG Base Directory
 #==============================================================================
@@ -69,7 +71,7 @@ type mise &>/dev/null && eval "$(mise activate zsh)"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # pub
-export PATH="$HOME/.pub-cache/bin:$PATH"
+path=($HOME/.pub-cache/bin $path)
 
 # maestro
 export PATH="$PATH:$HOME/.maestro/bin"

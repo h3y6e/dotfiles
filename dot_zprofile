@@ -1,5 +1,17 @@
-typeset -gU cdpath fpath mailpath path
-path=(
-  /usr/local/{bin,sbin}
-  $path
-)
+# Restore PATH order after /etc/zprofile's path_helper rearranges it.
+# The initial setup in .zshenv covers non-login shells; this re-run
+# ensures login shells also get the correct precedence.
+
+# homebrew
+if type brew &>/dev/null; then
+  eval "$(brew shellenv)"
+fi
+
+# rust
+[[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
+
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh)"
+
+# pub
+path=($HOME/.pub-cache/bin $path)
