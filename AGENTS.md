@@ -5,6 +5,7 @@
 - Use `gh-grep` to search code from GitHub. Never use `gh api`.
 - Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `shfmt`, `shellcheck`.
   - Avoid throwaway Python/Ruby scripts.
+- Prefer single quotes for shell arguments to avoid backtick command substitution.
 
 # Workflow
 
@@ -19,7 +20,8 @@
 
 # Principles
 
-- Simplicity first: minimal code, minimal impact.
+- Simplicity first: minimal code, minimal impact. Improve aggressively—no backward compatibility or migration paths unless explicitly asked. This is a personal dotfiles repo, not a public library. Refactor boldly, delete freely, simplify relentlessly.
 - No hacky fixes: find root causes, maintain senior-level standards.
 - For non-trivial changes, pause and ask "is there a more elegant way?"
 - Fix bugs autonomously—don't ask for hand-holding.
+
