@@ -1,0 +1,35 @@
+name: skills
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update-skills:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+      - run: go install github.com/h3y6e/skills@latest
+      - run: skills update -d dot_agents/exact_skills -y
+      - id: pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: skills-update
+          commit-message: "fix(skills): update agent skills"
+          title: "fix(skills): update agent skills"
+          body: |
+            Automated skill update by [h3y6e/skills](https://github.com/h3y6e/skills).
+      - if: steps.pr.outputs.pull-request-number
+        run: gh pr merge ${{ steps.pr.outputs.pull-request-number }} --auto --squash
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
