@@ -21,7 +21,7 @@ jobs:
       - run: go install github.com/h3y6e/skills@latest
       - run: skills update -d dot_agents/exact_skills -y
       - id: pr
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
           token: ${{ steps.app-token.outputs.token }}
           branch: skills-update
