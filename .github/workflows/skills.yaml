@@ -18,6 +18,9 @@ jobs:
       - uses: actions/checkout@v6
         with:
           token: ${{ steps.app-token.outputs.token }}
+      - uses: actions/setup-go@v6
+        with:
+          cache: false
       - run: go install github.com/h3y6e/skills@latest
       - run: skills update -d dot_agents/exact_skills -y
       - id: pr
