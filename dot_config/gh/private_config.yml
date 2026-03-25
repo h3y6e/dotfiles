@@ -3,7 +3,7 @@ editor:
 prompt: enabled
 pager:
 aliases:
-  main: |
+  default-branch: |
     !git rev-parse --git-dir > /dev/null 2>&1 || { echo "Not a git repository"; exit 1; }
     defaultbranch=$(gh repo view --json defaultBranchRef --jq ".defaultBranchRef.name")
     [ -z "$defaultbranch" ] && exit 0
