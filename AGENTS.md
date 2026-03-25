@@ -1,8 +1,8 @@
 # Tools
 
+- Use `context7` mcp to search docs.
+- Use `gh_grep` mcp to search code from GitHub. Never use `gh api`.
 - Use `trash` instead of `rm`.
-- Use `context7` tools to search docs.
-- Use `gh-grep` to search code from GitHub. Never use `gh api`.
 - Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `shfmt`, `shellcheck`.
   - Avoid throwaway Python/Ruby scripts.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
@@ -24,4 +24,3 @@
 - No hacky fixes: find root causes, maintain senior-level standards.
 - For non-trivial changes, pause and ask "is there a more elegant way?"
 - Fix bugs autonomously—don't ask for hand-holding.
-
