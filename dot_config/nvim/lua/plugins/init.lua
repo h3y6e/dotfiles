@@ -26,6 +26,18 @@ return {
   { import = "nvchad.blink.lazyspec" },
 
   {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      gitbrowse = { enabled = true },
+      lazygit = { enabled = true },
+      scope = { enabled = true },
+      words = { enabled = true },
+    },
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
