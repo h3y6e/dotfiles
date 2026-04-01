@@ -3,6 +3,7 @@
 - Use `context7` mcp to search docs.
 - Use `gh_grep` mcp to search code from GitHub. Never use `gh api`.
 - Use `trash` instead of `rm`.
+- Use `git wt` instead of `git worktree`.
 - Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `shfmt`, `shellcheck`.
   - Avoid throwaway Python/Ruby scripts.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
@@ -20,7 +21,7 @@
 
 # Principles
 
-- Simplicity first: minimal code, minimal impact. Improve aggressively—no backward compatibility or migration paths unless explicitly asked. This is a personal dotfiles repo, not a public library. Refactor boldly, delete freely, simplify relentlessly.
+- Simplicity first. Refactor boldly, delete freely, no backward compatibility unless asked.
 - No hacky fixes: find root causes, maintain senior-level standards.
 - For non-trivial changes, pause and ask "is there a more elegant way?"
 - Fix bugs autonomously—don't ask for hand-holding.
