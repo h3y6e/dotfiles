@@ -1,5 +1,5 @@
 # vim: set ft=toml:
-{{- $ephemeral := false -}}
+{{ $ephemeral := false -}}
 {{- $personal := false -}}
 
 {{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "runner" "ubuntu" "vscode") -}}
