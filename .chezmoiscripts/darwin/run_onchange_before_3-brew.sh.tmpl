@@ -22,6 +22,10 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "aria2"
   "watchman"
   "mas"
+  "colima"
+  "docker"
+  "docker-compose"
+  "docker-buildx"
 -}}
 
 {{ $casks := list
@@ -54,13 +58,6 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
 
 {{ if .personal -}}
 # personal
-{{ $brews = concat $brews (list
-  "colima"
-  "docker"
-  "docker-compose"
-  "docker-buildx"
-) -}}
-
 {{ $casks = concat $casks (list
   "appcleaner"
   "affinity-designer"
@@ -75,10 +72,6 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
   "tailscale-app"
 ) -}}
 {{ else -}}
-# work
-{{ $casks = concat $casks (list
-  "docker-desktop"
-) -}}
 {{ end -}}
 
 brew bundle --file=-<<EOF
