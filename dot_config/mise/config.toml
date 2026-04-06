@@ -13,6 +13,7 @@ task.monorepo_depth = 2
 cargo.binstall = true
 npm.package_manager = "bun"
 pipx.uvx = true
+github.credential_command = "gh auth token"
 
 # For Renovate:
 # - Use short names if available (node, aws-cli), otherwise full names (aqua:peco/peco, npm:sfw)
@@ -53,3 +54,5 @@ aws-cli = { version = "2.34.23", symlink_bins = "true" }
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
 "vfox:mise-plugins/vfox-1password" = "2.33.1"
 "vfox:mise-plugins/vfox-neovim" = "0.12.0"
+"github:h3y6e/cxg" = "2026.4.2"
+"github:h3y6e/skills" = "2026.4.1"
