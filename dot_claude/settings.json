@@ -15,7 +15,6 @@
     "DISABLE_TELEMETRY": "1",
     "ENABLE_TOOL_SEARCH": "1"
   },
-  "language": "ja",
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
@@ -109,5 +108,7 @@
     "deny": ["NotebookEdit", "Bash(rm:*)", "Bash(sudo:*)", "Bash(npx:*)"],
     "defaultMode": "acceptEdits"
   },
+  "language": "ja",
+  "voiceEnabled": true,
   "model": "opusplan"
 }
