@@ -30,7 +30,8 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      gitbrowse = { enabled = true },
+      dashboard = { enabled = false },
+      indent = { enabled = false },
       lazygit = { enabled = true },
       scope = { enabled = true },
       words = { enabled = true },
