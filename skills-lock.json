@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "cxg": {
+      "source": "h3y6e/cxg",
+      "sourceType": "github",
+      "computedHash": "049b8c2c875b67231c6eb171fdd4042ae284fa79ab035487daaf47ad2b96a3e9"
+    },
     "dispatching-parallel-agents": {
       "source": "obra/superpowers",
       "sourceType": "github",
@@ -15,6 +20,31 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "computedHash": "046180bd8519589b176d575e32a720c43cf6834f2e4d182277faf8943fe03564"
+    },
+    "spec-constitution": {
+      "source": "h3y6e/spec-skills",
+      "sourceType": "github",
+      "computedHash": "bbae54f38fa05d2c7828530adc2d3f45aa34a1ed7fa0dfd4b0e558c4ce9c7956"
+    },
+    "spec-implement": {
+      "source": "h3y6e/spec-skills",
+      "sourceType": "github",
+      "computedHash": "04a0f44982422a924279bd4788b62ef92b186f6a23f3ff3f6787bde22dce7507"
+    },
+    "spec-plan": {
+      "source": "h3y6e/spec-skills",
+      "sourceType": "github",
+      "computedHash": "ac26054f1d15d3e7a7a9e6e8e8ff7fe071f4ef5c4b181373d3782d8387335839"
+    },
+    "spec-research": {
+      "source": "h3y6e/spec-skills",
+      "sourceType": "github",
+      "computedHash": "f8f5e80e7bbf3ef55a23811ed1f4aab822a428ca7da5b584b357c3dd0af607f9"
+    },
+    "spec-specify": {
+      "source": "h3y6e/spec-skills",
+      "sourceType": "github",
+      "computedHash": "d603bdcac55efba6fff9f18c96c98b34e640a9f041e3c573b2e59e387eab3cae"
     },
     "subagent-driven-development": {
       "source": "obra/superpowers",
