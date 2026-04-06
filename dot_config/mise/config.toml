@@ -52,7 +52,5 @@ aws-cli = { version = "2.34.23", symlink_bins = "true" }
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
-"vfox:mise-plugins/vfox-1password" = "2.33.1"
-"vfox:mise-plugins/vfox-neovim" = "0.12.0"
 "github:h3y6e/cxg" = "2026.4.2"
 "github:h3y6e/skills" = "2026.4.1"
