@@ -28,7 +28,8 @@ Sections: Goal, DoD (checklist), Research, Notes (findings, decisions, lessons l
 - If note text includes backticks, shell substitutions, or other shell-sensitive characters, do not pass it via `obsidian append ... content="..."` or `obsidian daily:append ... content="..."` in zsh. Edit the markdown file directly, or only use shell-safe quoting when the content is simple enough to verify.
 - If an `obsidian` subcommand or flag is uncertain, check `obsidian --help` or `obsidian help <command>` before guessing.
 - Run a task-note sync checkpoint after the initial plan, after each meaningful implementation/inspection batch, when blocked or changing direction, and immediately before the final response.
-- Never send the final answer or treat the work as complete until the task note reflects the current status, completed DoD items, key verification commands/results, and any remaining follow-up.
+- Never send the final answer or treat the work as complete until the task note reflects the current status, completed DoD items, key verification commands/results, and any remaining follow-up. Evidence before claims — if you haven't run the verification, you can't mark it done.
+- If something goes wrong mid-task, update the task note with what you know before attempting fixes. The note is the source of truth, not your memory.
 - Log universal insights (not task-specific) to today's daily note. Use `obsidian daily:append` only for simple plain text; if the note includes backticks or other shell-sensitive characters, edit the daily note directly instead.
 
 ## Workflow
