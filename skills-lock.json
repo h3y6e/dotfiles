@@ -4,72 +4,80 @@
     "cxg": {
       "source": "h3y6e/cxg",
       "sourceType": "github",
-      "computedHash": "049b8c2c875b67231c6eb171fdd4042ae284fa79ab035487daaf47ad2b96a3e9"
+      "computedHash": "049b8c2c875b67231c6eb171fdd4042ae284fa79ab035487daaf47ad2b96a3e9",
+      "dest": "dot_agents/exact_skills"
     },
     "dispatching-parallel-agents": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "e21044ae7496fc285f1df9ff3fb518a3a20bea6f5216c1f59f4987e12c769a0a"
+      "computedHash": "e21044ae7496fc285f1df9ff3fb518a3a20bea6f5216c1f59f4987e12c769a0a",
+      "dest": "dot_agents/exact_skills"
     },
     "receiving-code-review": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "2760c85d4f4117b0006e7ba755f4bbd61f8f4c185f347999763c97f507274e30"
+      "computedHash": "2760c85d4f4117b0006e7ba755f4bbd61f8f4c185f347999763c97f507274e30",
+      "dest": "dot_agents/exact_skills"
     },
     "requesting-code-review": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "046180bd8519589b176d575e32a720c43cf6834f2e4d182277faf8943fe03564"
+      "computedHash": "046180bd8519589b176d575e32a720c43cf6834f2e4d182277faf8943fe03564",
+      "dest": "dot_agents/exact_skills"
     },
     "spec-constitution": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "bbae54f38fa05d2c7828530adc2d3f45aa34a1ed7fa0dfd4b0e558c4ce9c7956"
+      "computedHash": "bbae54f38fa05d2c7828530adc2d3f45aa34a1ed7fa0dfd4b0e558c4ce9c7956",
+      "dest": "dot_agents/exact_skills"
     },
     "spec-implement": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "04a0f44982422a924279bd4788b62ef92b186f6a23f3ff3f6787bde22dce7507"
+      "computedHash": "04a0f44982422a924279bd4788b62ef92b186f6a23f3ff3f6787bde22dce7507",
+      "dest": "dot_agents/exact_skills"
     },
     "spec-plan": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "ac26054f1d15d3e7a7a9e6e8e8ff7fe071f4ef5c4b181373d3782d8387335839"
+      "computedHash": "ac26054f1d15d3e7a7a9e6e8e8ff7fe071f4ef5c4b181373d3782d8387335839",
+      "dest": "dot_agents/exact_skills"
     },
     "spec-research": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "f8f5e80e7bbf3ef55a23811ed1f4aab822a428ca7da5b584b357c3dd0af607f9"
+      "computedHash": "f8f5e80e7bbf3ef55a23811ed1f4aab822a428ca7da5b584b357c3dd0af607f9",
+      "dest": "dot_agents/exact_skills"
     },
     "spec-specify": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "d603bdcac55efba6fff9f18c96c98b34e640a9f041e3c573b2e59e387eab3cae"
-    },
-    "subagent-driven-development": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "computedHash": "96697eb8dde8631ee7cd5e1cb29c6d7c0b8ef2869c0875dd2eedf07762e5feae"
+      "computedHash": "d603bdcac55efba6fff9f18c96c98b34e640a9f041e3c573b2e59e387eab3cae",
+      "dest": "dot_agents/exact_skills"
     },
     "systematic-debugging": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "6fddb1f3952f65f1f3a2ef267ae4ab6919ff70a8b36672ea908640ae21a34ea0"
+      "computedHash": "6fddb1f3952f65f1f3a2ef267ae4ab6919ff70a8b36672ea908640ae21a34ea0",
+      "dest": "dot_agents/exact_skills"
     },
     "test-driven-development": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "126f1ebf6ccd414f42544f6e83d8cc5adb089e1108eaffb7c400701e37eecd9f"
+      "computedHash": "126f1ebf6ccd414f42544f6e83d8cc5adb089e1108eaffb7c400701e37eecd9f",
+      "dest": "dot_agents/exact_skills"
     },
     "verification-before-completion": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "9b446f0c7fe1cfb560b1d34439523b1a76d5f177290007b2c053a1c749a4a8ba"
+      "computedHash": "9b446f0c7fe1cfb560b1d34439523b1a76d5f177290007b2c053a1c749a4a8ba",
+      "dest": "dot_agents/exact_skills"
     },
     "writing-skills": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "272ccd701f41b94e1119aaa99455a52cdb8e07283cb6a6aab32a7722d96bef45"
+      "computedHash": "272ccd701f41b94e1119aaa99455a52cdb8e07283cb6a6aab32a7722d96bef45",
+      "dest": "dot_agents/exact_skills"
     }
   }
 }
