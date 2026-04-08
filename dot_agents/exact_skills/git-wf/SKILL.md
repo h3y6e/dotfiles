@@ -16,12 +16,17 @@ compatibility: Requires git, gh, and git-wt.
 ## Branch
 
 - Do not keep feature work on the default branch.
-- Use `git wt` for all worktree operations. Run `git wt -h` to check usage.
+- Use `git wt` for all worktree operations. It has no subcommands — any argument is treated as a branch name.
+  - `git wt` (no args) → list worktrees
+  - `git wt <branch>` → switch/create worktree
+  - `git wt -D <branch>` → delete worktree
+  - `git wt -h` → help
 - Worktree basedir is `../{gitroot}.wt/`, outside the repo.
 
 ## Commit
 
 - Write commit messages in the language the user is currently using unless they explicitly specify otherwise.
+- Use `cxg` skill for commit message format.
 
 ## Pull Request
 
