@@ -1,7 +1,7 @@
 ---
 name: git-wf
 description: Git branch, commit, push, and PR workflow. Use before making code changes in a git repo, on branch switch, or when the user says `push` or `pr`.
-compatibility: Requires git and gh.
+compatibility: Requires git, gh, and git-wt.
 ---
 
 # Git Workflow
@@ -16,7 +16,8 @@ compatibility: Requires git and gh.
 ## Branch
 
 - Do not keep feature work on the default branch.
-- When using worktrees, basedir is `../{gitroot}.wt/`, outside the repo.
+- Use `git wt` for all worktree operations. Run `git wt -h` to check usage.
+- Worktree basedir is `../{gitroot}.wt/`, outside the repo.
 
 ## Commit
 
