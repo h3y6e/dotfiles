@@ -110,5 +110,6 @@
   },
   "language": "ja",
   "voiceEnabled": true,
-  "model": "opusplan"
+  "model": "opusplan",
+  "effortLevel": "high"
 }
