@@ -49,6 +49,7 @@ aws-cli = { version = "2.34.25", symlink_bins = "true" }
 "aqua:github/copilot-language-server-release" = "1.465.0"
 "aqua:k1LoW/git-wt" = "0.26.2"
 "aqua:tree-sitter/tree-sitter" = "0.26.8"
+"aqua:suzuki-shunsuke/pinact" = "3.9.0"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
