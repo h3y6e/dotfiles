@@ -13,6 +13,7 @@
 [data]
   ephemeral = {{ $ephemeral }}
   personal = {{ $personal }}
+  work = {{ and (not $ephemeral) (not $personal) }}
 
 [onepassword]
   cache = true
