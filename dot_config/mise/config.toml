@@ -45,7 +45,7 @@ aws-cli = { version = "2.34.25", symlink_bins = "true" }
 "aqua:jesseduffield/lazygit" = "0.61.0"
 "aqua:anomalyco/opencode" = "1.4.0"
 "aqua:openai/codex" = "0.118.0"
-"aqua:github/copilot-cli" = "1.0.20"
+"aqua:github/copilot-cli" = "1.0.21"
 "aqua:github/copilot-language-server-release" = "1.465.0"
 "aqua:k1LoW/git-wt" = "0.26.2"
 "aqua:tree-sitter/tree-sitter" = "0.26.8"
