@@ -4,7 +4,7 @@ description: Execute open tasks from specs/{feature}/plan.md using an implement 
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.0"
+  version: "2026.4.1"
 ---
 
 # Implement Skill
@@ -13,70 +13,52 @@ metadata:
 
 Implement using `specs/{feature}/plan.md` as the single progress source.
 
+**Iron Law:** No completion claims without fresh verification evidence. If you haven't run the command in this step, you cannot claim it passes.
+
 ## Input
 
 - Existing `specs/constitution.md` when present
-- `specs/{feature}/spec.md`
-- `specs/{feature}/plan.md`
+- `specs/{feature}/spec.md` and `specs/{feature}/plan.md`
 
 ## Output
 
-- Implemented code
-- `specs/{feature}/plan.md` when implementation findings change execution design
-- `specs/{feature}/spec.md` when implementation findings change requirements
-- Progress updates in `specs/{feature}/plan.md`
+- Implemented code with passing tests
+- Updated `specs/{feature}/plan.md` (and `spec.md` if findings require it)
+- Progress log entries with verification evidence
 
 ## Steps
 
-1. Resolve `language` and shared rules from `specs/constitution.md` when present; otherwise infer from the available workflow documents and the user's own message. Ask only if still unclear, then conduct all subsequent interaction in this language.
-2. Confirm spec/plan approval state.
-   - Require `spec.md` and `plan.md` to be `approved` before implementation begins
-3. Process open tasks from top to bottom.
-   - Set `plan.md` to `in-progress` when implementation work starts
-4. Run an implementation loop for each task.
+1. Resolve `language` and shared rules from `specs/constitution.md` when present; otherwise infer from workflow documents and the user's message. Ask only if still unclear.
+2. Confirm spec/plan approval state — both must be `approved` before work begins.
+3. Process open tasks from top to bottom. Set `plan.md` to `in-progress` when work starts.
+4. **Implementation loop** for each task:
    - Implement the smallest coherent slice
-   - Classify new findings immediately:
-     - `local-only`: stays within approved task intent; continue in the current loop
-     - `plan-impacting`: changes sequencing, technical approach, dependencies, or validation strategy; update `plan.md`, then resume only after it is aligned
-     - `spec-impacting`: changes user-visible behavior, scope, acceptance scenarios, or requirements; stop implementation and return to upstream phases
-   - When external platform, library, API, or framework findings need deeper investigation, delegate to `spec-research` instead of recording them inline
-   - Self-validate (tests, type checks, static checks, security checks)
-   - Fix
-5. Update `plan.md` after each successful task.
-   - Mark the task as complete
-   - Keep `status: in-progress` until all tasks and phase DoD items are complete, then set `status: done`
-   - Append evidence under `## Progress Log` (create the section if missing)
-   - Record progress in this format:
-     - Task: [TASK_ID]
-     - Change: [CHANGE_SUMMARY]
-     - Doc Impact: [local-only | plan-impacting | spec-impacting]
-     - Validation: [PASS_FAIL_AND_EVIDENCE]
-     - Next: [NEXT_TASK]
-6. Escalate only exception cases.
-   - Conflicting requirements
-   - High-risk changes
-   - Validation failures that cannot be resolved in-loop
-7. Run stop-the-line backflow when implementation findings change approved documents.
-   - For `plan-impacting`, update `plan.md`, then resume only after it is realigned with the approved spec
-   - For `spec-impacting`, update `spec.md`, reset `spec.md` status to `draft`, and stop implementation until upstream documents are approved again
-   - Never let implementation continue ahead of approved spec/plan documents after a `plan-impacting` or `spec-impacting` discovery
-8. Confirm DoD completion and place outputs in the repository structure.
-   - Check each phase DoD when that phase's tasks are complete
-   - Set `plan.md` to `done` when all tasks and phase DoD items are complete
-9. If documents are updated, perform final review and keep them within 150 lines.
-   - Remove repetition
-   - Simplify wording
-   - Resolve contradictions
-10. In the completion message, suggest the next step.
-   - If open tasks remain: continue `spec-implement`
-   - If all tasks are complete: final completion report
+   - When testing is required to prove the task is complete, make the test change, verification command, and expected outcome explicit before claiming success
+   - Classify findings: `local-only` (continue), `plan-impacting` (update plan, realign), `spec-impacting` (stop, return upstream)
+   - Delegate deep investigation to `spec-research` when needed
+   - Self-validate (tests, type checks, static analysis, security checks)
+   - Fix until green
+   - Run the actual verification command and read the output before claiming pass; never trust "should pass" or stale results
+5. **Update `plan.md`** after each successful task:
+   - Mark task complete, keep `status: in-progress` until all tasks and phase DoD items finish
+   - Append under `## Progress Log` (create if missing):
+     - Task: [TASK_ID] | Change: [SUMMARY] | Doc Impact: [local-only|plan-impacting|spec-impacting]
+     - Validation: [PASS/FAIL + evidence] | Next: [NEXT_TASK]
+6. Escalate exception cases: conflicting requirements, high-risk changes, unresolvable validation failures.
+7. **Stop-the-line backflow** when findings change approved documents:
+   - `plan-impacting`: update `plan.md`, realign before resuming
+   - `spec-impacting`: update `spec.md`, reset to `draft`, stop until re-approved
+8. Confirm DoD completion per phase. Set `plan.md` to `done` when all tasks and DoD items pass.
+9. If documents are updated, review and keep within 150 lines.
+10. Suggest next step: continue `spec-implement` or final completion report.
 
 ## Success Criteria
 
-- `plan.md` progress matches actual implementation state.
-- Findings that affect the plan or spec trigger document realignment before implementation continues.
-- Phase DoD items are satisfied.
-- Non-exception issues are resolved inside the self-validation loop.
+- `plan.md` progress matches actual implementation state
+- Every task has fresh verification evidence (not stale or assumed)
+- Findings that affect plan/spec trigger document realignment before continuing
+- Phase DoD items are satisfied
+- Non-exception issues resolved inside the self-validation loop
 
 ## Completion Guidance
 

@@ -4,12 +4,14 @@ description: Investigate a specific topic and record findings in specs/{feature}
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.0"
+  version: "2026.4.1"
 ---
 
 # Research Skill
 
 ## Purpose
+
+**Core principle:** Evidence before decisions. No recommendation without tested findings.
 
 Investigate a focused topic and produce `specs/{feature}/research/{topic}.md` with findings, a decision, and impact assessment.
 This skill can be invoked independently or from any other skill when deeper investigation is needed.
@@ -38,13 +40,14 @@ This skill can be invoked independently or from any other skill when deeper inve
 3. Gather information.
    - Read existing project context (`spec.md`, `plan.md`, other `research/*.md`)
    - Investigate external sources: documentation, APIs, library comparisons, platform constraints
-   - Run a proof of concept when hands-on validation is needed to answer the question
+   - Run a proof of concept when hands-on validation is needed — don't trust documentation alone for critical decisions
+   - Form a hypothesis, test it minimally, then record what you found. One variable at a time.
 4. Create the research file from `references/research-template.md`.
    - Research Question: one clear question the research answers
    - Context: feature, topic, and scope of investigation
    - Sources: all references consulted
    - Findings: factual observations with evidence
-   - Decision: selected option with rationale and alternatives considered
+   - Decision: selected option with rationale AND alternatives considered — a decision without rejected alternatives is not a real decision
    - Impact: assessed effect on spec, plan, and tasks
    - Follow-ups: remaining open items, if any
 5. Assess impact on existing documents.
