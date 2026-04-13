@@ -1,7 +1,5 @@
 "color
 syntax on
-set termguicolors
-colorscheme catppuccin
 
 "essential
 if &compatible
