@@ -5,7 +5,7 @@ compatibility: Requires git and cxg.
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.2"
+  version: "2026.4.4"
 ---
 
 # cxg
@@ -16,21 +16,18 @@ Route all commit messages through `cxg`. Never bypass it.
 
 1. If unsure of commit scope, run `git diff --cached --stat`
 2. Write subject + action lines you can support
-3. Commit:
+3. Use `cxg commit` to lint the message and run `git commit` in one step:
 
 ```sh
-cxg lint --fix \
-  -m 'type(scope): subject' \
-  -m 'action-type(scope): description' \
-  | git commit -F -
+cxg commit -m 'type(scope): subject' -m 'action-type(scope): description'
 ```
 
-If validation fails, fix the message and rerun.
+If linting fails, fix the message and rerun.
 
 ## Commit Format
 
 ```text
-type(scope): subject line
+type(scope): subject
 
 action-type(scope): description
 ```
@@ -54,15 +51,11 @@ Scope is a human-readable concept label (e.g. `auth`, `payment-flow`, `session-s
 
 ## Options
 
+- Most non-interactive `git commit` flags work the same way on `cxg commit`.
+- Common cases: `--all`, `--amend`, `--allow-empty`, `--signoff`, `--author`, `--date`, `--trailer`.
+
 ```sh
-# trailer
-cxg lint --fix -m '...' --trailer 'Co-authored-by: Alice <alice@example.com>' | git commit -F -
-
-# JSON errors
-cxg lint --json -m 'bad message'
-
-# file (for hooks)
-cxg lint .git/COMMIT_EDITMSG
+cxg commit --all -m 'docs(readme): refresh usage' --trailer 'Co-authored-by: Alice <alice@example.com>'
 ```
 
 ## Examples

@@ -4,7 +4,7 @@ description: Use when a team wants to create or update specs/constitution.md to 
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.0"
+  version: "2026.4.1"
 ---
 
 # Constitution Skill
@@ -39,9 +39,10 @@ Create or update `specs/constitution.md` when the team wants shared rules that s
     - Do not copy concrete coding conventions, framework APIs, directory names, commands, or tool-specific rules into the constitution unless the user explicitly wants to elevate them into permanent governance
     - Even when the user requests elevation, include such a rule only if it is intended to remain valid across features and over time; otherwise keep it in lower-level docs
     - The constitution should govern spec-skills behavior and outputs, not become a general repository policy file by default
+    - Apply YAGNI: if a principle is speculative or addresses a scenario that hasn't occurred, omit it. Constitutions grow stale when they accumulate hypothetical rules.
 5. Add variable project rules only when the user specifies them.
     - Fold them into existing principles when possible
-    - If a rule belongs more naturally in `AGENTS.md`, contribution docs, or feature documents, keep it out of the constitution and preserve that separation
+    - If a rule belongs more naturally in `AGENTS.md`, contribution docs, or feature documents, keep it out of the constitution and preserve that separation of responsibility explicitly
 6. Update frontmatter.
    - Required keys: `language`, `summary`
 7. If updating an existing constitution, verify consistency with existing feature documents.

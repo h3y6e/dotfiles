@@ -4,12 +4,14 @@ description: Create or update specs/{feature}/spec.md from user requirements —
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.0"
+  version: "2026.4.1"
 ---
 
 # Specify Skill
 
 ## Purpose
+
+**Core principle:** Understand before specifying. No spec without exploring the problem space first.
 
 Create or update `specs/{feature}/spec.md` from user requirements.
 Resolve ambiguity within this skill before handing off to downstream phases.
@@ -30,21 +32,16 @@ Resolve ambiguity within this skill before handing off to downstream phases.
 2. Decide the feature slug and target `specs/{feature}/`.
 3. Create the spec from `references/spec-template.md`.
    - Keep the spec focused on user needs, behavior, business rules, and constraints
+   - Design for isolation and clarity — break the system into units that each have one clear purpose, communicate through well-defined interfaces, and can be understood and tested independently
+   - YAGNI ruthlessly — remove unnecessary features from all designs
    - Avoid locking in technical design choices unless the user explicitly requires them
    - If optional or secondary capabilities can stand alone, prefer splitting them into separate specs instead of expanding the current one
    - Write acceptance scenarios as natural sentences that still make context, action, and outcome explicit; avoid forcing literal `Given/When/Then` wording when it hurts readability
-4. Run a specification self-review.
-   - Scope
-   - Data
-   - UX
-   - Non-Functional
-   - Integration
-   - Edge
-   - Terminology
-   - Ambiguity
-   - Completion
+4. Run a specification self-review: Scope, Data, UX, Non-Functional, Integration, Edge, Terminology, Ambiguity, Completion.
 5. Ask only high-impact clarification questions.
+   - Prefer multiple choice when possible — easier to answer than open-ended
    - Actively look for ambiguity that would materially change scope, behavior, data, UX, or downstream execution design
+   - If the request describes multiple independent subsystems, stop and surface the decomposition decision immediately — do not spend clarification cycles refining details of a project that first needs to be split into separate specs
    - Resolve high-impact ambiguity before recommending the next phase
    - Delegate low-impact open points to `spec-research` for investigation
 6. Integrate answers directly into the spec.
@@ -53,9 +50,7 @@ Resolve ambiguity within this skill before handing off to downstream phases.
    - Initial `status`: `draft`
    - Set `status: approved` when no unresolved high-impact ambiguity remains and the spec is ready for execution design and tasking
 8. Perform final review and keep the file within 150 lines.
-   - Remove repetition
-   - Simplify wording
-   - Resolve contradictions
+   - Remove repetition, simplify wording, resolve contradictions
 9. In the completion message, suggest the next step.
    - If review-ready: `spec-plan`
    - If open points need investigation: `spec-research`

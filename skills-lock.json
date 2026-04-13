@@ -4,7 +4,7 @@
     "cxg": {
       "source": "h3y6e/cxg",
       "sourceType": "github",
-      "computedHash": "049b8c2c875b67231c6eb171fdd4042ae284fa79ab035487daaf47ad2b96a3e9",
+      "computedHash": "cd4c956873854b481b6ef2e0717081c6b88d64d11bd093309a371fe4191fd817",
       "dest": "dot_agents/exact_skills"
     },
     "dispatching-parallel-agents": {
@@ -28,31 +28,31 @@
     "spec-constitution": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "bbae54f38fa05d2c7828530adc2d3f45aa34a1ed7fa0dfd4b0e558c4ce9c7956",
+      "computedHash": "38a7eac4463043b9b13a1f51100b88ee816ea8a0a7fbe88273915ba139cd60db",
       "dest": "dot_agents/exact_skills"
     },
     "spec-implement": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "04a0f44982422a924279bd4788b62ef92b186f6a23f3ff3f6787bde22dce7507",
+      "computedHash": "60c899ee3e1f230cab1af35f43e02b280b3da961e0985f7cdb11e46ec61141ba",
       "dest": "dot_agents/exact_skills"
     },
     "spec-plan": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "ac26054f1d15d3e7a7a9e6e8e8ff7fe071f4ef5c4b181373d3782d8387335839",
+      "computedHash": "7c3e7afe5163d50bbf17cfd9a6dde6607866d7692b3aac0754b4c37def5984e4",
       "dest": "dot_agents/exact_skills"
     },
     "spec-research": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "f8f5e80e7bbf3ef55a23811ed1f4aab822a428ca7da5b584b357c3dd0af607f9",
+      "computedHash": "b24247a5e45d7904cb3d72ad95d74e41337df1ec2a5332f530e8d1cec8b8a73b",
       "dest": "dot_agents/exact_skills"
     },
     "spec-specify": {
       "source": "h3y6e/spec-skills",
       "sourceType": "github",
-      "computedHash": "d603bdcac55efba6fff9f18c96c98b34e640a9f041e3c573b2e59e387eab3cae",
+      "computedHash": "4c679e4e7a972ddd095618708d3c47ad3bc45b01ed52e130d019659f3ce98377",
       "dest": "dot_agents/exact_skills"
     },
     "systematic-debugging": {
