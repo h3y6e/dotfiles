@@ -1,0 +1,12 @@
+{
+  "diagnostics": {
+    "globals": ["vim", "wezterm"]
+  },
+  "workspace": {
+    "checkThirdParty": false,
+    "library": [
+      "${3rd}/luv/library",
+      "/opt/homebrew/opt/neovim/share/nvim/runtime/lua"
+    ]
+  }
+}

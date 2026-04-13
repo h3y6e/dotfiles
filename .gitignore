@@ -115,6 +115,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-### Neovim ###
-dot_config/nvim/lazy-lock.json
