@@ -1,10 +1,18 @@
+local is_dark = vim.o.background == "dark"
+
 return {
   {
     "catppuccin/nvim",
     opts = {
-      transparent_background = true,
+      auto_integrations = true,
+      background = {
+        light = "latte",
+        dark = "frappe",
+      },
+      transparent_background = is_dark,
       float = {
-        transparent = true,
+        transparent = is_dark,
+        solid = true,
       },
       custom_highlights = function(colors)
         return {
@@ -16,7 +24,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "catppuccin-nvim",
     },
   },
   {
