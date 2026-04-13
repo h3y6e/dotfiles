@@ -15,6 +15,8 @@ web_search = "live"
 suppress_unstable_features_warning = true
 personality = "pragmatic"
 service_tier = "fast"
+plan_mode_reasoning_effort = "xhigh"
+approvals_reviewer = "guardian_subagent"
 
 [features]
 apply_patch_freeform = true
@@ -48,6 +50,18 @@ url = "https://mcp.context7.com/mcp"
 
 [mcp_servers.gh_grep]
 url = "https://mcp.grep.app"
+
+{{ if .work -}}
+[otel]
+environment = "prod"
+
+[otel.metrics_exporter.otlp-http]
+endpoint = "{{ onepasswordRead "op://env/ai-agent-stats/endpoint" }}/v1/metrics"
+protocol = "binary"
+
+[otel.metrics_exporter.otlp-http.headers]
+Authorization = "Bearer {{ onepasswordRead "op://env/ai-agent-stats/token" }}"
+{{- end }}
 
 {{- if lookPath "ghq" }}
 {{- range (output "ghq" "list" "-p" | splitList "\n") }}
