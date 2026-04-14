@@ -94,6 +94,8 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-opus-4.6",
+      "effort": "high",
+      "enable_thinking": true,
     },
   },
   "lsp": {
