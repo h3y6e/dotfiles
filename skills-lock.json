@@ -4,7 +4,7 @@
     "cxg": {
       "source": "h3y6e/cxg",
       "sourceType": "github",
-      "computedHash": "cd4c956873854b481b6ef2e0717081c6b88d64d11bd093309a371fe4191fd817",
+      "computedHash": "aab6502dde612493e9fbcdfcfcafa57c1105c094de0b415b0a458563603e017a",
       "dest": "dot_agents/exact_skills"
     },
     "dispatching-parallel-agents": {
