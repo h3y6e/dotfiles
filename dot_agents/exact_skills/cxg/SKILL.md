@@ -16,10 +16,10 @@ Route all commit messages through `cxg`. Never bypass it.
 
 1. If unsure of commit scope, run `git diff --cached --stat`
 2. Write subject + action lines you can support
-3. Use `cxg commit` to lint the message and run `git commit` in one step:
+3. Lint with `cxg lint`, then pipe into `git commit`:
 
 ```sh
-cxg commit -m 'type(scope): subject' -m 'action-type(scope): description'
+cxg lint -m 'type(scope): subject' -m 'action-type(scope): description' | git commit -F -
 ```
 
 If linting fails, fix the message and rerun.
@@ -51,11 +51,12 @@ Scope is a human-readable concept label (e.g. `auth`, `payment-flow`, `session-s
 
 ## Options
 
-- Most non-interactive `git commit` flags work the same way on `cxg commit`.
-- Common cases: `--all`, `--amend`, `--allow-empty`, `--signoff`, `--author`, `--date`, `--trailer`.
+- `--fix`: normalize the message before validation (removes trailing periods, blank-line issues, etc.)
+- `--json`: output machine-readable JSON with `valid`, `message`, and `errors`
+- `--trailer`: append a trailer to the message (repeatable)
 
 ```sh
-cxg commit --all -m 'docs(readme): refresh usage' --trailer 'Co-authored-by: Alice <alice@example.com>'
+cxg lint --fix -m 'docs(readme): refresh usage' --trailer 'Co-authored-by: Alice <alice@example.com>' | git commit -F -
 ```
 
 ## Examples
