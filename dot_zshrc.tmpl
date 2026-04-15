@@ -1,4 +1,8 @@
 # vim: set ft=zsh:
+
+### start profiler
+zmodload zsh/zprof
+
 #==============================================================================
 # Zsh Options
 #==============================================================================
@@ -33,24 +37,8 @@ setopt CORRECT
 #==============================================================================
 # Completions
 #==============================================================================
-# homebrew
-if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  # gcloud
-  if type gcloud &>/dev/null; then
-    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-  fi
-
-  # mysql-client
-  [[ -d "$(brew --prefix)/opt/mysql-client" ]] && export PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
-fi
-
-# flutter
-[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
-
-# zfunc
+# fpath
+[[ -n "$HOMEBREW_PREFIX" ]] && FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 [[ -d $HOME/.zfunc ]] && fpath+=$HOME/.zfunc
 
 # compinit
@@ -60,9 +48,16 @@ if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump)" 
 else
   compinit -C
 fi
-
-# bashcompinit
 autoload -U +X bashcompinit && bashcompinit
+
+# flutter
+[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
+
+# gcloud
+if [[ -n "$HOMEBREW_PREFIX" ]] && type gcloud &>/dev/null; then
+  source "${HOMEBREW_PREFIX}/share/google-cloud-sdk/path.zsh.inc"
+  source "${HOMEBREW_PREFIX}/share/google-cloud-sdk/completion.zsh.inc"
+fi
 
 # git-wt
 type git-wt &>/dev/null && eval "$(git-wt --init zsh)"
@@ -136,6 +131,7 @@ alias bunx='sfw bunx'
 
 # chezmoi
 alias cz='chezmoi'
+
 alias czz='zed $(cz source-path)'
 
 # code
@@ -191,3 +187,6 @@ alias ipen0='ipconfig getifaddr en0'
 # tailscale
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 {{- end }}
+
+### end profiler
+zprof | head -7

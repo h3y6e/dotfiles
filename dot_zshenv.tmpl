@@ -54,6 +54,9 @@ fi
 
 # obsidian cli
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
+# mysql-client
+[[ -d "${HOMEBREW_PREFIX}/opt/mysql-client" ]] && export PATH="${HOMEBREW_PREFIX}/opt/mysql-client/bin:$PATH"
 {{- end }}
 
 # rust
