@@ -7,8 +7,8 @@ model_reasoning_effort = "high"
 model_reasoning_summary = "detailed"
 model_verbosity = "high"
 model_supports_reasoning_summaries = true
-approval_policy = "never"
-sandbox_mode = "danger-full-access"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
 hide_agent_reasoning = false
 file_opener = "none"
 web_search = "live"
@@ -18,21 +18,24 @@ service_tier = "fast"
 plan_mode_reasoning_effort = "xhigh"
 approvals_reviewer = "guardian_subagent"
 
+[sandbox_workspace_write]
+network_access = true
+writable_roots = ["{{ .chezmoi.homeDir }}/ghq"]
+
 [features]
 apply_patch_freeform = true
 child_agents_md = true
-unified_exec = true
-shell_snapshot = true
-apps = true
-personality = true
 undo = true
 codex_git_commit = true
 memories = true
-multi_agent = true
 prevent_idle_sleep = true
-js_repl = true
-voice_transcription = true
 guardian_approval = true
+enable_fanout = true
+multi_agent_v2 = true
+codex_hooks = true
+exec_permission_approvals = true
+request_permissions_tool = true
+realtime_conversation = true
 
 [shell_environment_policy]
 inherit = "all"
