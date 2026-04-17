@@ -1,6 +1,11 @@
 ---
 name: verification-before-completion
 description: Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always
+metadata:
+  github-path: skills/verification-before-completion
+  github-ref: refs/tags/v5.0.7
+  github-repo: https://github.com/obra/superpowers
+  github-tree-sha: ceb2f1f67f4cadb29b32a06e54d3d0be832071f5
 ---
 
 # Verification Before Completion

@@ -1,6 +1,11 @@
 ---
 name: test-driven-development
 description: Use when implementing any feature or bugfix, before writing implementation code
+metadata:
+  github-path: skills/test-driven-development
+  github-ref: refs/tags/v5.0.7
+  github-repo: https://github.com/obra/superpowers
+  github-tree-sha: 98904a7d8e0e04b9bd46220b9b17298f45fe0b72
 ---
 
 # Test-Driven Development (TDD)

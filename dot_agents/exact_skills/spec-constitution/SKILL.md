@@ -4,7 +4,11 @@ description: Use when a team wants to create or update specs/constitution.md to 
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.1"
+  version: 2026.4.1
+  github-path: skills/spec-constitution
+  github-ref: refs/tags/v2026.4.1
+  github-repo: https://github.com/h3y6e/spec-skills
+  github-tree-sha: d4b67028c40e06bf56402e13e341a2aaa002ac3b
 ---
 
 # Constitution Skill

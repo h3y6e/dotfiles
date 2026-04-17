@@ -1,6 +1,11 @@
 ---
 name: writing-skills
 description: Use when creating new skills, editing existing skills, or verifying skills work before deployment
+metadata:
+  github-path: skills/writing-skills
+  github-ref: refs/tags/v5.0.7
+  github-repo: https://github.com/obra/superpowers
+  github-tree-sha: 80e8c7d3be99d55d5d76c9516cc45a1e7f48f281
 ---
 
 # Writing Skills

@@ -4,7 +4,11 @@ description: Execute open tasks from specs/{feature}/plan.md using an implement 
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.1"
+  version: 2026.4.1
+  github-path: skills/spec-implement
+  github-ref: refs/tags/v2026.4.1
+  github-repo: https://github.com/h3y6e/spec-skills
+  github-tree-sha: 32488e7f6cb9f2799f48061c21f2303c6974009d
 ---
 
 # Implement Skill
