@@ -25,11 +25,11 @@ compatibility: Requires git, gh, and git-wt.
 
 ## Commit
 
-- Use English for commit messages if the working directory is a public repo; otherwise, use the language the user is currently using.
+- Use English for commit messages if the repo's visibility is set to public; otherwise, use the language the user is currently using.
 - Use `cxg` skill for commit message format.
 
 ## Pull Request
 
-- Draft the title and body in English if the working directory is a public repo; otherwise, use the language the user is currently using.
+- Draft the title and body in English if the repo's visibility is set to public; otherwise, use the language the user is currently using.
 - PR body structure: `## Summary`, optional `## Background`, `## Changes`, optional `## Impact`.
 - ALWAYS create as draft PR.
