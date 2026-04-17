@@ -19,17 +19,17 @@ compatibility: Requires git, gh, and git-wt.
 - Use `git wt` for all worktree operations. It has no subcommands — any argument is treated as a branch name.
   - `git wt` (no args) → list worktrees
   - `git wt <branch>` → switch/create worktree
-  - `git wt -D <branch>` → delete worktree
+  - `git wt <branch> --copymodified --copyuntracked` → switch/create while copying files
   - `git wt -h` → help
 - Worktree basedir is `../{gitroot}.wt/`, outside the repo.
 
 ## Commit
 
-- Write commit messages in the language the user is currently using unless they explicitly specify otherwise.
+- Use English for commit messages if the working directory is a public repo; otherwise, use the language the user is currently using.
 - Use `cxg` skill for commit message format.
 
 ## Pull Request
 
-- Draft the title and body in the language the user is currently using unless they explicitly specify otherwise.
-- PR body structure: `Summary`, optional `Background`, `Changes`, optional `Impact`.
-- ALWAYS use `gh pr create --web`. The `--web` flag is **mandatory**. Stop there — do not proceed until the user says so.
+- Draft the title and body in English if the working directory is a public repo; otherwise, use the language the user is currently using.
+- PR body structure: `## Summary`, optional `## Background`, `## Changes`, optional `## Impact`.
+- ALWAYS create as draft PR.
