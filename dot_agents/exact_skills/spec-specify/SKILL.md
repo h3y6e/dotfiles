@@ -4,7 +4,11 @@ description: Create or update specs/{feature}/spec.md from user requirements —
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.1"
+  version: 2026.4.1
+  github-path: skills/spec-specify
+  github-ref: refs/tags/v2026.4.1
+  github-repo: https://github.com/h3y6e/spec-skills
+  github-tree-sha: 557041ff3dcafb8e0a8b30904898804053e0002a
 ---
 
 # Specify Skill

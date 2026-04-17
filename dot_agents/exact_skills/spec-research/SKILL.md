@@ -4,7 +4,11 @@ description: Investigate a specific topic and record findings in specs/{feature}
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.1"
+  version: 2026.4.1
+  github-path: skills/spec-research
+  github-ref: refs/tags/v2026.4.1
+  github-repo: https://github.com/h3y6e/spec-skills
+  github-tree-sha: 9091f463a6052eed4f9fb7ed281d2812ecca3864
 ---
 
 # Research Skill

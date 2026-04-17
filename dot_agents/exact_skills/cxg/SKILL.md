@@ -5,7 +5,11 @@ compatibility: Requires git and cxg.
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.4"
+  version: 2026.4.5
+  github-path: skills/cxg
+  github-ref: refs/tags/v2026.4.5
+  github-repo: https://github.com/h3y6e/cxg
+  github-tree-sha: 765fc9d6c1bd6dae9f8e0d6f1e249ee210514ba0
 ---
 
 # cxg

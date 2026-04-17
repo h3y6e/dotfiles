@@ -1,6 +1,11 @@
 ---
 name: receiving-code-review
 description: Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation
+metadata:
+  github-path: skills/receiving-code-review
+  github-ref: refs/tags/v5.0.7
+  github-repo: https://github.com/obra/superpowers
+  github-tree-sha: 7750c56fddb8b2f1cbdb1550a6e3e40d2eeac5f1
 ---
 
 # Code Review Reception

@@ -4,7 +4,11 @@ description: Create or update specs/{feature}/plan.md by turning an approved spe
 license: MIT
 metadata:
   author: h3y6e
-  version: "2026.4.1"
+  version: 2026.4.1
+  github-path: skills/spec-plan
+  github-ref: refs/tags/v2026.4.1
+  github-repo: https://github.com/h3y6e/spec-skills
+  github-tree-sha: 92f7e3e37c346de68487f45441683540ec3a9285
 ---
 
 # Plan Skill
