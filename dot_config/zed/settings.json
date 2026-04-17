@@ -1,4 +1,15 @@
 {
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
+    "codex-acp": {
+      "type": "registry",
+    },
+  },
   "context_servers": {
     "figma": {
       "settings": {},
