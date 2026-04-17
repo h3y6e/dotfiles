@@ -113,9 +113,6 @@ alias ll='ls -lh'
 alias la='ll -A'
 alias sl='ls'
 
-# git
-alias gr='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)'
-
 # ghq
 if type ghq &>/dev/null && type peco &>/dev/null; then
   function g() {
@@ -124,6 +121,9 @@ if type ghq &>/dev/null && type peco &>/dev/null; then
   }
 fi
 
+# git-wt
+alias gw='git wt $(git wt | tail -n +2 | peco | awk "{print \$(NF-1)}")'
+
 # Socket Firewall
 alias npx='sfw npx'
 alias pnpx='sfw pnpx'
@@ -131,7 +131,6 @@ alias bunx='sfw bunx'
 
 # chezmoi
 alias cz='chezmoi'
-
 alias czz='zed $(cz source-path)'
 
 # code
