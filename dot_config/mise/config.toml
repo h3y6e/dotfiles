@@ -50,7 +50,7 @@ aws-cli = { version = "2.34.30", symlink_bins = "true" }
 "aqua:openai/codex" = "0.121.0"
 "aqua:github/copilot-cli" = "1.0.27"
 "aqua:github/copilot-language-server-release" = "1.472.0"
-"aqua:k1LoW/git-wt" = "0.26.2"
+"aqua:k1LoW/git-wt" = "0.27.0"
 "aqua:tree-sitter/tree-sitter" = "0.26.8"
 "aqua:suzuki-shunsuke/pinact" = "3.9.0"
 "npm:npm-check" = "6.0.1"
