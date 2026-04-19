@@ -19,10 +19,6 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
-        with:
-          mise_toml: |
-            [tools]
-            gh = "2.90.0"
       - run: gh skill update --dir dot_agents/exact_skills --all
         env:
           GH_TOKEN: ${{ github.token }}
