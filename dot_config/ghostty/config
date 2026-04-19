@@ -4,7 +4,7 @@ auto-update-channel = stable
 theme = catppuccin-frappe
 background-opacity = 0.9
 bold-is-bright = true
-font-family = "Explex35 Console"
+font-family = "Explex35 Console NF"
 
 # window
 window-padding-x = 2
