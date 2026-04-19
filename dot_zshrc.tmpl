@@ -59,6 +59,9 @@ if [[ -n "$HOMEBREW_PREFIX" ]] && type gcloud &>/dev/null; then
   source "${HOMEBREW_PREFIX}/share/google-cloud-sdk/completion.zsh.inc"
 fi
 
+# gh
+type gh &>/dev/null && eval "$(gh completion -s zsh)"
+
 # git-wt
 type git-wt &>/dev/null && eval "$(git-wt --init zsh)"
 
