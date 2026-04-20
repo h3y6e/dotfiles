@@ -1,16 +1,15 @@
 ---
-name: spec-research
 description: Investigate a specific topic and record findings in specs/{feature}/research/{topic}.md — covering technical options, library comparisons, API constraints, architecture trade-offs, or any open question that needs evidence before a decision can be made. Use this skill whenever someone wants to research a topic independently of spec/plan/implement phases, compare technical alternatives, investigate an API or platform constraint, run a proof of concept and document results, or says "research [topic]". This is a utility skill that can be invoked from any point in the spec-driven workflow or standalone. Don't use for writing specs, creating plans, or implementing code.
 license: MIT
 metadata:
-  author: h3y6e
-  version: 2026.4.1
-  github-path: skills/spec-research
-  github-ref: refs/tags/v2026.4.1
-  github-repo: https://github.com/h3y6e/spec-skills
-  github-tree-sha: 9091f463a6052eed4f9fb7ed281d2812ecca3864
+    author: h3y6e
+    github-path: skills/spec-research
+    github-ref: refs/tags/v2026.4.3
+    github-repo: https://github.com/h3y6e/spec-skills
+    github-tree-sha: b817ef245266af6f239e127080597348e1fc19b6
+    version: 2026.4.3
+name: spec-research
 ---
-
 # Research Skill
 
 ## Purpose

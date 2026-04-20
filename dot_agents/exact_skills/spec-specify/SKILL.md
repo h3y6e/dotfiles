@@ -1,16 +1,15 @@
 ---
-name: spec-specify
 description: Create or update specs/{feature}/spec.md from user requirements — writing user stories, functional requirements, acceptance criteria, and resolving ambiguity through focused questions. Use this skill whenever someone wants to document feature requirements, write a specification, turn ideas or user research into a formal spec, update spec.md, or says "create a spec for [feature]". This is the first required step in the spec-driven workflow and typically follows spec-constitution when a team uses shared constitutional rules. Don't use for execution design, task decomposition, bug fixes, or implementation.
 license: MIT
 metadata:
-  author: h3y6e
-  version: 2026.4.1
-  github-path: skills/spec-specify
-  github-ref: refs/tags/v2026.4.1
-  github-repo: https://github.com/h3y6e/spec-skills
-  github-tree-sha: 557041ff3dcafb8e0a8b30904898804053e0002a
+    author: h3y6e
+    github-path: skills/spec-specify
+    github-ref: refs/tags/v2026.4.3
+    github-repo: https://github.com/h3y6e/spec-skills
+    github-tree-sha: 6c1545bc13fee0e69b0cc7b2f0e94abd68d9df73
+    version: 2026.4.3
+name: spec-specify
 ---
-
 # Specify Skill
 
 ## Purpose

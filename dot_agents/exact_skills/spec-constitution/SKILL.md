@@ -1,16 +1,15 @@
 ---
-name: spec-constitution
 description: Use when a team wants to create or update specs/constitution.md to define durable principles that govern spec-skills runs, especially when starting a new workflow, revising shared governance for the spec-driven phases, or deciding what belongs in constitutional rules versus lower-level docs.
 license: MIT
 metadata:
-  author: h3y6e
-  version: 2026.4.1
-  github-path: skills/spec-constitution
-  github-ref: refs/tags/v2026.4.1
-  github-repo: https://github.com/h3y6e/spec-skills
-  github-tree-sha: d4b67028c40e06bf56402e13e341a2aaa002ac3b
+    author: h3y6e
+    github-path: skills/spec-constitution
+    github-ref: refs/tags/v2026.4.3
+    github-repo: https://github.com/h3y6e/spec-skills
+    github-tree-sha: c7504ac583f7304084c509cc311bfbb4077cf359
+    version: 2026.4.3
+name: spec-constitution
 ---
-
 # Constitution Skill
 
 ## Purpose
