@@ -15,7 +15,7 @@
 
 # Task Management
 
-- Use **taskmd** skill.
+- Use **tracking-tasks** skill.
 - On session start: read tasks relevant to the current work.
 
 # Principles
