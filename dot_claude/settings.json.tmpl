@@ -5,7 +5,7 @@
     "CLAUDE_CODE_USE_VERTEX": "1",
     "CLOUD_ML_REGION": "global",
     "ANTHROPIC_VERTEX_PROJECT_ID": "{{ onepasswordRead "op://env/anthropic-vertex/project-id" }}",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-7@default",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6@default",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6@default",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5@20251001",
     {{- end }}
@@ -80,12 +80,19 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs"
     ],
-    "deny": ["NotebookEdit", "Bash(rm:*)", "Bash(sudo:*)", "Bash(npx:*)"],
-    "additionalDirectories": ["{{ .chezmoi.homeDir }}/ghq"],
-    "defaultMode": "acceptEdits"
+    "deny": [
+      "NotebookEdit", 
+      "Bash(rm:*)", 
+      "Bash(sudo:*)", 
+      "Bash(npx:*)"
+    ],
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": [
+      "{{ .chezmoi.homeDir }}/ghq"
+    ]
   },
-  "language": "ja",
-  "voiceEnabled": true,
   "model": "opusplan",
-  "effortLevel": "high"
+  "language": "ja",
+  "effortLevel": "high",
+  "voiceEnabled": true
 }
