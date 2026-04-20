@@ -1,2 +1,5 @@
 git:
   overrideGpg: true
+  pagers:
+    - pager: delta -s --paging=never
+    - externalDiffCommand: difft --color=always

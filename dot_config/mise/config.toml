@@ -45,6 +45,8 @@ aws-cli = { version = "2.34.31", symlink_bins = "true" }
 "aqua:BurntSushi/ripgrep" = "15.1.0"
 "aqua:cli/cli" = "2.90.0"
 "aqua:x-motemen/ghq" = "1.10.1"
+"aqua:dandavison/delta" = "0.19.2"
+"aqua:Wilfred/difftastic" = "0.68.0"
 "aqua:jesseduffield/lazygit" = "0.61.1"
 "aqua:anomalyco/opencode" = "1.14.17"
 "aqua:openai/codex" = "0.121.0"
