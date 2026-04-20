@@ -1,16 +1,15 @@
 ---
-name: spec-plan
 description: Create or update specs/{feature}/plan.md by turning an approved spec into one execution-ready document with key technical decisions, phased tasks, IDs (T001...), parallel candidates (P), story linkage, TDD-oriented bite-sized steps, and Definition of Done per phase. Use this skill whenever someone wants to translate a spec into concrete implementation work without maintaining a separate execution-design file, create a structured task checklist for a feature, add DoD to task phases, or create/update plan.md. This follows spec-specify and precedes spec-implement in the spec-driven workflow. Don't use for general to-do lists or project management outside the spec workflow.
 license: MIT
 metadata:
-  author: h3y6e
-  version: 2026.4.1
-  github-path: skills/spec-plan
-  github-ref: refs/tags/v2026.4.1
-  github-repo: https://github.com/h3y6e/spec-skills
-  github-tree-sha: 92f7e3e37c346de68487f45441683540ec3a9285
+    author: h3y6e
+    github-path: skills/spec-plan
+    github-ref: refs/tags/v2026.4.3
+    github-repo: https://github.com/h3y6e/spec-skills
+    github-tree-sha: 18ab19dd3d11127151a705ba28bf5f21f7df502d
+    version: 2026.4.3
+name: spec-plan
 ---
-
 # Plan Skill
 
 ## Purpose

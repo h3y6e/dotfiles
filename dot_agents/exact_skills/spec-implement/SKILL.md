@@ -1,16 +1,15 @@
 ---
-name: spec-implement
 description: Execute open tasks from specs/{feature}/plan.md using an implement → self-validate → fix loop, updating plan.md progress after each completed task. Use this skill whenever someone wants to start or continue feature implementation guided by plan.md, run a self-validating coding loop, continue from a specific task ID, or work through phased tasks with built-in quality checks. This is the execution phase after spec-plan in the spec-driven workflow. Don't use for ad-hoc bug fixes, code review, or implementation tasks not defined in plan.md.
 license: MIT
 metadata:
-  author: h3y6e
-  version: 2026.4.1
-  github-path: skills/spec-implement
-  github-ref: refs/tags/v2026.4.1
-  github-repo: https://github.com/h3y6e/spec-skills
-  github-tree-sha: 32488e7f6cb9f2799f48061c21f2303c6974009d
+    author: h3y6e
+    github-path: skills/spec-implement
+    github-ref: refs/tags/v2026.4.3
+    github-repo: https://github.com/h3y6e/spec-skills
+    github-tree-sha: 2920dcb8f81e4e552a6f48f3336c1748dbc82a4b
+    version: 2026.4.3
+name: spec-implement
 ---
-
 # Implement Skill
 
 ## Purpose
