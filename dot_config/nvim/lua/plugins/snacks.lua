@@ -11,6 +11,10 @@ return {
           files = {
             hidden = true,
             ignored = true,
+            preview = require("md-render.snacks").preview(),
+          },
+          grep = {
+            preview = require("md-render.snacks").preview(),
           },
         },
       },
