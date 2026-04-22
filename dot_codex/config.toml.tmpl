@@ -50,7 +50,9 @@ url = "http://127.0.0.1:3845/mcp"
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
+{{- if not .ephemeral }}
 http_headers = { "CONTEXT7_API_KEY" = "{{ onepasswordRead "op://env/context7/api-key" }}" }
+{{- end }}
 
 [mcp_servers.gh_grep]
 url = "https://mcp.grep.app"

@@ -12,18 +12,17 @@
   },
   "context_servers": {
     "figma": {
-      "settings": {},
       "url": "http://127.0.0.1:3845/mcp",
     },
     "context7": {
-      "settings": {},
       "url": "https://mcp.context7.com/mcp",
+      {{- if not .ephemeral }}
       "headers": {
         "CONTEXT7_API_KEY": "{{ onepasswordRead "op://env/context7/api-key" }}",
       },
+      {{- end }}
     },
     "gh_grep": {
-      "settings": {},
       "url": "https://mcp.grep.app",
     },
   },

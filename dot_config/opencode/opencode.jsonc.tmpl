@@ -139,9 +139,11 @@
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
+      {{- if not .ephemeral }}
       "headers": {
         "CONTEXT7_API_KEY": "{{ onepasswordRead "op://env/context7/api-key" }}",
       },
+      {{- end }}
     },
     "gh_grep": {
       "type": "remote",

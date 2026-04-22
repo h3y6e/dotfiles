@@ -12,10 +12,12 @@
   ],
   "amp.mcpServers": {
     "context7": {
-      "url": "https://mcp.context7.com/mcp",
+      "url": "https://mcp.context7.com/mcp"
+      {{- if not .ephemeral }},
       "headers": {
         "CONTEXT7_API_KEY": "{{ onepasswordRead "op://env/context7/api-key" }}"
       }
+      {{- end }}
     }
   }
 }
