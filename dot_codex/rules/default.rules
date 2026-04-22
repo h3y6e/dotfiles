@@ -1,0 +1,17 @@
+prefix_rule(
+    pattern = ["git", "commit"],
+    decision = "allow",
+    justification = "Allow git commit to update repository metadata under .git",
+)
+
+prefix_rule(
+    pattern = ["git", "checkout"],
+    decision = "allow",
+    justification = "Allow git checkout to switch branches and update HEAD and refs under .git",
+)
+
+prefix_rule(
+    pattern = ["git", "switch"],
+    decision = "allow",
+    justification = "Allow git switch to change branches and update repository metadata under .git",
+)
