@@ -62,3 +62,4 @@ aws-cli = { version = "2.34.33", symlink_bins = "true" }
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
 "github:h3y6e/cxg" = "2026.4.5"
 "github:h3y6e/skills" = "2026.4.4"
+"github:endevco/aube" = "1.0.0"
