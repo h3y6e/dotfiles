@@ -53,6 +53,7 @@ conf.font_size = 13.0
 conf.line_height = 1.1
 conf.scrollback_lines = 10000
 conf.use_ime = true
+conf.enable_kitty_keyboard = true
 conf.audible_bell = "Disabled"
 conf.visual_bell = {
   fade_in_duration_ms = 75,
@@ -89,7 +90,6 @@ conf.keys = {
   { key = "]",     mods = "SUPER", action = act({ ActivatePaneDirection = "Next" }) },
   { key = "/",     mods = "SUPER", action = act.Search("CurrentSelectionOrEmptyString") },
   { key = "Enter", mods = "SUPER", action = act.ToggleFullScreen },
-  { key = "Enter", mods = "SHIFT", action = act({ SendString = "\x1b\r" }) },
 }
 
 return conf
