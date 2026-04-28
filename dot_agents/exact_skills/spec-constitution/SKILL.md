@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/spec-constitution
-    github-ref: refs/tags/v2026.4.3
+    github-ref: refs/tags/v2026.4.4
     github-repo: https://github.com/h3y6e/spec-skills
-    github-tree-sha: c7504ac583f7304084c509cc311bfbb4077cf359
-    version: 2026.4.3
+    github-tree-sha: 270ef36d461ebbff995df54fc1072f9c990e4875
+    version: 2026.4.4
 name: spec-constitution
 ---
 # Constitution Skill

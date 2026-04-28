@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/spec-implement
-    github-ref: refs/tags/v2026.4.3
+    github-ref: refs/tags/v2026.4.4
     github-repo: https://github.com/h3y6e/spec-skills
-    github-tree-sha: 2920dcb8f81e4e552a6f48f3336c1748dbc82a4b
-    version: 2026.4.3
+    github-tree-sha: 7ea207cd0786a64648596cf44c7e9d3605cb19bb
+    version: 2026.4.4
 name: spec-implement
 ---
 # Implement Skill
