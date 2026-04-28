@@ -12,7 +12,7 @@ Place this file at `specs/{feature}/plan.md`.
 ## Execution Context
 
 - Runtime/Platform: [RUNTIME_OR_PLATFORM]
-- Dependencies: [PRIMARY_DEPENDENCIES]
+- Implementation Dependencies: [PRIMARY_IMPLEMENTATION_DEPENDENCIES]
 - Constraints: [EXECUTION_CONSTRAINTS]
 - Validation: [VALIDATION_STRATEGY]
 

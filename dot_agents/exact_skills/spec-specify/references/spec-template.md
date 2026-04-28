@@ -1,11 +1,13 @@
 ---
 status: draft
 summary: Requirements and scenarios for [FEATURE_NAME]
+dependencies: []
 ---
 
 Place this file at `specs/{feature}/spec.md`.
 
 <!-- Keep this document user-facing. Execution design and delivery sequencing belong in `plan.md`. -->
+<!-- `dependencies` lists prerequisite spec paths such as `specs/auth/spec.md`; keep `[]` when none. -->
 
 ## Context and Goals
 

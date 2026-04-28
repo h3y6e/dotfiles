@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/spec-research
-    github-ref: refs/tags/v2026.4.3
+    github-ref: refs/tags/v2026.4.4
     github-repo: https://github.com/h3y6e/spec-skills
-    github-tree-sha: b817ef245266af6f239e127080597348e1fc19b6
-    version: 2026.4.3
+    github-tree-sha: ddaecfb1c68474af0d7f0b82a31eb6bb0a69593e
+    version: 2026.4.4
 name: spec-research
 ---
 # Research Skill
@@ -55,7 +55,8 @@ This skill can be invoked independently or from any other skill when deeper inve
    - Follow-ups: remaining open items, if any
 5. Assess impact on existing documents.
    - If findings change requirements or user-visible behavior: flag spec impact
-   - If findings change execution design, dependencies, or validation strategy: flag plan impact
+   - If findings change spec-to-spec prerequisites: update `spec.md` frontmatter `dependencies` and flag spec impact
+   - If findings change execution design, task dependencies, or validation strategy: flag plan impact
    - If no upstream documents exist yet, record impact as guidance for future phases
 6. Apply backflow when existing approved documents are affected.
    - Update `spec.md` and reset its status to `draft` when findings are spec-impacting
