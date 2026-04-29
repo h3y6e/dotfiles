@@ -43,7 +43,7 @@ aws-cli = { version = "2.34.37", symlink_bins = "true" }
 "aqua:sharkdp/bat" = "0.26.1"
 "aqua:peco/peco" = "0.6.0"
 "aqua:BurntSushi/ripgrep" = "15.1.0"
-"aqua:cli/cli" = "2.91.0"
+"aqua:cli/cli" = "2.92.0"
 "aqua:x-motemen/ghq" = "1.10.1"
 "aqua:dandavison/delta" = "0.19.2"
 "aqua:Wilfred/difftastic" = "0.68.0"
