@@ -65,6 +65,9 @@ type gh &>/dev/null && eval "$(gh completion -s zsh)"
 # git-wt
 type git-wt &>/dev/null && eval "$(git-wt --init zsh)"
 
+# jj
+type jj &>/dev/null && source <(COMPLETE=zsh jj)
+
 #==============================================================================
 # Plugins
 #==============================================================================
