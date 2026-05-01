@@ -50,7 +50,7 @@ aws-cli = { version = "2.34.38", symlink_bins = "true" }
 "aqua:jesseduffield/lazygit" = "0.61.1"
 "aqua:anomalyco/opencode" = "1.14.28"
 "aqua:openai/codex" = "0.124.0"
-"aqua:github/copilot-cli" = "1.0.37"
+"aqua:github/copilot-cli" = "1.0.39"
 "aqua:anthropics/claude-code" = "2.1.121"
 "aqua:github/copilot-language-server-release" = "1.480.0"
 "aqua:jj-vcs/jj" = "0.40.0"
