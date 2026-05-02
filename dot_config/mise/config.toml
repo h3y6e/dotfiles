@@ -56,7 +56,7 @@ aws-cli = { version = "2.34.38", symlink_bins = "true" }
 "aqua:jj-vcs/jj" = "0.40.0"
 "aqua:k1LoW/git-wt" = "0.27.0"
 "aqua:tree-sitter/tree-sitter" = "0.26.8"
-"aqua:suzuki-shunsuke/pinact" = "3.9.0"
+"aqua:suzuki-shunsuke/pinact" = "3.9.2"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
 "npm:@mermaid-js/mermaid-cli" = "11.12.0"
