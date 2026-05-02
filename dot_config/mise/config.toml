@@ -59,7 +59,7 @@ aws-cli = { version = "2.34.38", symlink_bins = "true" }
 "aqua:suzuki-shunsuke/pinact" = "3.9.2"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.4"
-"npm:@mermaid-js/mermaid-cli" = "11.12.0"
+"npm:@mermaid-js/mermaid-cli" = "11.14.0"
 "pipx:pfnet/plamo-translate-cli" = { version = "1.0.5", uvx_args = "-p 3.12" }
 "github:h3y6e/cxg" = "2026.4.5"
 "github:h3y6e/skills" = "2026.4.4"
