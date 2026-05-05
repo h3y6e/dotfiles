@@ -1,16 +1,15 @@
 ---
-name: requesting-code-review
 description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
 metadata:
-  github-path: skills/requesting-code-review
-  github-ref: refs/tags/v5.0.7
-  github-repo: https://github.com/obra/superpowers
-  github-tree-sha: ed265b1a03114cc400d5524afc5c961a4aa9ea8b
+    github-path: skills/requesting-code-review
+    github-ref: refs/tags/v5.1.0
+    github-repo: https://github.com/obra/superpowers
+    github-tree-sha: ff419ec159bdf5ff2f2d83c7e544c586bcde69bb
+name: requesting-code-review
 ---
-
 # Requesting Code Review
 
-Dispatch superpowers:code-reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history. This keeps the reviewer focused on the work product, not your thought process, and preserves your own context for continued work.
+Dispatch a code reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history. This keeps the reviewer focused on the work product, not your thought process, and preserves your own context for continued work.
 
 **Core principle:** Review early, review often.
 
@@ -34,16 +33,15 @@ BASE_SHA=$(git rev-parse HEAD~1)  # or origin/main
 HEAD_SHA=$(git rev-parse HEAD)
 ```
 
-**2. Dispatch code-reviewer subagent:**
+**2. Dispatch code reviewer subagent:**
 
-Use Task tool with superpowers:code-reviewer type, fill template at `code-reviewer.md`
+Use Task tool with `general-purpose` type, fill template at `code-reviewer.md`
 
 **Placeholders:**
-- `{WHAT_WAS_IMPLEMENTED}` - What you just built
+- `{DESCRIPTION}` - Brief summary of what you built
 - `{PLAN_OR_REQUIREMENTS}` - What it should do
 - `{BASE_SHA}` - Starting commit
 - `{HEAD_SHA}` - Ending commit
-- `{DESCRIPTION}` - Brief summary
 
 **3. Act on feedback:**
 - Fix Critical issues immediately
@@ -61,12 +59,11 @@ You: Let me request code review before proceeding.
 BASE_SHA=$(git log --oneline | grep "Task 1" | head -1 | awk '{print $1}')
 HEAD_SHA=$(git rev-parse HEAD)
 
-[Dispatch superpowers:code-reviewer subagent]
-  WHAT_WAS_IMPLEMENTED: Verification and repair functions for conversation index
+[Dispatch code reviewer subagent]
+  DESCRIPTION: Added verifyIndex() and repairIndex() with 4 issue types
   PLAN_OR_REQUIREMENTS: Task 2 from docs/superpowers/plans/deployment-plan.md
   BASE_SHA: a7981ec
   HEAD_SHA: 3df7661
-  DESCRIPTION: Added verifyIndex() and repairIndex() with 4 issue types
 
 [Subagent returns]:
   Strengths: Clean architecture, real tests
@@ -87,7 +84,7 @@ You: [Fix progress indicators]
 - Fix before moving to next task
 
 **Executing Plans:**
-- Review after each batch (3 tasks)
+- Review after each task or at natural checkpoints
 - Get feedback, apply, continue
 
 **Ad-Hoc Development:**
