@@ -20,14 +20,11 @@ approvals_reviewer = "guardian_subagent"
 
 [sandbox_workspace_write]
 network_access = true
-writable_roots = ["{{ .chezmoi.homeDir }}/ghq"]
 
 [features]
 apply_patch_freeform = true
 child_agents_md = true
-undo = true
 codex_git_commit = true
-memories = true
 prevent_idle_sleep = true
 guardian_approval = true
 enable_fanout = true
@@ -36,14 +33,11 @@ codex_hooks = true
 exec_permission_approvals = true
 request_permissions_tool = true
 realtime_conversation = true
+goals = true
 
 [shell_environment_policy]
 inherit = "all"
 ignore_default_excludes = true
-
-[agents]
-max_threads = 6
-max_depth = 1
 
 [mcp_servers.figma]
 url = "http://127.0.0.1:3845/mcp"
