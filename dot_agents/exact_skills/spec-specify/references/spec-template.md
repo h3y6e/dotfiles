@@ -14,6 +14,11 @@ Place this file at `specs/{feature}/spec.md`.
 - Context: [BACKGROUND]
 - Goal: [GOAL]
 
+## Approach
+
+- Selected direction: [SELECTED_DIRECTION]
+- Alternatives considered: [ALTERNATIVES_OR_NONE]
+
 ## User Scenarios and Testing
 
 ### User Story [N] - [STORY_TITLE] (Priority: P1|P2|P3)

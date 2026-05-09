@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/spec-implement
-    github-ref: refs/tags/v2026.4.4
+    github-ref: refs/tags/v2026.5.0
     github-repo: https://github.com/h3y6e/spec-skills
-    github-tree-sha: 7ea207cd0786a64648596cf44c7e9d3605cb19bb
-    version: 2026.4.4
+    github-tree-sha: 426c63b3a32c6de00780e848f02b5c11ad03f800
+    version: 2026.5.0
 name: spec-implement
 ---
 # Implement Skill
@@ -32,20 +32,23 @@ Implement using `specs/{feature}/plan.md` as the single progress source.
 ## Steps
 
 1. Resolve `language` and shared rules from `specs/constitution.md` when present; otherwise infer from workflow documents and the user's message. Ask only if still unclear.
-2. Confirm spec/plan approval state — both must be `approved` before work begins.
+2. Confirm spec/plan approval state — both must be `approved` before work begins — and critically review the plan for gaps, contradictions, or unclear verification before implementing.
 3. Process open tasks from top to bottom. Set `plan.md` to `in-progress` when work starts.
 4. **Implementation loop** for each task:
    - Implement the smallest coherent slice
    - When testing is required to prove the task is complete, make the test change, verification command, and expected outcome explicit before claiming success
+   - For bug fixes, test failures, or unexpected behavior, reproduce and identify root cause before changing implementation; create the failing check first when practical
    - Classify findings: `local-only` (continue), `plan-impacting` (update plan, realign), `spec-impacting` (stop, return upstream)
    - Delegate deep investigation to `spec-research` when needed
    - Self-validate (tests, type checks, static analysis, security checks)
    - Fix until green
    - Run the actual verification command and read the output before claiming pass; never trust "should pass" or stale results
 5. **Update `plan.md`** after each successful task:
+   - Map the task or phase DoD to the fresh evidence that proves it; passing commands are not enough if they do not cover the requirement
    - Mark task complete, keep `status: in-progress` until all tasks and phase DoD items finish
    - Append under `## Progress Log` (create if missing):
      - Task: [TASK_ID] | Change: [SUMMARY] | Doc Impact: [local-only|plan-impacting|spec-impacting]
+     - Coverage: [US/FR/DoD proven]
      - Validation: [PASS/FAIL + evidence] | Next: [NEXT_TASK]
 6. Escalate exception cases: conflicting requirements, high-risk changes, unresolvable validation failures.
 7. **Stop-the-line backflow** when findings change approved documents:
@@ -59,6 +62,7 @@ Implement using `specs/{feature}/plan.md` as the single progress source.
 
 - `plan.md` progress matches actual implementation state
 - Every task has fresh verification evidence (not stale or assumed)
+- Completion is backed by requirement-to-evidence mapping, not proxy green status alone
 - Findings that affect plan/spec trigger document realignment before continuing
 - Phase DoD items are satisfied
 - Non-exception issues resolved inside the self-validation loop
