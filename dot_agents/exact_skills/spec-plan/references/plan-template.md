@@ -20,6 +20,10 @@ Place this file at `specs/{feature}/plan.md`.
 
 - [DECISION]
 
+## Requirement Coverage
+
+- [US_OR_FR_OR_SC_ID]: [TASK_IDS_OR_PHASE_DOD]
+
 ## Format
 
 - `- [ ] Txxx (P) [USn] [DESCRIPTION] ([PATH])`
@@ -75,6 +79,7 @@ Place this file at `specs/{feature}/plan.md`.
 - Task: [TASK_ID]
   Change: [CHANGE_SUMMARY]
   Doc Impact: [local-only | plan-impacting | spec-impacting]
+  Coverage: [US/FR/DoD proven]
   Validation: [PASS_FAIL_AND_EVIDENCE]
   Next: [NEXT_TASK]
 

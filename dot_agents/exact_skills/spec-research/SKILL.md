@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/spec-research
-    github-ref: refs/tags/v2026.4.4
+    github-ref: refs/tags/v2026.5.0
     github-repo: https://github.com/h3y6e/spec-skills
-    github-tree-sha: ddaecfb1c68474af0d7f0b82a31eb6bb0a69593e
-    version: 2026.4.4
+    github-tree-sha: 6e83e0a0efd79cab7cef663647a694fc6db5f0d3
+    version: 2026.5.0
 name: spec-research
 ---
 # Research Skill
@@ -44,6 +44,8 @@ This skill can be invoked independently or from any other skill when deeper inve
    - Read existing project context (`spec.md`, `plan.md`, other `research/*.md`)
    - Investigate external sources: documentation, APIs, library comparisons, platform constraints
    - Run a proof of concept when hands-on validation is needed — don't trust documentation alone for critical decisions
+   - Compare against working examples or reference implementations when a pattern already exists
+   - For failures or unexpected behavior, reproduce the symptom and identify root cause before recommending fixes
    - Form a hypothesis, test it minimally, then record what you found. One variable at a time.
 4. Create the research file from `references/research-template.md`.
    - Research Question: one clear question the research answers

@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/spec-plan
-    github-ref: refs/tags/v2026.4.4
+    github-ref: refs/tags/v2026.5.0
     github-repo: https://github.com/h3y6e/spec-skills
-    github-tree-sha: 4b0d15da0b86a58377378807557bd9612b20025b
-    version: 2026.4.4
+    github-tree-sha: 82b5cb7dbe5384b0e071d0707bfd8b7552a4b7ba
+    version: 2026.5.0
 name: spec-plan
 ---
 # Plan Skill
@@ -38,6 +38,7 @@ Create or update `specs/{feature}/plan.md` as the execution source of truth, inc
    - Summary
    - Execution Context
    - Key Decisions
+   - Requirement Coverage
    - Phases: Setup, Foundational, User Story (P1, P2, ...), Polish
    - When uncertainty could change the spec or plan structure, delegate to `spec-research` instead of investigating inline
 4. Map out the file structure before defining tasks.
@@ -55,32 +56,39 @@ Create or update `specs/{feature}/plan.md` as the execution source of truth, inc
    - When testing is required, make the expected test change, verification command, and expected outcome explicit instead of assuming the implementer will fill them in
    - Every task must contain the concrete content needed to execute it; do not use placeholders such as "TBD", "TODO", "implement later", "fill in details", or references like "Similar to Task N"
    - Do not defer critical details behind vague instructions such as "Add appropriate error handling" or "Write tests for the above"; spell out the required work directly
-7. Add `DoD` under each phase.
+7. Add a requirement coverage map.
+   - Map each user story, functional requirement, and success criterion to task IDs or phase DoD
+   - If a requirement has no task or DoD coverage, add the missing task or run backflow
+8. Add `DoD` under each phase.
    - Include checks for testing, observability, and rollback readiness
    - Write DoD as proof that the phase itself is complete
-8. Express execution dependencies through phase order and task descriptions.
+9. Express execution dependencies through phase order and task descriptions.
    - Place high-uncertainty discovery work before irreversible implementation tasks
    - Preserve spec-to-spec prerequisites in `spec.md` frontmatter `dependencies`
-9. Run backflow if requirement gaps or contradictions are discovered.
+10. Run backflow if requirement gaps or contradictions are discovered.
     - Update `spec.md`
     - Reset `spec.md` status to `draft`
-10. Update frontmatter.
+11. Update frontmatter.
     - Required keys: `status`, `summary`
     - Initial `status`: `draft`
     - Set `status: approved` when the plan is ready for implementation
-11. Perform final review and keep the file within 150 lines.
+12. Perform final review and keep the file within 150 lines.
+    - Verify every story, requirement, and success criterion has task or DoD coverage
+    - Search for placeholders and vague work instructions
+    - Check that paths, task IDs, commands, and expected outputs are internally consistent
     - Remove repetition
     - Simplify wording
     - Resolve contradictions
-12. In the completion message, suggest the next step.
-     - After approval: `spec-implement`
-     - If requirement changes are needed: `spec-specify`
-     - If technical investigation is needed: `spec-research`
+13. In the completion message, suggest the next step.
+    - After approval: `spec-implement`
+    - If requirement changes are needed: `spec-specify`
+    - If technical investigation is needed: `spec-research`
 
 ## Success Criteria
 
 - The plan combines execution design and delivery sequencing without requiring another execution document.
 - The plan supports independent delivery by story.
+- Every story, requirement, and success criterion has explicit task or DoD coverage.
 - Each phase has a clear DoD.
 - `(P)` marks valid parallel work.
 - Every task contains concrete code, commands, and expected output — no placeholders.

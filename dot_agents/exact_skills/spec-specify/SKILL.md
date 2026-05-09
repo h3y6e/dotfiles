@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/spec-specify
-    github-ref: refs/tags/v2026.4.4
+    github-ref: refs/tags/v2026.5.0
     github-repo: https://github.com/h3y6e/spec-skills
-    github-tree-sha: e62fc381eea8bd80233889ddb3ebd0ab9b0d0d5e
-    version: 2026.4.4
+    github-tree-sha: ec9e269b861d6765d49a45f69e4c3a653ee92bf6
+    version: 2026.5.0
 name: spec-specify
 ---
 # Specify Skill
@@ -37,12 +37,14 @@ Resolve ambiguity within this skill before handing off to downstream phases.
    - Keep the spec focused on user needs, behavior, business rules, and constraints
    - Design for isolation and clarity — break the system into units that each have one clear purpose, communicate through well-defined interfaces, and can be understood and tested independently
    - YAGNI ruthlessly — remove unnecessary features from all designs
+   - When meaningful alternatives exist, compare 2-3 approaches with trade-offs and record the selected direction plus rejected alternatives concisely
    - Avoid locking in technical design choices unless the user explicitly requires them
    - If optional or secondary capabilities can stand alone, prefer splitting them into separate specs instead of expanding the current one
    - Record spec-to-spec prerequisites only in frontmatter `dependencies` as `specs/{feature}/spec.md` paths
    - Write acceptance scenarios as natural sentences that still make context, action, and outcome explicit; avoid forcing literal `Given/When/Then` wording when it hurts readability
 4. Run a specification self-review: Scope, Data, UX, Non-Functional, Integration, Edge, Terminology, Ambiguity, Completion.
 5. Ask only high-impact clarification questions.
+   - Ask one question at a time
    - Prefer multiple choice when possible — easier to answer than open-ended
    - Actively look for ambiguity that would materially change scope, behavior, data, UX, or downstream execution design
    - If the request describes multiple independent subsystems, stop and surface the decomposition decision immediately — do not spend clarification cycles refining details of a project that first needs to be split into separate specs
@@ -66,6 +68,7 @@ Resolve ambiguity within this skill before handing off to downstream phases.
 - Prioritized user stories include at least one P1 story.
 - Acceptance scenarios are testable.
 - Functional requirements align with success criteria.
+- Material alternatives and the selected direction are explicit when they affect scope.
 - No unresolved high-impact ambiguity remains before handoff.
 
 ## Completion Guidance
