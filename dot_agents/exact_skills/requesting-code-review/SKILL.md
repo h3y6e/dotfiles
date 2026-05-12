@@ -1,12 +1,13 @@
 ---
+name: requesting-code-review
 description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
 metadata:
-    github-path: skills/requesting-code-review
-    github-ref: refs/tags/v5.1.0
-    github-repo: https://github.com/obra/superpowers
-    github-tree-sha: ff419ec159bdf5ff2f2d83c7e544c586bcde69bb
-name: requesting-code-review
+  github-path: skills/requesting-code-review
+  github-ref: refs/tags/v5.1.0
+  github-repo: https://github.com/obra/superpowers
+  github-tree-sha: ff419ec159bdf5ff2f2d83c7e544c586bcde69bb
 ---
+
 # Requesting Code Review
 
 Dispatch a code reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history. This keeps the reviewer focused on the work product, not your thought process, and preserves your own context for continued work.
