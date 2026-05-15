@@ -10,28 +10,21 @@ jobs:
     runs-on: ubuntu-slim
     timeout-minutes: 5
     steps:
-      - uses: actions/create-github-app-token@v3
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: app-token
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           token: ${{ steps.app-token.outputs.token }}
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
-      - run: gh skill update --dir dot_agents/exact_skills --all
-        env:
-          GH_TOKEN: ${{ github.token }}
-      - id: pr
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+      - id: skill-update
+        uses: h3y6e/gh-skill-update-action@ef39f27793178d7d72f57cc1fc0071dda87523a8 # v1.0.0
         with:
           token: ${{ steps.app-token.outputs.token }}
-          branch: skills-update
-          commit-message: "fix(skills): update agent skills"
-          title: "fix(skills): update agent skills"
-          body: |
-            Automated skill update by [`gh skill update`](https://cli.github.com/manual/gh_skill_update).
-      - if: steps.pr.outputs.pull-request-number
-        run: gh pr merge ${{ steps.pr.outputs.pull-request-number }} --auto --squash
+          dir: dot_agents/exact_skills
+      - if: steps.skill-update.outputs.pr-number != ''
+        run: gh pr merge "${{ steps.skill-update.outputs.pr-number }}" --auto --squash
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
