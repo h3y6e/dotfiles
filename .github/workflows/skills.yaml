@@ -20,7 +20,7 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
       - id: skill-update
-        uses: h3y6e/gh-skill-update-action@ef39f27793178d7d72f57cc1fc0071dda87523a8 # v1.0.0
+        uses: h3y6e/gh-skill-update-action@3d7a2c86170e04e07f0b06fa489e3c02dd51bd58 # v1.1.0
         with:
           token: ${{ steps.app-token.outputs.token }}
           dir: dot_agents/exact_skills
