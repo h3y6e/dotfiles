@@ -20,8 +20,9 @@
 
 # Language
 
-- Conversation with the user: Japanese. Internal thinking: English.
-- Written artifacts (docs, descriptions, commit messages, issue/PR titles and bodies):
+- Conversation with the user: Japanese.
+- Agent-facing guidance (`AGENTS.md`, Agent Skills): English.
+- Other written artifacts (docs, descriptions, commit messages, issue/PR titles and bodies):
   - Run `gh repo view --json visibility -q '.visibility'` to determine.
   - PUBLIC → English.
   - PRIVATE / INTERNAL / unknown → Japanese.
