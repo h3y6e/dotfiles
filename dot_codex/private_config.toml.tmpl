@@ -72,6 +72,9 @@ protocol = "binary"
 Authorization = "Bearer {{ onepasswordRead "op://env/ai-agent-stats/token" }}"
 {{- end }}
 
+[projects."{{ .chezmoi.workingTree }}"]
+trust_level = "trusted"
+
 {{- if lookPath "ghq" }}
 {{- range (output "ghq" "list" "-p" | splitList "\n") }}
 {{- if ne . "" }}
