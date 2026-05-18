@@ -20,6 +20,11 @@ approvals_reviewer = "guardian_subagent"
 
 [sandbox_workspace_write]
 network_access = true
+writable_roots = [
+  "{{ .chezmoi.homeDir }}/.Trash",
+  "{{ .chezmoi.homeDir }}/.cache",
+  "{{ .chezmoi.homeDir }}/ghq"
+]
 
 [features]
 apply_patch_freeform = true
