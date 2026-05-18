@@ -3,7 +3,7 @@
 - Use `context7` mcp to search docs.
 - Use `gh_grep` mcp to search code from GitHub.
 - Use `trash` instead of `rm`.
-- Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `pinact`, `shfmt`, `shellcheck`, `gh`.
+- Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `pinact`, `ghalint`, `zizmor`, `hadolint`, `shfmt`, `shellcheck`, `gh`.
   - Avoid throwaway Python/Ruby/Node scripts.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
 
@@ -17,6 +17,14 @@
 
 - Use **tracking-tasks** skill.
 - On session start: read tasks relevant to the current work.
+
+# Language
+
+- Conversation with the user: Japanese. Internal thinking: English.
+- Written artifacts (docs, descriptions, commit messages, issue/PR titles and bodies):
+  - Run `gh repo view --json visibility -q '.visibility'` to determine.
+  - PUBLIC → English.
+  - PRIVATE / INTERNAL / unknown → Japanese.
 
 # Principles
 
