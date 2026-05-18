@@ -21,9 +21,11 @@ approvals_reviewer = "guardian_subagent"
 [sandbox_workspace_write]
 network_access = true
 writable_roots = [
-  "{{ .chezmoi.homeDir }}/.Trash",
   "{{ .chezmoi.homeDir }}/.cache",
-  "{{ .chezmoi.homeDir }}/ghq"
+  "{{ .chezmoi.homeDir }}/.local/state",
+  "{{ .chezmoi.homeDir }}/.Trash",
+  "{{ .chezmoi.homeDir }}/ghq",
+  "{{ .chezmoi.homeDir }}/go/pkg/mod",
 ]
 
 [features]
