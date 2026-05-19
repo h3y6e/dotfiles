@@ -1,16 +1,16 @@
 ---
-name: tracking-tasks
-description: Use when starting any multi-step work, resuming an existing task, switching direction mid-task, or wrapping up. Use proactively when a request spans more than one response — open or create a task note before diving in.
-compatibility: Requires Obsidian with CLI enabled and vault "log".
 allowed-tools: Bash(obsidian:*) Bash(ghq get log) Bash(rg:*) Read Edit Write
+compatibility: Requires Obsidian with CLI enabled and vault "log".
+description: Use when starting any multi-step work, resuming an existing task, switching direction mid-task, or wrapping up. Use proactively when a request spans more than one response — open or create a task note before diving in.
 license: MIT
 metadata:
-  author: h3y6e
-  version: 2026.5.1
-  github-path: skills/tracking-tasks
-  github-ref: refs/tags/v2026.5.1
-  github-repo: https://github.com/h3y6e/agent-skills
-  github-tree-sha: af2f4f0079fc6bce9cc7db37467b0169f7875d6f
+    author: h3y6e
+    github-path: skills/tracking-tasks
+    github-ref: refs/tags/v2026.5.3
+    github-repo: https://github.com/h3y6e/agent-skills
+    github-tree-sha: 1cd590b1ae61840d55ffe8da58ce8ed9c492b7ea
+    version: 2026.5.3
+name: tracking-tasks
 ---
 # Tracking Tasks
 

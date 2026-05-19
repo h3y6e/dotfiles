@@ -1,15 +1,15 @@
 ---
-name: git-shipping
-description: Use when making code changes in a git repo, switching branches, or when asked to `push`, `commit`, `pr`, or manage branches. Use before starting implementation to confirm you're on the right branch.
 compatibility: Requires git, gh, git-wt, and cxg.
+description: Use when making code changes in a git repo, switching branches, or when asked to `push`, `commit`, `pr`, or manage branches. Use before starting implementation to confirm you're on the right branch.
 license: MIT
 metadata:
-  author: h3y6e
-  version: 2026.5.1
-  github-path: skills/git-shipping
-  github-ref: refs/tags/v2026.5.1
-  github-repo: https://github.com/h3y6e/agent-skills
-  github-tree-sha: 7030db60d43b58730d3684d4d7514e099452e1be
+    author: h3y6e
+    github-path: skills/git-shipping
+    github-ref: refs/tags/v2026.5.3
+    github-repo: https://github.com/h3y6e/agent-skills
+    github-tree-sha: 17d06fce4863bfcdfdc644325e51d449e1c6aa71
+    version: 2026.5.3
+name: git-shipping
 ---
 # Git Shipping
 
@@ -49,7 +49,8 @@ When creating a new worktree, consider whether to carry over uncommitted work:
 
 ## Pull Request
 
-- Body structure: `## Summary`, optional `## Background`, `## Changes`, optional `## Impact`.
+- Prefer a repository PR template when one applies (`pull_request_template.*` or `PULL_REQUEST_TEMPLATE/`; use `gh pr create --template <file>` when useful).
+- Fallback body structure only: `## Summary`, optional `## Background`, `## Changes`, optional `## Impact`.
 - Default to draft PR (`gh pr create --draft`). Only create a ready PR when the user explicitly requests it.
 
 ## Common Mistakes
