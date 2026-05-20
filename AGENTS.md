@@ -35,4 +35,3 @@
 - For non-trivial changes, pause and ask "is there a more elegant way?"
 - Act autonomously. Resolve ambiguity yourself; only ask when a real trade-off needs user judgment.
 - Prefer inline code; avoid one-off variables and non-reused helpers.
-- Evidence before claims: no completion without running verification.
