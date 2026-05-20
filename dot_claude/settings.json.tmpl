@@ -5,7 +5,7 @@
     "CLAUDE_CODE_USE_VERTEX": "1",
     "CLOUD_ML_REGION": "global",
     "ANTHROPIC_VERTEX_PROJECT_ID": "{{ onepasswordRead "op://env/anthropic-vertex/project-id" }}",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6@default",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-7@default",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6@default",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5@20251001",
     {{- end }}
@@ -35,6 +35,7 @@
       "Bash(test:*)",
       "Bash(mv:*)",
       "Bash(trash:*)",
+      "Bash(obsidian:*)",
       "Bash(file:*)",
       "Bash(sed:*)",
       "Bash(touch:*)",
@@ -95,8 +96,28 @@
       "{{ .chezmoi.homeDir }}/ghq"
     ]
   },
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "allowWrite": [
+      "{{ .chezmoi.homeDir }}/.cache",
+      "{{ .chezmoi.homeDir }}/.docker/buildx/activity",
+      "{{ .chezmoi.homeDir }}/.local/state",
+      "{{ .chezmoi.homeDir }}/.Trash",
+      "{{ .chezmoi.homeDir }}/Library/Caches",
+      "{{ .chezmoi.homeDir }}/ghq",
+      "{{ .chezmoi.homeDir }}/go/pkg/mod",
+        "/tmp"
+      ]
+    },
+    "network": {
+      "allowAllUnixSockets": true
+    },
+    "enableWeakerNetworkIsolation": true
+  },
   "model": "opusplan",
   "language": "ja",
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
+  "alwaysThinkingEnabled": true,
   "voiceEnabled": true
 }
