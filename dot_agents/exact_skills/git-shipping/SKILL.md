@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.5.3
+    github-ref: refs/tags/v2026.5.4
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 17d06fce4863bfcdfdc644325e51d449e1c6aa71
-    version: 2026.5.3
+    github-tree-sha: 82e6855dfc55ccb787aae7847ced92d0da8e59c4
+    version: 2026.5.4
 name: git-shipping
 ---
 # Git Shipping
@@ -50,7 +50,9 @@ When creating a new worktree, consider whether to carry over uncommitted work:
 ## Pull Request
 
 - Prefer a repository PR template when one applies (`pull_request_template.*` or `PULL_REQUEST_TEMPLATE/`; use `gh pr create --template <file>` when useful).
-- Fallback body structure only: `## Summary`, optional `## Background`, `## Changes`, optional `## Impact`.
+- When no template applies, use only these sections, in this order: `## Summary`, `## Background`, `## Changes`, optional `## Impact`.
+- Use `## Impact` only for behavior changed by merging the PR. Omit it when there is no behavior change; do not list unchanged behavior, non-goals, or work not done.
+- Do not add ad hoc `Testing`, `Verification`, `Checklist`, `Related issues`, or `Screenshots` sections. Never dump every local verification command into the PR body.
 - Default to draft PR (`gh pr create --draft`). Only create a ready PR when the user explicitly requests it.
 
 ## Common Mistakes
