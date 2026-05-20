@@ -27,6 +27,11 @@
   - PUBLIC → English.
   - PRIVATE / INTERNAL / unknown → Japanese.
 
+# Writing Artifacts
+
+- In docs, issues, PR bodies, and review comments, keep only non-obvious rationale, constraints, trade-offs, impact, and risks.
+- Omit source/diff-obvious facts, restatements, and duplicate summaries.
+
 # Principles
 
 - Always use the latest or near-latest versions for dependencies.
