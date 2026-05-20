@@ -1,17 +1,59 @@
 prefix_rule(
     pattern = ["git", "commit"],
     decision = "allow",
-    justification = "Allow git commit to update repository metadata under .git",
+)
+
+prefix_rule(
+    pattern = ["git", "add"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "branch"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "branch", ["-d", "-D", "--delete"]],
+    decision = "prompt",
 )
 
 prefix_rule(
     pattern = ["git", "checkout"],
     decision = "allow",
-    justification = "Allow git checkout to switch branches and update HEAD and refs under .git",
+)
+
+prefix_rule(
+    pattern = ["git", "fetch"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "push", ["--force", "--force-with-lease", "-f"]],
+    decision = "prompt",
 )
 
 prefix_rule(
     pattern = ["git", "switch"],
     decision = "allow",
-    justification = "Allow git switch to change branches and update repository metadata under .git",
+)
+
+prefix_rule(
+    pattern = ["git", "wt"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "wt", "-D"],
+    decision = "prompt",
+)
+
+prefix_rule(
+    pattern = ["git", "worktree", "add"],
+    decision = "allow",
 )
