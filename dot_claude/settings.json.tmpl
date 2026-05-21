@@ -96,25 +96,26 @@
       "{{ .chezmoi.homeDir }}/ghq"
     ]
   },
+  "model": "opusplan",
+  "disableAllHooks": true,
+  "language": "ja",
   "sandbox": {
     "enabled": true,
+    "network": {
+      "allowAllUnixSockets": true
+    },
     "filesystem": {
       "allowWrite": [
         "{{ .chezmoi.homeDir }}/.cache",
         "{{ .chezmoi.homeDir }}/.local/state",
         "{{ .chezmoi.homeDir }}/.Trash",
         "{{ .chezmoi.homeDir }}/Library/Caches",
-        "{{ .chezmoi.homeDir }}/ghq",
+        "{{ .chezmoi.homeDir }}/ghq"
       ]
-    },
-    "network": {
-      "allowAllUnixSockets": true
     },
     "enableWeakerNetworkIsolation": true
   },
-  "model": "opusplan",
-  "language": "ja",
-  "effortLevel": "xhigh",
   "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
   "voiceEnabled": true
 }
