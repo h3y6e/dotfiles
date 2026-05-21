@@ -88,3 +88,10 @@ trust_level = "trusted"
 {{- end }}
 {{- end }}
 {{- end }}
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "git-branch", "pull-request-number", "branch-changes", "run-state", "context-remaining", "task-progress"]
+terminal_title = ["activity", "project-name", "git-branch", "task-progress"]
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
