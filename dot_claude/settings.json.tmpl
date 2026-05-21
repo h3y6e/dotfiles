@@ -100,14 +100,11 @@
     "enabled": true,
     "filesystem": {
       "allowWrite": [
-      "{{ .chezmoi.homeDir }}/.cache",
-      "{{ .chezmoi.homeDir }}/.docker/buildx/activity",
-      "{{ .chezmoi.homeDir }}/.local/state",
-      "{{ .chezmoi.homeDir }}/.Trash",
-      "{{ .chezmoi.homeDir }}/Library/Caches",
-      "{{ .chezmoi.homeDir }}/ghq",
-      "{{ .chezmoi.homeDir }}/go/pkg/mod",
-        "/tmp"
+        "{{ .chezmoi.homeDir }}/.cache",
+        "{{ .chezmoi.homeDir }}/.local/state",
+        "{{ .chezmoi.homeDir }}/.Trash",
+        "{{ .chezmoi.homeDir }}/Library/Caches",
+        "{{ .chezmoi.homeDir }}/ghq",
       ]
     },
     "network": {
