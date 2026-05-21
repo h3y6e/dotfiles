@@ -89,7 +89,11 @@
       "NotebookEdit",
       "Bash(rm:*)",
       "Bash(sudo:*)",
-      "Bash(npx:*)"
+      "Bash(npx:*)",
+      "Read(**/.env)",
+      "Read(**/.env.*local)",
+      "Read(**/*.pem)",
+      "Read(**/.ssh/**)"
     ],
     "defaultMode": "acceptEdits",
     "additionalDirectories": [
@@ -107,6 +111,7 @@
     "filesystem": {
       "allowWrite": [
         "{{ .chezmoi.homeDir }}/.cache",
+        "{{ .chezmoi.homeDir }}/.local/share/mise",
         "{{ .chezmoi.homeDir }}/.local/state",
         "{{ .chezmoi.homeDir }}/.Trash",
         "{{ .chezmoi.homeDir }}/Library/Caches",
