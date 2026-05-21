@@ -34,7 +34,7 @@ shfmt = "3.13.1"
 jq = "1.8.1"
 yq = "4.53.2"
 aws-cli = { version = "2.34.50", symlink_bins = "true" }
-"aqua:ast-grep/ast-grep" = "0.42.2"
+"aqua:ast-grep/ast-grep" = "0.42.3"
 "aqua:sharkdp/fd" = "10.4.2"
 "aqua:junegunn/fzf" = "0.72.0"
 "aqua:ByteNess/aws-vault" = "7.10.7"
