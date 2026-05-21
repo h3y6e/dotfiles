@@ -79,6 +79,7 @@ trust_level = "trusted"
 network_access = true
 writable_roots = [
   "{{ .chezmoi.homeDir }}/.cache",
+  "{{ .chezmoi.homeDir }}/.local/share/mise",
   "{{ .chezmoi.homeDir }}/.local/state",
   "{{ .chezmoi.homeDir }}/.Trash",
   "{{ .chezmoi.homeDir }}/ghq",
