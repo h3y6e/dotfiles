@@ -1,32 +1,22 @@
 # vim: set ft=toml:
 #:schema https://developers.openai.com/codex/config-schema.json
 
+approval_policy = "on-request"
+approvals_reviewer = "guardian_subagent"
+file_opener = "none"
+hide_agent_reasoning = false
 model = "gpt-5.5"
 model_provider = "openai"
 model_reasoning_effort = "xhigh"
 model_reasoning_summary = "detailed"
-model_verbosity = "high"
 model_supports_reasoning_summaries = true
-approval_policy = "on-request"
-sandbox_mode = "workspace-write"
-hide_agent_reasoning = false
-file_opener = "none"
-web_search = "live"
-suppress_unstable_features_warning = true
+model_verbosity = "high"
 personality = "pragmatic"
-service_tier = "fast"
 plan_mode_reasoning_effort = "xhigh"
-approvals_reviewer = "guardian_subagent"
-
-[sandbox_workspace_write]
-network_access = true
-writable_roots = [
-  "{{ .chezmoi.homeDir }}/.cache",
-  "{{ .chezmoi.homeDir }}/.local/state",
-  "{{ .chezmoi.homeDir }}/.Trash",
-  "{{ .chezmoi.homeDir }}/Library/Caches",
-  "{{ .chezmoi.homeDir }}/ghq",
-]
+sandbox_mode = "workspace-write"
+service_tier = "fast"
+suppress_unstable_features_warning = true
+web_search = "live"
 
 [features]
 apply_patch_freeform = true
@@ -39,27 +29,23 @@ enable_fanout = true
 enable_mcp_apps = true
 exec_permission_approvals = true
 goals = true
+hooks = false
 memories = true
 multi_agent_v2 = true
 prevent_idle_sleep = true
 request_permissions_tool = true
 skill_env_var_dependency_prompt = true
 tool_search_always_defer_mcp_tools = true
-hooks = false
-
-[shell_environment_policy]
-inherit = "all"
-ignore_default_excludes = true
-
-[mcp_servers.figma]
-url = "http://127.0.0.1:3845/mcp"
-enabled = false
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
 {{- if not .ephemeral }}
 http_headers = { "CONTEXT7_API_KEY" = "{{ onepasswordRead "op://env/context7/api-key" }}" }
 {{- end }}
+
+[mcp_servers.figma]
+url = "http://127.0.0.1:3845/mcp"
+enabled = false
 
 [mcp_servers.gh_grep]
 url = "https://mcp.grep.app"
@@ -88,6 +74,20 @@ trust_level = "trusted"
 {{- end }}
 {{- end }}
 {{- end }}
+
+[sandbox_workspace_write]
+network_access = true
+writable_roots = [
+  "{{ .chezmoi.homeDir }}/.cache",
+  "{{ .chezmoi.homeDir }}/.local/state",
+  "{{ .chezmoi.homeDir }}/.Trash",
+  "{{ .chezmoi.homeDir }}/ghq",
+  "{{ .chezmoi.homeDir }}/Library/Caches",
+]
+
+[shell_environment_policy]
+ignore_default_excludes = true
+inherit = "all"
 
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch", "pull-request-number", "branch-changes", "run-state", "context-remaining", "task-progress"]
