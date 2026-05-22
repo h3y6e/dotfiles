@@ -1,15 +1,15 @@
 ---
 allowed-tools: Bash(obsidian:*) Bash(ghq get log) Bash(rg:*) Read Edit Write
 compatibility: Requires Obsidian with CLI enabled and vault "log".
-description: Use when starting any multi-step work, resuming an existing task, switching direction mid-task, or wrapping up. Use proactively when a request spans more than one response — open or create a task note before diving in.
+description: Use when starting multi-step work, resuming an existing task, switching direction mid-task, wrapping up, or capturing cross-session task context in Obsidian.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/tracking-tasks
-    github-ref: refs/tags/v2026.5.4
+    github-ref: refs/tags/v2026.5.5
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 27151c4fadedcedd8a5f958206ed3f55d7cf2d84
-    version: 2026.5.4
+    github-tree-sha: 812a293af7cbf7a19c92d89a316d5c4c6dc7d067
+    version: 2026.5.5
 name: tracking-tasks
 ---
 # Tracking Tasks
@@ -20,13 +20,21 @@ name: tracking-tasks
 
 ## Task Note
 
-Path: `task/YYYY-MM-DD-<slug>.md`. Frontmatter: `title`, `status` (`backlog`→`todo`→`in-progress`→`done`/`canceled`), `tags`. Sections: Goal, DoD (checklist), Research, Notes.
+Path: `task/YYYY-MM-DD-<slug>.md`. Frontmatter: `title`, `status` (`backlog`→`todo`→`in-progress`→`done`/`canceled`). Sections: Goal, DoD (checklist), Research, Notes.
 
-- Infer slug, title, tags from context — don't ask.
+- Infer slug and title from context — don't ask.
 - On session start: search with `obsidian search:context` or direct `rg` under the log vault, then read the file directly.
 - Fill Goal and DoD before substantial work, then set status to `in-progress`.
 - The note is the source of truth. Sync after initial plan, each work batch, direction changes, and before final response.
 - Evidence before claims — don't mark done until verification is recorded.
+
+## Graph
+
+Make the Obsidian graph useful with `[[wikilinks]]`; do not treat notes as isolated logs.
+
+- Link concrete context: active project/repo, related task notes, daily notes, issues/PRs, and ADRs/specs.
+- When resuming a task, inspect linked notes/backlinks before broad search; prefer existing pages over new abstract concept nodes.
+- When logging a cross-cutting finding in the daily note, link the active task and relevant project/source pages there too.
 
 ## Daily Note
 
@@ -47,8 +55,9 @@ The CLI is unstable. If any command errors, **immediately fall back to direct fi
 1. `obsidian daily:path vault=log` → get today's date (use this, not `date` command)
 2. Search for existing task; if none, `obsidian create vault=log path="task/YYYY-MM-DD-slug.md" template=task`
 3. Edit directly — Goal, DoD, Research, Notes
-4. `obsidian property:set vault=log path="task/..." name=status value=in-progress`
-5. After each batch, update Notes with findings/decisions/verification
-6. `obsidian task vault=log path="task/..." line=N toggle`
-7. Final sync checkpoint
-8. `obsidian property:set vault=log path="task/..." name=status value=done`
+4. Add/update `[[wikilinks]]` so graph/backlinks connect the task to related work
+5. `obsidian property:set vault=log path="task/..." name=status value=in-progress`
+6. After each batch, update Notes with findings/decisions/verification
+7. `obsidian task vault=log path="task/..." line=N toggle`
+8. Final sync checkpoint
+9. `obsidian property:set vault=log path="task/..." name=status value=done`
