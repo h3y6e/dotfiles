@@ -92,7 +92,7 @@
       "{{ .chezmoi.homeDir }}/ghq"
     ]
   },
-  "model": "opus[1m]",
+  "model": "{{ if .work }}opus[1m]{{ else }}opusplan{{ end }}",
   "disableAllHooks": true,
   "language": "ja",
   "sandbox": {
@@ -124,6 +124,6 @@
   "effortLevel": "xhigh",
   "theme": "auto",
   "preferredNotifChannel": "auto",
-  "voiceEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
 }
