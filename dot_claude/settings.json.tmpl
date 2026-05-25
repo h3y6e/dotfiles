@@ -1,14 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "env": {
-    {{- if .work }}
-    "CLAUDE_CODE_USE_VERTEX": "1",
-    "CLOUD_ML_REGION": "global",
-    "ANTHROPIC_VERTEX_PROJECT_ID": "{{ onepasswordRead "op://env/anthropic-vertex/project-id" }}",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-7@default",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6@default",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5@20251001",
-    {{- end }}
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_AUTO_CONNECT_IDE": "0",
@@ -95,18 +87,23 @@
       "Read(**/*.pem)",
       "Read(**/.ssh/**)"
     ],
-    "defaultMode": "acceptEdits",
+    "defaultMode": "auto",
     "additionalDirectories": [
       "{{ .chezmoi.homeDir }}/ghq"
     ]
   },
-  "model": "opusplan",
+  "model": "opus[1m]",
   "disableAllHooks": true,
   "language": "ja",
   "sandbox": {
     "enabled": true,
     "network": {
-      "allowAllUnixSockets": true
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "*.githubusercontent.com"
+      ],
+      "allowLocalBinding": true
     },
     "filesystem": {
       "allowWrite": [
@@ -118,10 +115,15 @@
         "{{ .chezmoi.homeDir }}/ghq"
       ]
     },
-    "enableWeakerNetworkIsolation": true
+    "enableWeakerNetworkIsolation": true,
+    "excludedCommands": [
+      "docker *"
+    ]
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
-  "theme": "dark-ansi",
-  "voiceEnabled": true
+  "theme": "auto",
+  "preferredNotifChannel": "auto",
+  "voiceEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
