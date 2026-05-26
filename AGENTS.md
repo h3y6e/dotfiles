@@ -9,9 +9,10 @@
 
 # Workflow
 
-- Never mark a task done without relevant validation. Prefer tool-specific lint, format, test, or execution checks that match the files you changed.
 - For creative/feature work, explore the problem space before implementing. Understand purpose, constraints, and success criteria first.
+- Use **tdd** skill when implementing any feature or bugfix, before writing implementation code.
 - If something goes wrong, stop and re-plan before pushing forward.
+- Never mark a task done without relevant validation. Prefer tool-specific lint, format, test, or execution checks that match the files you changed.
 
 # Task Management
 
