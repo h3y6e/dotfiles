@@ -13,6 +13,7 @@
 - Use **tdd** skill when implementing any feature or bugfix, before writing implementation code.
 - If something goes wrong, stop and re-plan before pushing forward.
 - Never mark a task done without relevant validation. Prefer tool-specific lint, format, test, or execution checks that match the files you changed.
+  - Skip validation when the change is trivially correct (e.g. typo fix, comment edit).
 
 # Task Management
 
@@ -40,4 +41,6 @@
 - No hacky fixes: find root causes, maintain senior-level standards.
 - For non-trivial changes, pause and ask "is there a more elegant way?"
 - Act autonomously. Resolve ambiguity yourself; only ask when a real trade-off needs user judgment.
-- Prefer inline code; avoid one-off variables and non-reused helpers.
+- Never extract trivial expressions into named helper functions. Inline them at the call site.
+  - A helper is justified only when it is called 3+ times AND encapsulates non-obvious logic.
+- Avoid one-off variables that merely rename an expression without adding clarity.
