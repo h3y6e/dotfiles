@@ -3,6 +3,7 @@
 
 approval_policy = "on-request"
 approvals_reviewer = "guardian_subagent"
+default_permissions = "custom"
 file_opener = "none"
 hide_agent_reasoning = false
 model = "gpt-5.5"
@@ -85,6 +86,26 @@ writable_roots = [
   "{{ .chezmoi.homeDir }}/ghq",
   "{{ .chezmoi.homeDir }}/Library/Caches",
 ]
+
+[permissions.custom]
+extends = ":workspace"
+
+[permissions.custom.workspace_roots]
+"{{ .chezmoi.homeDir }}/.cache" = true
+"{{ .chezmoi.homeDir }}/.local/share/mise" = true
+"{{ .chezmoi.homeDir }}/.local/state" = true
+"{{ .chezmoi.homeDir }}/.Trash" = true
+"{{ .chezmoi.homeDir }}/ghq" = true
+"{{ .chezmoi.homeDir }}/Library/Caches" = true
+
+[permissions.custom.filesystem.":workspace_roots"]
+".git/**" = "write"
+".git/hooks/**" = "read"
+".git/config" = "read"
+
+[permissions.custom.network]
+enabled = true
+dangerously_allow_all_unix_sockets = true
 
 [shell_environment_policy]
 ignore_default_excludes = true
