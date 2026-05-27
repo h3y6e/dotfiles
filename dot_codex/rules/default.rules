@@ -44,6 +44,11 @@ prefix_rule(
 )
 
 prefix_rule(
+    pattern = ["git", "wt", ["ls", "list"]],
+    decision = "forbidden",
+)
+
+prefix_rule(
     pattern = ["git", "wt"],
     decision = "allow",
 )
