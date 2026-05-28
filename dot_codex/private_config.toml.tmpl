@@ -56,18 +56,6 @@ enabled = false
 [mcp_servers.gh_grep]
 url = "https://mcp.grep.app"
 
-{{ if .work -}}
-[otel]
-environment = "prod"
-
-[otel.metrics_exporter.otlp-http]
-endpoint = "{{ onepasswordRead "op://env/ai-agent-stats/endpoint" }}/v1/metrics"
-protocol = "binary"
-
-[otel.metrics_exporter.otlp-http.headers]
-Authorization = "Bearer {{ onepasswordRead "op://env/ai-agent-stats/token" }}"
-{{- end }}
-
 [projects."{{ .chezmoi.workingTree }}"]
 trust_level = "trusted"
 
