@@ -32,11 +32,16 @@ exec_permission_approvals = true
 goals = true
 hooks = false
 memories = true
-multi_agent_v2 = { enabled = true, max_concurrent_threads_per_session = 6 }
 prevent_idle_sleep = true
 request_permissions_tool = true
 skill_env_var_dependency_prompt = true
 tool_search_always_defer_mcp_tools = true
+
+[features.multi_agent_v2]
+enabled = true
+max_concurrent_threads_per_session = 6
+default_wait_timeout_ms = 600_000
+min_wait_timeout_ms = 60_000
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
