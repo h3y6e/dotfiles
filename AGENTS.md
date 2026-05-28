@@ -1,7 +1,5 @@
 # Tools
 
-- Use `context7` mcp to search docs.
-- Use `gh_grep` mcp to search code from GitHub.
 - Use `trash` instead of `rm`.
 - Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `pinact`, `ghalint`, `zizmor`, `hadolint`, `shfmt`, `shellcheck`, `gh`.
   - Avoid throwaway Python/Ruby/Node scripts.
