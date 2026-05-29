@@ -1,11 +1,11 @@
 ---
-name: grill-with-docs
 description: Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, ADRs) inline as decisions crystallise. Use when user wants to stress-test a plan against their project's language and documented decisions.
 metadata:
-  github-path: skills/engineering/grill-with-docs
-  github-ref: refs/heads/main
-  github-repo: https://github.com/mattpocock/skills
-  github-tree-sha: 2c6aa7079cc705a6e0c319fcf23a0fa39968de29
+    github-path: skills/engineering/grill-with-docs
+    github-ref: refs/heads/main
+    github-repo: https://github.com/mattpocock/skills
+    github-tree-sha: 2c3a4e48571bfe42203ed7b49cae85f31ef4b6f2
+name: grill-with-docs
 ---
 <what-to-do>
 
