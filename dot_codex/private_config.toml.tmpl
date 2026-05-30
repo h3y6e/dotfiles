@@ -37,11 +37,9 @@ request_permissions_tool = true
 skill_env_var_dependency_prompt = true
 tool_search_always_defer_mcp_tools = true
 
-[features.multi_agent_v2]
-enabled = true
-max_concurrent_threads_per_session = 6
-default_wait_timeout_ms = 600_000
-min_wait_timeout_ms = 60_000
+[agents]
+max_threads = 10
+job_max_runtime_seconds = 600
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
@@ -85,10 +83,13 @@ extends = ":workspace"
 
 [permissions.custom.workspace_roots]
 "{{ .chezmoi.homeDir }}/.cache" = true
+"{{ .chezmoi.homeDir }}/.config/gcloud" = true
+"{{ .chezmoi.homeDir }}/.docker/buildx/activity" = true
 "{{ .chezmoi.homeDir }}/.local/share/mise" = true
 "{{ .chezmoi.homeDir }}/.local/state" = true
 "{{ .chezmoi.homeDir }}/.Trash" = true
 "{{ .chezmoi.homeDir }}/ghq" = true
+"{{ .chezmoi.homeDir }}/go" = true
 "{{ .chezmoi.homeDir }}/Library/Caches" = true
 
 [permissions.custom.filesystem.":workspace_roots"]
