@@ -60,7 +60,7 @@ aws-cli = { version = "2.34.57", symlink_bins = "true" }
 "aqua:k1LoW/git-wt" = "0.28.0"
 "aqua:tree-sitter/tree-sitter" = "0.26.9"
 "aqua:suzuki-shunsuke/pinact" = "4.0.0"
-"aqua:bridgecrewio/checkov" = "3.2.530"
+"aqua:bridgecrewio/checkov" = "3.2.531"
 "aqua:aquasecurity/trivy" = "0.70.0"
 "aqua:k1LoW/mo" = "1.5.5"
 "npm:npm-check" = "6.0.1"
