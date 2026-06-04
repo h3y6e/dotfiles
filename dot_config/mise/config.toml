@@ -57,7 +57,7 @@ aws-cli = { version = "2.34.61", symlink_bins = "true" }
 "aqua:anthropics/claude-code" = "2.1.162"
 "aqua:github/copilot-language-server-release" = "1.500.0"
 "aqua:jj-vcs/jj" = "0.41.0"
-"aqua:k1LoW/git-wt" = "0.28.0"
+"aqua:k1LoW/git-wt" = "0.29.0"
 "aqua:tree-sitter/tree-sitter" = "0.26.9"
 "aqua:suzuki-shunsuke/pinact" = "4.0.0"
 "aqua:bridgecrewio/checkov" = "3.2.532"
