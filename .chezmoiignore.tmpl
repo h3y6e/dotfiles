@@ -10,6 +10,10 @@ LICENSE
 install.sh
 mise.toml
 
+{{- if not (lookPath "mise") }}
+.docker/cli-plugins/*
+{{- end }}
+
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
 .config/karabiner/
