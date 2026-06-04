@@ -22,10 +22,12 @@
 
 - Conversation with the user: Japanese.
 - Agent-facing guidance (`AGENTS.md`, Agent Skills): English.
-- Other written artifacts (docs, descriptions, commit messages, issue/PR titles and bodies):
+- Other written artifacts (docs, commit messages, issue/PR titles and bodies, etc.):
   - Run `gh repo view --json visibility -q '.visibility'` to determine.
   - PUBLIC → English.
-  - PRIVATE / INTERNAL / unknown → Japanese.
+  - PRIVATE / INTERNAL / unknown → natural Japanese.
+    - Write prose for Japanese readers, not literal translations of English source terms.
+    - Use natural Japanese; leave English only for identifiers, product/library names, API names, and established terms when clearer.
 
 # Writing Artifacts
 
