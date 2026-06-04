@@ -1,14 +1,14 @@
 ---
-compatibility: Requires git, gh, git-wt, and cxg.
+compatibility: Requires git, gh, cxg, and git-wt or an environment worktree tool. Do not use raw git worktree.
 description: Use when making code changes in a git repo, switching branches, or when asked to `push`, `commit`, `pr`, or manage branches. Use before starting implementation to confirm you're on the right branch.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.5.5
+    github-ref: refs/tags/v2026.6.0
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 9479df9aed94753cb8d938d868698612a7a0dbee
-    version: 2026.5.5
+    github-tree-sha: 526c12d8c8b6392987063f1b2903d5d95a923d1e
+    version: 2026.6.0
 name: git-shipping
 ---
 # Git Shipping
@@ -36,12 +36,11 @@ Check repo visibility with `gh repo view --json visibility -q '.visibility'`.
 
 ## Branch
 
-Feature work belongs on a feature branch, not the default branch. Use `git wt` for all worktree operations.
+Start new feature work in a clean feature-branch worktree, not on the default branch.
+Prefer an environment worktree tool when it can create worktrees under `../{gitroot}.wt`; otherwise check `git wt -h` and use `git wt`.
+Do not call raw `git worktree` directly.
 
-When creating a new worktree, consider whether to carry over uncommitted work:
-
-- **Moving in-progress work** (e.g., started on main, moving to a feature branch): `git wt <branch> --copymodified --copyuntracked`
-- **Starting fresh** (e.g., separate, unrelated work): `git wt <branch>`
+Do not move already-started work into a new worktree just to satisfy this workflow. If files are already being edited in the current checkout, keep working there and create or switch to the appropriate branch in place when safe.
 
 ## Commit
 
@@ -49,7 +48,7 @@ When creating a new worktree, consider whether to carry over uncommitted work:
 
 ## Pull Request
 
-- Prefer a repository PR template when one applies (`pull_request_template.*` or `PULL_REQUEST_TEMPLATE/`; use `gh pr create --template <file>` when useful).
+- Prefer a repository PR template when one applies.
 - When no template applies, use only these sections, in this order: `## Summary`, `## Background`, `## Changes`, optional `## Impact`.
 - Use `## Impact` only for behavior changed by merging the PR. Omit it when there is no behavior change; do not list unchanged behavior, non-goals, or work not done.
 - Do not add ad hoc `Testing`, `Verification`, `Checklist`, `Related issues`, or `Screenshots` sections. Never dump every local verification command into the PR body.
@@ -59,7 +58,12 @@ When creating a new worktree, consider whether to carry over uncommitted work:
 
 | Mistake | Fix |
 |---------|-----|
-| Working directly on the default branch | `git wt <branch>` first |
+| Starting new work directly on the default branch | Create a clean feature-branch worktree first |
+| Moving already-started work just to satisfy the workflow | Keep working in the current checkout; branch in place when safe, and ask before relocating changes |
+| Copying modified or untracked files into new worktrees by default | Create clean worktrees; transfer in-progress changes only on explicit request |
 | Treating `push` / `commit` as a single git command | Follow Intent Expansion above |
-| Using `git worktree` directly | Use `git wt` — run `git wt -h` for help |
+| Ignoring an available environment worktree tool that supports the standard layout | Use that tool with destination `../{gitroot}.wt` |
+| Creating worktrees outside `../{gitroot}.wt` | Use the tool's destination setting when available; otherwise use `git wt` |
+| Using raw `git worktree` | Use a layout-compatible environment tool, otherwise use `git wt` |
+| Guessing `git wt` usage | Run `git wt -h` before choosing flags |
 | Skipping `cxg lint` | Always pipe through `cxg lint` before committing |
