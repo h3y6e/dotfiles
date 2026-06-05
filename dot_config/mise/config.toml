@@ -65,7 +65,7 @@ aws-cli = { version = "2.34.61", symlink_bins = "true" }
 "aqua:k1LoW/mo" = "1.5.6"
 "aqua:docker/cli" = "29.5.3"
 "aqua:docker/buildx" = "0.34.1"
-"aqua:abiosoft/colima" = "0.10.1"
+"aqua:abiosoft/colima" = "0.10.3"
 "aqua:docker/compose" = "5.1.4"
 "aqua:lima-vm/lima" = "2.1.2"
 "npm:npm-check" = "6.0.1"
