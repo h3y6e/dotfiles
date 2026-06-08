@@ -42,7 +42,7 @@ aws-cli = { version = "2.34.63", symlink_bins = "true" }
 "aqua:suzuki-shunsuke/ghalint" = "1.5.6"
 "aqua:zizmorcore/zizmor" = "1.25.2"
 "aqua:hadolint/hadolint" = "2.14.0"
-"aqua:XcodesOrg/xcodes" = "1.6.2"
+"aqua:XcodesOrg/xcodes" = "2.0.1"
 "aqua:sharkdp/bat" = "0.26.1"
 "aqua:peco/peco" = "0.6.0"
 "aqua:BurntSushi/ripgrep" = "15.1.0"
