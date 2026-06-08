@@ -71,6 +71,8 @@ printf "\033[3;35m%s\033[m\n" "brew installing..."
 {{ else -}}
 {{ end -}}
 
+brew trust h3y6e/dotfiles
+
 brew bundle --file=-<<EOF
 tap "h3y6e/dotfiles"
 {{ range ($brews | sortAlpha | uniq) -}}
