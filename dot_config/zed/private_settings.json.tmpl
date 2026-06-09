@@ -4,14 +4,26 @@
     "claude-acp": {
       "type": "registry",
     },
-    "github-copilot-cli": {
-      "type": "registry",
-    },
-    "opencode": {
-      "type": "registry",
-    },
     "codex-acp": {
       "type": "registry",
+    },
+    "Copilot": {
+      "default_config_options": {
+        "allow_all": "on",
+        "model": "auto",
+      },
+      "type": "custom",
+      "command": "copilot",
+      "args": ["--acp", "--stdio"],
+    },
+    "OpenCode": {
+      "default_config_options": {
+        "effort": "xhigh",
+        "model": "openai/gpt-5.5-fast"
+      },
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"],
     },
   },
   "context_servers": {
