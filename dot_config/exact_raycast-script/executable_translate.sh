@@ -17,7 +17,7 @@ set -Eeufo pipefail
 
 text="$1"
 
-if echo "$text" | grep -q '[ぁ-んァ-ン一-龯]'; then
+if mise x -- rg -q '\p{Hiragana}|\p{Katakana}|\p{Han}' <<<"$text"; then
   read -r src code dst dcode <<<"Japanese ja English en"
 else
   read -r src code dst dcode <<<"English en Japanese ja"
