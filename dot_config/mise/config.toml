@@ -13,7 +13,6 @@ task.monorepo_depth = 2
 cargo.binstall = true
 npm.package_manager = "bun"
 pipx.uvx = true
-github.credential_command = "gh auth token"
 
 # For Renovate:
 # - Use short names if available (node, aws-cli), otherwise full names (aqua:peco/peco, npm:sfw)
