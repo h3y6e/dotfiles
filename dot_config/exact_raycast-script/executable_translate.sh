@@ -15,7 +15,9 @@ set -Eeufo pipefail
 # @raycast.author h3y6e
 # @raycast.authorURL https://raycast.com/h3y6e
 
-if echo "$1" | grep -q '[ぁ-んァ-ン一-龯]'; then
+text="$1"
+
+if echo "$text" | grep -q '[ぁ-んァ-ン一-龯]'; then
   read -r src code dst dcode <<<"Japanese ja English en"
 else
   read -r src code dst dcode <<<"English en Japanese ja"
@@ -25,4 +27,4 @@ mise x -- ollama run translategemma "You are a professional $src ($code) to $dst
 Produce only the $dst translation, without any additional explanations or commentary. Please translate the following $src text into $dst:
 
 
-$1" 2>|/dev/null
+$text" --nowordwrap 2>|/dev/null
