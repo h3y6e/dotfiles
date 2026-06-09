@@ -1,27 +1,26 @@
 ---
-name: modern-web-guidance
 description: |-
-  Search tool for modern web development best practices. MANDATORY: Execute FIRST for all HTML/CSS and clientside JS tasks. Do NOT skip — web APIs evolve rapidly and training weights contain obsolete patterns.
+    Search tool for modern web development best practices. MANDATORY: Execute FIRST for all HTML/CSS and clientside JS tasks. Do NOT skip — web APIs evolve rapidly and training weights contain obsolete patterns.
 
-  Trigger immediately for:
-  - UI/Layout: Modals, dialogs, popovers, Glassmorphism/backdrop-filters, anchor positioning, container queries, `:has()`, `:user-valid`.
-  - Scroll/Motion: View Transitions, Scroll-driven animations, scroll parallax/reveals.
-  - Performance: CWV (LCP, INP), content-visibility, Fetch Priority, image optimization.
-  - System/APIs: Local filesystem access, WebUSB, WebSockets sync, WebAssembly widgets.
-  - Frameworks: Adapting layout/styles in React, Vue, Angular.
-  - General Frontend: Forms, autofill, advanced inputs, custom scrollbars, modern component states, etc.
+    Trigger immediately for:
+    - UI/Layout: Modals, dialogs, popovers, Glassmorphism/backdrop-filters, anchor positioning, container queries, `:has()`, `:user-valid`.
+    - Scroll/Motion: View Transitions, Scroll-driven animations, scroll parallax/reveals.
+    - Performance: CWV (LCP, INP), content-visibility, Fetch Priority, image optimization.
+    - System/APIs: Local filesystem access, WebUSB, WebSockets sync, WebAssembly widgets.
+    - Frameworks: Adapting layout/styles in React, Vue, Angular.
+    - General Frontend: Forms, autofill, advanced inputs, custom scrollbars, modern component states, etc.
 
-  DO NOT trigger for:
-  - Backend: Database SQL, ORMs, Express API routes.
-  - Pipelines: CI/CD deployment, Docker, Actions.
-  - Generic: Local scripts (Python/Go tools), ESLint, Git.
+    DO NOT trigger for:
+    - Backend: Database SQL, ORMs, Express API routes.
+    - Pipelines: CI/CD deployment, Docker, Actions.
+    - Generic: Local scripts (Python/Go tools), ESLint, Git.
 metadata:
-  github-path: skills/modern-web-guidance
-  github-ref: refs/heads/main
-  github-repo: https://github.com/GoogleChrome/modern-web-guidance
-  github-tree-sha: 9b9e922aa2a9875b133a3bf12f4fd4dbcad30d5a
+    github-path: skills/modern-web-guidance
+    github-ref: refs/heads/main
+    github-repo: https://github.com/GoogleChrome/modern-web-guidance
+    github-tree-sha: db0b42d1a8941087ff284e139b05799008680913
+name: modern-web-guidance
 ---
-
 # Modern Web Guidance
 
 A skill to search for specific web development use cases and retrieve their corresponding best practice guides.
