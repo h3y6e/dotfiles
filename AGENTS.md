@@ -37,7 +37,7 @@
 # Principles
 
 - Always use the latest or near-latest versions for dependencies.
-- Simplicity first. Refactor boldly, delete freely, no backward compatibility unless asked.
+- Simplicity first. Refactor boldly, no backward compatibility unless asked.
 - No hacky fixes: find root causes, maintain senior-level standards.
 - For non-trivial changes, pause and ask "is there a more elegant way?"
 - Act autonomously. Resolve ambiguity yourself; only ask when a real trade-off needs user judgment.
