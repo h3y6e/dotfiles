@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.6.0
+    github-ref: refs/tags/v2026.6.1
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 526c12d8c8b6392987063f1b2903d5d95a923d1e
-    version: 2026.6.0
+    github-tree-sha: 9f6ec633e886d1d51e29c983f84a99ebb1643fba
+    version: 2026.6.1
 name: git-shipping
 ---
 # Git Shipping
@@ -37,7 +37,7 @@ Check repo visibility with `gh repo view --json visibility -q '.visibility'`.
 ## Branch
 
 Start new feature work in a clean feature-branch worktree, not on the default branch.
-Prefer an environment worktree tool when it can create worktrees under `../{gitroot}.wt`; otherwise check `git wt -h` and use `git wt`.
+Prefer an environment worktree tool when available; otherwise check `git wt -h` and use `git wt`.
 Do not call raw `git worktree` directly.
 
 Do not move already-started work into a new worktree just to satisfy this workflow. If files are already being edited in the current checkout, keep working there and create or switch to the appropriate branch in place when safe.
@@ -62,8 +62,7 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 | Moving already-started work just to satisfy the workflow | Keep working in the current checkout; branch in place when safe, and ask before relocating changes |
 | Copying modified or untracked files into new worktrees by default | Create clean worktrees; transfer in-progress changes only on explicit request |
 | Treating `push` / `commit` as a single git command | Follow Intent Expansion above |
-| Ignoring an available environment worktree tool that supports the standard layout | Use that tool with destination `../{gitroot}.wt` |
-| Creating worktrees outside `../{gitroot}.wt` | Use the tool's destination setting when available; otherwise use `git wt` |
+| Ignoring an available environment worktree tool | Use it before falling back to `git wt` |
 | Using raw `git worktree` | Use a layout-compatible environment tool, otherwise use `git wt` |
 | Guessing `git wt` usage | Run `git wt -h` before choosing flags |
 | Skipping `cxg lint` | Always pipe through `cxg lint` before committing |
