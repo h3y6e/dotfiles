@@ -61,7 +61,7 @@ aws-cli = { version = "2.35.1", symlink_bins = "true" }
 "aqua:tree-sitter/tree-sitter" = "0.26.9"
 "aqua:suzuki-shunsuke/pinact" = "4.1.0"
 "aqua:bridgecrewio/checkov" = "3.3.0"
-"aqua:aquasecurity/trivy" = "0.71.0"
+"aqua:aquasecurity/trivy" = "0.71.1"
 "aqua:k1LoW/mo" = "1.5.6"
 "aqua:docker/cli" = "29.5.3"
 "aqua:docker/buildx" = "0.34.1"
