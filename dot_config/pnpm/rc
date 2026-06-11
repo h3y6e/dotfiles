@@ -1,3 +1,2 @@
-minimum-release-age=720
+minimum-release-age=2160
 save-prefix=~
-manage-package-manager-versions=true
