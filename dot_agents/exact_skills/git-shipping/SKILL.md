@@ -1,14 +1,14 @@
 ---
-compatibility: Requires git, gh, cxg, and git-wt or an environment worktree tool. Do not use raw git worktree.
+compatibility: Requires git, gh, cxg, and git-wt. Do not use raw git worktree.
 description: Use when making code changes in a git repo, switching branches, or when asked to `push`, `commit`, `pr`, or manage branches. Use before starting implementation to confirm you're on the right branch.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.6.1
+    github-ref: refs/tags/v2026.6.2
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 9f6ec633e886d1d51e29c983f84a99ebb1643fba
-    version: 2026.6.1
+    github-tree-sha: 4d9978775c08af640ded8e5db545b0fcce0df5fb
+    version: 2026.6.2
 name: git-shipping
 ---
 # Git Shipping
@@ -37,7 +37,7 @@ Check repo visibility with `gh repo view --json visibility -q '.visibility'`.
 ## Branch
 
 Start new feature work in a clean feature-branch worktree, not on the default branch.
-Prefer an environment worktree tool when available; otherwise check `git wt -h` and use `git wt`.
+When creating a worktree, check `git wt -h` before choosing flags and use `git wt`.
 Do not call raw `git worktree` directly.
 
 Do not move already-started work into a new worktree just to satisfy this workflow. If files are already being edited in the current checkout, keep working there and create or switch to the appropriate branch in place when safe.
@@ -52,7 +52,7 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 - When no template applies, use only these sections, in this order: `## Summary`, `## Background`, `## Changes`, optional `## Impact`.
 - Use `## Impact` only for behavior changed by merging the PR. Omit it when there is no behavior change; do not list unchanged behavior, non-goals, or work not done.
 - Do not add ad hoc `Testing`, `Verification`, `Checklist`, `Related issues`, or `Screenshots` sections. Never dump every local verification command into the PR body.
-- Default to draft PR (`gh pr create --draft`). Only create a ready PR when the user explicitly requests it.
+- New PRs default to draft (`gh pr create --draft`); preserve existing PR draft/ready state unless asked.
 
 ## Common Mistakes
 
@@ -62,7 +62,5 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 | Moving already-started work just to satisfy the workflow | Keep working in the current checkout; branch in place when safe, and ask before relocating changes |
 | Copying modified or untracked files into new worktrees by default | Create clean worktrees; transfer in-progress changes only on explicit request |
 | Treating `push` / `commit` as a single git command | Follow Intent Expansion above |
-| Ignoring an available environment worktree tool | Use it before falling back to `git wt` |
-| Using raw `git worktree` | Use a layout-compatible environment tool, otherwise use `git wt` |
-| Guessing `git wt` usage | Run `git wt -h` before choosing flags |
+| Using raw `git worktree` | Use `git wt`; run `git wt -h` before choosing flags |
 | Skipping `cxg lint` | Always pipe through `cxg lint` before committing |
