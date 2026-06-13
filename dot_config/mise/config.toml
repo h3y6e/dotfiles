@@ -68,7 +68,7 @@ aws-cli = { version = "2.35.3", symlink_bins = "true" }
 "aqua:docker/compose" = "5.1.4"
 "aqua:lima-vm/lima" = "2.1.2"
 "aqua:abiosoft/colima" = "0.10.3"
-"aqua:ollama/ollama" = "0.30.7"
+"aqua:ollama/ollama" = "0.30.8"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.6"
 "npm:@mermaid-js/mermaid-cli" = "11.15.0"
