@@ -1,0 +1,16 @@
+# vim: set ft=toml:
+#:schema https://mise.jdx.dev/schema/mise.json
+
+{{ if lookPath "mise" -}}
+[bootstrap.macos.launchd.agents.ollama]
+program = "{{ lookPath "mise" }}"
+args = ["x", "--", "ollama", "serve"]
+run_at_load = true
+keep_alive = true
+kickstart = true
+{{- end }}
+
+{{ if .personal -}}
+[tools]
+pi = "latest"
+{{- end }}
