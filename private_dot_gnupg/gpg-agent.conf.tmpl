@@ -1,7 +1,4 @@
-{{- if eq .chezmoi.os "darwin" }}
-{{- if eq .chezmoi.arch "amd64" -}}
-pinentry-program /usr/local/bin/pinentry-mac
-{{- else if eq .chezmoi.arch "arm64" -}}
-pinentry-program /opt/homebrew/bin/pinentry-mac
-{{- end }}
+{{- $pinentryMac := lookPath "pinentry-mac" -}}
+{{- if and (eq .chezmoi.os "darwin") $pinentryMac -}}
+pinentry-program {{ $pinentryMac }}
 {{- end }}
