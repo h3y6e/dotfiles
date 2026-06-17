@@ -28,7 +28,7 @@ github.use_git_credentials = true
 # - Specify versions ("1.2.3") if Renovate recognizes them, otherwise "latest"
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
-aube = "1.21.0"
+aube = "1.22.0"
 node = "26.3.0"
 deno = "2.8.3"
 bun = "1.3.14"
