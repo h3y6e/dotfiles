@@ -4,6 +4,7 @@
 - Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `pinact`, `ghalint`, `zizmor`, `hadolint`, `shfmt`, `shellcheck`, `gh`.
   - Avoid throwaway Python/Ruby/Node scripts.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
+- For context-mode, keep raw data out of the conversation: use sandbox/search tools for analysis and return only derived answers.
 
 # Workflow
 
