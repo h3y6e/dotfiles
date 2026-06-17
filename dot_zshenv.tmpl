@@ -54,9 +54,6 @@ else
   [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# obsidian cli
-export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
-
 # mysql-client
 [[ -d "${HOMEBREW_PREFIX}/opt/mysql-client" ]] && export PATH="${HOMEBREW_PREFIX}/opt/mysql-client/bin:$PATH"
 {{- end }}
@@ -72,6 +69,3 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # pub
 path=($HOME/.pub-cache/bin $path)
-
-# maestro
-export PATH="$PATH:$HOME/.maestro/bin"
