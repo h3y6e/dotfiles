@@ -14,6 +14,5 @@ kickstart = true
 {{ if .personal -}}
 [tools]
 pi = "latest"
-rtk = "latest"
 "pipx:hermes-agent" = { version = "latest", extras = "messaging" }
 {{- end }}
