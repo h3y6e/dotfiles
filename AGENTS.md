@@ -1,7 +1,7 @@
 # Tools
 
 - Use `trash` instead of `rm`.
-- Prefer installed tools: `rg`, `jq`, `yq`, `actionlint`, `pinact`, `ghalint`, `zizmor`, `hadolint`, `shfmt`, `shellcheck`, `gh`.
+- Prefer installed tools: `rg`, `ast-grep`, `jq`, `yq`, `actionlint`, `pinact`, `ghalint`, `zizmor`, `hadolint`, `shfmt`, `shellcheck`, `gh`.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
 - For `context-mode`, keep raw data out of the conversation: use sandbox/search tools for analysis and return only derived answers.
 
