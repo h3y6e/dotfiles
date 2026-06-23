@@ -46,7 +46,7 @@ cosign = "3.1.1"
 slsa-verifier = "2.7.1"
 sheldon = "0.8.5"
 gcloud = "572.0.0"
-aws-cli = { version = "2.35.9", symlink_bins = "true" }
+aws-cli = { version = "2.35.10", symlink_bins = "true" }
 ast-grep = "0.44.0"
 fd = "10.4.2"
 fzf = "0.73.1"
