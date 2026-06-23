@@ -6,10 +6,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/tracking-tasks
-    github-ref: refs/tags/v2026.6.4
+    github-ref: refs/tags/v2026.6.6
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 16443f55a54a429560538f0aaef021afce0afd96
-    version: 2026.6.4
+    github-tree-sha: 7939a5aa2d93bf017c852fab0c3b9658c909c2c8
+    version: 2026.6.6
 name: tracking-tasks
 ---
 # Tracking Tasks
@@ -23,7 +23,7 @@ name: tracking-tasks
 Path: `task/YYYY-MM-DD-<slug>.md`. Frontmatter: `title`, `status` (`backlog`→`todo`→`in-progress`→`done`/`canceled`). Sections: Goal, DoD (checklist), Research, Notes.
 
 - Infer slug and title from context — don't ask.
-- On session start: search with `obsidian search:context` or direct `rg` under the log vault, then read the file directly.
+- On session start: search with `obsidian search:context query=<text> limit=<n>` or direct `rg` under the log vault, then read the file directly.
 - Fill Goal and DoD before substantial work, then set status to `in-progress`.
 - The note is the source of truth. Sync after initial plan, each work batch, direction changes, and before final response.
 - Evidence before claims — don't mark done until verification is recorded.
@@ -40,7 +40,7 @@ Make the Obsidian graph useful with `[[wikilinks]]`; do not treat notes as isola
 
 Triggers are **session-wide** — even without a task note, even on single-response tasks. Write at the moment of discovery, not batched at the end.
 
-Path: `obsidian daily:path vault=log` → `daily/YYYY-MM-DD.md`. If CLI fails, use `~/ghq/github.com/h3y6e/log/daily/YYYY-MM-DD.md`.
+Path: `obsidian daily` → `daily/YYYY-MM-DD.md`. If CLI fails, use `~/ghq/github.com/h3y6e/log/daily/YYYY-MM-DD.md`.
 
 **Triggers** — TIL, workarounds, cross-cutting decisions, env/tooling issues, useful links, recurring patterns.
 
@@ -52,12 +52,12 @@ The CLI is unstable. If any command errors, **immediately fall back to direct fi
 
 ## Workflow
 
-1. `obsidian daily:path vault=log` → get today's date (use this, not `date` command)
-2. Search for existing task; if none, `obsidian create vault=log path="task/YYYY-MM-DD-slug.md" template=task`
+1. `obsidian daily` → get today's date (use this, not `date` command)
+2. Search for existing task; if none, `obsidian create path="task/YYYY-MM-DD-slug.md" template=task`
 3. Edit directly — Goal, DoD, Research, Notes
 4. Add/update `[[wikilinks]]` so graph/backlinks connect the task to related work
-5. `obsidian property:set vault=log path="task/..." name=status value=in-progress`
+5. `obsidian property:set path="task/..." name=status value=in-progress`
 6. After each batch, update Notes with findings/decisions/verification
-7. `obsidian task vault=log path="task/..." line=N toggle`
+7. `obsidian task ref=<path:line> toggle`
 8. Final sync checkpoint
-9. `obsidian property:set vault=log path="task/..." name=status value=done`
+9. `obsidian property:set path="task/..." name=status value=done`
