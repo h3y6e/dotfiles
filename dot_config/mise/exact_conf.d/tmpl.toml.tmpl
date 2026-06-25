@@ -1,14 +1,21 @@
 # vim: set ft=toml:
 #:schema https://mise.jdx.dev/schema/mise.json
 
+{{ $anna := joinPath .chezmoi.homeDir ".local/share/mise/installs/github-h3y6e-anna/latest/anna" -}}
 {{ $ollama := joinPath .chezmoi.homeDir ".local/share/mise/installs/ollama/latest/ollama" -}}
 {{ if stat $ollama -}}
+{{ if stat $anna -}}
+[bootstrap.macos.launchd.agents.anna]
+program = "{{ $anna }}"
+args = ["nrem", "{{ .chezmoi.homeDir }}/ghq/github.com/h3y6e/log/task"]
+run_at_load = true
+start_interval = 300
+{{- end }}
 [bootstrap.macos.launchd.agents.ollama]
 program = "{{ $ollama }}"
 args = ["serve"]
 run_at_load = true
 keep_alive = true
-kickstart = true
 {{- end }}
 
 {{ if .personal -}}

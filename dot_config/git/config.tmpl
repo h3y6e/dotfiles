@@ -76,3 +76,5 @@
 	copy = "*.local"
 	hook = "git submodule update --init --recursive"
 	relative = true
+[safe]
+	directory = {{ .chezmoi.homeDir }}/.local/share/chezmoi
