@@ -1,15 +1,15 @@
 ---
-allowed-tools: Bash(obsidian:*) Bash(ghq get log) Bash(rg:*) Read Edit Write
-compatibility: Requires Obsidian with CLI enabled and vault "log".
+allowed-tools: Bash(obsidian:*) Bash(anna recall:*) Bash(ghq get log) Read Edit Write
+compatibility: Requires Obsidian with CLI enabled, vault "log", and anna recall configured.
 description: Use when starting multi-step work, resuming an existing task, switching direction mid-task, wrapping up, or capturing cross-session task context in Obsidian.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/tracking-tasks
-    github-ref: refs/tags/v2026.6.6
+    github-ref: refs/tags/v2026.6.7
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 7939a5aa2d93bf017c852fab0c3b9658c909c2c8
-    version: 2026.6.6
+    github-tree-sha: c6ff662a0ac0196b0e3bc62d7068ee7add812018
+    version: 2026.6.7
 name: tracking-tasks
 ---
 # Tracking Tasks
@@ -23,7 +23,7 @@ name: tracking-tasks
 Path: `task/YYYY-MM-DD-<slug>.md`. Frontmatter: `title`, `status` (`backlog`→`todo`→`in-progress`→`done`/`canceled`). Sections: Goal, DoD (checklist), Research, Notes.
 
 - Infer slug and title from context — don't ask.
-- On session start: search with `obsidian search:context query=<text> limit=<n>` or direct `rg` under the log vault, then read the file directly.
+- On session start: search with `anna recall "<text>"`, then read the matching file directly.
 - Fill Goal and DoD before substantial work, then set status to `in-progress`.
 - The note is the source of truth. Sync after initial plan, each work batch, direction changes, and before final response.
 - Evidence before claims — don't mark done until verification is recorded.
@@ -53,7 +53,7 @@ The CLI is unstable. If any command errors, **immediately fall back to direct fi
 ## Workflow
 
 1. `obsidian daily` → get today's date (use this, not `date` command)
-2. Search for existing task; if none, `obsidian create path="task/YYYY-MM-DD-slug.md" template=task`
+2. Search for existing task with `anna recall "<query>"`; if none, `obsidian create path="task/YYYY-MM-DD-slug.md" template=task`
 3. Edit directly — Goal, DoD, Research, Notes
 4. Add/update `[[wikilinks]]` so graph/backlinks connect the task to related work
 5. `obsidian property:set path="task/..." name=status value=in-progress`
