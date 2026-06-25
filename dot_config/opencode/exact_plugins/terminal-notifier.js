@@ -1,5 +1,5 @@
 const SPINNER_FRAMES = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
-const INPUT_FRAMES = ["◆", "◇"];
+const ASKING_FRAMES = ["◆", "◇"];
 
 export const TerminalNotifier = async ({ client }) => {
   const titles = new Map();
@@ -14,7 +14,7 @@ export const TerminalNotifier = async ({ client }) => {
     return clean.length > 40 ? `${clean.slice(0, 37)}...` : clean;
   };
   const titlePrefix = () => {
-    if (asking) return INPUT_FRAMES[frame % INPUT_FRAMES.length];
+    if (asking) return ASKING_FRAMES[frame % ASKING_FRAMES.length];
     if (status === "idle") return "▣";
     return SPINNER_FRAMES[frame % SPINNER_FRAMES.length];
   };
