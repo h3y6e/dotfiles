@@ -50,7 +50,7 @@ aws-cli = { version = "2.35.11", symlink_bins = "true" }
 ast-grep = "0.44.0"
 fd = "10.4.2"
 fzf = "0.73.1"
-aws-vault = "7.12.1"
+"aqua:ByteNess/aws-vault" = "7.12.1"
 actionlint = "1.7.12"
 ghalint = "1.5.6"
 zizmor = "1.26.1"
