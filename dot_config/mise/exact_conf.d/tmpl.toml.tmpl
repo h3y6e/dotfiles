@@ -1,6 +1,9 @@
 # vim: set ft=toml:
 #:schema https://mise.jdx.dev/schema/mise.json
 
+[settings]
+trusted_config_paths = ["{{ .chezmoi.workingTree }}", "~/ghq"]
+
 {{ $anna := joinPath .chezmoi.homeDir ".local/share/mise/installs/github-h3y6e-anna/latest/anna" -}}
 {{ $ollama := joinPath .chezmoi.homeDir ".local/share/mise/installs/ollama/latest/ollama" -}}
 {{ if stat $ollama -}}

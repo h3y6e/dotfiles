@@ -23,15 +23,13 @@
       "sudo *": "deny",
       "shutdown*": "deny",
       "reboot*": "deny",
-      "npx *": "deny",
-      "npx -y modern-web-guidance*": "allow",
     },
     "read": {
       "*": "allow",
       "*.env": "deny",
     },
     "external_directory": {
-      "~/.local/share/chezmoi/**": "allow",
+      "{{ .chezmoi.workingTree }}/**": "allow",
       "~/ghq/**": "allow",
       "/tmp/**": "allow",
     },
