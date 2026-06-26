@@ -47,12 +47,12 @@
     },
     "filesystem": {
       "allowWrite": [
-        "{{ .chezmoi.homeDir }}/.cache",
-        "{{ .chezmoi.homeDir }}/.config/gcloud",
+        "{{ .xdg.cache }}",
+        "{{ .xdg.config }}/gcloud",
         "{{ .chezmoi.homeDir }}/.docker/buildx",
-        "{{ .chezmoi.homeDir }}/.local/share/mise",
-        "{{ .chezmoi.homeDir }}/.local/share/pnpm/store",
-        "{{ .chezmoi.homeDir }}/.local/state",
+        "{{ .xdg.data }}/mise",
+        "{{ .xdg.data }}/pnpm/store",
+        "{{ .xdg.state }}",
         "{{ .chezmoi.homeDir }}/.npm",
         "{{ .chezmoi.homeDir }}/.Trash",
         "{{ .chezmoi.homeDir }}/ghq",

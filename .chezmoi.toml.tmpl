@@ -15,6 +15,12 @@
   personal = {{ $personal }}
   work = {{ and (not $ephemeral) (not $personal) }}
 
+[data.xdg]
+  config = "{{ .chezmoi.homeDir }}/.config"
+  cache = "{{ .chezmoi.homeDir }}/.cache"
+  data = "{{ .chezmoi.homeDir }}/.local/share"
+  state = "{{ .chezmoi.homeDir }}/.local/state"
+
 [onepassword]
   cache = true
 

@@ -73,12 +73,12 @@ trust_level = "trusted"
 extends = ":workspace"
 
 [permissions.custom.workspace_roots]
-"{{ .chezmoi.homeDir }}/.cache" = true
-"{{ .chezmoi.homeDir }}/.config/gcloud" = true
+"{{ .xdg.cache }}" = true
+"{{ .xdg.config }}/gcloud" = true
 "{{ .chezmoi.homeDir }}/.docker/buildx" = true
-"{{ .chezmoi.homeDir }}/.local/share/mise" = true
-"{{ .chezmoi.homeDir }}/.local/share/pnpm/store" = true
-"{{ .chezmoi.homeDir }}/.local/state" = true
+"{{ .xdg.data }}/mise" = true
+"{{ .xdg.data }}/pnpm/store" = true
+"{{ .xdg.state }}" = true
 "{{ .chezmoi.homeDir }}/.npm" = true
 "{{ .chezmoi.homeDir }}/.Trash" = true
 "{{ .chezmoi.homeDir }}/ghq" = true
