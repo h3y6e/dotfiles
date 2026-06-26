@@ -14,4 +14,4 @@ set -Eeufo pipefail
 # @raycast.author h3y6e
 # @raycast.authorURL https://raycast.com/h3y6e
 
-zed "$(chezmoi source-path)"
+zed "{{ .chezmoi.workingTree }}"

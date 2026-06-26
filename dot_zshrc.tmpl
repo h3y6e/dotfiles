@@ -137,7 +137,7 @@ alias bunx='sfw bunx'
 
 # chezmoi
 alias cz='chezmoi'
-alias czn='nvim $(cz source-path)'
+alias czn='nvim "{{ .chezmoi.workingTree }}"'
 
 # zed
 alias z='zed --existing .'

@@ -3,7 +3,7 @@ Set-PSReadLineOption -EditMode Emacs
 # chezmoi
 if (Get-Command chezmoi -ErrorAction SilentlyContinue) {
   Set-Alias cz chezmoi
-  function czc { code -n $(chezmoi source-path) }
+  function czc { code -n '{{ .chezmoi.workingTree }}' }
 }
 
 # eza
