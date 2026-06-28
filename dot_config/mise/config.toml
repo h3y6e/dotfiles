@@ -14,6 +14,10 @@ npm.package_manager = "aube"
 pipx.uvx = true
 github.use_git_credentials = true
 
+[settings.status]
+show_env = true
+show_tools = true
+
 [bootstrap.packages]
 "brew:aria2" = "latest"
 "brew:chezmoi" = "latest"
