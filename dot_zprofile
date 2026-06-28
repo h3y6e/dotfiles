@@ -11,7 +11,7 @@ fi
 [[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
 
 # mise
-type mise &>/dev/null && eval "$(mise activate zsh)"
+type mise &>/dev/null && eval "$(mise activate zsh --shims)"
 
 # pub
 path=($HOME/.pub-cache/bin $path)

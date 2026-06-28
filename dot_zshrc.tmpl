@@ -77,6 +77,9 @@ type sheldon &>/dev/null && eval "$(sheldon source)"
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh)"
+
 # 1password cli
 [[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
 
