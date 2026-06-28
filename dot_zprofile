@@ -1,11 +1,10 @@
-# Restore PATH order after /etc/zprofile's path_helper rearranges it.
-# The initial setup in .zshenv covers non-login shells; this re-run
-# ensures login shells also get the correct precedence.
+# vim: set ft=zsh:
 
 # homebrew
-if type brew &>/dev/null; then
-  eval "$(brew shellenv)"
-fi
+type brew &>/dev/null && eval "$(brew shellenv)"
+
+# mysql-client
+[[ -d "${HOMEBREW_PREFIX}/opt/mysql-client" ]] && path=(${HOMEBREW_PREFIX}/opt/mysql-client/bin $path)
 
 # rust
 [[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
@@ -15,3 +14,9 @@ type mise &>/dev/null && eval "$(mise activate zsh --shims)"
 
 # pub
 path=($HOME/.pub-cache/bin $path)
+
+# android
+path=($HOME/Library/Android/sdk/platform-tools $path)
+
+# bun
+path=($XDG_CACHE_HOME/.bun/bin $path)
