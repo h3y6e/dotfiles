@@ -55,7 +55,7 @@ cosign = "3.1.1"
 slsa-verifier = "2.7.1"
 sheldon = "0.8.5"
 gcloud = "572.0.0"
-aws-cli = { version = "2.35.11", symlink_bins = "true" }
+aws-cli = { version = "2.35.12", symlink_bins = "true" }
 "aqua:ByteNess/aws-vault" = "7.12.4"
 ast-grep = "0.44.0"
 fd = "10.4.2"
