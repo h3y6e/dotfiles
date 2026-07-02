@@ -1,0 +1,22 @@
+providers: 
+  webSearch: auto
+symbolPreset: unicode
+theme: 
+  dark: dark-catppuccin
+  light: light-catppuccin
+setupVersion: 1
+modelRoles: 
+  default: openai-codex/gpt-5.5:xhigh
+statusLine: 
+  separator: pipe
+  transparent: true
+  showHookStatus: true
+  sessionAccent: true
+display: 
+  shimmer: kitt
+  showTokenUsage: true
+  cacheMissMarker: true
+showHardwareCursor: true
+power: 
+  sleepPrevention: "off"
+hideThinkingBlock: false
