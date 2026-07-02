@@ -2,7 +2,7 @@
 description: Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
 metadata:
     github-path: skills/dispatching-parallel-agents
-    github-ref: refs/tags/v6.0.3
+    github-ref: refs/tags/v6.1.0
     github-repo: https://github.com/obra/superpowers
     github-tree-sha: adc9175fe3545914d5a07e5475bc0e82d5aaed6f
 name: dispatching-parallel-agents

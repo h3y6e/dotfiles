@@ -2,7 +2,7 @@
 description: Use when implementing any feature or bugfix, before writing implementation code
 metadata:
     github-path: skills/test-driven-development
-    github-ref: refs/tags/v6.0.3
+    github-ref: refs/tags/v6.1.0
     github-repo: https://github.com/obra/superpowers
     github-tree-sha: 61939b456845d75979423c855829d05cbf2c304d
 name: test-driven-development
