@@ -2,17 +2,12 @@
 
 typeset -gU cdpath fpath mailpath path
 
-#==============================================================================
 # XDG Base Directory
-#==============================================================================
 [[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="{{ .xdg.config }}"
 [[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="{{ .xdg.cache }}"
 [[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="{{ .xdg.data }}"
 [[ -z "$XDG_STATE_HOME" ]] && export XDG_STATE_HOME="{{ .xdg.state }}"
 
-#==============================================================================
-# Environment Variables
-#==============================================================================
 # editors
 export EDITOR='vim'
 export VISUAL='vim'

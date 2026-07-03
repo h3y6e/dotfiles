@@ -1,16 +1,20 @@
 # vim: set ft=zsh:
 
 # homebrew
-type brew &>/dev/null && eval "$(brew shellenv)"
+if [[ $(arch) == "i386" ]]; then
+  [ -s "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
+else
+  [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh --shims)"
 
 # mysql-client
 [[ -d "${HOMEBREW_PREFIX}/opt/mysql-client" ]] && path=(${HOMEBREW_PREFIX}/opt/mysql-client/bin $path)
 
 # rust
 [[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
-
-# mise
-type mise &>/dev/null && eval "$(mise activate zsh --shims)"
 
 # pub
 path=($HOME/.pub-cache/bin $path)

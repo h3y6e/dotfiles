@@ -34,9 +34,6 @@ unsetopt CLOBBER
 # auto correction
 setopt CORRECT
 
-#==============================================================================
-# Environment (interactive)
-#==============================================================================
 # less
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
@@ -51,12 +48,12 @@ export NI_USE_SOCKET_FIREWALL=1
 export BROWSER='open'
 {{- end }}
 
-#==============================================================================
-# Completions
-#==============================================================================
 # fpath
 [[ -n "$HOMEBREW_PREFIX" ]] && fpath=(${HOMEBREW_PREFIX}/share/zsh/site-functions $fpath)
 [[ -d $HOME/.zfunc ]] && fpath+=$HOME/.zfunc
+
+# mise
+type mise &>/dev/null && eval "$(mise activate zsh)"
 
 # compinit
 autoload -Uz compinit
@@ -85,24 +82,15 @@ type git-wt &>/dev/null && eval "$(git-wt --init zsh)"
 # jj
 type jj &>/dev/null && source <(COMPLETE=zsh jj)
 
-#==============================================================================
-# Plugins
-#==============================================================================
 # sheldon
 type sheldon &>/dev/null && eval "$(sheldon source)"
-
-# direnv
-type direnv &>/dev/null && eval "$(direnv hook zsh)"
-
-# mise
-type mise &>/dev/null && eval "$(mise activate zsh)"
 
 # 1password cli
 [[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
 
-#==============================================================================
-# Hooks
-#==============================================================================
+# direnv
+type direnv &>/dev/null && eval "$(direnv hook zsh)"
+
 # flutter/fvm
 function check-fvm() {
   if [[ -d ".fvm" ]]; then
@@ -114,9 +102,6 @@ function check-fvm() {
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd check-fvm
 
-#==============================================================================
-# Aliases & Functions
-#==============================================================================
 # nocorrect
 alias cd='nocorrect cd'
 alias cp='nocorrect cp'
