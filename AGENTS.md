@@ -1,7 +1,6 @@
 # Tools
 
 - Use `trash` instead of `rm`.
-- Prefer installed tools: `rg`, `ast-grep`, `jq`, `yq`, `actionlint`, `pinact`, `ghalint`, `zizmor`, `hadolint`, `shfmt`, `shellcheck`, `gh`.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
 - For `context-mode`, keep raw data out of the conversation: use sandbox/search tools for analysis and return only derived answers.
 
@@ -35,7 +34,7 @@
 
 # Principles
 
-- Always use the latest or near-latest versions for dependencies.
+- Always use the near-latest versions for dependencies.
 - Simplicity first. Refactor boldly, no backward compatibility unless asked.
 - No hacky fixes: find root causes, maintain senior-level standards.
 - For non-trivial changes, pause and ask "is there a more elegant way?"
@@ -43,3 +42,5 @@
 - Never extract trivial expressions into named helper functions. Inline them at the call site.
   - A helper is justified only when it is called 3+ times AND encapsulates non-obvious logic.
 - Avoid one-off variables that merely rename an expression without adding clarity.
+- Never prioritize minimal diffs. "Minimal diff" thinking leads to convoluted, patchwork code.
+- Never write fallback logic preemptively. Handle the expected path cleanly; edge cases must surface as errors.
