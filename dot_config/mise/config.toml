@@ -8,7 +8,6 @@
 "brew:gnupg" = "latest"
 "brew:libyaml" = "latest"
 "brew:mas" = "latest"
-"brew:mise" = "latest"
 "brew:pinentry-mac" = "latest"
 "brew:watchman" = "latest"
 
