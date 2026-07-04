@@ -1,9 +1,6 @@
 # vim: set ft=toml:
 #:schema https://mise.jdx.dev/schema/mise.json
 
-[settings]
-trusted_config_paths = ["{{ .chezmoi.workingTree }}", "~/ghq"]
-
 {{ $ollama := joinPath .xdg.data "mise/installs/ollama/latest/ollama" -}}
 {{ if stat $ollama -}}
 [bootstrap.macos.launchd.agents.ollama]
@@ -12,6 +9,9 @@ args = ["serve"]
 run_at_load = true
 keep_alive = true
 {{- end }}
+
+[settings]
+trusted_config_paths = ["{{ .chezmoi.workingTree }}", "~/ghq"]
 
 {{ if .personal -}}
 [tools]
