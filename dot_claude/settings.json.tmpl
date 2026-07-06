@@ -34,40 +34,28 @@
   "model": "opusplan",
   "language": "Japanese",
   "sandbox": {
-    "enabled": true,
+    "enabled": false,
     "network": {
       "allowedDomains": [
-        "github.com",
-        "*.github.com",
-        "*.githubusercontent.com"
+        "*"
       ],
       "allowAllUnixSockets": true,
       "allowLocalBinding": true
     },
     "filesystem": {
       "allowWrite": [
-        "{{ .xdg.cache }}",
-        "{{ .xdg.config }}/gcloud",
-        "{{ .chezmoi.homeDir }}/.docker/buildx",
-        "{{ .xdg.data }}/mise",
-        "{{ .xdg.data }}/pnpm/store",
-        "{{ .xdg.state }}",
-        "{{ .chezmoi.homeDir }}/.npm",
-        "{{ .chezmoi.homeDir }}/.Trash",
-        "{{ .chezmoi.homeDir }}/ghq",
-        "{{ .chezmoi.homeDir }}/go",
-        "{{ .chezmoi.homeDir }}/Library/Caches"
+        "{{ .chezmoi.homeDir }}"
       ]
     },
-    "enableWeakerNetworkIsolation": true,
-    "excludedCommands": [
-      "docker *"
-    ]
+    "enableWeakerNetworkIsolation": true
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "theme": "auto",
   "preferredNotifChannel": "auto",
+  "switchModelsOnFlag": false,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true
+  }
 }
