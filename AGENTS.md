@@ -2,25 +2,26 @@
 
 - Use `trash` instead of `rm`.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
-- For `context-mode`, keep raw data out of the conversation: use sandbox/search tools for analysis and return only derived answers.
 
 # Workflow
 
-- For creative/feature work, explore the problem space before implementing. Understand purpose, constraints, and success criteria first.
-- Use TDD skill when implementing any feature or bugfix, before writing implementation code.
-- If something goes wrong, stop and re-plan before pushing forward.
-- Never mark a task done without relevant validation. Prefer tool-specific lint, format, test, or execution checks that match the files you changed.
-  - Skip validation when the change is trivially correct (e.g. typo fix, comment edit).
+- Use TDD skills before writing implementation code.
+  - Tests are specifications: test code expresses the specification of the implementation.
+  - In test code, explicitly mark each section with comments: `// Assert`, `// Act`, `// Arrange`.
+  - Name tests as `situation -> operation -> result`, e.g. "when a valid token is provided, retrieving user information succeeds".
+- Act autonomously. Ask only for real trade-offs.
+- For non-trivial changes, ask: "is there a more elegant way?"
+- Validate before marking done. Prefer tool-specific checks. Skip trivial fixes.
 
 # Task Management
 
-- Use **tracking-tasks** skill.
-- On session start: read tasks relevant to the current work.
+- Use **tracking-tasks** skill for every task.
+- Before starting any work: read tasks relevant to the current work.
 
 # Language
 
 - Conversation with the user: Japanese. Agent-facing guidance (`AGENTS.md`, Agent Skills): English.
-- Other written artifacts (docs, commit messages, issue/PR titles and bodies, etc.):
+- Other written artifacts (docs, descriptions, test names, commit messages, issue/PR titles and bodies, etc.):
   - Run `gh repo view --json visibility -q '.visibility'` to determine.
   - PUBLIC → English.
   - PRIVATE / INTERNAL / unknown → Japanese.
@@ -34,13 +35,12 @@
 
 # Principles
 
-- Always use the near-latest versions for dependencies.
-- Simplicity first. Refactor boldly, no backward compatibility unless asked.
-- No hacky fixes: find root causes, maintain senior-level standards.
-- For non-trivial changes, pause and ask "is there a more elegant way?"
-- Act autonomously. Resolve ambiguity yourself; only ask when a real trade-off needs user judgment.
-- Never extract trivial expressions into named helper functions. Inline them at the call site.
-  - A helper is justified only when it is called 3+ times AND encapsulates non-obvious logic.
-- Avoid one-off variables that merely rename an expression without adding clarity.
-- Never prioritize minimal diffs. "Minimal diff" thinking leads to convoluted, patchwork code.
-- Never write fallback logic preemptively. Handle the expected path cleanly; edge cases must surface as errors.
+- Always use near-latest versions for dependencies.
+- Simplicity first. Refactor boldly. No backward compatibility unless asked.
+- Find root causes. No hacky fixes.
+- Shorter is better. Brevity is beauty; beauty is read; read code has fewer bugs.
+- Inline trivial expressions; avoid one-off variables.
+- Prefer co-location: keep related code close together.
+- Extract helpers only when called 3+ times and non-obvious.
+- Never chase minimal diffs. Patchwork follows.
+- Never add fallback logic "just in case". Let edge cases surface.
