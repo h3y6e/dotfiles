@@ -16,6 +16,9 @@ type mise &>/dev/null && eval "$(mise activate zsh --shims)"
 # rust
 [[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
 
+# bin
+path=($HOME/.local/bin $path)
+
 # pub
 path=($HOME/.pub-cache/bin $path)
 
