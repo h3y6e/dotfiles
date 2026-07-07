@@ -18,7 +18,7 @@ metadata:
     github-path: skills/modern-web-guidance
     github-ref: refs/heads/main
     github-repo: https://github.com/GoogleChrome/modern-web-guidance
-    github-tree-sha: 6a556d0fcee54f2fa419c30147a90d8b55b5b777
+    github-tree-sha: 03cc8b14bdcfc6f6a6da334ecc8c96defe46a616
 name: modern-web-guidance
 ---
 # Modern Web Guidance
@@ -39,7 +39,7 @@ Must use this skill:
 Search with an action-oriented query summarizing what you want to achieve using the `search` command. Run `modern-web-guidance` directly with `npx`.
 
 ```sh
-npx -y modern-web-guidance@latest search "<query>" --skill-version 2026_05_16-c5e7870
+npx -y modern-web-guidance@latest search "<query>" --skill-version 2026_05_16-c5e78707
 ```
 
 **Example Output**:
