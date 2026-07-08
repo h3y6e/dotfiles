@@ -6,10 +6,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/tracking-tasks
-    github-ref: refs/tags/v2026.6.7
+    github-ref: refs/tags/v2026.7.0
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: c6ff662a0ac0196b0e3bc62d7068ee7add812018
-    version: 2026.6.7
+    github-tree-sha: f650d0c7cc50a149ac025f1f1bc40267c923298b
+    version: 2026.7.0
 name: tracking-tasks
 ---
 # Tracking Tasks
