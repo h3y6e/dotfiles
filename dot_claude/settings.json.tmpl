@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_AUTO_CONNECT_IDE": "0",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
@@ -29,7 +28,7 @@
       "{{ .chezmoi.homeDir }}/ghq"
     ]
   },
-  "model": "opusplan",
+  "model": "fable",
   "enabledPlugins": {
     "figma@claude-plugins-official": true
   },
@@ -51,7 +50,8 @@
     "enableWeakerNetworkIsolation": true
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "medium",
+  "effortLevel": "high",
+  "skipWorkflowUsageWarning": true,
   "theme": "auto",
   "preferredNotifChannel": "auto",
   "switchModelsOnFlag": false,
