@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/cxg
-    github-ref: refs/tags/v2026.6.0
+    github-ref: refs/tags/v2026.7.0
     github-repo: https://github.com/h3y6e/cxg
-    github-tree-sha: 2b660f2f2e3f43767bfa9a4132240dd661f7e2d6
-    version: 2026.6.0
+    github-tree-sha: 6590912c0383c31cea5566053f61e471a084d722
+    version: 2026.7.0
 name: cxg
 ---
 # cxg
