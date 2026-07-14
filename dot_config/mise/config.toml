@@ -75,7 +75,7 @@ jj = "0.43.0"
 jq = "1.8.2"
 lazygit = "0.63.0"
 lima = "2.1.4"
-"llama.cpp" = { version = "9986", version_prefix = "b" }
+"llama.cpp" = { version = "9987", version_prefix = "b" }
 neovim = "0.12.4"
 node = "26.5.0"
 "npm:@mermaid-js/mermaid-cli" = "11.16.0"
