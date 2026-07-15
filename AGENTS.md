@@ -8,7 +8,7 @@
 - Use TDD skills before writing implementation code.
   - Tests are specifications: test code expresses the specification of the implementation.
   - In test code, explicitly mark each section with comments: `// Assert`, `// Act`, `// Arrange`.
-  - Name tests as `situation -> operation -> result`, e.g. "when a valid token is provided, retrieving user information succeeds".
+  - Name tests with a sentence stating the situation, operation, and expected result in that order, e.g. "when a valid token is provided, retrieving user information succeeds".
 - Act autonomously. Ask only for real trade-offs.
 - For non-trivial changes, ask: "is there a more elegant way?"
 - Validate before marking done. Prefer tool-specific checks. Skip trivial fixes.
