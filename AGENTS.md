@@ -9,6 +9,7 @@
   - Tests are specifications: test code expresses the specification of the implementation.
   - In test code, explicitly mark each section with comments: `// Assert`, `// Act`, `// Arrange`.
   - Name tests with a sentence stating the situation, operation, and expected result in that order, e.g. "when a valid token is provided, retrieving user information succeeds".
+  - Before finishing, remove or consolidate temporary TDD tests; keep only tests whose lasting value justifies their maintenance cost.
 - Act autonomously. Ask only for real trade-offs.
 - For non-trivial changes, ask: "is there a more elegant way?"
 - Validate before marking done. Prefer tool-specific checks. Skip trivial fixes.
