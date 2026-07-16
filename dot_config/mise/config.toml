@@ -73,7 +73,7 @@ imagemagick = "7.1.2_25"
 java = "26.0.1"
 jj = "0.43.0"
 jq = "1.8.2"
-lazygit = "0.63.0"
+lazygit = "0.63.1"
 lima = "2.1.4"
 "llama.cpp" = { version = "10016", version_prefix = "b" }
 neovim = "0.12.4"
