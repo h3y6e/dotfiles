@@ -2,16 +2,17 @@
 description: Use when writing, editing, or reviewing Japanese technical prose, book chapters, drafts, articles, or explanations where sentence-per-line formatting, paragraph logic, argument rigor, reader load, tone, restrained rhetoric, non-LLM phrasing, and concision matter.
 metadata:
     github-path: skills/writing-japanese
-    github-ref: refs/tags/v2026.7.0
+    github-ref: refs/tags/v2026.7.1
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: f3af71d6d1b934e15f4e0c14158c77b38bbbca5e
-    ref: https://gist.githubusercontent.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d/raw/5ed08e4475365fd233aa0d3ab71c19b87e1a5732/SKILL.md
-    version: 2026.7.0
+    github-tree-sha: 34f12bdf8817fec1ae1d6f20f038146a64bb208c
+    refs: https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d, https://gist.github.com/k16shikano/eb2929f13ed19c97188393d297be8432
+    version: 2026.7.1
 name: writing-japanese
 ---
 # 日本語技術文書の文章規範
 
 日本語で技術的な原稿（書籍の章、記事、解説文）を書く・推敲するときは、以下の規範に従う。
+読者に最後まで読み進めさせたい「読み物」を書く・推敲するとき、または「密度はあるが平坦でおもしろくない」文章を診断・修正するときは、[緩急と緊張の設計](references/pacing-and-tension.md) も読む。
 
 ## 整形
 
