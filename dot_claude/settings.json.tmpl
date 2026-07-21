@@ -28,7 +28,7 @@
       "{{ .chezmoi.homeDir }}/ghq"
     ]
   },
-  "model": "fable",
+  "model": "{{ if .personal }}fable{{ else }}sonnet{{ end }}",
   "enabledPlugins": {
     "figma@claude-plugins-official": true
   },
