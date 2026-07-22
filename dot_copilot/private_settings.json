@@ -1,6 +1,5 @@
 {
   "theme": "auto",
-  "model": "auto",
   "continueOnAutoMode": true,
   "inlineImages": true,
   "experimental": true,
@@ -9,10 +8,9 @@
   "showTipsOnStartup": true,
   "stayInAutopilot": true,
   "dynamicRetrieval": {
-    "mcp": true,
-    "skills": true
+    "skills": true,
+    "mcp": true
   },
-  "ide": {
-    "autoConnect": true
-  }
+  "effortLevel": "high",
+  "contextTier": "long_context"
 }
