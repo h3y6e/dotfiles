@@ -1,8 +1,6 @@
 {
   "theme": "auto",
   "autoUpdate": false,
-  "model": "claude-opus-4.6",
-  "experimental": true,
-  "showReasoning": true,
-  "effortLevel": "high"
+  "model": "auto",
+  "experimental": true
 }
