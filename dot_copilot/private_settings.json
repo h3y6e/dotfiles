@@ -1,6 +1,18 @@
 {
   "theme": "auto",
-  "autoUpdate": false,
   "model": "auto",
-  "experimental": true
+  "continueOnAutoMode": true,
+  "inlineImages": true,
+  "experimental": true,
+  "beep": true,
+  "autoUpdate": false,
+  "showTipsOnStartup": true,
+  "stayInAutopilot": true,
+  "dynamicRetrieval": {
+    "mcp": true,
+    "skills": true
+  },
+  "ide": {
+    "autoConnect": true
+  }
 }
