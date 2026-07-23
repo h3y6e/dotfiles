@@ -1,5 +1,7 @@
 #!/bin/bash
 
-set -Eeufo pipefail
+set -Eufo pipefail
 
 sheldon lock --update
+
+exit 0
