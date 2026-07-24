@@ -2,9 +2,9 @@
 description: Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
 metadata:
     github-path: skills/dispatching-parallel-agents
-    github-ref: refs/tags/v6.1.0
+    github-ref: refs/tags/v6.2.0
     github-repo: https://github.com/obra/superpowers
-    github-tree-sha: adc9175fe3545914d5a07e5475bc0e82d5aaed6f
+    github-tree-sha: 15697cb0726c26a66bff737494e8b5266667ba0c
 name: dispatching-parallel-agents
 ---
 # Dispatching Parallel Agents
@@ -162,15 +162,6 @@ Agent 3 → Fix tool-approval-race-conditions.test.ts
 
 **Integration:** All fixes independent, no conflicts, full suite green
 
-**Time saved:** 3 problems solved in parallel vs sequentially
-
-## Key Benefits
-
-1. **Parallelization** - Multiple investigations happen simultaneously
-2. **Focus** - Each agent has narrow scope, less context to track
-3. **Independence** - Agents don't interfere with each other
-4. **Speed** - 3 problems solved in time of 1
-
 ## Verification
 
 After agents return:
@@ -178,12 +169,3 @@ After agents return:
 2. **Check for conflicts** - Did agents edit same code?
 3. **Run full suite** - Verify all fixes work together
 4. **Spot check** - Agents can make systematic errors
-
-## Real-World Impact
-
-From debugging session (2025-10-03):
-- 6 failures across 3 files
-- 3 agents dispatched in parallel
-- All investigations completed concurrently
-- All fixes integrated successfully
-- Zero conflicts between agent changes

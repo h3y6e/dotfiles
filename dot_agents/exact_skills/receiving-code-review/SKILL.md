@@ -2,9 +2,9 @@
 description: Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation
 metadata:
     github-path: skills/receiving-code-review
-    github-ref: refs/tags/v6.1.0
+    github-ref: refs/tags/v6.2.0
     github-repo: https://github.com/obra/superpowers
-    github-tree-sha: f54c765d64eedccc17aa099b4947e64231f4b698
+    github-tree-sha: b5e154fc3ec7a6a0b1e710eebacc2168620cc428
 name: receiving-code-review
 ---
 # Code Review Reception
@@ -207,11 +207,3 @@ You understand 1,2,3,6. Unclear on 4,5.
 ## GitHub Thread Replies
 
 When replying to inline review comments on GitHub, reply in the comment thread (`gh api repos/{owner}/{repo}/pulls/{pr}/comments/{id}/replies`), not as a top-level PR comment.
-
-## The Bottom Line
-
-**External feedback = suggestions to evaluate, not orders to follow.**
-
-Verify. Question. Then implement.
-
-No performative agreement. Technical rigor always.

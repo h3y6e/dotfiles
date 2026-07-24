@@ -2,14 +2,14 @@
 description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
 metadata:
     github-path: skills/requesting-code-review
-    github-ref: refs/tags/v6.1.0
+    github-ref: refs/tags/v6.2.0
     github-repo: https://github.com/obra/superpowers
-    github-tree-sha: c9144401a26cbe2549a0020c65c478a6a0bdfaee
+    github-tree-sha: adfc337f87084b705c1a5811ba2436dc99fb7216
 name: requesting-code-review
 ---
 # Requesting Code Review
 
-Dispatch a code reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history. This keeps the reviewer focused on the work product, not your thought process, and preserves your own context for continued work.
+Dispatch a code reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history.
 
 **Core principle:** Review early, review often.
 
@@ -76,20 +76,12 @@ You: [Fix progress indicators]
 [Continue to Task 3]
 ```
 
-## Integration with Workflows
+## Common Rationalizations
 
-**Subagent-Driven Development:**
-- Review after EACH task
-- Catch issues before they compound
-- Fix before moving to next task
-
-**Executing Plans:**
-- Review after each task or at natural checkpoints
-- Get feedback, apply, continue
-
-**Ad-Hoc Development:**
-- Review before merge
-- Review when stuck
+| Excuse | Reality |
+|--------|---------|
+| "I'll just review the diff myself instead of dispatching a reviewer" | You're the coordinator — reviewing the diff inline burns the context window you need to keep driving the work. Dispatch a reviewer subagent: the diff and the evaluation live in its context, and only the findings come back to you. |
+| "The reviewer needs my whole session history to understand the change" | Hand it precisely crafted context, never your session's history. That keeps the reviewer on the work product, not your thought process. |
 
 ## Red Flags
 
