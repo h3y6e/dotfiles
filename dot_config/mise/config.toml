@@ -39,7 +39,7 @@ actionlint = "1.7.12"
 "aqua:ByteNess/aws-vault" = "7.13.1"
 "aqua:docker/buildx" = "0.35.0"
 "aqua:k1LoW/git-wt" = "0.29.0"
-ast-grep = "0.44.1"
+ast-grep = "0.45.0"
 aube = "1.32.0"
 aws-cli = { version = "2.36.6", symlink_bins = "true" }
 bat = "0.26.1"
