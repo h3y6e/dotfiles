@@ -8,9 +8,13 @@
   "showTipsOnStartup": true,
   "stayInAutopilot": true,
   "dynamicRetrieval": {
-    "skills": true,
     "mcp": true
   },
+  "allowedUrls": [
+    "https://docs.databricks.com",
+    "https://docs.aws.amazon.com",
+    "https://raw.githubusercontent.com"
+  ],
   "effortLevel": "high",
   "contextTier": "long_context"
 }
