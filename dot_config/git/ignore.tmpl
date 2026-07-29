@@ -1,15 +1,14 @@
 # vim: set ft=gitignore:
-# Created in part by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,vim,visualstudiocode,jetbrains,xcode,dotenv
 
 *.local.*
-*.local/
-.worktrees/
+?*.local
 
 ### agents ###
 .claude/.cc-writes/
 .claude/worktrees/
 .serena/
 .ghfs/
+.worktrees/
 
 ### 1Password ###
 .op/plugins
@@ -34,9 +33,6 @@ venv/
 node_modules/
 
 ### JetBrains ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -62,19 +58,6 @@ node_modules/
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
-
-# Gradle and Maven with auto-import
-# When using Gradle or Maven with auto-import, you should exclude module files,
-# since they will be recreated, and may cause churn.  Uncomment if using
-# auto-import.
-# .idea/artifacts
-# .idea/compiler.xml
-# .idea/jarRepositories.xml
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
-# *.iml
-# *.ipr
 
 # CMake
 cmake-build-*/
@@ -111,14 +94,6 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
-
-### JetBrains Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
-
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
 
 # Sonarlint plugin
 # https://plugins.jetbrains.com/plugin/7973-sonarlint
@@ -161,7 +136,6 @@ tags
 # Built Visual Studio Code Extensions
 *.vsix
 
-### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
 .ionide
@@ -216,19 +190,15 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### macOS Patch ###
 # iCloud generated files
 *.icloud
 
 ### Xcode ###
-## User settings
 xcuserdata/
 
-## Xcode 8 and earlier
 *.xcscmblueprint
 *.xccheckout
 
-### Xcode Patch ###
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
