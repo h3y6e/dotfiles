@@ -1,5 +1,7 @@
 {
-  "lastChangelogVersion": "{{ output "pi" "-v" | trim }}",
+  {{- if lookPath "pi" }}
+  "lastChangelogVersion": "{{ output "pi" "--version" | trim }}",
+  {{- end }}
   "theme": "light/dark",
   "defaultProvider": "github-copilot",
   "defaultModel": "claude-sonnet-5",
