@@ -13,6 +13,7 @@
   "allowedUrls": [
     "https://docs.databricks.com",
     "https://docs.aws.amazon.com",
+    "https://github.com",
     "https://raw.githubusercontent.com"
   ],
   "effortLevel": "high",
