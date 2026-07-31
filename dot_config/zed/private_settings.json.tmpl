@@ -9,10 +9,6 @@
   },
   "cli_default_open_behavior": "existing_window",
   "context_servers": {
-    "figma": {
-      "url": "http://127.0.0.1:3845/mcp",
-      "enabled": false,
-    },
     "context7": {
       "url": "https://mcp.context7.com/mcp",
       {{- if not .ephemeral }}
@@ -121,14 +117,12 @@
     "use_modifier_to_send": true,
     "play_sound_when_agent_done": "always",
     "default_model": {
-      "effort": "low",
-      "enable_thinking": true,
-      "provider": "openai-subscribed",
-      "model": "gpt-5.6-sol",
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-5",
     },
     "commit_message_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "model": "gpt-5.6-luna",
     },
   },
   "lsp": {
@@ -148,9 +142,6 @@
           "updateImportsOnFileMove": {
             "enabled": "always",
           },
-          "tsserver": {
-            "maxTsServerMemory": 16184,
-          },
         },
       },
     },
@@ -161,7 +152,6 @@
     },
   },
   "auto_install_extensions": {
-    "biome": true,
     "catppuccin": true,
     "catppuccin-icons": true,
     "oxc": true,
