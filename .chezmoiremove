@@ -2,3 +2,7 @@
 # breaking WezTerm's config resolution. Brilliant engineering, Anthropic.
 # https://github.com/wezterm/wezterm/issues/7251#issuecomment-3363979705
 .wezterm.lua
+
+# AGENTS.md is no longer deployed to the home directory root; each coding
+# agent now gets its own rendering of .chezmoitemplates/AGENTS.md.tmpl.
+AGENTS.md

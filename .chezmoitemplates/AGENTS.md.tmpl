@@ -1,3 +1,9 @@
+{{- if eq .agent "zed" -}}
+# Commit Messages
+
+- Use Conventional Commit subjects: "type(scope): subject", max 72 chars, in English.
+- Valid subject types: fix, feat, docs, style, refactor, perf, test, build, ci, chore, revert.
+{{- else -}}
 # Tools
 
 - Use `trash` instead of `rm`.
@@ -21,7 +27,7 @@
 
 # Language
 
-- Conversation with the user: Japanese. Agent-facing guidance (`AGENTS.md`, Agent Skills): English.
+- Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "claude" }}CLAUDE.md{{ else }}AGENTS.md{{ end }}`, Agent Skills): English.
 - Other written artifacts (docs, descriptions, test names, commit messages, issue/PR titles and bodies, etc.):
   - Run `gh repo view --json visibility -q '.visibility'` to determine.
   - PUBLIC → English.
@@ -45,3 +51,4 @@
 - Extract helpers only when called 3+ times and non-obvious.
 - Never chase minimal diffs. Patchwork follows.
 - Never add fallback logic "just in case". Let edge cases surface.
+{{- end }}
