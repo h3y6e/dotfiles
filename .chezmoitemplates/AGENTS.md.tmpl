@@ -1,9 +1,4 @@
-{{- if eq .agent "zed" -}}
-# Commit Messages
-
-- Use Conventional Commit subjects: "type(scope): subject", max 72 chars, in English.
-- Valid subject types: fix, feat, docs, style, refactor, perf, test, build, ci, chore, revert.
-{{- else -}}
+{{- /* vim: set ft=markdown: */ -}}
 # Tools
 
 - Use `trash` instead of `rm`.
@@ -16,14 +11,15 @@
   - In test code, explicitly mark each section with comments: `// Assert`, `// Act`, `// Arrange`.
   - Name tests with a sentence stating the situation, operation, and expected result in that order, e.g. "when a valid token is provided, retrieving user information succeeds".
   - Before finishing, remove or consolidate temporary TDD tests; keep only tests whose lasting value justifies their maintenance cost.
-- Act autonomously. Ask only for real trade-offs.
 - For non-trivial changes, ask: "is there a more elegant way?"
 - Validate before marking done. Prefer tool-specific checks. Skip trivial fixes.
 
+{{- if ne .agent "zed" }}
 # Task Management
 
 - Use **tracking-tasks** skill for every task.
 - Before starting any work: read tasks relevant to the current work.
+{{- end }}
 
 # Language
 
@@ -39,6 +35,10 @@
 
 - In docs, issues, PR bodies, and review comments, keep only non-obvious rationale, constraints, trade-offs, impact, and risks.
 - Omit source/diff-obvious facts, restatements, and duplicate summaries.
+{{- if eq .agent "zed" }}
+- Commit messages: use Conventional Commit subjects: "type(scope): subject", max 72 chars, in English.
+  - Valid subject types: fix, feat, docs, style, refactor, perf, test, build, ci, chore, revert.
+{{- end }}
 
 # Principles
 
@@ -51,4 +51,3 @@
 - Extract helpers only when called 3+ times and non-obvious.
 - Never chase minimal diffs. Patchwork follows.
 - Never add fallback logic "just in case". Let edge cases surface.
-{{- end }}
