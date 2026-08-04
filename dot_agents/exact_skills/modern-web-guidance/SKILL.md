@@ -18,7 +18,7 @@ metadata:
     github-path: skills/modern-web-guidance
     github-ref: refs/heads/main
     github-repo: https://github.com/GoogleChrome/modern-web-guidance
-    github-tree-sha: 9999944bbd00550eba8f01f313a59bf44ef28fd8
+    github-tree-sha: 83059c96ba3ad213acda61a18451555d9b0860fb
 name: modern-web-guidance
 ---
 # Modern Web Guidance
