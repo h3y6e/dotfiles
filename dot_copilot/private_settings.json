@@ -1,7 +1,6 @@
 {
   "theme": "auto",
   "continueOnAutoMode": true,
-  "inlineImages": true,
   "experimental": true,
   "beep": true,
   "autoUpdate": false,
