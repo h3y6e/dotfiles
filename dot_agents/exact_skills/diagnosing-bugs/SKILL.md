@@ -2,9 +2,9 @@
 description: Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow.
 metadata:
     github-path: skills/engineering/diagnosing-bugs
-    github-ref: refs/tags/v1.0.1
+    github-ref: refs/tags/v1.2.2
     github-repo: https://github.com/mattpocock/skills
-    github-tree-sha: 0ecacff09e31245c34727abe7cb7cff71f615a35
+    github-tree-sha: 27bf00e3ccc53491e938e8b5602be39238ce68f3
 name: diagnosing-bugs
 ---
 # Diagnosing Bugs
