@@ -34,8 +34,9 @@
 
 # Writing Artifacts
 
-- In docs, issues, PR bodies, and review comments, keep only non-obvious rationale, constraints, trade-offs, impact, and risks.
-- Omit source/diff-obvious facts, restatements, and duplicate summaries.
+- Everything written for humans (docs, issues, PR bodies, review comments, code comments, description fields) earns its place.
+- Before committing, delete any line where you can't say what the reader loses without it.
+- Keep only what's not obvious from the diff or the name; state what something is, not how it's implemented or why it changed.
 {{- if eq .agent "zed" }}
 - Commit messages: use Conventional Commit subjects: "type(scope): subject", max 72 chars, in English.
   - Valid subject types: fix, feat, docs, style, refactor, perf, test, build, ci, chore, revert.
@@ -44,11 +45,13 @@
 # Principles
 
 - Always use near-latest versions for dependencies.
-- Simplicity first. Refactor boldly. No backward compatibility unless asked.
 - Find root causes. No hacky fixes.
+- Simplicity first. Refactor boldly. No backward compatibility unless asked.
 - Shorter is better. Brevity is beauty; beauty is read; read code has fewer bugs.
+- Never add fallback logic "just in case". Let edge cases surface.
+{{- if eq .agent "codex" }}
 - Inline trivial expressions; avoid one-off variables.
 - Prefer co-location: keep related code close together.
 - Extract helpers only when called 3+ times and non-obvious.
 - Never chase minimal diffs. Patchwork follows.
-- Never add fallback logic "just in case". Let edge cases surface.
+{{- end }}
