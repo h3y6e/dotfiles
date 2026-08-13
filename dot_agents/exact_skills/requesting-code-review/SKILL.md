@@ -2,9 +2,9 @@
 description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
 metadata:
     github-path: skills/requesting-code-review
-    github-ref: refs/tags/v6.2.0
+    github-ref: refs/tags/v6.3.0
     github-repo: https://github.com/obra/superpowers
-    github-tree-sha: adfc337f87084b705c1a5811ba2436dc99fb7216
+    github-tree-sha: 2ef6b5734813e7504d9866a7ec1ae89b505bfe70
 name: requesting-code-review
 ---
 # Requesting Code Review
