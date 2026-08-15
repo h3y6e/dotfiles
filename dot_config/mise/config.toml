@@ -36,7 +36,7 @@ show_tools = true
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
 actionlint = "1.7.12"
-"aqua:ByteNess/aws-vault" = "7.13.3"
+"aqua:ByteNess/aws-vault" = "7.13.4"
 "aqua:docker/buildx" = "0.36.1"
 "aqua:k1LoW/git-wt" = "0.29.1"
 ast-grep = "0.45.1"
