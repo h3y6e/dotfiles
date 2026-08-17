@@ -15,16 +15,23 @@ set -Eeufo pipefail
 # @raycast.author h3y6e
 # @raycast.authorURL https://raycast.com/h3y6e
 
+export MISE_EXEC_AUTO_INSTALL=0
 text="$1"
 
 if mise x -- rg -q '\p{Hiragana}|\p{Katakana}|\p{Han}' <<<"$text"; then
-  read -r src code dst dcode <<<"Japanese ja English en"
+  read -r src dst <<<"Japanese English"
 else
-  read -r src code dst dcode <<<"English en Japanese ja"
+  read -r src dst <<<"English Japanese"
 fi
 
-mise x -- ollama run translategemma "You are a professional $src ($code) to $dst ($dcode) translator. Your goal is to accurately convey the meaning and nuances of the original $src text while adhering to $dst grammar, vocabulary, and cultural sensitivities.
-Produce only the $dst translation, without any additional explanations or commentary. Please translate the following $src text into $dst:
+prompt="Translate the following $src text into $dst.
 
+$text"
 
-$text" --nowordwrap 2>|/dev/null
+# shellcheck disable=SC2016
+body=$(mise x -- jq -n --arg prompt "$prompt" \
+  '{model: "mradermacher/CAT-Translate-7b-i1-GGUF:Q4_K_M", messages: [{role: "user", content: $prompt}]}')
+
+curl -sf http://127.0.0.1:11435/v1/chat/completions \
+  -H 'Content-Type: application/json' \
+  -d "$body" | mise x -- jq -r '.choices[0].message.content'
