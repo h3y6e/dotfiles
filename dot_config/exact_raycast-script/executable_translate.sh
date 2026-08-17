@@ -30,7 +30,7 @@ $text"
 
 # shellcheck disable=SC2016
 body=$(mise x -- jq -n --arg prompt "$prompt" \
-  '{model: "mradermacher/CAT-Translate-7b-i1-GGUF:Q4_K_M", messages: [{role: "user", content: $prompt}]}')
+  '{model: "cat-translate-7b", messages: [{role: "user", content: $prompt}]}')
 
 curl -sf http://127.0.0.1:11435/v1/chat/completions \
   -H 'Content-Type: application/json' \

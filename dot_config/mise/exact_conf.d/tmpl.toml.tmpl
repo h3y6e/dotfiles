@@ -18,7 +18,7 @@ args = ["serve"]
 run_at_load = true
 keep_alive = true
 kickstart = true
-environment = { LLAMA_ARG_PORT = "11435" }
+environment = { LLAMA_ARG_PORT = "11435", LLAMA_ARG_MODELS_PRESET = "{{ joinPath .xdg.config .handle "llama.cpp/presets.ini" }}" }
 stdout_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
 stderr_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
 {{- end }}
