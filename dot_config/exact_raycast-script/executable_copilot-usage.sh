@@ -18,6 +18,7 @@ set -Eeufo pipefail
 export MISE_EXEC_AUTO_INSTALL=0
 export GH_PROMPT_DISABLED=1
 
+# shellcheck disable=SC2016
 mise x -- gh api /copilot_internal/user --jq '
 .quota_snapshots.premium_interactions as $q
 | (100 - $q.percent_remaining) as $p
