@@ -10,6 +10,19 @@ run_at_load = true
 keep_alive = true
 {{- end }}
 
+{{ $llamaCpp := joinPath .xdg.data "mise/installs/llama-cpp/latest/llama" -}}
+{{ if stat $llamaCpp -}}
+[bootstrap.macos.launchd.agents.llama-cpp]
+program = "{{ $llamaCpp }}"
+args = ["serve"]
+run_at_load = true
+keep_alive = true
+kickstart = true
+environment = { LLAMA_ARG_PORT = "11435" }
+stdout_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
+stderr_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
+{{- end }}
+
 [settings]
 trusted_config_paths = ["{{ .chezmoi.workingTree }}", "~/ghq"]
 
