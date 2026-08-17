@@ -12,7 +12,7 @@ set -Eeufo pipefail
 # @raycast.argument1 { "type": "text", "placeholder": "log" }
 
 # Documentation:
-# @raycast.author h3y6e
-# @raycast.authorURL https://raycast.com/h3y6e
+# @raycast.author {{ .handle }}
+# @raycast.authorURL https://raycast.com/{{ .handle }}
 
 echo "$1" | sed -E 's#(/Users)/[^/]+#\1/<user>#g' | sed -E 's#(/ghq/github\.com)/[^/]+/[^/]+#\1/<org>/<repo>#g' | pbcopy

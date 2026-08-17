@@ -12,8 +12,8 @@ set -Eeufo pipefail
 # @raycast.argument1 { "type": "text", "placeholder": "text (ja/en)" }
 
 # Documentation:
-# @raycast.author h3y6e
-# @raycast.authorURL https://raycast.com/h3y6e
+# @raycast.author {{ .handle }}
+# @raycast.authorURL https://raycast.com/{{ .handle }}
 
 export MISE_EXEC_AUTO_INSTALL=0
 text="$1"
