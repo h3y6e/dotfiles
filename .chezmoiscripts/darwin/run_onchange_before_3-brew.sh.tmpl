@@ -65,7 +65,7 @@ export HOMEBREW_NO_ASK=1
 export HOMEBREW_BUNDLE_NO_UPGRADE=1
 
 brew bundle --file=-<<EOF
-tap "h3y6e/dotfiles"
+tap "{{ .handle }}/dotfiles"
 {{ range ($brews | sortAlpha | uniq) -}}
 brew "{{ . }}"
 {{ end -}}

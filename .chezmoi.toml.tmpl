@@ -1,12 +1,13 @@
 # vim: set ft=toml:
 {{ $ephemeral := false -}}
 {{- $personal := false -}}
+{{- $handle := "h3y6e" -}}
 
 {{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "runner" "ubuntu" "vscode") -}}
 {{-   $ephemeral = true -}}
 {{- end -}}
 
-{{- if eq .chezmoi.username "h3y6e" -}}
+{{- if eq .chezmoi.username $handle -}}
 {{-   $personal = true -}}
 {{- end -}}
 
@@ -14,6 +15,7 @@
   ephemeral = {{ $ephemeral }}
   personal = {{ $personal }}
   work = {{ and (not $ephemeral) (not $personal) }}
+  handle = "{{ $handle }}"
 
 [data.xdg]
   config = "{{ .chezmoi.homeDir }}/.config"
