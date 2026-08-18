@@ -1,0 +1,5 @@
+interface:
+  display_name: Fuck
+  short_description: Find and fix what just went wrong
+policy:
+  allow_implicit_invocation: false
