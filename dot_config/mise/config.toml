@@ -36,6 +36,7 @@ show_tools = true
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
 actionlint = "1.7.12"
+"aqua:bridgecrewio/checkov" = "3.3.9"
 "aqua:ByteNess/aws-vault" = "7.13.5"
 "aqua:docker/buildx" = "0.36.1"
 "aqua:k1LoW/git-wt" = "0.29.1"
@@ -45,7 +46,6 @@ aws = { version = "2.36.25", symlink_bins = "true" }
 bat = "0.26.1"
 bun = "1.3.14"
 cargo-binstall = "1.21.1"
-checkov = "3.3.11"
 claude-code = "2.1.234"
 codex = "latest"
 colima = "0.10.3"
