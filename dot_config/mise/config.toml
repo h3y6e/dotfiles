@@ -46,7 +46,7 @@ aws = { version = "2.36.25", symlink_bins = "true" }
 bat = "0.26.1"
 bun = "1.3.14"
 cargo-binstall = "1.21.1"
-claude-code = "2.1.234"
+claude-code = "2.1.235"
 codex = "latest"
 colima = "0.10.3"
 copilot-cli = "1.0.80"
