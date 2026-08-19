@@ -3,3 +3,4 @@ memory = "~/ghq/github.com/h3y6e/log/task/memory.local.db"
 [embedder]
 provider = "llama.cpp"
 url = "http://localhost:11435"
+model = "qwen3-embedding-0.6b"
