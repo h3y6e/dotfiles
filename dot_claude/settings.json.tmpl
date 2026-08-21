@@ -28,7 +28,7 @@
       "{{ .chezmoi.homeDir }}/ghq"
     ]
   },
-  "model": "{{ if .personal }}fable{{ else }}sonnet{{ end }}",
+  "model": "{{ if .personal }}fable{{ else }}sonnet[1m]{{ end }}",
   "enabledPlugins": {
     "figma@claude-plugins-official": true
   },
@@ -50,10 +50,11 @@
     "enableWeakerNetworkIsolation": true
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "{{ if .personal }}medium{{ else }}high{{ end }}"
+  "effortLevel": "{{ if .personal }}medium{{ else }}high{{ end }}",
   "skipWorkflowUsageWarning": true,
   "theme": "auto",
   "preferredNotifChannel": "terminal_bell",
   "switchModelsOnFlag": false,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "outputStyle": "Concise"
 }
