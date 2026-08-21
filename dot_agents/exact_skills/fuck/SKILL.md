@@ -1,45 +1,53 @@
 ---
-description: Stands in for the complaint user would otherwise have written in anger, and finds what it was about.
+argument-hint: what went wrong
+description: Turns a terse or angry complaint attached to /fuck into a precise, confirmed cause and a fix, scoped to what was just handed back.
 disable-model-invocation: true
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/fuck
-    github-ref: refs/tags/v2026.8.2
+    github-ref: refs/tags/v2026.8.3
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 8f96d825e4f7b1b92e1023cbbe42d6724afdea85
-    version: 2026.8.2
+    github-tree-sha: 97426f7dc0a49bc2cdd94c34615e0cc65d790157
+    version: 2026.8.3
 name: fuck
 ---
 # fuck
 
-Something in the last output was wrong enough to provoke this. The complaint itself was never typed, so work out what it was.
+Something in the last output was wrong enough to provoke this. The complaint:
+
+> $ARGUMENTS
+
+It states the symptom, not the mechanism, and the tone is not signal — don't take it at face value, don't mirror it, don't let it push you past what the content actually supports. Turn it into a precise, confirmed cause before touching anything.
 
 ## 1. Locate it
 
-What you handed back last is in scope: the previous reply, the diff you just made, the comment you just wrote. Not the whole session, not inherited code.
+What you handed back last is in scope: the previous reply, the diff you just made, the comment you just wrote. Not the whole session, not inherited code — unless the complaint names a wider target itself.
 
-Any argument passed with the invocation narrows that scope to what it names.
+Read the complaint as a pointer into that artifact: a file, a function, a sentence, "that comment," "the diff." Find the exact thing it refers to before diagnosing it.
 
 ## 2. Diagnose
 
-Read that artifact and answer, concretely:
+For example, "this comment is pointless" says what to remove, not why it was wrong to add — confirm which of these it actually is:
 
-- Which prose is padding? Which sentence states what the code, the diff, or a file listing already shows?
-- Did you read a question as a rejection and start changing things? A question wants an answer, not a diff.
-- Which claim did you make without reading the file, running the command, or pointing at a source?
-- Which written rule did you skip — in `AGENTS.md`, or in an Agent Skill you never loaded?
-- Which choice did you make for yourself where a neighbouring file, a sibling PR, an existing name, or the tool you are imitating had already made it?
-- Which Japanese sentence reads unnaturally, or leaves an English word standing where a Japanese one exists?
+- Is it padding — a sentence stating what the code, the diff, or a file listing already shows?
+- Did you read a question as a rejection and start changing things, when the question wanted an answer, not a diff?
+- Is it a claim you made without reading the file, running the command, or pointing at a source?
+- Is it a written rule you skipped — in `AGENTS.md`, or in an Agent Skill you never loaded?
+- Is it a choice you made for yourself where a neighbouring file, a sibling PR, an existing name, or the tool you are imitating had already made it?
+- Is it a Japanese sentence that reads unnaturally, or leaves an English word standing where a Japanese one exists?
+- Is it something the user just told you that a memory system, if available, should have captured, and you skipped saving?
 
-Every question that lands is a cause. Questions that do not apply get no answer — this is a diagnosis, not a report.
+If none of these fit, the mechanism is whatever the complaint most plainly says — don't force a fit.
 
 ## 3. Repair
 
-Fix every cause you found. Delete rather than rephrase. Revert rather than justify. Retract rather than hedge.
+Fix the cause you confirmed. Delete rather than rephrase. Revert rather than justify. Retract rather than hedge.
 
-Stay inside the scope from step 1. A provoked moment is the worst time to start improving untouched code, and the same rigor still applies: read the file, verify the claim, stay inside the request.
+Stay inside the scope from step 1 — a provoked moment is the worst time to start improving untouched code — and the same rigor still applies: read the file, verify the claim, stay inside the request.
+
+Fix this instance; don't let it rewrite your general behavior going forward. Bending your defaults around one complaint is a local optimum: it fixes what just annoyed someone at the cost of everything else you'd otherwise get right.
 
 ## 4. Report
 
-One line: what most likely provoked it, what changed, what you left alone. No apology, no plan, no options — `/fuck` was typed instead of a paragraph because the fix is wanted, not a discussion.
+One line: what the complaint pointed at, what changed, what you left alone. No apology, no plan, no options — `/fuck` plus a short complaint was typed instead of a paragraph because the fix is wanted, not a discussion.
