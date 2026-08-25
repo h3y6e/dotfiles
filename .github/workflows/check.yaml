@@ -3,28 +3,30 @@ name: check
 on:
   push:
 
+permissions:
+  contents: read
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
 jobs:
   install:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-slim
     timeout-minutes: 5
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Show installer help
-        run: ./install.sh -h
-      - name: Install dotfiles
-        run: ./install.sh
-      - name: Check chezmoi
-        run: mise x chezmoi -- chezmoi data -f yaml
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: ./install.sh -h
+      - run: ./install.sh
+      - run: mise x chezmoi -- chezmoi data -f yaml
 
   remote:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-slim
     timeout-minutes: 5
 
     steps:
-      - name: Remote install
-        run: bash -c "$(curl -fsSL s.h3y6e.com/dotfiles)"
-      - name: Check chezmoi
-        shell: bash -i {0}
+      - run: bash -c "$(curl -fsSL s.h3y6e.com/dotfiles)"
+      - shell: bash -i {0}
         run: cz managed
