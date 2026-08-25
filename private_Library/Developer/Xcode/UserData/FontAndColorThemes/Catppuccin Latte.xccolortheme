@@ -5,23 +5,23 @@
 	<key>DVTConsoleDebuggerInputTextColor</key>
 	<string>0.298039 0.309804 0.411765 1</string>
 	<key>DVTConsoleDebuggerInputTextFont</key>
-	<string>Explex35Console-NF-Regular - 12.0</string>
+	<string>UDEVGothic35NF-Regular - 12.0</string>
 	<key>DVTConsoleDebuggerOutputTextColor</key>
 	<string>0.298039 0.309804 0.411765 1</string>
 	<key>DVTConsoleDebuggerOutputTextFont</key>
-	<string>Explex35Console-NF-Regular - 12.0</string>
+	<string>UDEVGothic35NF-Regular - 12.0</string>
 	<key>DVTConsoleDebuggerPromptTextColor</key>
 	<string>0.25098 0.627451 0.168627 1</string>
 	<key>DVTConsoleDebuggerPromptTextFont</key>
-	<string>Explex35Console-NF-Regular - 12.0</string>
+	<string>UDEVGothic35NF-Regular - 12.0</string>
 	<key>DVTConsoleExectuableInputTextColor</key>
 	<string>0.298039 0.309804 0.411765 1</string>
 	<key>DVTConsoleExectuableInputTextFont</key>
-	<string>Explex35Console-NF-Regular - 12.0</string>
+	<string>UDEVGothic35NF-Regular - 12.0</string>
 	<key>DVTConsoleExectuableOutputTextColor</key>
 	<string>0.298039 0.309804 0.411765 1</string>
 	<key>DVTConsoleExectuableOutputTextFont</key>
-	<string>Explex35Console-NF-Regular - 12.0</string>
+	<string>UDEVGothic35NF-Regular - 12.0</string>
 	<key>DVTConsoleTextBackgroundColor</key>
 	<string>0.976006 0.982591 1 1</string>
 	<key>DVTConsoleTextInsertionPointColor</key>
