@@ -1,16 +1,6 @@
 #:tombi schema.strict = false
 #:schema https://mise.jdx.dev/schema/mise.json
 
-[bootstrap.packages]
-"brew:aria2" = "latest"
-"brew:chezmoi" = "latest"
-"brew:git" = "latest"
-"brew:gnupg" = "latest"
-"brew:libyaml" = "latest"
-"brew:mas" = "latest"
-"brew:pinentry-mac" = "latest"
-"brew:watchman" = "latest"
-
 [settings]
 activate_aggressive = true
 cargo.binstall = true
@@ -46,6 +36,7 @@ bat = "0.26.1"
 bun = "1.4.0"
 cargo-binstall = "1.22.0"
 checkov = "latest"
+chezmoi = "2.72.0"
 claude-code = "2.1.241"
 codex = "latest"
 colima = "0.10.3"

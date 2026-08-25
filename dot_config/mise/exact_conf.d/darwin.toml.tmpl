@@ -1,0 +1,118 @@
+# vim: set ft=toml:
+#:tombi schema.strict = false
+#:schema https://mise.jdx.dev/schema/mise.json
+
+[bootstrap.packages]
+"brew:aria2" = "latest"
+"brew:git" = "latest"
+"brew:gnupg" = "latest"
+"brew:libyaml" = "latest"
+"brew:mas" = "latest"
+"brew:pinentry-mac" = "latest"
+"brew:watchman" = "latest"
+"brew-cask:1password" = "latest"
+"brew-cask:1password-cli" = "latest"
+"brew-cask:android-studio" = "latest"
+"brew-cask:arc" = "latest"
+"brew-cask:figma" = "latest"
+"brew-cask:finicky" = "latest"
+"brew-cask:firefox@developer-edition" = "latest"
+"brew-cask:font-fira-code" = "latest"
+"brew-cask:font-udev-gothic-nf" = "latest"
+"brew-cask:karabiner-elements" = "latest"
+"brew-cask:notion" = "latest"
+"brew-cask:notion-calendar" = "latest"
+"brew-cask:obsidian" = "latest"
+"brew-cask:raycast" = "latest"
+"brew-cask:scroll-reverser" = "latest"
+"brew-cask:wezterm@nightly" = "latest"
+"brew-cask:zed" = "latest"
+{{ if .personal -}}
+"brew-cask:amazon-photos" = "latest"
+"brew-cask:appcleaner" = "latest"
+"brew-cask:discord" = "latest"
+"brew-cask:dropbox" = "latest"
+"brew-cask:readdle-spark" = "latest"
+"brew-cask:slack" = "latest"
+"brew-cask:spotify" = "latest"
+"brew-cask:tailscale-app" = "latest"
+{{ end -}}
+"mas:682658836" = "latest" # GarageBand
+
+# Touch ID for sudo
+[bootstrap.files."/etc/pam.d/sudo_local"]
+content = "auth sufficient pam_tid.so\n"
+owner = "root"
+group = "wheel"
+mode = "0644"
+
+# https://macos-defaults.com
+# https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+[bootstrap.macos.dock]
+autohide = true
+tilesize = 48
+
+[bootstrap.macos.finder]
+show_pathbar = true
+preferred_view_style = "list"
+
+[bootstrap.macos.keyboard]
+initial_key_repeat = 15
+key_repeat = 2
+press_and_hold = false
+fn_state = true
+
+[bootstrap.macos.defaults.NSGlobalDomain]
+"com.apple.mouse.scaling" = 1.5
+"com.apple.trackpad.scaling" = 1.0
+"com.apple.sound.beep.feedback" = true
+
+[bootstrap.macos.defaults."com.apple.WindowManager"]
+EnableTiledWindowMargins = false
+
+[bootstrap.macos.defaults."com.apple.AppleMultitouchTrackpad"]
+FirstClickThreshold = 0
+SecondClickThreshold = 0
+
+[bootstrap.macos.defaults."com.apple.systemsound"]
+"com.apple.sound.uiaudio.enabled" = false
+
+[bootstrap.macos.defaults."com.apple.finder"]
+CreateDesktop = true
+NewWindowTarget = "PfHm"
+
+[bootstrap.macos.defaults."com.apple.menuextra.clock"]
+Show24Hour = 1
+ShowDate = 2
+ShowDayOfWeek = 0
+ShowSeconds = 1
+
+[bootstrap.macos.defaults."com.apple.systemuiserver"]
+"NSStatusItem Visible com.apple.menuextra.vpn" = true
+
+{{ $ollama := joinPath .xdg.data "mise/installs/ollama/latest/ollama" -}}
+{{ if stat $ollama -}}
+[bootstrap.macos.launchd.agents.ollama]
+program = "{{ $ollama }}"
+args = ["serve"]
+run_at_load = true
+keep_alive = true
+{{- end }}
+
+{{ $llamaCpp := joinPath .xdg.data "mise/installs/llama-cpp/latest/llama" -}}
+{{ if stat $llamaCpp -}}
+[bootstrap.macos.launchd.agents.llama-cpp]
+program = "{{ $llamaCpp }}"
+args = ["serve"]
+run_at_load = true
+keep_alive = true
+kickstart = true
+environment = { LLAMA_ARG_PORT = "11435", LLAMA_ARG_MODELS_PRESET = "{{ joinPath .xdg.config .handle "llama.cpp/presets.ini" }}" }
+stdout_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
+stderr_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
+{{- end }}
+
+{{ if .personal -}}
+[tools]
+"pipx:hermes-agent" = { version = "latest", extras = "messaging" }
+{{- end }}

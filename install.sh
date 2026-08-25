@@ -5,7 +5,7 @@ trap cleanup SIGINT SIGTERM ERR EXIT
 
 usage() {
   cat <<EOF
-Usage: $(basename "${BASH_SOURCE[0]}") [options]
+Usage: $(basename "${BASH_SOURCE[0]:-install.sh}") [options]
 
 Install dotfiles.
 
@@ -13,8 +13,6 @@ Available options:
 
 -h, --help     Print this help and exit
 -v, --verbose  Print script debug info
--c, --chezmoi  Only install chezmoi
--r, --remote   Perform installation remotely
 --no-color     No colors
 EOF
   exit
@@ -56,15 +54,10 @@ die() {
 }
 
 parse_params() {
-  only_chezmoi=0
-  remote_install=0
-
   while :; do
     case "${1-}" in
     -h | --help) usage;;
     -v | --verbose) set -x;;
-    -c | --chezmoi) only_chezmoi=1;;
-    -r | --remote) remote_install=1;;
     --no-color) NO_COLOR=1;;
     -?*) die "Unknown option: $1";;
     *) break;;
@@ -80,31 +73,27 @@ has() {
 }
 
 install() {
-  if ! chezmoi="$(command -v chezmoi)"; then
-    bin_dir="${HOME}/.local/bin"
-    chezmoi="${bin_dir}/chezmoi"
-    if has "curl" || has "wget"; then
-      info "Installing chezmoi to '${chezmoi}'"
-      if has "curl"; then
-        chezmoi_install_script="$(curl -fsLS get.chezmoi.io)"
-      else
-        chezmoi_install_script="$(wget -qO- get.chezmoi.io)"
-      fi
+  if ! mise="$(command -v mise)"; then
+    mise="${HOME}/.local/bin/mise"
+    info "Installing mise to '${mise}'"
+    if has "curl"; then
+      mise_install_script="$(curl -fsLS https://mise.run)"
+    elif has "wget"; then
+      mise_install_script="$(wget -qO- https://mise.run)"
     else
       die "curl or wget required."
     fi
-    sh -c "${chezmoi_install_script}" -- -b "${bin_dir}"
-    unset chezmoi_install_script bin_dir
+    sh -c "${mise_install_script}"
+    unset mise_install_script
   fi
 
-  if [[ "${only_chezmoi}" == 0 ]]; then
-    script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
-    info "Installing dotfiles..."
-    if [[ "${remote_install}" == 0 ]]; then
-      "${chezmoi}" init --apply --source="${script_dir}"
-    else
-      "${chezmoi}" init --apply h3y6e
-    fi
+  info "Installing dotfiles..."
+  # run from a checkout: apply it as the source; run via `curl | bash`: clone from GitHub
+  if [[ -f "${BASH_SOURCE[0]-}" ]]; then
+    script_dir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+    "${mise}" x chezmoi -- chezmoi init --apply --source="${script_dir}"
+  else
+    "${mise}" x chezmoi -- chezmoi init --apply h3y6e
   fi
 
   completed "All done."

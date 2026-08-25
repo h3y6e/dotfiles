@@ -1,21 +1,16 @@
 # vim: set ft=gitignore:
 .vscode/
 .github/
-Casks/
 .editorconfig
 .gitignore
 .stylua.toml
 .luarc.json
 LICENSE
 install.sh
-mise.toml
-
-{{- if not (lookPath "mise") }}
-.docker/cli-plugins/*
-{{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
+.config/mise/conf.d/darwin.toml
 .config/karabiner/
 .config/raycast-script/
 .config/ghostty/

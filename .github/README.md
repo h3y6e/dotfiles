@@ -4,20 +4,10 @@
 
 ## Install
 
-### darwin
-
-```zsh
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-brew install chezmoi
-chezmoi init --apply h3y6e
-```
-
-### linux
+### darwin / linux
 
 ```bash
-/bin/bash -c "$(curl -fsSL s.h3y6e.com/dotfiles)" -- --remote
+/bin/bash -c "$(curl -fsSL s.h3y6e.com/dotfiles)"
 ```
 
 ### windows

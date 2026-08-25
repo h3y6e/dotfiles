@@ -1,0 +1,12 @@
+#!/bin/bash
+# vim: set ft=bash:
+# config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+# darwin hash: {{ includeTemplate "dot_config/mise/exact_conf.d/darwin.toml.tmpl" . | sha256sum }}
+# common hash: {{ includeTemplate "dot_config/mise/exact_conf.d/common.toml.tmpl" . | sha256sum }}
+
+set -Eeufo pipefail
+
+export PATH="${HOME}/.local/bin:${PATH}"
+
+printf "\033[3;35m%s\033[m\n" "mise bootstrapping..."
+mise bootstrap --yes
