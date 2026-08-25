@@ -5,5 +5,5 @@
 ## Install
 
 ```bash
-/bin/bash -c "$(curl -fsSL s.h3y6e.com/dotfiles)"
+curl -fsSL s.h3y6e.com/dotfiles | bash
 ```
