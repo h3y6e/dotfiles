@@ -27,6 +27,6 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - run: bash -c "$(curl -fsSL s.h3y6e.com/dotfiles)"
+      - run: curl -fsSL s.h3y6e.com/dotfiles | bash
       - shell: bash -i {0}
         run: cz managed
