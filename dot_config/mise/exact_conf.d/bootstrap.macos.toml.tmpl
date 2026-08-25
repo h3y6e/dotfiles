@@ -52,15 +52,15 @@ mode = "0644"
 autohide = true
 tilesize = 48
 
-[bootstrap.macos.finder]
-show_pathbar = true
-preferred_view_style = "list"
-
 [bootstrap.macos.keyboard]
 initial_key_repeat = 15
 key_repeat = 2
 press_and_hold = false
 fn_state = true
+
+[bootstrap.macos.finder]
+show_pathbar = true
+preferred_view_style = "list"
 
 [bootstrap.macos.defaults.NSGlobalDomain]
 "com.apple.mouse.scaling" = 1.5
@@ -98,12 +98,7 @@ args = ["serve"]
 run_at_load = true
 keep_alive = true
 kickstart = true
-environment = { LLAMA_ARG_PORT = "11435", LLAMA_ARG_MODELS_PRESET = "{{ joinPath .xdg.config .handle "llama.cpp/presets.ini" }}" }
-stdout_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
-stderr_path = "{{ joinPath .xdg.state .handle "llama.cpp/serve.log" }}"
-{{- end }}
-
-{{ if .personal -}}
-[tools]
-"pipx:hermes-agent" = { version = "latest", extras = "messaging" }
+environment = { LLAMA_ARG_PORT = "11435", LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets.ini" }
+stdout_path = "{{ .xdg.state }}/{{ .handle }}/llama.cpp/serve.log"
+stderr_path = "{{ .xdg.state }}/{{ .handle }}/llama.cpp/serve.log"
 {{- end }}

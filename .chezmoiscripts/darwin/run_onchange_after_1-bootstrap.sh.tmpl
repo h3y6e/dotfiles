@@ -1,8 +1,6 @@
 #!/bin/bash
 # vim: set ft=bash:
-# config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
-# darwin hash: {{ includeTemplate "dot_config/mise/exact_conf.d/darwin.toml.tmpl" . | sha256sum }}
-# common hash: {{ includeTemplate "dot_config/mise/exact_conf.d/common.toml.tmpl" . | sha256sum }}
+# bootstrap hash: {{ includeTemplate "dot_config/mise/exact_conf.d/bootstrap.macos.toml.tmpl" . | sha256sum }}
 
 set -Eeufo pipefail
 
