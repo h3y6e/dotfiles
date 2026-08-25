@@ -3,6 +3,9 @@ import type { FinickyConfig } from "/Applications/Finicky.app/Contents/Resources
 // see: https://github.com/johnste/finicky/wiki/Configuration-(v4)
 export default {
   defaultBrowser: "Firefox Developer Edition",
+  options: {
+    hideIcon: true,
+  },
   handlers: [
     {
       match: (url) =>
