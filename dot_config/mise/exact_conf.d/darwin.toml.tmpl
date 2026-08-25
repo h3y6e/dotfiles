@@ -90,15 +90,6 @@ ShowSeconds = 1
 [bootstrap.macos.defaults."com.apple.systemuiserver"]
 "NSStatusItem Visible com.apple.menuextra.vpn" = true
 
-{{ $ollama := joinPath .xdg.data "mise/installs/ollama/latest/ollama" -}}
-{{ if stat $ollama -}}
-[bootstrap.macos.launchd.agents.ollama]
-program = "{{ $ollama }}"
-args = ["serve"]
-run_at_load = true
-keep_alive = true
-{{- end }}
-
 {{ $llamaCpp := joinPath .xdg.data "mise/installs/llama-cpp/latest/llama" -}}
 {{ if stat $llamaCpp -}}
 [bootstrap.macos.launchd.agents.llama-cpp]
