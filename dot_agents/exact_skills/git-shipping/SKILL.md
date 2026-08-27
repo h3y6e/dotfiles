@@ -1,14 +1,14 @@
 ---
 compatibility: Requires git, gh, cxg, and git-wt. Do not use raw git worktree.
-description: Use when making code changes in a git repo, switching branches, or when asked to `push`, `commit`, `pr`, or manage branches. Use before starting implementation to confirm you're on the right branch.
+description: Guides the git workflow for shipping code changes — branch, commit, push, PR. Use whenever asked to `commit` (inspect diff, stage coherent chunks, then commit — not just format a message), `push`, `pr`, or manage branches, or when making code changes in a git repo. Use before starting implementation to confirm you're on the right branch.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.8.3
+    github-ref: refs/tags/v2026.8.4
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: fc47c32e11124898d0334bbdef08d42a20a46347
-    version: 2026.8.3
+    github-tree-sha: df9db7bde4a294b15978a750eec24b202a709ca0
+    version: 2026.8.4
 name: git-shipping
 ---
 # Git Shipping
