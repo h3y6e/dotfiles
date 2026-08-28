@@ -3,6 +3,7 @@
 
 [settings]
 activate_aggressive = true
+auto_update = true
 cargo.binstall = true
 color_theme = "catppuccin"
 experimental = true
