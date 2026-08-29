@@ -33,7 +33,7 @@ actionlint = "1.7.12"
 "aqua:k1LoW/git-wt" = "0.29.1"
 ast-grep = "0.45.2"
 aube = "2.2.0"
-aws = { version = "2.36.33", symlink_bins = "true" }
+aws = { version = "2.36.34", symlink_bins = "true" }
 bat = "0.26.1"
 bun = "1.4.0"
 cargo-binstall = "1.22.0"
