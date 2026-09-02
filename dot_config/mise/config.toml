@@ -32,7 +32,7 @@ actionlint = "1.7.12"
 "aqua:docker/buildx" = "0.36.1"
 "aqua:k1LoW/git-wt" = "0.29.1"
 ast-grep = "0.45.3"
-aube = "2.2.0"
+aube = "2.2.4"
 aws = { version = "2.36.36", symlink_bins = "true" }
 bat = "0.26.1"
 bun = "1.4.0"
