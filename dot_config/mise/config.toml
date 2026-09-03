@@ -28,18 +28,18 @@ show_tools = true
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
 actionlint = "1.7.12"
-"aqua:ByteNess/aws-vault" = "7.13.6"
 "aqua:docker/buildx" = "0.37.0"
 "aqua:k1LoW/git-wt" = "0.29.1"
 ast-grep = "0.45.3"
 aube = "2.2.4"
 aws = { version = "2.36.36", symlink_bins = "true" }
+aws-vault = "7.13.6"
 bat = "0.26.1"
 bun = "1.4.0"
 cargo-binstall = "1.22.0"
-checkov = "latest"
+checkov = "3.3.16"
 chezmoi = "2.72.1"
-claude-code = "2.1.252"
+claude-code = "2.1.258"
 codex = "latest"
 colima = "0.10.3"
 copilot-cli = "1.0.82"
