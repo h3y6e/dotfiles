@@ -1,57 +1,65 @@
 {{- /* vim: set ft=markdown: */ -}}
-# Tools
-
-- Use `trash` instead of `rm`.
-- Prefer single quotes for shell arguments to avoid backtick command substitution.
-
-# Workflow
-
-- Use **test-driven-development** before writing implementation code.
-  - Tests are specifications: test code expresses the specification of the implementation.
-  - In test code, explicitly mark each section with comments: `// Assert`, `// Act`, `// Arrange`.
-  - Name tests with a sentence stating the situation, operation, and expected result in that order, e.g. "when a valid token is provided, retrieving user information succeeds".
-  - Before finishing, remove or consolidate temporary TDD tests; keep only tests whose lasting value justifies their maintenance cost.
-- For non-trivial changes, ask: "is there a more elegant way?"
-- Validate before marking done. Prefer tool-specific checks. Skip trivial fixes.
-
-{{- if ne .agent "zed" }}
-
-# Task Management
-
-- Use **tracking-tasks** for every task.
-- Before starting any work: read tasks relevant to the current work.
-{{- end }}
-
-# Language
-
-- Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "claude" }}CLAUDE.md{{ else }}AGENTS.md{{ end }}`, Agent Skills): English.
-- Other written artifacts (docs, descriptions, test names, commit messages, issue/PR titles and bodies, etc.):
-  - Run `gh repo view --json visibility -q '.visibility'` to determine.
-  - PUBLIC → English.
-  - PRIVATE / INTERNAL / unknown → Japanese.
-    - Use natural Japanese, not awkward mixed Japanese-English phrasing; leave English only for identifiers, product/library names, API names, and established terms when clearer.
-    - Do not end Japanese description fields or similar prose with the Japanese full stop `。`.
-
-# Writing Artifacts
-
-- Everything written for humans (docs, issues, PR bodies, review comments, code comments, description fields) earns its place.
-- Before committing, delete any line where you can't say what the reader loses without it.
-- Keep only what's not obvious from the diff or the name; state what something is, not how it's implemented or why it changed.
-{{- if eq .agent "zed" }}
-- Commit messages: use Conventional Commit subjects: "type(scope): subject", max 72 chars, in English.
-  - Valid subject types: fix, feat, docs, style, refactor, perf, test, build, ci, chore, revert.
-{{- end }}
+Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "claude" }}CLAUDE.md{{ else }}AGENTS.md{{ end }}`, Agent Skills): English.
 
 # Principles
 
-- Always use near-latest versions for dependencies.
 - Find root causes. No hacky fixes.
 - Simplicity first. Refactor boldly. No backward compatibility unless asked.
-- Shorter is better. Brevity is beauty; beauty is read; read code has fewer bugs.
+- Shorter is better; read code has fewer bugs.
 - Never add fallback logic "just in case". Let edge cases surface.
+- For non-trivial changes, ask: "is there a more elegant way?"
 {{- if eq .agent "codex" }}
 - Inline trivial expressions; avoid one-off variables.
 - Prefer co-location: keep related code close together.
 - Extract helpers only when called 3+ times and non-obvious.
 - Never chase minimal diffs. Patchwork follows.
+{{- end }}
+{{- if ne .agent "zed" }}
+- Track every task with **tracking-tasks** skill; read related tasks before starting.
+{{- end }}
+
+<important if="you are deleting files or directories">
+- Use `trash` instead of `rm`.
+</important>
+
+<important if="you are running shell commands">
+- Prefer single quotes for shell arguments to avoid backtick command substitution.
+</important>
+
+<important if="you are adding or updating dependencies">
+- Always use near-latest versions.
+{{- if eq .agent "claude" }}
+- Look the current version up; never recall it from memory.
+{{- end }}
+</important>
+
+<important if="you are writing or modifying tests">
+- Tests are specifications: test code expresses the specification of the implementation.
+- Explicitly mark each section with comments: `// Arrange`, `// Act`, `// Assert`.
+- Name tests with a sentence stating the situation, operation, and expected result in that order, e.g. "when a valid token is provided, retrieving user information succeeds".
+- Before finishing, remove or consolidate temporary TDD tests: keep roughly one focused test per stated behavior, and only where its lasting value justifies the maintenance cost.
+</important>
+
+<important if="you are about to mark work as done">
+- Validate first. Prefer tool-specific checks. Skip trivial fixes.
+</important>
+
+<important if="you are writing text for humans: docs, descriptions, test names, code comments, review comments, commit messages, issue/PR titles and bodies">
+- Language: run `gh repo view --json visibility -q '.visibility'` to determine.
+  - PUBLIC → English.
+  - PRIVATE / INTERNAL / unknown → Japanese.
+    - Use natural Japanese, not awkward mixed Japanese-English phrasing; leave English only for identifiers, product/library names, API names, and established terms when clearer.
+    - Do not end Japanese description fields or similar prose with the Japanese full stop `。`.
+- Every line earns its place. Delete any line where you can't say what the reader loses without it.
+- Keep only what's not obvious from the diff or the name; state what something is, not how it's implemented or why it changed.
+{{- if eq .agent "claude" }}
+- No mannered prose: when a literal phrase is available, use it instead of metaphor or flourish.
+{{- end }}
+</important>
+{{- if eq .agent "zed" }}
+
+<important if="you are writing a commit message">
+- Use Conventional Commit subjects: "type(scope): subject", max 72 chars, in English.
+- Valid subject types: fix, feat, docs, style, refactor, perf, test, build, ci, chore, revert.
+</important>
 {{- end }}
