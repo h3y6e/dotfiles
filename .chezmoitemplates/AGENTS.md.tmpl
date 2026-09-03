@@ -27,10 +27,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 </important>
 
 <important if="you are adding or updating dependencies">
-- Always use near-latest versions.
-{{- if eq .agent "claude" }}
-- Look the current version up; never recall it from memory.
-{{- end }}
+- Always use near-latest versions; look the current version up rather than recalling it.
 </important>
 
 <important if="you are writing or modifying tests">
