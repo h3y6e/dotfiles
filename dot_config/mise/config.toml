@@ -35,7 +35,7 @@ aube = "2.2.4"
 aws = { version = "2.36.36", symlink_bins = "true" }
 aws-vault = "7.13.6"
 bat = "0.26.1"
-bun = "1.4.0"
+bun = "1.4.1"
 cargo-binstall = "1.22.0"
 checkov = "3.3.16"
 chezmoi = "2.72.1"
