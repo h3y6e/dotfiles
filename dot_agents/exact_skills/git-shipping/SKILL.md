@@ -1,14 +1,14 @@
 ---
 compatibility: Requires git, gh, cxg, and git-wt. Do not use raw git worktree.
-description: Guides the git workflow for shipping code changes — branch, commit, push, PR. Use whenever asked to `commit` (inspect diff, stage coherent chunks, then commit — not just format a message), `push`, `pr`, or manage branches, or when making code changes in a git repo. Use before starting implementation to confirm you're on the right branch.
+description: Guides the git workflow for shipping code changes — branch, commit, push, PR. Use whenever asked to `commit` (inspect diff, stage coherent chunks, then commit — not just format a message), `push`, `pr`/`ship`/`open a PR`/`merge this`, or manage branches, and whenever about to make code changes in a git repo (to confirm you're on the right branch before implementation starts) — even if the user only described the change and never said the word "git".
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.8.4
+    github-ref: refs/tags/v2026.9.5
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: df9db7bde4a294b15978a750eec24b202a709ca0
-    version: 2026.8.4
+    github-tree-sha: 9a903b98cac86432909c2b73d50ae9ed69e7f482
+    version: 2026.9.5
 name: git-shipping
 ---
 # Git Shipping
@@ -54,6 +54,7 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 - Use `## Impact` only for merge behavior changes. Omit unchanged behavior, non-goals, and work not done.
 - Do not add ad hoc `Testing`, `Verification`, `Checklist`, `Related issues`, or `Screenshots`. Never dump local verification commands into the PR body.
 - New PRs default to draft (`gh pr create --draft`); preserve existing PR draft/ready state unless asked.
+- After pushing to a branch with an open PR, reread the title and body against the new diff and edit whatever no longer matches (`gh pr edit`).
 
 ## Common Mistakes
 
@@ -66,3 +67,4 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 | Using a prose PR title | Use Conventional Commit subject format: `type(scope): subject` |
 | Using raw `git worktree` | Use `git wt <branch> origin/<default-branch> --nocd`; check `git wt -h` first |
 | Skipping `cxg lint` | Pipe through `cxg lint` before committing |
+| Pushing follow-up commits and leaving the PR text stale | Update title and body to describe the PR as it now is |

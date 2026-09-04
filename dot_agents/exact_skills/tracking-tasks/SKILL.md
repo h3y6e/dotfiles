@@ -1,15 +1,15 @@
 ---
 allowed-tools: Bash(obsidian:*) Bash(anna recall:*) Bash(ghq get log) Read Edit Write
 compatibility: Requires Obsidian with CLI enabled, vault "log", and anna recall configured.
-description: Use when starting multi-step work, resuming an existing task, switching direction mid-task, wrapping up, or capturing cross-session task context in Obsidian.
+description: Tracks task state and findings as Obsidian task/daily notes so work survives across sessions. Use when starting any multi-step task, resuming or continuing prior work (including phrases like "continue", "last time", "where were we", or a reference to an earlier task/issue/PR), switching direction or scope mid-task, wrapping up or reporting task status, or hitting a TIL, workaround, env/tooling quirk, or cross-cutting decision worth recording — even in a single-response task with no task note yet.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/tracking-tasks
-    github-ref: refs/tags/v2026.8.4
+    github-ref: refs/tags/v2026.9.5
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 9445293438243d07269da0006da1fc6d94752fe4
-    version: 2026.8.4
+    github-tree-sha: 4742b2ee1f66630eacbeb0b5eeb8ea00b0697f14
+    version: 2026.9.5
 name: tracking-tasks
 ---
 # Tracking Tasks
