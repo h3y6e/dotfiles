@@ -24,6 +24,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 
 <important if="you are running shell commands">
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
+- `>` fails on existing files (`unsetopt CLOBBER`); use `>|`.
 </important>
 
 <important if="you are adding or updating dependencies">
