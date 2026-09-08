@@ -16,9 +16,9 @@ description: |-
     - Generic: Local scripts (Python/Go tools), ESLint, Git.
 metadata:
     github-path: skills/modern-web-guidance
-    github-ref: refs/tags/v0.0.186
+    github-ref: refs/tags/v0.0.187
     github-repo: https://github.com/GoogleChrome/modern-web-guidance
-    github-tree-sha: 6ae91335f8fe1ac80f8cfc74712bafb0a19b6858
+    github-tree-sha: 9bd508d217b14d82adb63f2ec05b955c551c24cc
 name: modern-web-guidance
 ---
 # Modern Web Guidance
@@ -39,7 +39,7 @@ Must use this skill:
 Search with an action-oriented query summarizing what you want to achieve using the `search` command. Run `modern-web-guidance` directly with `npx`.
 
 ```sh
-npx -y modern-web-guidance@latest search "<query>" --skill-version 2026_08_31-6ba3cecd
+npx -y modern-web-guidance@latest search "<query>" --skill-version 2026_09_04-7de96777
 ```
 
 **Example Output**:
@@ -94,20 +94,19 @@ When generating or modifying code, cross-check the implementation against the re
 
 ## Using npx / pnpx
 
--   Prefer `pnpx` over `npx` if `pnpm` is available (note: `pnpx` does not use the `-y` flag).
--   When requesting tool permissions, allowlist `npx -y modern-web-guidance@latest *` specifically (or `pnpx modern-web-guidance@latest *`), never bare `npx *` or `pnpx *`.
--   IMPORTANT: on Windows, using `npx` may fail. Use `npx.cmd ...` instead.
--   Network access is required for fetching npm packages needed by the task.
--   If the `npx -y modern-web-guidance…` command hangs, you may be offline. Try running again in offline
-    mode: `npx --offline …`.
--   The `--skill-version` flag is used to determine if this SKILL.md is out of date. If it is, a warning
-    message is logged to stderr.
+- Prefer `pnpx` over `npx` if `pnpm` is available (note: `pnpx` does not use the `-y` flag).
+- When requesting tool permissions, allowlist `npx -y modern-web-guidance@latest *` specifically (or `pnpx modern-web-guidance@latest *`), never bare `npx *` or `pnpx *`.
+- IMPORTANT: on Windows, using `npx` may fail. Use `npx.cmd ...` instead.
+- Fetching and running `modern-web-guidance` requires outbound network access. If running in a sandboxed, permission-gated, or approval-based environment (e.g., Codex, Claude Code), **proactively request approval/allowlisting for the command with network access BEFORE executing it the first time**, avoiding sandbox network timeouts.
+- In sandboxed environments where `~/.npm` is read-only or restricted, set `NPM_CONFIG_CACHE=/tmp/npm-cache`.
+- If the command hangs due to being offline, try running again in offline mode: `npx --offline …`.
+- The `--skill-version` flag is used to determine if this SKILL.md is out of date. If it is, a warning message is logged to stderr.
 
 ## Guidelines
 
--   Always search **first** to find the most relevant guides.
--   These guides are usually framework-agnostic; adapt them correctly to your setup.
--   Do not hallucinate guides or ignore them; they represent the preferred local standard for the user's project.
+- Always search **first** to find the most relevant guides.
+- These guides are usually framework-agnostic; adapt them correctly to your setup.
+- Do not hallucinate guides or ignore them; they represent the preferred local standard for the user's project.
 
 ## Interpreting Browser Support & Fallbacks
 
