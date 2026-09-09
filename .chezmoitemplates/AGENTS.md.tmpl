@@ -8,19 +8,22 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Shorter is better; read code has fewer bugs.
 - Never add fallback logic "just in case". Let edge cases surface.
 - For non-trivial changes, ask: "is there a more elegant way?"
-- Progressive outlining: for prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first, discussing and gathering information at that level; write the actual text or implementation last.
-{{- if eq .agent "claude" }}
-- Keep design and instruction-writing to yourself; delegate concrete execution (investigation, file sweeps, summarizing) to subagents with `model: sonnet`.
-{{- end }}
 {{- if eq .agent "codex" }}
 - Inline trivial expressions; avoid one-off variables.
 - Prefer co-location: keep related code close together.
 - Extract helpers only when called 3+ times and non-obvious.
 - Never chase minimal diffs. Patchwork follows.
 {{- end }}
-{{- if ne .agent "zed" }}
-- Track every task with **tracking-tasks** skill; read related tasks before starting.
+
+<important if="you are the main conversation talking to the user, not a subagent; a subagent skips this section and just does the work it was handed">
+- Progressive outlining: for prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first, discussing and gathering information at that level; write the actual text or implementation last.
+{{- if eq .agent "claude" }}
+- Keep design and instruction-writing to yourself; delegate concrete execution (investigation, file sweeps, summarizing) to subagents with `model: sonnet`.
 {{- end }}
+{{- if ne .agent "zed" }}
+- Track every task with **tracking-tasks** skill; read related tasks before starting. Record a subagent's findings yourself rather than letting each one write its own notes.
+{{- end }}
+</important>
 
 <important if="you are deleting files or directories">
 - Use `trash` instead of `rm`.
