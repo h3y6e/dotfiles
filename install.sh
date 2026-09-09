@@ -56,11 +56,11 @@ die() {
 parse_params() {
   while :; do
     case "${1-}" in
-    -h | --help) usage;;
-    -v | --verbose) set -x;;
-    --no-color) NO_COLOR=1;;
-    -?*) die "Unknown option: $1";;
-    *) break;;
+    -h | --help) usage ;;
+    -v | --verbose) set -x ;;
+    --no-color) NO_COLOR=1 ;;
+    -?*) die "Unknown option: $1" ;;
+    *) break ;;
     esac
     shift
   done
@@ -69,8 +69,11 @@ parse_params() {
 }
 
 has() {
-  type "$1" > /dev/null 2>&1
+  type "$1" >/dev/null 2>&1
 }
+
+# renovate: datasource=github-releases depName=twpayne/chezmoi
+chezmoi="chezmoi@2.72.1"
 
 install() {
   if ! mise="$(command -v mise)"; then
@@ -91,9 +94,9 @@ install() {
   # run from a checkout: apply it as the source; run via `curl | bash`: clone from GitHub
   if [[ -f "${BASH_SOURCE[0]-}" ]]; then
     script_dir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-    "${mise}" x chezmoi -- chezmoi init --apply --source="${script_dir}"
+    "${mise}" x "${chezmoi}" -- chezmoi init --apply --source="${script_dir}"
   else
-    "${mise}" x chezmoi -- chezmoi init --apply h3y6e
+    "${mise}" x "${chezmoi}" -- chezmoi init --apply h3y6e
   fi
 
   completed "All done."
