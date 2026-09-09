@@ -16,7 +16,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 {{- end }}
 
 <important if="you are the main conversation talking to the user, not a subagent; a subagent skips this section and just does the work it was handed">
-- Progressive outlining: for prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first, discussing and gathering information at that level; write the actual text or implementation last.
+- Progressive outlining: on non-trivial prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first — discuss and gather information at that level; write the actual text or implementation last.
 {{- if eq .agent "claude" }}
 - Keep design and instruction-writing to yourself; delegate concrete execution (investigation, file sweeps, summarizing) to subagents with `model: sonnet`.
 {{- end }}
@@ -43,19 +43,16 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Tests are specifications: test code expresses the specification of the implementation.
 - Explicitly mark each section with comments: `// Arrange`, `// Act`, `// Assert`.
 - Name tests with a sentence stating the situation, operation, and expected result in that order, e.g. "when a valid token is provided, retrieving user information succeeds".
-- Before finishing, remove or consolidate temporary TDD tests: keep roughly one focused test per stated behavior, and only where its lasting value justifies the maintenance cost.
 </important>
 
 <important if="you are about to mark work as done">
 - Validate first. Prefer tool-specific checks. Skip trivial fixes.
+- Remove or consolidate temporary TDD tests: keep roughly one focused test per stated behavior, and only where its lasting value justifies the maintenance cost.
 </important>
 
 <important if="you are writing text for humans: docs, descriptions, test names, code comments, review comments, commit messages, issue/PR titles and bodies">
-- Language: run `gh repo view --json visibility -q '.visibility'` to determine.
-  - PUBLIC → English.
-  - PRIVATE / INTERNAL / unknown → Japanese.
-    - Use natural Japanese, not awkward mixed Japanese-English phrasing; leave English only for identifiers, product/library names, API names, and established terms when clearer.
-    - Do not end Japanese description fields or similar prose with the Japanese full stop `。`.
+- Language: `gh repo view --json visibility -q '.visibility'` decides it. PUBLIC → English; PRIVATE, INTERNAL, or unknown → Japanese.
+- In Japanese, leave English only for identifiers, product/library names, API names, and established terms when clearer; no awkward mixed Japanese-English phrasing, and no trailing `。` in description fields and similar prose.
 - Every line earns its place. Delete any line where you can't say what the reader loses without it.
 - Keep only what's not obvious from the diff or the name; state what something is, not how it's implemented or why it changed.
 {{- if eq .agent "claude" }}
