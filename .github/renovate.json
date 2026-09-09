@@ -3,6 +3,16 @@
   "extends": ["github>h3y6e/renovate-config", ":automergeAll"],
   "schedule": ["at any time"],
   "minimumReleaseAge": "12 hours",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^install\\.sh$/"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n\\w+=\"[\\w.-]+@(?<currentValue>[^\"]+)\""
+      ],
+      "extractVersionTemplate": "^v(?<version>.+)$"
+    }
+  ],
   "packageRules": [
     {
       "matchPackageNames": ["h3y6e/**"],
