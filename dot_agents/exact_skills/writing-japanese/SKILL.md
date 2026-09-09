@@ -2,11 +2,11 @@
 description: Use when writing, editing, or reviewing Japanese technical prose, book chapters, drafts, articles, or explanations where sentence-per-line formatting, paragraph logic, argument rigor, reader load, tone, restrained rhetoric, non-LLM phrasing, and concision matter.
 metadata:
     github-path: skills/writing-japanese
-    github-ref: refs/tags/v2026.9.5
+    github-ref: refs/tags/v2026.9.6
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: e6d3824466bd2403b2181dd42e911a860f76ddf9
+    github-tree-sha: e639874eba21d79140846fa651f609fd06784275
     refs: https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d, https://gist.github.com/k16shikano/eb2929f13ed19c97188393d297be8432
-    version: 2026.9.5
+    version: 2026.9.6
 name: writing-japanese
 ---
 # 日本語技術文書の文章規範
