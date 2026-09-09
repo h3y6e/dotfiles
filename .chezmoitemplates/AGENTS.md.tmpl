@@ -8,6 +8,10 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Shorter is better; read code has fewer bugs.
 - Never add fallback logic "just in case". Let edge cases surface.
 - For non-trivial changes, ask: "is there a more elegant way?"
+- Progressive outlining: for prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first, discussing and gathering information at that level; write the actual text or implementation last.
+{{- if eq .agent "claude" }}
+- Keep design and instruction-writing to yourself; delegate concrete execution (investigation, file sweeps, summarizing) to subagents with `model: sonnet`.
+{{- end }}
 {{- if eq .agent "codex" }}
 - Inline trivial expressions; avoid one-off variables.
 - Prefer co-location: keep related code close together.
