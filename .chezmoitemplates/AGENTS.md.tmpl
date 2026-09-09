@@ -31,9 +31,8 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 
 <important if="you are running shell commands">
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
-- `>` fails on existing files (`unsetopt CLOBBER`); use `>|`.
+- `mktemp` every temp file. `>` to a fixed path fails under `unsetopt CLOBBER` and leaves the previous run's content for the next command to read; reserve `>|` for a file you meant to replace.
 - zsh does not word-split `$VAR`; pass multiple args as an array (`args=(a b); cmd $args`).
-- `mktemp` temp files; a fixed path silently feeds you an earlier run's leftovers.
 </important>
 
 <important if="you are adding or updating dependencies">
