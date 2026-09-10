@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.9.6
+    github-ref: refs/tags/v2026.9.8
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 6e57e99a073a12379996949fffd2cd4aea7da7e5
-    version: 2026.9.6
+    github-tree-sha: 1e8e10e4aee359c8b362b226f6c1685792e6707d
+    version: 2026.9.8
 name: git-shipping
 ---
 # Git Shipping
@@ -53,6 +53,7 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 - Without a template, use only: `## Summary`, `## Background`, `## Changes`, optional `## Impact`.
 - Use `## Impact` only for merge behavior changes. Omit unchanged behavior, non-goals, and work not done.
 - Do not add ad hoc `Testing`, `Verification`, `Checklist`, `Related issues`, or `Screenshots`. Never dump local verification commands into the PR body.
+- Write the body to a `mktemp` file under `$TMPDIR`, never a fixed path — `gh pr create`/`gh pr edit` can reuse stale content, and plain `mktemp` can fail in a sandboxed shell.
 - New PRs default to draft (`gh pr create --draft`); preserve existing PR draft/ready state unless asked.
 - After pushing to a branch with an open PR, reread the title and body against the new diff and edit whatever no longer matches (`gh pr edit`).
 
@@ -68,3 +69,4 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 | Using raw `git worktree` | Use `git wt <branch> origin/<default-branch> --nocd`; check `git wt -h` first |
 | Skipping `cxg lint` | Pipe through `cxg lint` before committing |
 | Pushing follow-up commits and leaving the PR text stale | Update title and body to describe the PR as it now is |
+| Reusing a fixed path for the PR body | `mktemp` a fresh file under `$TMPDIR` for every run |
