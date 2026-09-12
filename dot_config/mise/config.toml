@@ -28,7 +28,7 @@ show_tools = true
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
 actionlint = "1.7.12"
-"aqua:docker/buildx" = "0.37.0"
+"aqua:docker/buildx" = "0.37.1"
 "aqua:k1LoW/git-wt" = "0.29.3"
 ast-grep = "0.45.3"
 aube = "2.2.13"
