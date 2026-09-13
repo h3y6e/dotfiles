@@ -27,6 +27,20 @@
       "/tmp/**": "allow",
     },
   },
+  "provider": {
+    "llama.cpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama-server",
+      "options": {
+        "baseURL": "http://127.0.0.1:11435/v1",
+      },
+      "models": {
+        "qwen3.8-27b": {
+          "name": "qwen3.8-27b",
+        }
+      },
+    }
+  },
   "mcp": {
     "context7": {
       "type": "remote",
