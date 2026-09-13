@@ -4,8 +4,3 @@
 
 [settings]
 trusted_config_paths = ["{{ .chezmoi.workingTree }}", "{{ .chezmoi.homeDir }}/ghq"]
-
-{{ if and .personal (eq .chezmoi.os "darwin") -}}
-[tools]
-"pipx:hermes-agent" = { version = "latest", extras = "messaging" }
-{{- end }}
