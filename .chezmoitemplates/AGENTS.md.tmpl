@@ -17,11 +17,8 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 
 <important if="you are the main conversation talking to the user, not a subagent; a subagent skips this section and just does the work it was handed">
 - Progressive outlining: on non-trivial prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first — discuss and gather information at that level; write the actual text or implementation last.
-{{- if eq .agent "claude" }}
-- Keep design and instruction-writing to yourself; delegate concrete execution (investigation, file sweeps, summarizing) to subagents with `model: sonnet`.
-{{- end }}
 {{- if ne .agent "zed" }}
-- Track every task with **tracking-tasks** skill; read related tasks before starting. Record a subagent's findings yourself rather than letting each one write its own notes.
+- Invoke the **tracking-tasks** skill and read related task notes before your first edit or command, even for a single-line edit. Being small or obvious is not a reason to skip it.
 {{- end }}
 </important>
 
