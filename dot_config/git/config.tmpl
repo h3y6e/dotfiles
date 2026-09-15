@@ -78,7 +78,7 @@
 	relative = true
 [safe]
 	directory = {{ .chezmoi.workingTree }}
-{{ $hk := joinPath .xdg.data "mise/installs/hk/latest/hk" -}}
+{{ $hk := joinPath .xdg.data "mise/shims/hk" -}}
 {{ if stat $hk -}}
 [hook "hk-commit-msg"]
 	command = test \"${HK:-1}\" = \"0\" || {{ $hk }} run commit-msg --from-hook \"$@\"
