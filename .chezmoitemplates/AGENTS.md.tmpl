@@ -28,7 +28,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 
 <important if="you are running shell commands">
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
-- `mktemp` every temp file. `>` to a fixed path fails under `unsetopt CLOBBER` and leaves the previous run's content for the next command to read; reserve `>|` for a file you meant to replace.
+- `mktemp` every temp file, then write with `>|`, not plain `>` — `mktemp` already creates the file, so `unsetopt CLOBBER` blocks a bare `>` even there.
 - zsh does not word-split `$VAR`; pass multiple args as an array (`args=(a b); cmd $args`).
 </important>
 
