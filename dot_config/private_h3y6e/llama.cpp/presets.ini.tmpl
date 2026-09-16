@@ -13,8 +13,10 @@ temp = 0.6
 top-k = 20
 min-p = 0
 
+{{ if and (eq .chezmoi.os "darwin") (ge (output "sysctl" "-n" "hw.memsize" | trim | int64) 137438953472) -}}
 [qwen3.8-27b]
 hf = ggml-org/Qwen3.8-27B-GGUF:Q8_0
 temp = 1.0
 min-p = 0
 reasoning-effort = low
+{{- end }}
