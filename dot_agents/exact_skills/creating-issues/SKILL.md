@@ -1,13 +1,13 @@
 ---
-description: Creates draft content for new issues as a single issue or dependency-aware issue set. Use when the user explicitly asks to turn a conversation or source material into a new issue/ticket draft or decompose work into multiple issue drafts. Do not use for implementing or reviewing existing issues, publishing an already-approved draft, or authoring issue templates.
+description: Creates draft content for issues as a single issue or dependency-aware issue set. Use when the user explicitly asks to turn a conversation or source material into an issue/ticket draft, to rewrite an existing issue's content, or to decompose work into multiple issue drafts. Do not use for implementing an issue, triage or status review, publishing an already-approved draft, or authoring issue templates.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/creating-issues
-    github-ref: refs/tags/v2026.9.11
+    github-ref: refs/tags/v2026.9.14
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 4d75a7fc9cb8a9e78ee3a0b698c664bb0ca4d86d
-    version: 2026.9.11
+    github-tree-sha: 69ada8f1fe2a4418e33d4e50ede60d16aae67a9b
+    version: 2026.9.14
 name: creating-issues
 ---
 # Creating Issues
@@ -18,8 +18,6 @@ A single issue is just a one-node graph — skip the singular-vs-plural choice.
 
 ## Boundaries
 
-- Scope is creating new issues or improving existing ones, not implementation, triage, or status review.
-- If you can't state the problem or an observable outcome, stop and ask the user to confirm it.
 - Write for an implementer with no context, but repository access.
 - File paths and code snippets go stale as implementation proceeds; write abstractly, and pin down specifics only when required.
 

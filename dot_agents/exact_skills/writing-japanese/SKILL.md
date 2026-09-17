@@ -1,12 +1,12 @@
 ---
-description: Use when writing, editing, or reviewing Japanese technical prose, book chapters, drafts, articles, or explanations where sentence-per-line formatting, paragraph logic, argument rigor, reader load, tone, restrained rhetoric, non-LLM phrasing, and concision matter.
+description: Norms for Japanese technical prose — paragraph logic, argument rigor, reader load, restrained rhetoric, and non-LLM phrasing. Use when writing, editing, or reviewing a Japanese book chapter, article, draft, or explanation.
 metadata:
     github-path: skills/writing-japanese
-    github-ref: refs/tags/v2026.9.11
+    github-ref: refs/tags/v2026.9.14
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: dc464640987879d0c78021e161bd42035f18a4dc
+    github-tree-sha: 29dc6d788c582d7412f760ca0c3d67710623508a
     refs: https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d, https://gist.github.com/k16shikano/eb2929f13ed19c97188393d297be8432
-    version: 2026.9.11
+    version: 2026.9.14
 name: writing-japanese
 ---
 # 日本語技術文書の文章規範

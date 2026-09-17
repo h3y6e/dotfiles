@@ -1,15 +1,15 @@
 ---
 allowed-tools: Bash(obsidian:*) Bash(anna recall:*) Bash(ghq get log) Read Edit Write
 compatibility: Requires Obsidian with CLI enabled, vault "log", and anna recall configured.
-description: Tracks task state and findings as Obsidian task/daily notes so work survives across sessions. Use when starting any multi-step task, resuming or continuing prior work (including phrases like "continue", "last time", "where were we", or a reference to an earlier task/issue/PR), switching direction or scope mid-task, wrapping up or reporting task status, or hitting a TIL, workaround, env/tooling quirk, or cross-cutting decision worth recording — even in a single-response task with no task note yet.
+description: Tracks task state and findings as Obsidian task/daily notes so work survives across sessions. Use when starting any multi-step task, resuming prior work or referring to an earlier task/issue/PR, switching direction or scope mid-task, wrapping up or reporting task status, or hitting a TIL, workaround, env/tooling quirk, or cross-cutting decision worth recording — even in a single-response task with no note yet.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/tracking-tasks
-    github-ref: refs/tags/v2026.9.11
+    github-ref: refs/tags/v2026.9.14
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 9f8277cdfaeacf8def4e40dae22ba1acd7c63e68
-    version: 2026.9.11
+    github-tree-sha: 8f6e82b62a489ae2ebb1b74f9e47bccf268fe199
+    version: 2026.9.14
 name: tracking-tasks
 ---
 # Tracking Tasks
@@ -52,12 +52,10 @@ The CLI is unstable. If any command errors, **immediately fall back to direct fi
 
 ## Workflow
 
-1. `obsidian daily` → get today's date (use this, not `date` command)
-2. Search for existing task with `anna recall "<query>"`; if none, `obsidian create path="task/YYYY-MM-DD-slug.md" template=task`
-3. Edit directly — Goal, DoD, Research, Notes
-4. Add/update `[[wikilinks]]` so graph/backlinks connect the task to related work
-5. `obsidian property:set path="task/..." name=status value=in-progress`
-6. After each batch, update Notes with findings/decisions/verification
-7. `obsidian task ref=<path:line> toggle`
-8. Final sync checkpoint
-9. `obsidian property:set path="task/..." name=status value=done`
+The sections above say what to write and when; these are the exact commands.
+
+1. `obsidian daily` → today's date (use this, not the `date` command)
+2. `anna recall "<query>"` for an existing task; if none, `obsidian create path="task/YYYY-MM-DD-slug.md" template=task`
+3. `obsidian property:set path="task/..." name=status value=in-progress`
+4. `obsidian task ref=<path:line> toggle` to check off a DoD item
+5. `obsidian property:set path="task/..." name=status value=done`
