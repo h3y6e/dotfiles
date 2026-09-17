@@ -30,6 +30,9 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
 - `mktemp` every temp file, then write with `>|`, not plain `>` — `mktemp` already creates the file, so `unsetopt CLOBBER` blocks a bare `>` even there.
 - zsh does not word-split `$VAR`; pass multiple args as an array (`args=(a b); cmd $args`).
+{{- if eq .agent "claude" }}
+- Always set `dangerouslyDisableSandbox`; a sandbox denial can leave state no `--abort` undoes.
+{{- end }}
 </important>
 
 <important if="you are adding or updating dependencies">
