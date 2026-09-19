@@ -31,7 +31,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - `mktemp` every temp file, then write with `>|`, not plain `>` — `mktemp` already creates the file, so `unsetopt CLOBBER` blocks a bare `>` even there.
 - zsh does not word-split `$VAR`; pass multiple args as an array (`args=(a b); cmd $args`).
 {{- if eq .agent "claude" }}
-- Always set `dangerouslyDisableSandbox`; a sandbox denial can leave state no `--abort` undoes.
+- Always set `dangerouslyDisableSandbox`. The sandbox is the danger, not the escape: it blocks `.git/config` writes mid-operation, leaving git half-applied (e.g. branch exists but worktree does not) in a state no `--abort` undoes. Disabling it is the safe default.
 {{- end }}
 </important>
 
