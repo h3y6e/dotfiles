@@ -18,7 +18,6 @@ task.monorepo_depth = 2
 
 [settings.skills]
 dir = ".agents/skills"
-auto_sync = true
 prune = true
 
 [settings.status]

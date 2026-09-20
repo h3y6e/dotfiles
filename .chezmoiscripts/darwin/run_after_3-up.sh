@@ -5,7 +5,7 @@ set -Eeufo pipefail
 export PATH="${HOME}/.local/bin:${PATH}"
 
 mise upgrade
-mise skills sync --global --prune
+mise skills sync --global
 mise bootstrap packages upgrade --yes
 mise x -- sheldon lock --update
 
