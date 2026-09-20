@@ -23,7 +23,7 @@ jobs:
         uses: h3y6e/gh-skill-update-action@ef708035a955ed549e143ad55d708e89e39f98c3 # v1.2.0
         with:
           token: ${{ steps.app-token.outputs.token }}
-          dir: dot_agents/exact_skills
+          dir: dot_agents/skills
       - if: steps.skill-update.outputs.pr-number != ''
         run: gh pr merge "${{ steps.skill-update.outputs.pr-number }}" --auto --squash
         env:
