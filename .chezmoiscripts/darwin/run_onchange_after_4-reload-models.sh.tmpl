@@ -1,0 +1,11 @@
+#!/bin/bash
+# vim: set ft=bash:
+# reload trigger: {{ includeTemplate "dot_config/private_h3y6e/llama.cpp/presets.ini.tmpl" . | sha256sum }} {{ includeTemplate "dot_config/private_h3y6e/llama.cpp/presets-aux.ini.tmpl" . | sha256sum }}
+
+set -Eeufo pipefail
+
+printf "\033[3;35m%s\033[m\n" "reloading models..."
+
+for port in 11435 11436; do
+  curl -fsS "http://127.0.0.1:${port}/v1/models?reload=1" || true
+done

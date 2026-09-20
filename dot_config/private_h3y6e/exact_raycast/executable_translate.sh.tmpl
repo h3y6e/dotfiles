@@ -33,6 +33,6 @@ $text"
 body=$(mise x -- jq -n --arg prompt "$prompt" \
   '{model: "cat-translate-7b", messages: [{role: "user", content: $prompt}]}')
 
-curl -sf http://127.0.0.1:11435/v1/chat/completions \
+curl -sf http://127.0.0.1:11436/v1/chat/completions \
   -H 'Content-Type: application/json' \
   -d "$body" | mise x -- jq -r '.choices[0].message.content'

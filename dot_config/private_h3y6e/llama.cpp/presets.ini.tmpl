@@ -1,12 +1,3 @@
-[cat-translate-7b]
-hf = mradermacher/CAT-Translate-7b-i1-GGUF:Q4_K_M
-
-[qwen3-embedding-0.6b]
-hf = Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
-embedding = true
-batch-size = 8192
-ubatch-size = 8192
-
 [ornith-1.5-35b]
 hf = ornith-ai/Ornith-1.5-35B-A3B-GGUF:Q6_K
 temp = 0.6
@@ -17,6 +8,19 @@ min-p = 0
 [qwen3.8-27b]
 hf = ggml-org/Qwen3.8-27B-GGUF:Q8_0
 temp = 1.0
+min-p = 0
+reasoning-effort = low
+
+[qwen3.8-flash-next]
+hf = unsloth/Qwen3.8-Flash-Next-GGUF:UD-IQ4_XS
+ctx-size = 65536
+fit = off
+batch-size = 512
+ubatch-size = 512
+parallel = 1
+no-mmproj = true
+temp = 1.0
+top-k = 20
 min-p = 0
 reasoning-effort = low
 {{- end }}
