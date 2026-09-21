@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/compressing-knowledge
-    github-ref: refs/tags/v2026.9.16
+    github-ref: refs/tags/v2026.9.17
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 67fe7f3e6660e1073dee9700cc8c8a4c88e4a5e7
-    version: 2026.9.16
+    github-tree-sha: c06f1c41473aa13e5a810a0e7599d96b27154519
+    version: 2026.9.17
 name: compressing-knowledge
 ---
 # Compressing Knowledge
