@@ -6,9 +6,14 @@ if wezterm.config_builder then
   conf = wezterm.config_builder()
 end
 
-wezterm.on('gui-startup', function(cmd)
-  local _, _, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
+-- `wezterm connect` does not emit gui-startup.
+wezterm.on('gui-attached', function()
+  local workspace = mux.get_active_workspace()
+  for _, window in ipairs(mux.all_windows()) do
+    if window:get_workspace() == workspace then
+      window:gui_window():maximize()
+    end
+  end
 end)
 
 wezterm.on('update-right-status', function(window, _)
@@ -58,6 +63,15 @@ conf.visual_bell = {
   target = 'CursorColor',
 }
 
+-- mux
+conf.unix_domains = {
+  {
+    name = 'unix',
+  },
+}
+conf.default_gui_startup_args = { 'connect', 'unix' }
+conf.window_close_confirmation = 'NeverPrompt'
+
 -- window
 conf.adjust_window_size_when_changing_font_size = false
 conf.window_background_opacity = 0.9
@@ -77,6 +91,18 @@ conf.tab_max_width = 100
 
 -- key bindings
 conf.keys = {
+  -- Cmd-Q kills panes. On the unix domain, match the window close button and detach.
+  {
+    key = "q",
+    mods = "SUPER",
+    action = wezterm.action_callback(function(window, pane)
+      if pane:get_domain_name() == 'unix' then
+        window:perform_action(act.DetachDomain 'CurrentPaneDomain', pane)
+      else
+        window:perform_action(act.QuitApplication, pane)
+      end
+    end),
+  },
   { key = "d",     mods = "SUPER", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
   { key = "D",     mods = "SUPER", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
   { key = "h",     mods = "SUPER", action = act({ ActivatePaneDirection = "Left" }) },
