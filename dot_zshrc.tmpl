@@ -85,6 +85,9 @@ type jj &>/dev/null && source <(COMPLETE=zsh jj)
 # sheldon
 type sheldon &>/dev/null && eval "$(sheldon source)"
 
+# zmx
+type zmx &>/dev/null && eval "$(zmx completions zsh)"
+
 # 1password cli
 [[ -f "$XDG_CONFIG_HOME/op/plugins.sh" ]] && source "$XDG_CONFIG_HOME/op/plugins.sh"
 
