@@ -48,7 +48,9 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 {{- if ne .agent "claude" }}
 - Validate first. Prefer tool-specific checks. Skip trivial fixes.
 {{- end }}
+{{- if ne .agent "zed" }}
 - Invoke the **no-comments** skill on the changed files.
+{{- end }}
 - Remove or consolidate temporary TDD tests: keep roughly one focused test per stated behavior, and only where its lasting value justifies the maintenance cost.
 </important>
 
