@@ -59,9 +59,6 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - In Japanese, leave English only for identifiers, product/library names, API names, and established terms when clearer; no awkward mixed Japanese-English phrasing, and no trailing `。` in description fields and similar prose.
 - Every line earns its place. Delete any line where you can't say what the reader loses without it.
 - Keep only what's not obvious from the diff or the name; state what something is, not how it's implemented or why it changed.
-{{- if eq .agent "claude" }}
-- No mannered prose: when a literal phrase is available, use it instead of metaphor or flourish.
-{{- end }}
 </important>
 {{- if eq .agent "zed" }}
 
