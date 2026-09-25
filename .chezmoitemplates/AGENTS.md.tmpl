@@ -7,10 +7,9 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Simplicity first. Refactor boldly. No backward compatibility unless asked.
 - Shorter is better; read code has fewer bugs.
 - Never add fallback logic "just in case". Let edge cases surface.
-- For non-trivial changes, ask: "is there a more elegant way?"
+- Prefer co-location: keep related code close together.
 {{- if eq .agent "codex" }}
 - Inline trivial expressions; avoid one-off variables.
-- Prefer co-location: keep related code close together.
 - Extract helpers only when called 3+ times and non-obvious.
 - Never chase minimal diffs. Patchwork follows.
 {{- end }}
@@ -18,7 +17,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 <important if="you are the main conversation talking to the user, not a subagent; a subagent skips this section and just does the work it was handed">
 - Progressive outlining: on non-trivial prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first — discuss and gather information at that level; write the actual text or implementation last.
 {{- if ne .agent "zed" }}
-- Invoke the **tracking-tasks** skill and read related task notes before your first edit or command, even for a single-line edit. Being small or obvious is not a reason to skip it.
+- Invoke the **tracking-tasks** skill and read related task notes before your first edit or command, even for a single-line edit.
 {{- end }}
 </important>
 
@@ -46,7 +45,10 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 </important>
 
 <important if="you are about to mark work as done">
+{{- if ne .agent "claude" }}
 - Validate first. Prefer tool-specific checks. Skip trivial fixes.
+{{- end }}
+- Invoke the **no-comments** skill on the changed files.
 - Remove or consolidate temporary TDD tests: keep roughly one focused test per stated behavior, and only where its lasting value justifies the maintenance cost.
 </important>
 
