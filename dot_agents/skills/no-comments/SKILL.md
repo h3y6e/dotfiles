@@ -1,15 +1,14 @@
 ---
-description: Remove bad comments in the given files or diff, and fix the root cause behind the workarounds they hide.
-disable-model-invocation: true
+description: Removes bad comments in the given files or diff and fixes the root cause behind the workarounds they hide. Use when asked to remove, clean up, or audit code comments, or when a comment or lint suppression justifies a workaround the code should make obvious itself.
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/no-comments
-    github-ref: refs/tags/v2026.9.17
+    github-ref: refs/tags/v2026.9.20
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 4188e49d318c52fa36585ddbab25d15905bd777e
+    github-tree-sha: 90994a2e28910255070dec824f498d7432ca8758
     refs: https://github.com/cursor/plugins/blob/032be146865d973682535de75f2287da438550bf/pstack/skills/no-comments/SKILL.md
-    version: 2026.9.17
+    version: 2026.9.20
 name: no-comments
 ---
 # No Comments
