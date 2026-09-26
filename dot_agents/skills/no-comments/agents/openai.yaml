@@ -1,5 +1,0 @@
-interface:
-  display_name: No Comments
-  short_description: Remove bad comments in the given files or diff, and fix the root cause behind the workarounds they hide.
-policy:
-  allow_implicit_invocation: false
