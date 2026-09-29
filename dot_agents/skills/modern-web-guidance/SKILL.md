@@ -16,9 +16,9 @@ description: |-
     - Generic: Local scripts (Python/Go tools), ESLint, Git.
 metadata:
     github-path: skills/modern-web-guidance
-    github-ref: refs/tags/v0.0.190
+    github-ref: refs/tags/v0.0.191
     github-repo: https://github.com/GoogleChrome/modern-web-guidance
-    github-tree-sha: bb63f9b3fc55c86dccd7e7329de05e122430e8be
+    github-tree-sha: df633f7d26c50424a45cba65b3e9719b0f2faf32
 name: modern-web-guidance
 ---
 # Modern Web Guidance
