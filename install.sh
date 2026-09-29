@@ -73,7 +73,7 @@ has() {
 }
 
 # renovate: datasource=github-releases depName=twpayne/chezmoi
-chezmoi="chezmoi@2.72.2"
+chezmoi="chezmoi@2.73.0"
 
 install() {
   if ! mise="$(command -v mise)"; then
