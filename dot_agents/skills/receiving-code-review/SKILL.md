@@ -4,11 +4,11 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/receiving-code-review
-    github-ref: refs/tags/v2026.9.20
+    github-ref: refs/tags/v2026.10.0
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 17c2a5cdafedacde1c095661f1d9cafcac249003
+    github-tree-sha: 80c7c8bd112bfc5ccee733356bf94cfc1e3df221
     refs: https://github.com/obra/superpowers/tree/v6.2.0/skills/receiving-code-review
-    version: 2026.9.20
+    version: 2026.10.0
 name: receiving-code-review
 ---
 # Receiving Code Review
