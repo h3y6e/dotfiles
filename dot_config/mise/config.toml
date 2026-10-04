@@ -39,7 +39,7 @@ aube = "2.6.1"
 aws = { version = "2.37.9", symlink_bins = "true" }
 bat = "0.26.1"
 bun = "1.4.2"
-cargo-binstall = "1.25.0"
+cargo-binstall = "1.25.1"
 chezmoi = "2.73.0"
 claude-code = "2.1.288"
 codex = "latest"
