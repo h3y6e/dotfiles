@@ -11,16 +11,15 @@ temp = 1.0
 min-p = 0
 reasoning-effort = low
 
-[qwen3.8-flash-next]
-hf = unsloth/Qwen3.8-Flash-Next-GGUF:UD-IQ4_XS
-ctx-size = 65536
-fit = off
-batch-size = 512
-ubatch-size = 512
-parallel = 1
-no-mmproj = true
+[qwen3.8-27b-abliterated]
+hf = huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF:Q8_0
 temp = 1.0
-top-k = 20
+min-p = 0
+reasoning-effort = low
+
+[qwen3.8-27b-uncensored]
+hf = orcarouter/Qwen3.8-27B-Uncensored-GGUF:Q8_0
+temp = 1.0
 min-p = 0
 reasoning-effort = low
 {{- end }}
