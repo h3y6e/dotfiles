@@ -146,7 +146,7 @@ If `@property` is not supported, the ring will jump to the new value instantly i
 
 If the transition is absolutely necessary, you can check for `@property` support and use a `requestAnimationFrame()` loop to interpolate `--value` in older browsers.
 
-background-clip: border-area has limited availability.
+Browser support for background-clip: border-area: Limited availability.
 Supported by: Chrome 150, Edge 150, and Safari 18.2 (Dec 2024).
 Unsupported in: Firefox.
 
@@ -162,7 +162,7 @@ For browsers that don't yet support `background-clip: border-area`, fall back to
 }
 ```
 
-attr() has limited availability.
+Browser support for attr(): Limited availability.
 Supported by: Chrome 133 (Feb 2025), Edge 133 (Feb 2025), and Firefox 155.
 Unsupported in: Safari.
 

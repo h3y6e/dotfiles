@@ -100,7 +100,7 @@ Without a bundler, import from a CDN inside a `<script type="module">`:
 
 Alternatively, for a legacy fallback without a polyfill, use `position: fixed` and manually calculate coordinates via `getBoundingClientRect()` or rely on default positioning with `inset: auto` if that's acceptable for the use case.
 
-Anchor positioning has limited availability.
+Browser support for Anchor positioning: Limited availability.
 Supported by: Safari 27.
 Unsupported in: Chrome, Edge, and Firefox.
 

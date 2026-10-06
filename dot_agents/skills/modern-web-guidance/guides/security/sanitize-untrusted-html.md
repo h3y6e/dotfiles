@@ -64,7 +64,7 @@ preview.replaceChildren(...doc.body.childNodes);
 
 ## Fallbacks & browser support for Sanitizer API
 
-Sanitizer API has limited availability.
+Browser support for Sanitizer API: Limited availability.
 Supported by: Chrome 146 (Mar 2026), Edge 146 (Mar 2026), and Firefox 148 (Feb 2026).
 Unsupported in: Safari.
 

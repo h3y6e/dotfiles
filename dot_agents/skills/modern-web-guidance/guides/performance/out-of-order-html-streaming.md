@@ -127,7 +127,7 @@ await response
 
 ## Fallback strategies
 
-<template for> has limited availability.
+Browser support for <template for>: Limited availability.
 Supported by: Chrome 150 and Edge 150.
 Unsupported in: Firefox and Safari.
 
@@ -135,7 +135,7 @@ HTML setter methods is not natively supported by any major browser yet.
 
 HTML streaming setters is not natively supported by any major browser yet.
 
-HTML processing instructions has limited availability.
+Browser support for HTML processing instructions: Limited availability.
 Supported by: Chrome 150 and Edge 150.
 Unsupported in: Firefox and Safari.
 
