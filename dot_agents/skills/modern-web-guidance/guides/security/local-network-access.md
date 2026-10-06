@@ -163,7 +163,7 @@ Permissions-Policy: local-network=(self "https://setup.partner.example.com"), lo
 
 ## Fallback Strategies
 
-Local network access has limited availability.
+Browser support for Local network access: Limited availability.
 Supported by: Chrome 142 (Oct 2025) and Edge 142 (Oct 2025).
 Unsupported in: Firefox and Safari.
 

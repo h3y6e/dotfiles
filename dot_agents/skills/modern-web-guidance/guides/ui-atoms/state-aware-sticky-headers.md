@@ -78,7 +78,7 @@ Apply `overflow-anchor: none` to the direct parent of the `position: sticky` ele
 DO NOT: Rely on `overflow-anchor: none` for elements stuck to the **bottom**. Scroll anchoring only compensates for layout shifts above the current scroll position, so it has no effect on bottom-stuck elements. Avoid changing box-model properties in the stuck state for bottom-stuck headers.
 
 ### Fallback strategies
-Container scroll-state queries has limited availability.
+Browser support for Container scroll-state queries: Limited availability.
 Supported by: Chrome 133 (Feb 2025) and Edge 133 (Feb 2025).
 Unsupported in: Firefox and Safari.
 

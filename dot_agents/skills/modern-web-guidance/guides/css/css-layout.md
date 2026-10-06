@@ -209,7 +209,7 @@ Supported by: Chrome 37 (Aug 2014), Edge 79 (Jan 2020), Firefox 98 (Mar 2022), a
 Baseline status for Popover: Newly available. It's been Baseline since 2025-01-27.
 Supported by: Chrome 116 (Aug 2023), Edge 116 (Aug 2023), Firefox 125 (Apr 2024), Safari 17 (Sep 2023), and Safari iOS 18.3 (Jan 2025).
 
-Anchor positioning has limited availability.
+Browser support for Anchor positioning: Limited availability.
 Supported by: Safari 27.
 Unsupported in: Chrome, Edge, and Firefox.
 
@@ -276,11 +276,11 @@ Supported by: Chrome 108 (Nov 2022), Edge 108 (Dec 2022), Firefox 101 (May 2022)
 - Use `dvh`/`dvw` for mobile layout containers that must account for browser UI shifting (URL bar collapse/expand).
 - Don't use `100vw` for full-width layout — it ignores scrollbar width and causes horizontal overflow. Use `100%`, `100dvw`, or `100svw` instead.
 
-> For the full viewport unit reference (`svh`, `lvh`, `dvi`, `dvb`, etc.), see `css` (via `npx -y modern-web-guidance@latest retrieve "css"`).
+> For the responsive design entry point (dynamic viewport units, reserving space for media, fluid typography), see `responsive-design` (via `npx -y modern-web-guidance@latest retrieve "responsive-design"`).
 
 ## 8 Grid lanes (aka masonry)
 
-Grid lanes has limited availability.
+Browser support for Grid lanes: Limited availability.
 Supported by: Safari 26.4 (Mar 2026).
 Unsupported in: Chrome, Edge, and Firefox.
 

@@ -73,7 +73,7 @@ Also, the polyfill does not support `position-area` on popovers, so **MANDATORY:
 
 ### Fallback strategies
 
-Interest invokers has limited availability.
+Browser support for Interest invokers: Limited availability.
 Supported by: Chrome 142 (Oct 2025) and Edge 142 (Oct 2025).
 Unsupported in: Firefox and Safari.
 
@@ -126,13 +126,13 @@ Without a bundler, import from a CDN inside a `<script type="module">`:
 
 Alternatively, for a legacy fallback without a polyfill, use `position: fixed` and manually calculate coordinates via `getBoundingClientRect()` or rely on default positioning with `inset: auto` if that's acceptable for the use case.
 
-popover="hint" has limited availability.
+Browser support for popover="hint": Limited availability.
 Supported by: Chrome 151, Edge 151, and Firefox 153 (Jul 2026).
 Unsupported in: Safari.
 
 The `popover-polyfill` does not polyfill the hint behavior in browsers that support `popover` but not `popover="hint"`. For those browsers, a tooltip opened via focus may stay open when a second tooltip opened via hover.
 
-Anchor positioning has limited availability.
+Browser support for Anchor positioning: Limited availability.
 Supported by: Safari 27.
 Unsupported in: Chrome, Edge, and Firefox.
 

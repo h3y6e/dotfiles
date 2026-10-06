@@ -49,7 +49,7 @@ The start and end delay for an interest invoker (i.e. the element with the `inte
 
 ### Fallback strategies
 
-Interest invokers has limited availability.
+Browser support for Interest invokers: Limited availability.
 Supported by: Chrome 142 (Oct 2025) and Edge 142 (Oct 2025).
 Unsupported in: Firefox and Safari.
 

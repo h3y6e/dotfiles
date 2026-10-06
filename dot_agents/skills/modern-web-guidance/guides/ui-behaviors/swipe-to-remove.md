@@ -462,7 +462,7 @@ All newer features that are used are either not core to the experience or have r
 
 ### Fallback for `overscroll-behavior`
 
-overscroll-behavior has limited availability.
+Browser support for overscroll-behavior: Limited availability.
 Supported by: Chrome 144 (Jan 2026), Edge 144 (Jan 2026), and Firefox 150 (Apr 2026).
 Unsupported in: Safari.
 
@@ -477,7 +477,7 @@ Hidden scrollbars are a visual enhancement, not the mechanism that makes swipe-t
 
 ### Fallback for `scroll-initial-target`
 
-scroll-initial-target has limited availability.
+Browser support for scroll-initial-target: Limited availability.
 Supported by: Chrome 133 (Feb 2025) and Edge 133 (Feb 2025).
 Unsupported in: Firefox and Safari.
 

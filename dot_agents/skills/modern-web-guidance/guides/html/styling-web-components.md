@@ -120,7 +120,7 @@ Supported by: Chrome 99 (Mar 2022), Edge 99 (Mar 2022), Firefox 97 (Feb 2022), a
 Baseline status for Container queries: Widely available. It's been Baseline since 2023-02-14.
 Supported by: Chrome 105 (Sep 2022), Edge 105 (Sep 2022), Firefox 110 (Feb 2023), and Safari 16 (Sep 2022).
 
-:host-context() has limited availability.
+Browser support for :host-context(): Limited availability.
 Supported by: Chrome 54 (Oct 2016) and Edge 79 (Jan 2020).
 Unsupported in: Firefox and Safari.
 

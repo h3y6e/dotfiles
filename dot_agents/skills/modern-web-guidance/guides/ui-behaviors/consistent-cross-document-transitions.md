@@ -212,7 +212,7 @@ window.addEventListener('pagereveal', async (event) => {
 
 ## Fallback Strategies
 
-Cross-document view transitions has limited availability.
+Browser support for Cross-document view transitions: Limited availability.
 Supported by: Chrome 126 (Jun 2024), Edge 126 (Jun 2024), and Safari 18.2 (Dec 2024).
 Unsupported in: Firefox.
 
