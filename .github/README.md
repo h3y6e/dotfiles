@@ -5,5 +5,5 @@
 ## Install
 
 ```bash
-curl -fsSL s.h3y6e.com/dotfiles | bash
+curl -fsSL https://raw.githubusercontent.com/h3y6e/dotfiles/main/install.sh | bash
 ```

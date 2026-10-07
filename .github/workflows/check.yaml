@@ -27,6 +27,6 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - run: curl -fsSL s.h3y6e.com/dotfiles | bash
+      - run: curl -fsSL https://raw.githubusercontent.com/h3y6e/dotfiles/main/install.sh | bash
       - shell: bash -i {0}
         run: cz managed
