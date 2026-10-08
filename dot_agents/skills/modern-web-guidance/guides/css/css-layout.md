@@ -161,7 +161,7 @@ footer  { grid-area: footer; }
 
 ## 4 Container queries
 
-Baseline status for Container queries: Widely available. It's been Baseline since 2023-02-14.
+Baseline status for Container queries (size): Widely available. It's been Baseline since 2023-02-14.
 Supported by: Chrome 105 (Sep 2022), Edge 105 (Sep 2022), Firefox 110 (Feb 2023), and Safari 16 (Sep 2022).
 
 Query the size (or computed style) of an ancestor container rather than the viewport. Mental model: container queries = component context; media queries = global page layout and user preferences (`prefers-color-scheme`, `prefers-reduced-motion`).
