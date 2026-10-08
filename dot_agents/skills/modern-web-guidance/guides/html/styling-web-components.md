@@ -117,7 +117,7 @@ Supported by: Chrome 73 (Mar 2019), Edge 79 (Jan 2020), Firefox 72 (Jan 2020), S
 Baseline status for Cascade layers: Widely available. It's been Baseline since 2022-03-14.
 Supported by: Chrome 99 (Mar 2022), Edge 99 (Mar 2022), Firefox 97 (Feb 2022), and Safari 15.4 (Mar 2022).
 
-Baseline status for Container queries: Widely available. It's been Baseline since 2023-02-14.
+Baseline status for Container queries (size): Widely available. It's been Baseline since 2023-02-14.
 Supported by: Chrome 105 (Sep 2022), Edge 105 (Sep 2022), Firefox 110 (Feb 2023), and Safari 16 (Sep 2022).
 
 Browser support for :host-context(): Limited availability.
