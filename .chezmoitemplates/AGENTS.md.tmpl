@@ -3,29 +3,24 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 
 # Principles
 
-- Find root causes. No hacky fixes.
-- Simplicity first. Refactor boldly. No backward compatibility unless asked.
-- Shorter is better; read code has fewer bugs.
+- Shorter is better.
 - Never add fallback logic "just in case". Let edge cases surface.
+- Refactor boldly. No backward compatibility unless asked.
 - Prefer co-location: keep related code close together.
 {{- if eq .agent "codex" }}
-- Inline trivial expressions; avoid one-off variables.
 - Extract helpers only when called 3+ times and non-obvious.
-- Never chase minimal diffs. Patchwork follows.
 {{- end }}
 
 <important if="you are the main conversation talking to the user, not a subagent; a subagent skips this section and just does the work it was handed">
-- Progressive outlining: on non-trivial prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first — discuss and gather information at that level; write the actual text or implementation last.
+- Progressive outlining: on non-trivial prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first — discuss and gather information at that level; write the actual text or implementation last. Skip this when running unattended.
+- Before non-trivial work, define done as checks a machine can run: a passing command or a metric threshold.
 {{- if ne .agent "zed" }}
 - Invoke the **tracking-tasks** skill and read related task notes before your first edit or command, even for a single-line edit.
 {{- end }}
 </important>
 
-<important if="you are deleting files or directories">
-- Use `trash` instead of `rm`.
-</important>
-
 <important if="you are running shell commands">
+- Use `trash` instead of `rm`.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
 - `mktemp` every temp file, then write with `>|`, not plain `>` — `mktemp` already creates the file, so `unsetopt CLOBBER` blocks a bare `>` even there.
 - zsh does not word-split `$VAR`; pass multiple args as an array (`args=(a b); cmd $args`).
@@ -55,7 +50,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Remove or consolidate temporary TDD tests: keep roughly one focused test per stated behavior, and only where its lasting value justifies the maintenance cost.
 </important>
 
-<important if="you are writing text for humans: docs, descriptions, test names, code comments, review comments, commit messages, issue/PR titles and bodies">
+<important if="you are writing text for humans: docs, descriptions, test names, review comments, issue/PR titles and bodies">
 - Language: `gh repo view --json visibility -q '.visibility'` decides it. PUBLIC → English; PRIVATE, INTERNAL, or unknown → Japanese.
 - In Japanese, leave English only for identifiers, product/library names, API names, and established terms when clearer; no awkward mixed Japanese-English phrasing, and no trailing `。` in description fields and similar prose.
 - Every line earns its place. Delete any line where you can't say what the reader loses without it.
