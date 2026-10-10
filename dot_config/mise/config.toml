@@ -1,6 +1,8 @@
 #:tombi schema.strict = false
 #:schema https://mise.jdx.dev/schema/mise.json
 
+min_version = "2026.10.7"
+
 [settings]
 activate_aggressive = true
 cargo.binstall = true
@@ -14,6 +16,7 @@ npm.package_manager = "aube"
 pin = true
 pypi.uvx = true
 task.monorepo_depth = 2
+tool_update.global_auto = true
 
 [settings.self_update]
 auto = true
@@ -44,7 +47,7 @@ bun = "1.4.2"
 cargo-binstall = "1.25.2"
 chezmoi = "2.73.0"
 claude-code = "2.1.295"
-codex = { version = "latest", auto_update = true }
+codex = "latest"
 colima = "0.10.3"
 copilot-cli = "1.0.94"
 cosign = "3.1.3"
@@ -76,7 +79,7 @@ node = "26.11.1"
 "npm:@krayinc/docbase-cli" = "1.1.3"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.6"
-opencode = { version = "latest", auto_update = true }
+opencode = "latest"
 "packslip:github.com/h3y6e/cxg" = "2026.9.1"
 peco = "0.6.0"
 pi = "1.1.0"
