@@ -75,7 +75,7 @@ jq = "1.8.2"
 lazygit = "0.66.0"
 lima = "2.2.1"
 "llama.cpp" = { version = "11398", version_prefix = "b" }
-neovim = "0.12.5"
+neovim = "0.12.6"
 node = "26.11.1"
 "npm:@krayinc/docbase-cli" = "1.1.3"
 "npm:npm-check" = "6.0.1"
