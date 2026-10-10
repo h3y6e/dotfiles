@@ -4,10 +4,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/creating-issues
-    github-ref: refs/tags/v2026.10.1
+    github-ref: refs/tags/v2026.10.2
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 5b547575748828099068d6643d0521cbddab9d68
-    version: 2026.10.1
+    github-tree-sha: 2152cc401f72d72f9248fb3f0980b7cdbdb4e500
+    version: 2026.10.2
 name: creating-issues
 ---
 # Creating Issues

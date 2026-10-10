@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.10.1
+    github-ref: refs/tags/v2026.10.2
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 94147c91ec75700eff984eac37fcaae91ea91bc7
-    version: 2026.10.1
+    github-tree-sha: 0def47d0126d06830da220c85c84f0a75cd46138
+    version: 2026.10.2
 name: git-shipping
 ---
 # Git Shipping
