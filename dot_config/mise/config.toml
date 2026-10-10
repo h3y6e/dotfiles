@@ -73,7 +73,7 @@ jj = "0.46.0"
 jq = "1.8.2"
 lazygit = "0.66.0"
 lima = "2.2.1"
-"llama.cpp" = { version = "11398", version_prefix = "b" }
+"llama.cpp" = { version = "11533", prerelease = true, version_prefix = "b" }
 neovim = "0.12.6"
 node = "26.11.1"
 "npm:@krayinc/docbase-cli" = "1.1.4"
