@@ -3,8 +3,6 @@
 
 [settings]
 activate_aggressive = true
-auto_update = true
-auto_update_check_duration = "1d"
 cargo.binstall = true
 color_theme = "catppuccin"
 experimental = true
@@ -15,6 +13,10 @@ npm.package_manager = "aube"
 pin = true
 pypi.uvx = true
 task.monorepo_depth = 2
+
+[settings.self_update]
+auto = true
+check_duration = "1d"
 
 [settings.skills]
 dir = ".agents/skills"
