@@ -1,4 +1,4 @@
-memory = "~/ghq/github.com/h3y6e/log/task/memory.local.db"
+notes = ["~/ghq/github.com/h3y6e/log/task"]
 
 [embedder]
 provider = "llama.cpp"
