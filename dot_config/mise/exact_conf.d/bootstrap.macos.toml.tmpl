@@ -90,25 +90,17 @@ ShowSeconds = 1
 [bootstrap.macos.defaults."com.apple.systemuiserver"]
 "NSStatusItem Visible com.apple.menuextra.vpn" = true
 
-{{ $llamaCpp := joinPath .xdg.data "mise/installs/llama-cpp/latest/llama" -}}
-{{ if stat $llamaCpp -}}
-[bootstrap.macos.launchd.agents.llama-cpp]
-program = "{{ $llamaCpp }}"
-args = ["serve"]
-run_at_load = true
-keep_alive = true
-kickstart = true
+{{ $llamaVer := index (index (include "dot_config/mise/config.toml" | fromToml).tools "llama.cpp") "version" -}}
+[bootstrap.services.llama-cpp]
+scope = "user"
+requires_tools = true
+restart = "always"
+command = "~/.local/bin/mise x llama.cpp@{{ $llamaVer }} -- llama serve"
 environment = { LLAMA_ARG_PORT = "11435", LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets.ini", LLAMA_ARG_MODELS_MAX = "1" }
-stdout_path = "{{ .xdg.state }}/{{ .handle }}/llama.cpp/serve.log"
-stderr_path = "{{ .xdg.state }}/{{ .handle }}/llama.cpp/serve.log"
 
-[bootstrap.macos.launchd.agents.llama-cpp-aux]
-program = "{{ $llamaCpp }}"
-args = ["serve"]
-run_at_load = true
-keep_alive = true
-kickstart = true
+[bootstrap.services.llama-cpp-aux]
+scope = "user"
+requires_tools = true
+restart = "always"
+command = "~/.local/bin/mise x llama.cpp@{{ $llamaVer }} -- llama serve"
 environment = { LLAMA_ARG_PORT = "11436", LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets-aux.ini", LLAMA_ARG_MODELS_MAX = "2" }
-stdout_path = "{{ .xdg.state }}/{{ .handle }}/llama.cpp/serve-aux.log"
-stderr_path = "{{ .xdg.state }}/{{ .handle }}/llama.cpp/serve-aux.log"
-{{- end }}
