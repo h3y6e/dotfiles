@@ -85,8 +85,8 @@ opencode = "latest"
 peco = "0.6.0"
 pi = "1.1.0"
 pinact = "5.0.0"
-"pypi:huggingface_hub" = { version = "2.2.0", uvx_args = "--python 3.14" }
-python = "3.15.0"
+"pypi:huggingface_hub" = "2.2.0"
+python = ["3.14.8", "3.15.0"]
 ripgrep = "15.2.0"
 rust = "1.99.0"
 shellcheck = "0.11.0"
