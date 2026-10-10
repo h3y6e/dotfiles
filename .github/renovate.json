@@ -8,7 +8,8 @@
       "customType": "regex",
       "managerFilePatterns": ["/^install\\.sh$/"],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n\\w+=\"[\\w.-]+@(?<currentValue>[^\"]+)\""
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n\\w+=\"[\\w.-]+@(?<currentValue>[^\"]+)\"",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n\\w+=\"v(?<currentValue>[^\"]+)\""
       ],
       "extractVersionTemplate": "^v(?<version>.+)$"
     }
