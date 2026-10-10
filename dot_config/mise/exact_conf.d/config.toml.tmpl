@@ -8,6 +8,7 @@ trusted_config_paths = ["{{ .chezmoi.workingTree }}", "{{ .chezmoi.homeDir }}/gh
 {{ if .personal -}}
 [tools.cursor-agent]
 version = "latest"
+auto_update = true
 bin_path = "dist-package"
 strip_components = "0"
 url = '{{`https://downloads.cursor.com/lab/{{ version }}/{{ os(macos="darwin") }}/{{ arch(arm64="arm64", x64="x64") }}/agent-cli-package.tar.gz`}}'
