@@ -109,6 +109,13 @@
     "provider": "copilot",
     "mode": "eager",
   },
+  "agent_servers": {
+    "Cursor": {
+      "type": "custom",
+      "command": "{{ .xdg.data }}/mise/shims/cursor-agent",
+      "args": ["acp"],
+    },
+  },
   "agent": {
     "notify_when_agent_waiting": "all_screens",
     "enable_feedback": false,
