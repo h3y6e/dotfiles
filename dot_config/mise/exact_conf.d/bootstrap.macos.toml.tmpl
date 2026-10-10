@@ -90,6 +90,12 @@ ShowSeconds = 1
 [bootstrap.macos.defaults."com.apple.systemuiserver"]
 "NSStatusItem Visible com.apple.menuextra.vpn" = true
 
+[bootstrap.macos.defaults."com.apple.assistant.support"]
+"Dictation Enabled" = false
+
+[bootstrap.macos.defaults."com.apple.HIToolbox"]
+AppleDictationAutoEnable = 0
+
 {{ $llamaVer := index (index (include "dot_config/mise/config.toml" | fromToml).tools "llama.cpp") "version" -}}
 [bootstrap.services.llama-cpp]
 scope = "user"
