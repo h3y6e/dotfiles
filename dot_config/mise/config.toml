@@ -41,7 +41,7 @@ show_tools = true
 "aqua:k1LoW/git-wt" = "0.30.0"
 ast-grep = "0.50.0"
 aube = "2.7.0"
-aws = { version = "2.37.11", symlink_bins = "true" }
+aws = { version = "2.37.12", symlink_bins = "true" }
 bat = "0.26.1"
 bun = "1.4.2"
 cargo-binstall = "1.25.2"
