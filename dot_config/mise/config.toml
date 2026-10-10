@@ -6,6 +6,7 @@ activate_aggressive = true
 cargo.binstall = true
 color_theme = "catppuccin"
 experimental = true
+install_layout = "identity"
 github.use_git_credentials = true
 lockfile = true
 minimum_release_age = "1d"
