@@ -1,4 +1,4 @@
-notes = ["~/ghq/github.com/h3y6e/log/task"]
+notes = ["~/ghq/github.com/h3y6e/memex/task"]
 
 [embedder]
 provider = "llama.cpp"
