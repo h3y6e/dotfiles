@@ -72,6 +72,8 @@ has() {
   type "$1" >/dev/null 2>&1
 }
 
+# renovate: datasource=github-releases depName=jdx/mise
+mise_version="v2026.10.7"
 # renovate: datasource=github-releases depName=twpayne/chezmoi
 chezmoi="chezmoi@2.73.0"
 
@@ -80,14 +82,12 @@ install() {
     mise="${HOME}/.local/bin/mise"
     info "Installing mise to '${mise}'"
     if has "curl"; then
-      mise_install_script="$(curl -fsLS https://mise.run)"
+      curl -fsSL https://mise.run
     elif has "wget"; then
-      mise_install_script="$(wget -qO- https://mise.run)"
+      wget -qO- https://mise.run
     else
       die "curl or wget required."
-    fi
-    sh -c "${mise_install_script}"
-    unset mise_install_script
+    fi | MISE_VERSION="${mise_version}" sh
   fi
 
   info "Installing dotfiles..."
