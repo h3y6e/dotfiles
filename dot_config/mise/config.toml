@@ -32,7 +32,7 @@ show_tools = true
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
 "aqua:docker/buildx" = "0.38.0"
-"aqua:k1LoW/git-wt" = "0.29.3"
+"aqua:k1LoW/git-wt" = "0.30.0"
 ast-grep = "0.45.3"
 aube = "2.7.0"
 aws = { version = "2.37.10", symlink_bins = "true" }
