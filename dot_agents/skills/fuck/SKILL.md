@@ -6,10 +6,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/fuck
-    github-ref: refs/tags/v2026.10.2
+    github-ref: refs/tags/v2026.10.3
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 2ebe8282517bb7d70f24f89f48f92969cd5f3b5c
-    version: 2026.10.2
+    github-tree-sha: b72269b417ad303ac549871bccff610ebbc35c12
+    version: 2026.10.3
 name: fuck
 ---
 # fuck
