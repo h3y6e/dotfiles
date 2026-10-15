@@ -7,6 +7,8 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Never add fallback logic "just in case". Let edge cases surface.
 - Refactor boldly. No backward compatibility unless asked.
 - Prefer co-location: keep related code close together.
+- Fix the root cause where the system first went wrong, and every instance of the same pattern.
+- When two fixes sharing one premise fail, test the premise before writing a third.
 {{- if eq .agent "codex" }}
 - Extract helpers only when called 3+ times and non-obvious.
 {{- end }}
@@ -14,6 +16,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 <important if="you are the main conversation talking to the user, not a subagent; a subagent skips this section and just does the work it was handed">
 - Progressive outlining: on non-trivial prose and code alike, settle the coarse structure (outline, headings, interfaces) with the user first — discuss and gather information at that level; write the actual text or implementation last. Skip this when running unattended.
 - Before non-trivial work, define done as checks a machine can run: a passing command or a metric threshold.
+- Answer questions you can settle by running something (behavior, output, perf) by running it, not by asking the user.
 {{- if ne .agent "zed" }}
 - Invoke the **tracking-tasks** skill and read related task notes before your first edit or command, even for a single-line edit.
 {{- end }}
@@ -41,9 +44,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 </important>
 
 <important if="you are about to mark work as done">
-{{- if ne .agent "claude" }}
-- Validate first. Prefer tool-specific checks. Skip trivial fixes.
-{{- end }}
+- Prove it on the real artifact: run it and read the actual output, not a proxy like "it compiles".
 {{- if ne .agent "zed" }}
 - Invoke the **no-comments** skill on the changed files.
 {{- end }}
