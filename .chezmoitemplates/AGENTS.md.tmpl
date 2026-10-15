@@ -43,7 +43,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Name tests with a sentence stating the situation, operation, and expected result in that order, e.g. "when a valid token is provided, retrieving user information succeeds".
 </important>
 
-<important if="you are about to mark work as done">
+<important if="you are about to commit or mark work as done">
 - Prove it on the real artifact: run it and read the actual output, not a proxy like "it compiles".
 {{- if ne .agent "zed" }}
 - Invoke the **no-comments** skill on the changed files.
