@@ -1,6 +1,2 @@
 git:
   overrideGpg: true
-  diffRenderers:
-    - command: delta -s --paging=never
-    - command: difft --color=always
-      type: extDiff
