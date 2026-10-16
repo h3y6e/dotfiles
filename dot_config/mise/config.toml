@@ -39,7 +39,7 @@ show_tools = true
 [tools]
 "aqua:docker/buildx" = "0.38.0"
 "aqua:k1LoW/git-wt" = "0.30.0"
-ast-grep = "0.50.0"
+ast-grep = "0.51.0"
 aube = "2.7.0"
 aws = { version = "2.38.1", symlink_bins = "true" }
 bat = "0.26.1"
