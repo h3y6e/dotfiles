@@ -52,7 +52,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 </important>
 
 <important if="you are writing text for humans: docs, descriptions, test names, review comments, issue/PR titles and bodies">
-- Language: `gh repo view --json visibility -q '.visibility'` decides it. PUBLIC → English; PRIVATE, INTERNAL, or unknown → Japanese.
+- Language: match what the repository already uses for the same kind of text (recent commits, PRs, issues, docs). With no precedent, English if `gh repo view --json visibility -q '.visibility'` is `PUBLIC`, else Japanese.
 - In Japanese, leave English only for identifiers, product/library names, API names, and established terms when clearer; no awkward mixed Japanese-English phrasing, and no trailing `。` in description fields and similar prose.
 - Every line earns its place. Delete any line where you can't say what the reader loses without it.
 - Keep only what's not obvious from the diff or the name; state what something is, not how it's implemented or why it changed.
