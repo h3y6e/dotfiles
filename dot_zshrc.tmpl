@@ -145,7 +145,6 @@ alias bunx='sfw bunx'
 
 # chezmoi
 alias cz='chezmoi'
-alias czn='nvim "{{ .chezmoi.workingTree }}"'
 
 # zed
 alias z='zed --existing .'
@@ -157,13 +156,6 @@ alias n='nvim .'
 alias oc='opencode -c'
 
 {{ if eq .chezmoi.os "darwin" -}}
-# xcode
-alias xcode='xed'
-alias xcodeclean='rm -rf ~/Library/Developer/Xcode/DerivedData'
-
-# network
-alias ipen0='ipconfig getifaddr en0'
-
 # tailscale
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 {{- end }}
