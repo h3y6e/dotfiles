@@ -32,6 +32,7 @@
   },
   "model": "opus[1m]",
   "enabledPlugins": {
+    "cc-plugin-diff@builtin": false,
     "figma@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
@@ -65,9 +66,10 @@
     "claude-fable-5-1": {
       "effortLevel": "low"
     },
-    "claude-sonnet-5": {},
-    "claude-opus-5": {},
-    "claude-opus-5-5": {}
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {}
   },
   "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
