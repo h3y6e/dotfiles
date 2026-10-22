@@ -1,0 +1,28 @@
+# theme
+theme = "Catppuccin Frappe"
+font-family = "UDEV Gothic 35NF"
+cursor-style-blink = false
+bell-features = system,border
+
+# window
+maximize = true
+background-opacity = 0.9
+background-opacity-cells = true
+window-padding-x = 0
+window-padding-y = 0
+macos-window-buttons = hidden
+macos-titlebar-style = tabs
+
+# shell
+shell-integration-features = no-cursor
+mouse-hide-while-typing = true
+
+# keybinds
+keybind = super+h=goto_split:left
+keybind = super+l=goto_split:right
+keybind = super+k=goto_split:up
+keybind = super+j=goto_split:down
+
+# update
+auto-update = check
+auto-update-channel = tip
