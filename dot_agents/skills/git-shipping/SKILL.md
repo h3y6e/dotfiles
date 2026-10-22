@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.10.4
+    github-ref: refs/tags/v2026.10.5
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 4ac2bbd25c2c980e24dcb7299abc27453ec6ad68
-    version: 2026.10.4
+    github-tree-sha: 38bfd10d15e4c0af12bbec8cd28d2281f00bc4cd
+    version: 2026.10.5
 name: git-shipping
 ---
 # Git Shipping
@@ -29,10 +29,7 @@ Ask only when the intended change scope is unclear enough that you might include
 
 ## Language Rule
 
-Check visibility with `gh repo view --json visibility -q '.visibility'`.
-
-- **PUBLIC**: Use English for commit messages, PR titles, and PR bodies.
-- **PRIVATE / INTERNAL**: Use the language the user is currently using.
+Write commit messages, PR titles, and PR bodies in the language the repository's recent commits and PRs already use. With no precedent, English if `gh repo view --json visibility -q '.visibility'` is `PUBLIC`, else the user's language.
 
 ## Branch
 
