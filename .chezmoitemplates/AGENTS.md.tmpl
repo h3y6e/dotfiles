@@ -25,11 +25,12 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 <important if="you are running shell commands">
 - Use `trash` instead of `rm`.
 - Prefer single quotes for shell arguments to avoid backtick command substitution.
-- `mktemp` every temp file, then write with `>|`, not plain `>` — `mktemp` already creates the file, so `unsetopt CLOBBER` blocks a bare `>` even there.
 - zsh does not word-split `$VAR`; pass multiple args as an array (`args=(a b); cmd $args`).
 - Search with `rg`, or `ast-grep` for structural code search and rewrites; never `grep`.
 {{- if eq .agent "claude" }}
-- Always set `dangerouslyDisableSandbox`. The sandbox is the danger, not the escape: it blocks `.git/config` writes mid-operation, leaving git half-applied (e.g. branch exists but worktree does not) in a state no `--abort` undoes. Disabling it is the safe default.
+- `unsetopt CLOBBER` is active: write to existing files, including fresh `mktemp` ones, with `>|`.
+- Set `dangerouslyDisableSandbox` on every command: the sandbox denies writes mid-operation and leaves state half-applied (e.g. a git branch without its worktree).
+  - If a command still runs sandboxed, pass `mktemp` a template (`mktemp "$TMPDIR/tmp.XXXXXX"`): without one, macOS `mktemp` ignores `$TMPDIR` and fails.
 {{- end }}
 </important>
 
