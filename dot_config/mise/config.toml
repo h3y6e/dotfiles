@@ -36,7 +36,7 @@ show_tools = true
 # - Specify versions ("1.2.3") if Renovate recognizes them, otherwise "latest"
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
 [tools]
-"aqua:docker/buildx" = "0.38.0"
+"aqua:docker/buildx" = "0.38.1"
 "aqua:k1LoW/git-wt" = "0.30.0"
 ast-grep = "0.51.0"
 aube = "2.8.1"
