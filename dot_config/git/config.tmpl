@@ -93,3 +93,9 @@
 	command = test \"${HK:-1}\" = \"0\" || {{ $hk }} run prepare-commit-msg --from-hook \"$@\"
 	event = prepare-commit-msg
 {{- end }}
+{{- $gh := joinPath .xdg.data "mise/shims/gh" }}
+{{- range list "https://github.com" "https://gist.github.com" }}
+[credential "{{ . }}"]
+	helper =
+	helper = !{{ $gh }} auth git-credential
+{{- end }}
