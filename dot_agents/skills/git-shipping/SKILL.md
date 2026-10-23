@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.10.5
+    github-ref: refs/tags/v2026.10.6
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 38bfd10d15e4c0af12bbec8cd28d2281f00bc4cd
-    version: 2026.10.5
+    github-tree-sha: 908ae18fe7143c6920342705f7f7b44def5d009f
+    version: 2026.10.6
 name: git-shipping
 ---
 # Git Shipping
@@ -43,7 +43,7 @@ Do not move already-started work into a new worktree just to satisfy this workfl
 
 ## Commit
 
-Use the `cxg` skill for the commit message format, and pipe the message through `cxg lint` before committing.
+Use the `cxg-commit` skill for the commit message format, and pipe the message through `cxg lint` before committing.
 
 ## Pull Request
 
