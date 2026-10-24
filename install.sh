@@ -73,7 +73,7 @@ has() {
 }
 
 # renovate: datasource=github-releases depName=jdx/mise
-mise_version="v2026.10.17"
+mise_version="v2026.10.18"
 # renovate: datasource=github-releases depName=twpayne/chezmoi
 chezmoi="chezmoi@2.73.3"
 
