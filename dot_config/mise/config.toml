@@ -39,7 +39,7 @@ show_tools = true
 "aqua:docker/buildx" = "0.38.1"
 "aqua:k1LoW/git-wt" = "0.30.0"
 ast-grep = "0.51.0"
-aube = { version = "2.8.1", workflow = [
+aube = { version = "2.8.2", workflow = [
   "release-plz.yml@refs/heads/main",
   "release.yml@refs/heads/main",
 ] }
