@@ -46,7 +46,7 @@ aube = { version = "2.8.2", workflow = [
 aws = { version = "2.38.5", symlink_bins = "true" }
 bat = "0.26.1"
 bun = "1.4.4"
-cargo-binstall = "1.26.0"
+cargo-binstall = "1.26.1"
 chezmoi = "2.73.3"
 claude-code = "2.1.310"
 codex = "latest"
