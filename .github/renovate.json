@@ -27,6 +27,11 @@
       "matchManagers": ["mise"],
       "matchDepNames": ["ffmpeg", "imagemagick"],
       "registryUrls": ["https://api.anaconda.org/package/conda-forge"]
+    },
+    {
+      "matchManagers": ["mise"],
+      "matchDepNames": ["codex"],
+      "extractVersion": "^rust-v(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ]
 }
