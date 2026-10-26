@@ -30,11 +30,11 @@ show_env = true
 show_tools = true
 
 # For Renovate:
-# - Use short names if available (node, aws-cli), otherwise full names (aqua:peco/peco, npm:sfw)
-#   https://docs.renovatebot.com/modules/manager/mise/#supported-default-registry-tool-short-names
-#   https://mise.jdx.dev/registry.html#tools
-# - Specify versions ("1.2.3") if Renovate recognizes them, otherwise "latest"
+# - Use short names (node, aws) if the mise registry maps them to a supported backend, otherwise full names (aqua:k1LoW/git-wt, npm:sfw)
+#   https://docs.renovatebot.com/modules/manager/mise/#short-names-support
 #   https://docs.renovatebot.com/modules/manager/mise/#limitations
+# - Specify versions ("1.2.3"); "latest" is only updated via mise.lock, which is not committed
+#   https://docs.renovatebot.com/modules/manager/mise/#lock-file-support
 [tools]
 "aqua:docker/buildx" = "0.38.1"
 "aqua:k1LoW/git-wt" = "0.30.0"
@@ -74,7 +74,7 @@ jj = "0.46.0"
 jq = "1.8.2"
 lazygit = "0.66.2"
 lima = "2.2.1"
-"github:ggml-org/llama.cpp" = { version = "11870", prerelease = true, version_prefix = "b" }
+"llama.cpp" = { version = "11870", prerelease = true, version_prefix = "b" }
 node = "26.12.1"
 "npm:@krayinc/docbase-cli" = "1.1.7"
 "npm:npm-check" = "6.0.1"
