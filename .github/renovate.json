@@ -22,6 +22,11 @@
     {
       "matchPackageNames": ["ggml-org/llama.cpp"],
       "ignoreUnstable": false
+    },
+    {
+      "matchManagers": ["mise"],
+      "matchDepNames": ["ffmpeg", "imagemagick"],
+      "registryUrls": ["https://api.anaconda.org/package/conda-forge"]
     }
   ]
 }
