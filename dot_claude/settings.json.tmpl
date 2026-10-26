@@ -32,6 +32,19 @@
     ]
   },
   "model": "opus[1m]",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh -c 'rex __internal session-start --agent claude 2>/dev/null || true'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "cc-plugin-diff@builtin": false,
     "figma@claude-plugins-official": true,
@@ -84,18 +97,5 @@
   "theme": "auto",
   "preferredNotifChannel": "terminal_bell",
   "switchModelsOnFlag": false,
-  "skipAutoPermissionPrompt": true,
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c 'rex __internal session-start --agent claude 2>/dev/null || true'",
-            "timeout": 5
-          }
-        ]
-      }
-    ]
-  }
+  "skipAutoPermissionPrompt": true
 }
