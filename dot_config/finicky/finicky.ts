@@ -8,15 +8,8 @@ export default {
   },
   handlers: [
     {
-      match: (url) =>
-        [
-          "google.com",
-          "figma.com",
-          "linear.app",
-          "inspect.isar.dev",
-          "inspect.isar-community.dev",
-        ].some((host) => url.host.endsWith(host)),
-      browser: "Arc",
+      match: (url) => ["google.com"].some((host) => url.host.endsWith(host)),
+      browser: "Google Chrome",
     },
   ],
 } satisfies FinickyConfig;
