@@ -1,6 +1,7 @@
 # theme
 theme = "Catppuccin Frappe"
 font-family = "UDEV Gothic 35NF"
+font-thicken = true
 cursor-style-blink = false
 bell-features = system,border
 
@@ -17,12 +18,6 @@ macos-titlebar-style = tabs
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
 
-# keybinds
-keybind = super+h=goto_split:left
-keybind = super+l=goto_split:right
-keybind = super+k=goto_split:up
-keybind = super+j=goto_split:down
-
 # update
 auto-update = check
-auto-update-channel = tip
+auto-update-channel = stable
