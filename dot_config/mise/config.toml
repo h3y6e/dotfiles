@@ -72,7 +72,7 @@ jj = "0.46.0"
 jq = "1.8.2"
 lazygit = "0.66.2"
 lima = "2.2.1"
-"llama.cpp" = { version = "11871", prerelease = true, version_prefix = "b" }
+"llama.cpp" = { version = "11874", prerelease = true, version_prefix = "b" }
 node = "26.12.1"
 "npm:@krayinc/docbase-cli" = "1.1.7"
 "npm:npm-check" = "6.0.1"
