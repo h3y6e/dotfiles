@@ -70,13 +70,11 @@ hadolint = "2.15.1"
 hk = { version = "2.8.1", workflow = "release.yml" }
 imagemagick = "7.1.2_31"
 jactionlint = "2.3.0"
-java = "27.0.0"
 jj = "0.46.0"
 jq = "1.8.2"
 lazygit = "0.66.2"
 lima = "2.2.1"
 "llama.cpp" = { version = "11533", prerelease = true, version_prefix = "b" }
-neovim = "0.12.6"
 node = "26.12.1"
 "npm:@krayinc/docbase-cli" = "1.1.7"
 "npm:npm-check" = "6.0.1"
