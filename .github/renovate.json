@@ -18,6 +18,10 @@
     {
       "matchPackageNames": ["h3y6e/**"],
       "minimumReleaseAge": "0"
+    },
+    {
+      "matchPackageNames": ["ggml-org/llama.cpp"],
+      "ignoreUnstable": false
     }
   ]
 }

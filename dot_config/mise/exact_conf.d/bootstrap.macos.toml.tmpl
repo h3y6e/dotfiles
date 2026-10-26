@@ -100,17 +100,17 @@ ShowSeconds = 1
 [bootstrap.macos.defaults."com.apple.HIToolbox"]
 AppleDictationAutoEnable = 0
 
-{{ $llamaVer := index (index (include "dot_config/mise/config.toml" | fromToml).tools "llama.cpp") "version" -}}
+{{ $llamaVer := index (index (include "dot_config/mise/config.toml" | fromToml).tools "github:ggml-org/llama.cpp") "version" -}}
 [bootstrap.services.llama-cpp]
 scope = "user"
 requires_tools = true
 restart = "always"
-command = "~/.local/bin/mise x llama.cpp@{{ $llamaVer }} -- llama serve"
+command = "~/.local/bin/mise x github:ggml-org/llama.cpp@{{ $llamaVer }} -- llama serve"
 environment = { LLAMA_ARG_PORT = "11435", LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets.ini", LLAMA_ARG_MODELS_MAX = "1" }
 
 [bootstrap.services.llama-cpp-aux]
 scope = "user"
 requires_tools = true
 restart = "always"
-command = "~/.local/bin/mise x llama.cpp@{{ $llamaVer }} -- llama serve"
+command = "~/.local/bin/mise x github:ggml-org/llama.cpp@{{ $llamaVer }} -- llama serve"
 environment = { LLAMA_ARG_PORT = "11436", LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets-aux.ini", LLAMA_ARG_MODELS_MAX = "2" }
