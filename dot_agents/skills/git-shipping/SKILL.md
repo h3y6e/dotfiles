@@ -1,14 +1,14 @@
 ---
-compatibility: Requires git, gh, cxg, and git-wt.
+compatibility: Requires git, gh, cxg, git-wt, and the code-review and security-review skills.
 description: Guides the git workflow for shipping code changes — branch, commit, push, PR. Use whenever asked to `commit`, `push`, `pr`/`ship`/`open a PR`/`merge this`, or manage branches, and whenever about to make code changes in a git repo, to confirm the branch is right before implementation starts — even if the user only described the change and never said the word "git".
 license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.10.6
+    github-ref: refs/tags/v2026.10.7
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 908ae18fe7143c6920342705f7f7b44def5d009f
-    version: 2026.10.6
+    github-tree-sha: 58ec4a0902f7efabae0e490ef1b003149717ed8a
+    version: 2026.10.7
 name: git-shipping
 ---
 # Git Shipping
