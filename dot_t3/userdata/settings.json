@@ -1,0 +1,44 @@
+{
+  "defaultAutoPull": true,
+  "defaultModelSelection": {
+    "instanceId": "claudeAgent",
+    "model": "claude-opus-5-5",
+    "options": [
+      {
+        "id": "effort",
+        "value": "medium"
+      }
+    ]
+  },
+  "defaultRuntimeMode": "auto",
+  "projectSettingsFolded": true,
+  "compactIdleThreads": true,
+  "idleCompaction": "beforeCacheExpires",
+  "defaultThreadEnvMode": "worktree",
+  "addProjectBaseDirectory": "~/ghq/",
+  "textGenerationModelSelection": {
+    "instanceId": "claudeAgent",
+    "model": "claude-sonnet-5-5",
+    "options": [
+      {
+        "id": "effort",
+        "value": "medium"
+      }
+    ]
+  },
+  "branchNamingMode": "semantic",
+  "removeAgentCreditsOnMerge": true,
+  "reviewGuidesEnabled": true,
+  "providerInstances": {
+    "codex": {
+      "driver": "codex",
+      "enabled": false
+    },
+    "cursor": {
+      "driver": "cursor",
+      "displayName": "Cursor",
+      "enabled": true
+    }
+  },
+  "cursorKeychainUsageEnabled": true
+}
