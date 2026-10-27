@@ -16,9 +16,9 @@ description: |-
     - Tooling/Trivial: Vite, tsconfig, ESLint, tests, copy/renames, 3P docs, etc.
 metadata:
     github-path: skills/modern-web-guidance
-    github-ref: refs/tags/v0.0.195
+    github-ref: refs/tags/v0.0.196
     github-repo: https://github.com/GoogleChrome/modern-web-guidance
-    github-tree-sha: 5f268ec207be7d074dd7fca0fe8be084fe76733a
+    github-tree-sha: f36692bc081465b920c16c5801415f2f0627146c
 name: modern-web-guidance
 ---
 # Modern Web Guidance
