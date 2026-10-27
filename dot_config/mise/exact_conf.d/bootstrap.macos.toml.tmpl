@@ -48,6 +48,16 @@ owner = "root"
 group = "wheel"
 mode = "0644"
 
+# https://emudhra.we-have-a-problem.com/
+[bootstrap.files."/etc/ssl/cert.pem"]
+template = true
+content = '''
+{{ `{{ exec(command="awk -v 's==== /C=IN/OU=emSign PKI/O=eMudhra Technologies Limited/CN=emSign ECC Root CA - G3' '/^(===|###) /{skip=0} $0==s{skip=1} !skip' /etc/ssl/cert.pem") }}` }}
+'''
+owner = "root"
+group = "wheel"
+mode = "0644"
+
 # https://macos-defaults.com
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 [bootstrap.macos.dock]
