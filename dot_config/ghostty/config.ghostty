@@ -13,6 +13,7 @@ window-padding-x = 0
 window-padding-y = 0
 macos-window-buttons = hidden
 macos-titlebar-style = tabs
+unfocused-split-opacity = 0.9
 
 # shell
 shell-integration-features = no-cursor
