@@ -18,7 +18,7 @@ task.monorepo_depth = 2
 tool_update.global_auto = true
 
 [settings.self_update]
-auto = false
+auto = true
 check_duration = "1d"
 
 [settings.skills]
