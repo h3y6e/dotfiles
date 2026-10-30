@@ -8,7 +8,7 @@ export default {
   },
   handlers: [
     {
-      match: (url) => ["google.com"].some((host) => url.host.endsWith(host)),
+      match: ["google.com/*", "*.google.com/*", "forms.gle/*"],
       browser: "Google Chrome",
     },
   ],
