@@ -119,7 +119,7 @@
     },
   },
   "agent": {
-    "terminal_init_command": "hc run --rm --no-parent",
+    "terminal_init_command": "exec hc attach $(hc run --bg --rm --no-parent | jq -r .address)",
     "show_turn_stats": false,
     "cancel_generation_on_terminal_stop": false,
     "thinking_display": "always_collapsed",
