@@ -4,11 +4,11 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/no-comments
-    github-ref: refs/tags/v2026.10.7
+    github-ref: refs/tags/v2026.10.8
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 61b94ec8565e56faddb58958953cce0200d0c3e6
+    github-tree-sha: dd42575715a9eaaa79ad1e74b223be3cd63b7bbd
     refs: https://github.com/cursor/plugins/blob/032be146865d973682535de75f2287da438550bf/pstack/skills/no-comments/SKILL.md
-    version: 2026.10.7
+    version: 2026.10.8
 name: no-comments
 ---
 # No Comments
