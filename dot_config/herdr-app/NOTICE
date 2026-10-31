@@ -59,7 +59,7 @@ SOFTWARE.
 
 ---
 
-catppuccin/themes: colors from the Catppuccin palette (https://catppuccin.com):
+themes/catppuccin-*.json: colors from the Catppuccin palette (https://catppuccin.com):
 
 MIT License
 
