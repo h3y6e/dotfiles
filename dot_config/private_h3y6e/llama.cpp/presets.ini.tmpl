@@ -1,16 +1,23 @@
-[ornith-1.5-35b]
-hf = ornith-ai/Ornith-1.5-35B-A3B-GGUF:Q6_K
-temp = 0.6
-top-k = 20
-min-p = 0
+[nemotron-3.5-bolt-e4b]
+hf-repo = nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB
+hf-file = Nemotron-3.5-Bolt-E4B-Q4_K_M.gguf
+ctx-size = 32768
+reasoning = off
+temp = 1.0
+top-p = 0.95
+
+[cat-translate-7b]
+hf = mradermacher/CAT-Translate-7b-i1-GGUF:Q4_K_M
+ctx-size = 8192
+
+[qwen3-embedding-0.6b]
+hf = Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
+ctx-size = 8192
+embedding = true
+batch-size = 8192
+ubatch-size = 8192
 
 {{ if and (eq .chezmoi.os "darwin") (ge (output "sysctl" "-n" "hw.memsize" | trim | int64) 137438953472) -}}
-[qwen3.8-27b]
-hf = ggml-org/Qwen3.8-27B-GGUF:Q8_0
-temp = 1.0
-min-p = 0
-reasoning-effort = low
-
 [qwen3.8-27b-abliterated]
 hf = huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF:Q8_0
 temp = 1.0
