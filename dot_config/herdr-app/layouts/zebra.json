@@ -1,0 +1,161 @@
+{
+  "id": "root",
+  "cloned_from": {
+    "name": "main",
+    "version": "0.1.6"
+  },
+  "type": "row",
+  "children": [
+    {
+      "id": "sidebar",
+      "type": "column",
+      "children": [
+        {
+          "id": "brand",
+          "type": "block",
+          "content": {
+            "mod": "zebra-workspace-chrome"
+          },
+          "size": {
+            "px": 32
+          },
+          "window_drag": true
+        },
+        {
+          "id": "threads",
+          "type": "block",
+          "content": {
+            "mod": "zebra-sidebar"
+          }
+        },
+        {
+          "id": "sidebar-bottom",
+          "type": "block",
+          "size": {
+            "px": 28
+          },
+          "content": {
+            "mod": "zebra-workspace-chrome",
+            "props": {
+              "footer": true
+            }
+          }
+        }
+      ],
+      "size": {
+        "px": 240
+      },
+      "min": 160,
+      "max": 480,
+      "background": "chrome",
+      "resizable": false
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "children": [
+        {
+          "id": "tabs",
+          "type": "block",
+          "content": {
+            "mod": "zebra-tabs"
+          },
+          "size": {
+            "px": 32
+          },
+          "window_drag": true
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "children": [
+            {
+              "id": "panel",
+              "type": "column",
+              "children": [
+                {
+                  "id": "panel-body",
+                  "type": "stack",
+                  "children": [
+                    {
+                      "id": "files",
+                      "type": "block",
+                      "content": {
+                        "mod": "zebra-files"
+                      }
+                    },
+                    {
+                      "id": "changes",
+                      "type": "block",
+                      "content": {
+                        "mod": "zebra-changes"
+                      }
+                    }
+                  ],
+                  "active": "files"
+                }
+              ],
+              "size": {
+                "px": 260
+              },
+              "min": 180,
+              "max": 900,
+              "hidden": true
+            },
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "header": {
+                    "content": {
+                      "mod": "zebra-pane"
+                    },
+                    "reveal": "always",
+                    "height": 32,
+                    "position": "top"
+                  },
+                  "background": "background",
+                  "radius": 0,
+                  "gap": 1,
+                  "lone": true
+                }
+              },
+              "background": "border"
+            }
+          ],
+          "divider": {
+            "width": 1,
+            "color": "border"
+          }
+        },
+        {
+          "id": "status",
+          "type": "block",
+          "content": {
+            "mod": "zebra-status"
+          },
+          "size": {
+            "px": 28
+          }
+        }
+      ],
+      "resizable": false
+    }
+  ],
+  "background": "canvas",
+  "terminal_padding": [
+    4,
+    0
+  ],
+  "titlebar": "none",
+  "traffic_lights": [
+    10,
+    9
+  ],
+  "divider": {
+    "width": 1,
+    "color": "border"
+  }
+}
