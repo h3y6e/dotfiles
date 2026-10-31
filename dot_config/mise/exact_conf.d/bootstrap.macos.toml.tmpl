@@ -116,11 +116,4 @@ scope = "user"
 requires_tools = true
 restart = "always"
 command = "~/.local/bin/mise x llama.cpp@{{ $llamaVer }} -- llama serve"
-environment = { LLAMA_ARG_PORT = "11435", LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets.ini", LLAMA_ARG_MODELS_MAX = "1" }
-
-[bootstrap.services.llama-cpp-aux]
-scope = "user"
-requires_tools = true
-restart = "always"
-command = "~/.local/bin/mise x llama.cpp@{{ $llamaVer }} -- llama serve"
-environment = { LLAMA_ARG_PORT = "11436", LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets-aux.ini", LLAMA_ARG_MODELS_MAX = "2" }
+environment = { LLAMA_ARG_MODELS_PRESET = "{{ .xdg.config }}/{{ .handle }}/llama.cpp/presets.ini", LLAMA_ARG_MODELS_MEMORY_MARGIN = "8192" }
