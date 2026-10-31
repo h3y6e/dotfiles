@@ -15,7 +15,7 @@
   "compactIdleThreads": true,
   "idleCompaction": "beforeCacheExpires",
   "defaultThreadEnvMode": "worktree",
-  "addProjectBaseDirectory": "~/ghq/",
+  "addProjectBaseDirectory": "~/ghq/github.com/",
   "textGenerationModelSelection": {
     "instanceId": "claudeAgent",
     "model": "claude-sonnet-5-5",
