@@ -60,7 +60,7 @@ ffmpeg = "9.0.2"
 fzf = "0.74.5"
 gcloud = "latest"
 gh = "2.103.3"
-ghalint = "1.5.7"
+ghalint = "1.6.0"
 ghq = "1.11.2"
 "github:docker/buildx" = { version = "0.38.1", bin = "docker-buildx" }
 go = "1.27.3"
