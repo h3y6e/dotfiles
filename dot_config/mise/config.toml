@@ -74,7 +74,7 @@ lazygit = "0.66.2"
 lima = "2.2.1"
 "llama.cpp" = { version = "12017", prerelease = true, version_prefix = "b" }
 node = "26.13.0"
-"npm:@krayinc/docbase-cli" = "1.1.7"
+"npm:@krayinc/docbase-cli" = "1.1.8"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.6"
 "packslip:github.com/h3y6e/anna" = "latest"
