@@ -2,11 +2,11 @@
 description: Norms for Japanese technical prose — paragraph logic, argument rigor, reader load, restrained rhetoric, and non-LLM phrasing. Use when writing, editing, or reviewing a Japanese book chapter, article, draft, or explanation.
 metadata:
     github-path: skills/writing-japanese
-    github-ref: refs/tags/v2026.10.8
+    github-ref: refs/tags/v2026.11.0
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: fd8e81134493a400e387123e3a7cb568017fa9cf
+    github-tree-sha: e2895e3b8792589347f1950d95661ac1ea26325e
     refs: https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d, https://gist.github.com/k16shikano/eb2929f13ed19c97188393d297be8432
-    version: 2026.10.8
+    version: 2026.11.0
 name: writing-japanese
 ---
 # 日本語技術文書の文章規範
