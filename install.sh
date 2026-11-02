@@ -75,7 +75,7 @@ has() {
 # renovate: datasource=github-releases depName=jdx/mise
 mise_version="v2026.10.25"
 # renovate: datasource=github-releases depName=twpayne/chezmoi
-chezmoi="chezmoi@2.73.3"
+chezmoi="chezmoi@2.74.0"
 
 install() {
   if ! mise="$(command -v mise)"; then
