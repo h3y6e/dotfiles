@@ -17,7 +17,7 @@ rex.action{
   args = { block = "string?", root = "string?", repo = "string?" },
   run = function(ctx, args)
     if args.repo == nil then
-      local pick = ('rex do -C %s open_repo block=%s root="$(ghq root)" repo="$(ghq list | peco)"'):format(ctx.client_id, ctx.block_id)
+      local pick = ('rex do -C %s open_repo block=%s repo="$(ghq list | peco)" root="$(ghq root)"'):format(ctx.client_id, ctx.block_id)
       assert(rex.session.new_layer{
         bounds = { 0.2, 0.2, 0.6, 0.6 },
         focus = true,
