@@ -1,6 +1,6 @@
 {
   "diagnostics": {
-    "globals": ["vim", "wezterm"]
+    "globals": ["vim", "wezterm", "rex"]
   },
   "workspace": {
     "checkThirdParty": false,
