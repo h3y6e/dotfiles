@@ -23,7 +23,7 @@ text="$1"
 ja=${text//[^ぁ-ヿ一-鿿]/}
 # shellcheck disable=SC2206
 words=(${text//[^A-Za-z]/ })
-if ((${#ja} >= ${#words[@]})); then
+if ((${#ja} > 0 && ${#ja} >= ${#words[@]})); then
   lang=en
 else
   lang=ja
