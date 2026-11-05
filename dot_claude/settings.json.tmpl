@@ -16,13 +16,15 @@
     "FORCE_HYPERLINK": "1"
   },
   "permissions": {
+    "allow": [
+      "Bash(npx -y modern-web-guidance@latest *)"
+    ],
     "deny": [
       "NotebookEdit",
       "Bash(rm *)",
       "Bash(dd *)",
       "Bash(su *)",
       "Bash(sudo *)",
-      "Bash(npx *)",
       "Bash(git wt ls)",
       "Bash(git wt list)"
     ],
