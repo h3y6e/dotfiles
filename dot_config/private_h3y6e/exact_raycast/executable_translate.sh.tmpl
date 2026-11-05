@@ -17,22 +17,23 @@ set -Eeufo pipefail
 
 export PATH="${HOME}/.local/bin:${PATH}"
 export MISE_EXEC_AUTO_INSTALL=0
+export LC_ALL=en_US.UTF-8
 text="$1"
 
-if mise x -- rg -q '\p{Hiragana}|\p{Katakana}|\p{Han}' <<<"$text"; then
-  read -r src dst <<<"Japanese English"
+ja=${text//[^ぁ-ヿ一-鿿]/}
+read -ra words <<<"${text//[^A-Za-z]/ }"
+if ((${#ja} > 0 && ${#ja} >= ${#words[@]})); then
+  lang=en
 else
-  read -r src dst <<<"English Japanese"
+  lang=ja
 fi
 
-prompt="Translate the following $src text into $dst.
-
-$text"
+prompt="<|plamo:tag|>dataset<|plamo:msg|>translation<|plamo:tag|>input<|plamo:msg|>$text<|plamo:tag|>output<|plamo:key|>lang<|plamo:val|>$lang<|plamo:msg|>"
 
 # shellcheck disable=SC2016
 body=$(mise x -- jq -n --arg prompt "$prompt" \
-  '{model: "cat-translate-7b", messages: [{role: "user", content: $prompt}]}')
+  '{model: "plamo-3-translate-2b", prompt: $prompt, temperature: 0, stop: ["<|plamo:tag|>", "<|plamo:bos|>"]}')
 
-curl -sf http://127.0.0.1:9931/v1/chat/completions \
+curl -sf http://127.0.0.1:9931/v1/completions \
   -H 'Content-Type: application/json' \
-  -d "$body" | mise x -- jq -r '.choices[0].message.content'
+  -d "$body" | mise x -- jq -r '.choices[0].text'
