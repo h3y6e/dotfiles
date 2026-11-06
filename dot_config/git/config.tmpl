@@ -77,6 +77,8 @@
 	copy = "*.local"
 	hook = "git submodule update --init --recursive"
 	relative = true
+[includeIf "gitdir:{{ .chezmoi.homeDir }}/ghq/"]
+	path = ghq.gitconfig
 [safe]
 	directory = {{ .chezmoi.workingTree }}
 {{ $hk := joinPath .xdg.data "mise/shims/hk" -}}
