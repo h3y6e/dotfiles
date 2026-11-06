@@ -68,7 +68,7 @@ hadolint = "2.15.1"
 hk = { version = "2.11.1", workflow = "release.yml" }
 imagemagick = "7.1.2_31"
 jactionlint = "2.4.0"
-jj = "0.47.0"
+jj = "0.47.1"
 jq = "1.8.2"
 lazygit = "0.66.2"
 lima = "2.2.1"
