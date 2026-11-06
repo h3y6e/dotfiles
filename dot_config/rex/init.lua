@@ -5,7 +5,7 @@ rex.action {
   title = "Open in Zed",
   run = function(ctx)
     local p = rex.block.call("com.superlogical.terminal", "process", { block_id = ctx.block_id })
-    local r = assert(rex.exec { "/opt/homebrew/bin/zed", "--existing", p.foreground.cwd })
+    local r = assert(rex.exec({ "/bin/zsh", "-lic", 'eval "$(direnv export zsh)"; z' }, { cwd = p.foreground.cwd }))
     assert(r.ok, r.stderr)
   end,
 }
