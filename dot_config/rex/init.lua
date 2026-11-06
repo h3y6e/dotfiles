@@ -12,6 +12,20 @@ rex.action {
 rex.bind("cmd+e", "open_in_zed")
 
 rex.action {
+  name = "lazygit",
+  title = "Lazygit",
+  run = function(ctx)
+    local p = rex.block.call("com.superlogical.terminal", "process", { block_id = ctx.block_id })
+    assert(rex.session.new_layer {
+      bounds = { 0.05, 0.05, 0.9, 0.9 },
+      focus = true,
+      layout = rex.layout.block { flavor = shell, options = { command = { "lazygit" }, cwd = p.foreground.cwd } },
+    })
+  end,
+}
+rex.bind("cmd+g", "lazygit")
+
+rex.action {
   name = "open_repo",
   title = "Open Repository…",
   args = { block = "string?", root = "string?", repo = "string?" },
