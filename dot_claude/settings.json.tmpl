@@ -24,7 +24,6 @@
     ],
     "deny": [
       "NotebookEdit",
-      "Bash(rm *)",
       "Bash(dd *)",
       "Bash(su *)",
       "Bash(sudo *)",
@@ -103,6 +102,10 @@
     "claude-sonnet-5-5": {}
   },
   "tui": "fullscreen",
+  "statusLine": {
+    "type": "command",
+    "command": "jq -r -f {{ .chezmoi.homeDir }}/.claude/statusline.jq"
+  },
   "skipWorkflowUsageWarning": true,
   "theme": "auto",
   "preferredNotifChannel": "terminal_bell",
