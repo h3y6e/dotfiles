@@ -5,7 +5,10 @@
 [settings]
 trusted_config_paths = ["{{ .chezmoi.workingTree }}", "{{ .chezmoi.homeDir }}/ghq"]
 
-{{ if .personal -}}
 [tools]
+{{- if .personal }}
 cursor-agent = "latest"
+{{- end }}
+{{- if .work }}
+"npm:@krayinc/docbase-cli" = "latest"
 {{- end }}

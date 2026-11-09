@@ -26,7 +26,7 @@
 "brew-cask:raycast" = "latest"
 "brew-cask:scroll-reverser" = "latest"
 "brew-cask:zed" = "latest"
-{{ if .personal -}}
+{{- if .personal }}
 "brew-cask:amazon-photos" = "latest"
 "brew-cask:appcleaner" = "latest"
 "brew-cask:discord" = "latest"
@@ -34,11 +34,10 @@
 "brew-cask:google-chrome" = "latest"
 "brew-cask:readdle-spark" = "latest"
 "brew-cask:slack" = "latest"
-"brew-cask:t3-code" = "latest"
-{{ end -}}
-{{ if .work -}}
+{{- end }}
+{{- if .work }}
 "brew-cask:cloudflare-warp" = "latest"
-{{ end -}}
+{{- end }}
 "mas:682658836" = "latest" # GarageBand
 
 # Touch ID for sudo
@@ -109,8 +108,8 @@ ShowSeconds = 1
 
 [bootstrap.macos.defaults."com.apple.HIToolbox"]
 AppleDictationAutoEnable = 0
+{{- $llamaVer := index (include "dot_config/mise/config.toml" | fromToml).tools "llama.cpp" "version" }}
 
-{{ $llamaVer := index (include "dot_config/mise/config.toml" | fromToml).tools "llama.cpp" "version" -}}
 [bootstrap.services.llama-cpp]
 scope = "user"
 requires_tools = true
