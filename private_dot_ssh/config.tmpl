@@ -1,6 +1,6 @@
 Include ~/.ssh/conf.d/*
+{{- if eq .chezmoi.os "darwin" }}
 
-{{ if eq .chezmoi.os "darwin" -}}
 Include {{ .xdg.config }}/colima/ssh_config
 
 Host *

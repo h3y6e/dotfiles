@@ -42,8 +42,8 @@ export OPENCODE_ENABLE_EXA=1
 
 # ni.zsh
 export NI_USE_SOCKET_FIREWALL=1
+{{- if eq .chezmoi.os "darwin" }}
 
-{{ if eq .chezmoi.os "darwin" -}}
 # browser
 export BROWSER='open'
 {{- end }}
@@ -114,7 +114,7 @@ alias rm='nocorrect rm'
 alias sudo='nocorrect sudo'
 
 # ls
-{{ if eq .chezmoi.os "darwin" -}}
+{{- if eq .chezmoi.os "darwin" }}
 alias ls='ls -G'
 {{- else }}
 alias ls='ls --color=auto'
@@ -152,8 +152,8 @@ alias n='nvim .'
 
 # opencode
 alias oc='opencode -c'
+{{- if eq .chezmoi.os "darwin" }}
 
-{{ if eq .chezmoi.os "darwin" -}}
 # tailscale
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 {{- end }}

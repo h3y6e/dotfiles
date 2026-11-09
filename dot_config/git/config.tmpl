@@ -81,8 +81,8 @@
 	path = ghq.gitconfig
 [safe]
 	directory = {{ .chezmoi.workingTree }}
-{{ $hk := joinPath .xdg.data "mise/shims/hk" -}}
-{{ if stat $hk -}}
+{{- $hk := joinPath .xdg.data "mise/shims/hk" }}
+{{- if stat $hk }}
 [hook "hk-commit-msg"]
 	command = test \"${HK:-1}\" = \"0\" || {{ $hk }} run commit-msg --from-hook \"$@\"
 	event = commit-msg
