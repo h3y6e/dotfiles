@@ -24,7 +24,8 @@
 	tree = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
 	push-f = push --force-with-lease
 	pull-f = !git fetch && git reset --hard @{u}
-	cd = !git switch $(git config --get init.defaultBranch)
+	cd = !git switch $(git rev-parse --abbrev-ref origin/HEAD | cut -d/ -f2-)
+	up = pull origin HEAD
 	cleanup = !git fetch --prune && git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | grep '\\[gone\\]' | cut -d' ' -f1 | xargs -r git wt -D
 [merge]
 	ff = false
@@ -41,6 +42,7 @@
 	autoSquash = true
 [fetch]
 	prune = true
+	followRemoteHEAD = always
 	fsckObjects = true
 [diff]
 	algorithm = histogram

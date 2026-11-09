@@ -3,12 +3,6 @@ editor:
 prompt: enabled
 pager:
 aliases:
-    default-branch: |
-        !git rev-parse --git-dir > /dev/null 2>&1 || { echo "Not a git repository"; exit 1; }
-        defaultbranch=$(gh repo view --json defaultBranchRef --jq ".defaultBranchRef.name")
-        [ -z "$defaultbranch" ] && exit 0
-        git config --local init.defaultBranch "$defaultbranch"
-        echo "$defaultbranch"
     pr wt: |
         !git rev-parse --git-dir >/dev/null 2>&1 || { echo "Not a git repository"; exit 1; }
         type peco >/dev/null 2>&1 || { echo "peco is not installed"; exit 1; }
