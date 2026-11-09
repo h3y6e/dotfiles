@@ -141,11 +141,6 @@ alias n='nvim .'
 
 # opencode
 alias oc='opencode -c'
-{{- if eq .chezmoi.os "darwin" }}
-
-# tailscale
-alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
-{{- end }}
 
 ### end profiler
 zprof | head -7
