@@ -56,6 +56,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Language: match what the repository already uses for the same kind of text (recent commits, PRs, issues, docs).
 - In Japanese, no awkward Japanese-English mixing beyond identifiers and established terms, and no trailing `。` in description fields and similar prose.
 - Omit anything obvious from the diff or the name.
+- Never leak private repo/org names, issue/PR refs, or internal details into public repos.
 </important>
 {{- if eq .agent "zed" }}
 
