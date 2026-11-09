@@ -91,17 +91,6 @@ type sheldon &>/dev/null && eval "$(sheldon source)"
 # direnv
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
-# flutter/fvm
-function check-fvm() {
-  if [[ -d ".fvm" ]]; then
-    alias flutter='fvm flutter'
-    alias dart='fvm dart'
-  fi
-}
-
-autoload -Uz add-zsh-hook
-add-zsh-hook chpwd check-fvm
-
 # nocorrect
 alias cd='nocorrect cd'
 alias cp='nocorrect cp'
