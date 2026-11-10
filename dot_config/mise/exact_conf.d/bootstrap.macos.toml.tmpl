@@ -23,7 +23,6 @@
 "brew-cask:karabiner-elements" = "latest"
 "brew-cask:notion-calendar" = "latest"
 "brew-cask:obsidian" = "latest"
-"brew-cask:raycast" = "latest"
 "brew-cask:scroll-reverser" = "latest"
 "brew-cask:zed" = "latest"
 {{- if .personal }}
@@ -58,9 +57,13 @@ owner = "root"
 group = "wheel"
 mode = "0644"
 
+[bootstrap.hooks]
+post-defaults = "killall Dock Finder SystemUIServer || true"
+
 # https://macos-defaults.com
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 [bootstrap.macos.dock]
+apps = ["/System/Applications/Utilities/Activity Monitor.app"]
 autohide = true
 tilesize = 48
 
@@ -75,13 +78,51 @@ show_pathbar = true
 preferred_view_style = "list"
 
 [bootstrap.macos.defaults.NSGlobalDomain]
+AppleLanguages = ["en-JP", "ja-JP"]
 "com.apple.mouse.scaling" = 1.5
 "com.apple.trackpad.scaling" = 1.0
 "com.apple.sound.beep.feedback" = true
 NSGlassTintAmount = 0.0
+TSMLanguageIndicatorEnabled = false
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.symbolichotkeys"
+key = "AppleSymbolicHotKeys"
+path = ["64"]
+value = { enabled = true, value = { parameters = [32, 49, 1048576], type = "standard" } }
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.symbolichotkeys"
+key = "AppleSymbolicHotKeys"
+path = ["65"]
+value = { enabled = true, value = { parameters = [32, 49, 1572864], type = "standard" } }
+
+[[bootstrap.macos.defaults_entries]]
+domain = "NSGlobalDomain"
+key = "NSUserKeyEquivalents"
+path = ["Fill"]
+value = "@~^="
+
+[[bootstrap.macos.defaults_entries]]
+domain = "NSGlobalDomain"
+key = "NSUserKeyEquivalents"
+path = ["\u001bWindow\u001bMove & Resize\u001bLeft"]
+value = "@~^["
+
+[[bootstrap.macos.defaults_entries]]
+domain = "NSGlobalDomain"
+key = "NSUserKeyEquivalents"
+path = ["\u001bWindow\u001bMove & Resize\u001bRight"]
+value = "@~^]"
 
 [bootstrap.macos.defaults."com.apple.WindowManager"]
+EnableTilingByEdgeDrag = true
+EnableTilingOptionAccelerator = true
 EnableTiledWindowMargins = false
+GloballyEnabled = false
+
+[bootstrap.macos.defaults."com.apple.spaces"]
+spans-displays = false
 
 [bootstrap.macos.defaults."com.apple.AppleMultitouchTrackpad"]
 FirstClickThreshold = 0
