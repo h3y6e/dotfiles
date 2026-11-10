@@ -42,11 +42,9 @@ export OPENCODE_ENABLE_EXA=1
 
 # ni.zsh
 export NI_USE_SOCKET_FIREWALL=1
-{{- if eq .chezmoi.os "darwin" }}
 
 # browser
 export BROWSER='open'
-{{- end }}
 
 # fpath
 [[ -n "$HOMEBREW_PREFIX" ]] && fpath=(${HOMEBREW_PREFIX}/share/zsh/site-functions $fpath)
@@ -103,11 +101,7 @@ alias rm='nocorrect rm'
 alias sudo='nocorrect sudo'
 
 # ls
-{{- if eq .chezmoi.os "darwin" }}
 alias ls='ls -G'
-{{- else }}
-alias ls='ls --color=auto'
-{{- end }}
 alias l='ls -A'
 alias ll='ls -lh'
 alias la='ll -A'
