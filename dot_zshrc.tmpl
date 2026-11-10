@@ -133,6 +133,13 @@ alias bunx='sfw bunx'
 alias cz='chezmoi'
 alias czz='zed {{ .chezmoi.workingTree }}'
 
+# translate (ja <-> en)
+t() {
+  jq -n --arg t "${1-$(cat)}" '{model: "plamo-3-translate-2b", messages: [{role: "user", content: $t}], temperature: 0}' |
+    curl -sf http://127.0.0.1:9931/v1/chat/completions -H 'Content-Type: application/json' -d @- |
+    jq -r '.choices[0].message.content'
+}
+
 # zed
 alias z='zed .'
 
