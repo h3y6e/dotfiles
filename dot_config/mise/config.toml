@@ -35,6 +35,7 @@ show_tools = true
 #   https://docs.renovatebot.com/modules/manager/mise/
 [tools]
 "aqua:k1LoW/git-wt" = "0.30.0"
+"aqua:ymtdzzz/otel-tui" = "0.7.5"
 ast-grep = "0.51.1"
 aube = { version = "2.10.0", workflow = [
   "release-plz.yml@refs/heads/main",
