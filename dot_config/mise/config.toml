@@ -64,7 +64,7 @@ gh = "2.103.3"
 ghalint = "1.6.0"
 ghq = "1.12.0"
 "github:docker/buildx" = { version = "0.38.2", bin = "docker-buildx" }
-go = "1.27.3"
+go = "1.27.4"
 hadolint = "2.15.1"
 hk = { version = "2.12.0", workflow = "release.yml" }
 imagemagick = "7.1.2_31"
