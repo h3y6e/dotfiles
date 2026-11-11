@@ -72,7 +72,7 @@ jj = "0.47.1"
 jq = "1.8.2"
 lazygit = "0.66.3"
 lima = "2.3.0"
-"llama.cpp" = { version = "12244", prerelease = true, version_prefix = "b" }
+"llama.cpp" = { version = "12253", prerelease = true, version_prefix = "b" }
 node = "26.13.1"
 "npm:npm-check" = "6.0.1"
 "npm:sfw" = "2.0.6"
