@@ -58,7 +58,7 @@ group = "wheel"
 mode = "0644"
 
 [bootstrap.hooks]
-post-defaults = "killall Dock Finder SystemUIServer || true"
+post-defaults = "/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u; killall Dock Finder SystemUIServer || true"
 
 # https://macos-defaults.com
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
