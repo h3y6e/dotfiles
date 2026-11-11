@@ -6,9 +6,6 @@
 trusted_config_paths = ["{{ .chezmoi.workingTree }}", "{{ .chezmoi.homeDir }}/ghq"]
 
 [tools]
-{{- if .personal }}
-cursor-agent = { version = "latest", os = ["macos", "linux"] }
-{{- end }}
 {{- if .work }}
 "npm:@krayinc/docbase-cli" = "latest"
 {{- end }}
