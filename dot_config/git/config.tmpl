@@ -79,7 +79,7 @@
 	copy = "*.local"
 	hook = "git submodule update --init --recursive"
 	relative = true
-[includeIf "gitdir:{{ .chezmoi.homeDir }}/ghq/"]
+[includeIf "gitdir:{{ .chezmoi.homeDir }}/ghq/**/?*.git/"]
 	path = ghq.gitconfig
 [safe]
 	directory = {{ .chezmoi.workingTree }}
