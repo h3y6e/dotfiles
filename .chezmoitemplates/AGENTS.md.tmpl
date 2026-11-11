@@ -9,6 +9,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - Prefer co-location: keep related code close together.
 - Fix the root cause where the system first went wrong, and every instance of the same pattern.
 - When two fixes sharing one premise fail, test the premise before writing a third.
+- NEVER write to a fixed path in `$TMPDIR`: other sessions overwrite it and leak their content into what you publish. Always use `mktemp "$TMPDIR/<name>.XXXXXX"` and write to it with `>|`.
 {{- if eq .agent "codex" }}
 - Extract helpers only when called 3+ times and non-obvious.
 {{- end }}
@@ -28,9 +29,7 @@ Conversation with the user: Japanese. Agent-facing guidance (`{{ if eq .agent "c
 - zsh does not word-split `$VAR`; pass multiple args as an array (`args=(a b); cmd $args`).
 - Search with `rg`, or `ast-grep` for structural code search and rewrites; never `grep`.
 {{- if eq .agent "claude" }}
-- `unsetopt CLOBBER` is active: write to existing files, including fresh `mktemp` ones, with `>|`.
 - Set `dangerouslyDisableSandbox` on every command: the sandbox denies writes mid-operation and leaves state half-applied (e.g. a git branch without its worktree).
-  - If a command still runs sandboxed, pass `mktemp` a template (`mktemp "$TMPDIR/tmp.XXXXXX"`): without one, macOS `mktemp` ignores `$TMPDIR` and fails.
 {{- end }}
 </important>
 
