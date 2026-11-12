@@ -62,7 +62,7 @@ fzf = "0.75.0"
 gh = "2.103.3"
 ghalint = "1.6.0"
 ghq = "1.12.0"
-"github:docker/buildx" = { version = "0.38.2", bin = "docker-buildx" }
+"github:docker/buildx" = { version = "0.39.0", bin = "docker-buildx" }
 go = "1.27.4"
 hadolint = "2.15.1"
 hk = { version = "2.12.0", workflow = "release.yml" }
