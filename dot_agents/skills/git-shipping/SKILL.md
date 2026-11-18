@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/git-shipping
-    github-ref: refs/tags/v2026.11.2
+    github-ref: refs/tags/v2026.11.3
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 300e737e366ad3744188b7c68d6894f447942c4a
-    version: 2026.11.2
+    github-tree-sha: 9f044f49169820c4fc2433afc2140d6ef4b3125c
+    version: 2026.11.3
 name: git-shipping
 ---
 # Git Shipping
@@ -49,3 +49,7 @@ On a PR branch, keep history as meaningful units, not a log of attempts. Rewrite
 ## Review Loop
 
 After opening a PR, read [the review loop](references/review-loop.md) and run it before reporting back.
+
+## Monitor
+
+An open PR is not done. Watch it with `gh pr checks --watch`, fix failing checks, and settle new reviews with `receiving-code-review`. Report its CI, review, and merge state from `gh pr view --json state,mergeStateStatus,statusCheckRollup,reviewDecision`.
