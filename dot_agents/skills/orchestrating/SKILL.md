@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/orchestrating
-    github-ref: refs/tags/v2026.11.2
+    github-ref: refs/tags/v2026.11.3
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: a0490592c4b084463556a6bb9242df1b2d4928b7
-    version: 2026.11.2
+    github-tree-sha: f0482c1abc69aaaa2605db04cfebf926ad0d6341
+    version: 2026.11.3
 name: orchestrating
 ---
 # Orchestrating
@@ -33,6 +33,8 @@ rex events -s "$REX_SESSION" --json | jq --unbuffered -c '.payload.event? | sele
 The stream reports only changes, so check every child once when you start it. Otherwise, check every child each time the user talks to you.
 
 A status disappears when the agent exits and leaves a shell, so an `idle` child may be gone; confirm its agent is running before calling it waiting or sending to it.
+
+Track each child's PR too: `gh pr view <branch> --json state,mergeStateStatus,statusCheckRollup,reviewDecision`, or `gh pr checks <branch> --watch` in the background. On merge, `git wt -d <branch>` and `rex block close <block>`. On failing checks, a conflict, or a new review, send the child a follow-up.
 
 ## Follow-ups
 
