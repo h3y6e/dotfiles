@@ -1,8 +1,10 @@
 # PR Body
 
-Use only these sections, written so a reviewer grasps the change without reading the diff, and skip what they already know:
+Write only what a reviewer needs to judge the change, so they grasp it without reading the diff. Start from the purpose; later work follows from it. Leave out local environment details and promises such as "CI will verify".
 
-- `## Summary`: 1–3 sentences: the outcome once merged, then why it is needed now. Link the issue.
+A repository template's headings are a guide: add nothing just to fill one, and put no parenthetical notes in headings. Without a template, use only these sections, skipping what reviewers already know:
+
+- `## Summary`: 1–3 sentences: the purpose and the outcome once merged, then why it is needed now. Link the issue.
 - `## Evidence`: before and after, above the level of the diff. Never copy diff lines or list changes by file. Omit when the diff reads at a glance.
   - Behavior: screenshots for UI; otherwise output or a test that fails before and passes after, pasted verbatim.
   - Structure: file or call trees in `diff` or `text` blocks, tables, pseudocode, Mermaid diagrams, or SVGs (e.g. from D2).
