@@ -54,7 +54,7 @@
           },
           {
             "type": "command",
-            "command": "/bin/sh -c 'test \"$(git rev-parse --is-bare-repository 2>/dev/null)\" = true && { echo \"bare repository: orchestrating\"; git wt; } || true'",
+            "command": "/bin/sh -c 'test \"$(git rev-parse --is-bare-repository 2>/dev/null)\" = true && { echo \"Use **orchestrating** skill.\"; git wt; } || true'",
             "timeout": 5
           }
         ]
