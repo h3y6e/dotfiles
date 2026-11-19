@@ -51,6 +51,11 @@
             "type": "command",
             "command": "/bin/sh -c 'rex __internal session-start --agent claude --feature-session-naming=false 2>/dev/null || true'",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "/bin/sh -c 'test \"$(git rev-parse --is-bare-repository 2>/dev/null)\" = true && { echo \"bare repository: orchestrating\"; git wt; } || true'",
+            "timeout": 5
           }
         ]
       }
