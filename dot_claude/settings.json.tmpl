@@ -63,7 +63,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "jq -r -f {{ .chezmoi.homeDir }}/.claude/statusline.jq"
+    "command": "/bin/sh -c 'i=$(cat); printf %s \"$i\" | jq -r --arg bare \"$(git -C \"$(printf %s \"$i\" | jq -r .workspace.project_dir)\" rev-parse --is-bare-repository 2>/dev/null)\" -f {{ .chezmoi.homeDir }}/.claude/statusline.jq'"
   },
   "enabledPlugins": {
     "cc-plugin-diff@builtin": false,
