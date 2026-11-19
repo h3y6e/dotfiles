@@ -5,37 +5,40 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/orchestrating
-    github-ref: refs/tags/v2026.11.3
+    github-ref: refs/tags/v2026.11.4
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: f0482c1abc69aaaa2605db04cfebf926ad0d6341
-    version: 2026.11.3
+    github-tree-sha: d7a390caaf5d71e59ee2cb345c37e1ba1dc11f7f
+    version: 2026.11.4
 name: orchestrating
 ---
 # Orchestrating
 
-You are the coordinator: you never edit code. The tabs and `git wt` (no arguments) are the task list, not your memory.
+You are the coordinator: you never edit code; spend your context on briefs and results. Rex's sidebar lists windows by name: one agent per named window, yours the session's first, named via `rex window rename coordinator`. Windows and `git wt` are the task list, not memory.
 
 ## Start a Child
 
-1. `git wt <branch> origin/<base> --nocd`.
-2. With `rex run --label <branch>`, open a tab in the worktree, without taking focus, and start the agent with the brief as its launch argument. A brief typed after launch can land in a trust or permission prompt. The label maps the branch to its block ID in `rex block list`.
-3. The child cannot see this conversation, so the brief stands alone, including the base branch. Ask it to follow the `git-shipping` skill through the PR and to end with a report: PR URL, evidence, and who acts next.
-4. Capture the tab once. A startup prompt such as folder trust reports no status, so the child looks idle while it waits. If one shows, ask the user to answer it in that tab.
+Start a child per branch and per context-heavy task: browsing, large documents, or logs. A new window costs a re-brief, lost detail, and the prompt cache: give related work to the child holding its context; start one only for an independent topic.
+
+Give a PR stack to one child and worktree; `gh stack rebase` stops on another worktree's uncommitted changes.
+
+1. For a branch, `git wt <branch> origin/<base> --nocd`. Other work starts in an existing worktree or scratch directory, never the coordinator's bare repository.
+2. `sh scripts/open-window.sh <name> <dir> <agent> <brief>` starts the agent in an unfocused window; name is the branch, or the topic. A brief typed later can hit a trust or permission prompt.
+3. The brief stands alone, including the base branch. A branch child follows the `shipping` skill through the PR; a checks list misses required ones. Others report and stop. Reports open with who does what next (`You: merge #12`), then the PR URL and evidence. Also:
+   - Before posting externally, changing shared or production state, or bulk-exporting personal data (it trips production alerts), get the user's approval with count and filter.
+   - At a login page, have the user log in in a headed browser and continue.
+   - Run dev servers and log tails in your window via `rex split -b "$REX_BLOCK"`.
+4. Capture it once: startup prompts like folder trust show no status; have the user answer.
 
 ## Track
 
-A child's state is its pane's program status: `rex block call -b <block> program_status` gives `idle`, `working`, `blocked`, `done`, or `error`. If you can watch a command in the background, watch this stream:
+A child's state: `rex block call -b <block> program_status`. Watch in the background with a per-line streaming tool (e.g. Claude Code's Monitor): `sh scripts/watch-children.sh` for stopping children, and one watch per PR whose merge gates your next step, in any repository or merged by anyone, added on opening. One-shot watches need restarts; one miss hides a stopped child.
 
-```sh
-rex events -s "$REX_SESSION" --json | jq --unbuffered -c '.payload.event? | select(.type == "block_event" and .payload.name == "program_status_changed" and .payload.block_id != env.REX_BLOCK) | {block: .payload.block_id, state: .payload.payload.record.state} | select(.state | IN("done", "blocked", "error"))'
-```
+It reports only changes; check children at start. Watch a PR until `state` is `MERGED` or `CLOSED`; a change watch misses an earlier merge. On each notice, read `rex capture -b <label>` and act.
 
-The stream reports only changes, so check every child once when you start it. Otherwise, check every child each time the user talks to you.
+`done` means the agent is free, not finished; confirm what still runs (`gh pr checks --watch`). Check its commits' `decision` and `rejected` lines and PR diff against the agreed design and API, raising departures with the user.
 
-A status disappears when the agent exits and leaves a shell, so an `idle` child may be gone; confirm its agent is running before calling it waiting or sending to it.
-
-Track each child's PR too: `gh pr view <branch> --json state,mergeStateStatus,statusCheckRollup,reviewDecision`, or `gh pr checks <branch> --watch` in the background. On merge, `git wt -d <branch>` and `rex block close <block>`. On failing checks, a conflict, or a new review, send the child a follow-up.
+Decide beforehand what each merge triggers: stack rebase, `git wt -d <branch>` and `rex window close <name>`, readying the next PR. Follow up on later failures, conflicts, or reviews. User-facing progress lists show only open items and whose turn each is.
 
 ## Follow-ups
 
-Send follow-ups only to an `idle` or `done` child. Never send to a `blocked` one: Enter on a permission prompt approves it.
+Send only to an `idle` or `done` child whose agent still runs; Enter on a `blocked` one approves its prompt. For a `working` child, even to change direction, `rex send` once from a background loop on `done`; never retract.
