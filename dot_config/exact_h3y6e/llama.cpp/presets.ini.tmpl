@@ -12,10 +12,10 @@ ctx-size = 8192
 
 [qwen3-embedding-0.6b]
 hf = Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0
-ctx-size = 8192
+ctx-size = 32768
 embedding = true
-batch-size = 8192
-ubatch-size = 8192
+batch-size = 32768
+ubatch-size = 32768
 {{- if and (eq .chezmoi.os "darwin") (ge (output "sysctl" "-n" "hw.memsize" | trim | int64) 137438953472) }}
 
 [qwen3.8-27b-abliterated]
