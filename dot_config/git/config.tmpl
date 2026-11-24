@@ -3,7 +3,7 @@
 	name = heyhoe
 	email = h3y6e@pm.me
 {{- if eq .chezmoi.os "darwin" }}
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINruieWJY7o2U4nvaPHJYKHPiCRmOzKBJe1TRZX3mtPB
+	signingkey = {{ .chezmoi.homeDir }}/.ssh/id_ecdsa_sk_rk_ssh
 {{- end }}
 [core]
 	editor = vim -c \"set fenc=utf-8\"
@@ -53,10 +53,12 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	program = {{ .chezmoi.homeDir }}/.config/git/ssh-keygen
 [commit]
 	gpgsign = true
 	verbose = true
+[tag]
+	gpgSign = true
 {{- end }}
 [url "https://github.com/"]
 	insteadOf = git@github.com:
