@@ -39,7 +39,7 @@ agent-browser = "0.43.0"
 "aqua:k1LoW/git-wt" = "0.30.0"
 "aqua:ymtdzzz/otel-tui" = "0.7.6"
 ast-grep = "0.51.3"
-aube = { version = "2.10.1", workflow = [
+aube = { version = "2.11.0", workflow = [
   "release-plz.yml@refs/heads/main",
   "release.yml@refs/heads/main",
 ] }
