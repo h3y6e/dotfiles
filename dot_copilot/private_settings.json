@@ -1,11 +1,8 @@
 {
-  "theme": "auto",
   "continueOnAutoMode": true,
   "experimental": true,
   "beep": true,
   "autoUpdate": false,
-  "showTipsOnStartup": true,
-  "stayInAutopilot": true,
   "dynamicRetrieval": {
     "mcp": true
   },
