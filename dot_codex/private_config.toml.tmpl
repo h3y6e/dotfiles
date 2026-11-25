@@ -2,46 +2,36 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
 approval_policy = "on-request"
-approvals_reviewer = "guardian_subagent"
+approvals_reviewer = "auto_review"
 default_permissions = "custom"
 file_opener = "none"
 hide_agent_reasoning = false
-model = "gpt-5.6-sol"
+model = "gpt-6.2-sol"
 model_provider = "openai"
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 model_reasoning_summary = "concise"
-model_supports_reasoning_summaries = true
 model_verbosity = "low"
-personality = "pragmatic"
 plan_mode_reasoning_effort = "xhigh"
 sandbox_mode = "workspace-write"
-service_tier = "fast"
 suppress_unstable_features_warning = true
 web_search = "live"
 
 [features]
 apply_patch_streaming_events = true
 apps = false
-child_agents_md = true
-chronicle = true
 default_mode_request_user_input = true
-enable_fanout = true
 enable_mcp_apps = true
 exec_permission_approvals = true
 hooks = false
 memories = true
-mentions_v2 = true
 prevent_idle_sleep = true
 request_permissions_tool = true
-# standalone_web_search = true
-tool_search_always_defer_mcp_tools = true
 
 [skills.bundled]
 enabled = false
 
 [agents]
-max_threads = 10
-job_max_runtime_seconds = 600
+max_concurrent_threads_per_session = 10
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
@@ -90,6 +80,3 @@ inherit = "all"
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch", "pull-request-number", "branch-changes", "run-state", "context-remaining", "task-progress"]
 terminal_title = ["activity", "project-name", "git-branch", "task-progress"]
-
-[tui.model_availability_nux]
-"gpt-5.5" = 4
