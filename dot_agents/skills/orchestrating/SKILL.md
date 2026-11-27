@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/orchestrating
-    github-ref: refs/tags/v2026.11.8
+    github-ref: refs/tags/v2026.11.9
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 72029dd47960beb92cd035f76cf66934844fcb07
-    version: 2026.11.8
+    github-tree-sha: 4d5a187967e8d5fd739699ebdd089fa5a895730b
+    version: 2026.11.9
 name: orchestrating
 ---
 # Orchestrating
