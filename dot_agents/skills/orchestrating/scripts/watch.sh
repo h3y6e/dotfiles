@@ -5,14 +5,7 @@ trap 'trap - EXIT HUP INT TERM; rm -r "$seen"; kill 0' EXIT HUP INT TERM
 
 workers() { rex window list --json | jq -r --arg b "${1-}" '.windows[] | .label as $w | .layers[].blocks[] | select(.label == $w and .block_id != env.REX_BLOCK and ($b == "" or .block_id == $b)) | "\(.block_id) \($w)"'; }
 
-status() {
-  pr=$(gh pr view "$2" --json number,state,mergeStateStatus,reviewDecision --jq '"#\(.number) \(.state) \(.mergeStateStatus) \(.reviewDecision)"' 2>/dev/null) || {
-    echo "$1 cannot read $2"
-    return 1
-  }
-  echo "$1 pr $pr"
-  case $pr in *" MERGED "* | *" CLOSED "*) return 1 ;; esac
-}
+status() { gh pr view "$1" --json number,state,mergeable --jq '"#\(.number) \(if .state != "OPEN" then .state elif .mergeable == "CONFLICTING" then "CONFLICTING" else "OPEN" end)"' 2>/dev/null; }
 
 listen() (
   trap 'rm "$3"' EXIT
@@ -21,10 +14,25 @@ listen() (
     pid=$!
     while IFS= read -r line; do
       case $line in
-        '{'* | "Changes made "*"; read the current state now.") status "$1" "$2" || {
-          kill "$pid"
-          return
-        } ;;
+        '{'* | "Changes made "*"; read the current state now.")
+          pr=$(status "$2") || {
+            echo "$1 cannot read $2"
+            kill "$pid"
+            return
+          }
+          case $line in
+            *review.submitted*) echo "$1 review $pr" ;;
+            *merge_conflict*) pr="${pr%% *} CONFLICTING" ;;
+          esac
+          case $pr in *" OPEN" | "${last-}") ;; *) echo "$1 pr $pr" ;; esac
+          last=$pr
+          case $pr in *" MERGED" | *" CLOSED")
+            trap - EXIT
+            kill "$pid"
+            return
+            ;;
+          esac
+          ;;
         "Listening for events." | "Listening for events on a new subscription." | "Event stream "*", reconnecting"* | "Subscription "*", creating it again." | hint:* | " "*) ;;
         *) echo "$1 $line" ;;
       esac

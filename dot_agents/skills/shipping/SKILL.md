@@ -5,10 +5,10 @@ license: MIT
 metadata:
     author: h3y6e
     github-path: skills/shipping
-    github-ref: refs/tags/v2026.11.9
+    github-ref: refs/tags/v2026.11.11
     github-repo: https://github.com/h3y6e/agent-skills
-    github-tree-sha: 0df661784bb21d728163a8dccc297ba642416d8c
-    version: 2026.11.9
+    github-tree-sha: 70dcb43b70a229e2fd2220a2afe29d754fd1d680
+    version: 2026.11.11
 name: shipping
 ---
 # Shipping
@@ -39,7 +39,7 @@ Before committing, run the `no-comments` skill on the touched files.
 
 Use the `cxg-commit` skill for the commit message format, and pipe the message through `cxg lint` before committing.
 
-On a PR branch, keep history as meaningful units, not a log of attempts. Rewrite it with `git history` (see `git history -h`; `reword` opens `GIT_EDITOR`), and push with `--force-with-lease`.
+On a PR branch, keep history as meaningful units, not a log of attempts: fold a later fix into the commit it corrects and add a new commit only for a new unit.
 
 ## PR
 

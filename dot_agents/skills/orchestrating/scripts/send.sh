@@ -5,17 +5,18 @@ text=$(cat)
 record() { rex block call -b "$branch" program_status | jq -r '.records[] | select(.id == null) | "\(.state) \(.updated_at)"'; }
 state() { record | cut -d ' ' -f 1; }
 [ "$(state)" = working ] && printf '\033' | rex send -b "$branch"
-while :; do
-  s=$(state)
-  case $s in
-    idle | done) break ;;
-    working) sleep 1 ;;
-    *)
-      echo "$branch: $s, not sent" >&2
-      exit 1
-      ;;
-  esac
+i=0
+while s=$(state) && [ "$s" = working ] && [ $i -lt 10 ]; do
+  sleep 1
+  i=$((i + 1))
 done
+case $s in
+  idle | done) ;;
+  *)
+    echo "$branch: $s, not sent" >&2
+    exit 1
+    ;;
+esac
 printf '%s' "$text" | rex send -b "$branch"
 sleep 1
 before=$(record)
